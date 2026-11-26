@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v3.2</title>
+  <title>Tracciatore Spese · v3.3</title>
   <meta name="theme-color" content="#dce6f4" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1363,54 +1363,51 @@ body.rev3 #analysis .chart-wrap{border-radius:17px!important;background:transpar
 body.rev3 #movements .move-amount{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}body.rev3 #movements .move-amount:before,body.rev3 #movements .move-amount:after{display:none!important}
 </style>
 
-<style id="v32-liquid-optimization">
-    :root{--safe-top:max(env(safe-area-inset-top), 14px);--safe-right:max(env(safe-area-inset-right), 14px);--safe-left:max(env(safe-area-inset-left), 14px);--safe-bottom:max(env(safe-area-inset-bottom), 12px)}
-    html,body{overscroll-behavior-y:contain}
-    body.rev3{--dynamic-shift:0px}
-    body.rev3 #revampBackdrop{background:linear-gradient(180deg, rgba(122,145,182,.92) 0%, rgba(166,186,214,.78) 18%, rgba(227,234,243,.92) 46%, rgba(241,245,249,.98) 78%, rgba(236,244,246,.96) 100%)!important}
-    body.rev3 #revampBackdrop:before{background:radial-gradient(ellipse at 28% 15%, rgba(90,119,176,.62), transparent 54%),radial-gradient(ellipse at 76% 30%, rgba(165,155,221,.42), transparent 56%)!important;opacity:.96;transform:translate3d(0, calc(var(--v65-shift, 0px) + var(--dynamic-shift, 0px)), 0);filter:blur(6px)}
-    body.rev3 #revampBackdrop:after{background:radial-gradient(ellipse at 18% 44%, rgba(134,186,191,.32), transparent 52%),radial-gradient(ellipse at 82% 76%, rgba(199,210,229,.34), transparent 54%)!important;opacity:.9;transform:translate3d(0, calc(var(--v65-shift2, 0px) - var(--dynamic-shift, 0px) * .35), 0);filter:blur(8px)}
-    body.rev3 .shell{padding-left:max(14px,var(--safe-left));padding-right:max(14px,var(--safe-right));padding-bottom:calc(var(--navH) + var(--safe-bottom) + 56px)}
-    body.rev3 .sticky-head{padding-top:calc(var(--safe-top) + 6px)!important;padding-left:max(16px,var(--safe-left))!important;padding-right:max(16px,var(--safe-right))!important;padding-bottom:18px!important;backdrop-filter:blur(18px) saturate(150%)!important;-webkit-backdrop-filter:blur(18px) saturate(150%)!important;background:linear-gradient(180deg,rgba(255,255,255,.38),rgba(255,255,255,.16))!important;box-shadow:0 10px 24px rgba(16,24,40,.05), inset 0 -1px 0 rgba(255,255,255,.36)!important}
-    body.rev3 .topbar-inner{grid-template-columns:52px minmax(0,1fr) 52px!important;min-height:56px}
-    body.rev3 .title{padding-top:2px}
-    body.rev3 .title h1{font-size:clamp(22px,4vw,30px)!important;line-height:1.04;text-wrap:balance;text-shadow:none!important}
-    body.rev3 .title p{font-size:13px!important;font-weight:650!important;color:#516074!important}
-    body.rev3 .period-row{margin-top:14px!important}
-    body.rev3 .icon-btn,body.rev3 .period-btn,body.rev3 .nav-item,body.rev3 .nav-home-btn,body.rev3 .drawer-toggle-mini,body.rev3 .drawer-help-fab,body.rev3 .mini-primary,body.rev3 .collapse-btn,body.rev3 .secondary,body.rev3 .primary{min-width:48px;min-height:48px}
-    body.rev3 .icon-btn,body.rev3 .period-btn{width:48px!important;height:48px!important;border-radius:17px!important}
-    body.rev3 .card,body.rev3 .stat,body.rev3 .info-tile,body.rev3 .setting-card,body.rev3 .drawer-card,body.rev3 .move-card,body.rev3 .budget-row,body.rev3 .category-toolbar{backdrop-filter:blur(16px) saturate(145%)!important;-webkit-backdrop-filter:blur(16px) saturate(145%)!important;box-shadow:0 14px 34px rgba(15,23,42,.06), inset 0 1px 0 rgba(255,255,255,.50)!important}
-    body.rev3 .chart-card,body.rev3 .chart-wrap,body.rev3 .settings-sheet,body.rev3 .side-drawer,body.rev3 .nav-main-group,body.rev3 .nav-home-btn,body.rev3 .nav-drag-lens{backdrop-filter:blur(20px) saturate(155%)!important;-webkit-backdrop-filter:blur(20px) saturate(155%)!important}
-    body.rev3 .liquid-nav.split-nav{left:max(14px,var(--safe-left))!important;right:max(14px,var(--safe-right))!important;bottom:max(12px,calc(var(--safe-bottom) + 6px))!important;filter:drop-shadow(0 14px 24px rgba(22,37,66,.08))}
-    body.rev3 .nav-main-group{background:linear-gradient(135deg,rgba(255,255,255,.30),rgba(255,255,255,.12) 58%,rgba(255,255,255,.08))!important;border:1px solid rgba(255,255,255,.58)!important;box-shadow:0 14px 30px rgba(17,24,39,.08), inset 0 1px 0 rgba(255,255,255,.62)!important}
-    body.rev3 .nav-home-btn{background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.08))!important;border:1px solid rgba(255,255,255,.64)!important;box-shadow:0 14px 30px rgba(17,24,39,.10), inset 0 1px 0 rgba(255,255,255,.72)!important}
-    body.rev3 .nav-item{min-height:52px!important;border-radius:20px!important;color:#5d6b80!important}
-    body.rev3 .nav-item.active{color:var(--blue)!important}
-    body.rev3 .nav-liquid-bubble{background:linear-gradient(145deg,rgba(255,255,255,.58),rgba(229,238,255,.42))!important;border:1px solid rgba(255,255,255,.82)!important;box-shadow:0 10px 24px rgba(52,120,246,.10), inset 0 1px 0 rgba(255,255,255,.94)!important}
-    body.rev3 .nav-drag-lens{background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(255,255,255,.07))!important;border:1px solid rgba(255,255,255,.72)!important;box-shadow:0 14px 28px rgba(52,120,246,.10), inset 0 1px 0 rgba(255,255,255,.82)!important}
-    body.rev3 #analysis .card-title h2,body.rev3 .section-title,body.rev3 .card-title h2{letter-spacing:-.04em}
-    body.rev3 #analysis .chart-card{padding:20px 18px 16px!important}
-    body.rev3 #analysis .analysis-budget-card,body.rev3 #analysis .chart-wrap{background:rgba(248,250,252,.78)!important;border:1px solid rgba(15,23,42,.07)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.72)!important}
-    body.rev3 #analysis .category-viz{padding:2px 2px 0}
-    body.rev3 #analysis .category-viz-row{padding:15px 0 14px!important;min-height:72px!important;border-bottom:1px solid rgba(15,23,42,.08)!important;outline:none!important;background:transparent!important}
-    body.rev3 #analysis .category-viz-row:last-child{border-bottom:0!important}
-    body.rev3 #analysis .category-viz-row:focus-visible{border-radius:18px;box-shadow:0 0 0 3px rgba(47,91,255,.12)!important}
-    body.rev3 #analysis .category-viz-name{font-size:15px!important;font-weight:760!important;color:#142034!important}
-    body.rev3 #analysis .category-viz-spent{font-size:15px!important;font-weight:840!important}
-    body.rev3 #analysis .category-viz-max{font-size:13px!important;color:#667085!important}
-    body.rev3 #analysis .category-viz-track{height:10px!important;background:#e6ebf2!important;box-shadow:inset 0 1px 2px rgba(15,23,42,.07)}
-    body.rev3 #analysis .legend{gap:14px;row-gap:8px}
-    body.rev3 #analysis .legend span{font-size:12px!important;font-weight:700;color:#475467}
-    body.rev3 .chart-tip{max-width:min(240px,72vw);font-size:13px;line-height:1.35}
-    body.rev3 .chart-tip strong{display:block;font-size:18px;line-height:1.1;margin-bottom:4px}
-    body.rev3 .chart-tip b{font-size:15px}
-    body.rev3 .chart-wrap{will-change:transform}
-    body.rev3 .monthly-live-point{will-change:transform,opacity}
-    @media (max-width:560px){body.rev3 .sticky-head{padding-top:calc(var(--safe-top) + 8px)!important;padding-bottom:16px!important}body.rev3 .title h1{font-size:clamp(21px,7vw,26px)!important}body.rev3 .title p{font-size:12.5px!important}body.rev3 .period-pill{min-width:min(290px,68vw)!important;font-size:12px!important}body.rev3 .nav-item{min-height:50px!important}body.rev3 .nav-home-btn{width:60px!important;height:60px!important}body.rev3 #analysis .category-viz-meta{align-items:flex-start!important}body.rev3 #analysis .category-viz-values{width:100%;justify-content:flex-start!important}}
-    @media (prefers-reduced-motion: reduce){body.rev3 #revampBackdrop:before,body.rev3 #revampBackdrop:after,body.rev3 .nav-drag-lens,body.rev3 .monthly-live-point,body.rev3 .chart-wrap{animation:none!important;transition:none!important}}
-  </style>
+<style id="rev33-glass">
+/* Content stays solid; only navigation and header use backdrop blur. */
+body.rev3 .shell{padding:0 max(16px,env(safe-area-inset-right)) calc(112px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))!important}
+body.rev3 .sticky-head{margin-left:calc(-1 * max(16px,env(safe-area-inset-left)))!important;margin-right:calc(-1 * max(16px,env(safe-area-inset-right)))!important;padding:calc(10px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 9px max(16px,env(safe-area-inset-left))!important;backdrop-filter:blur(14px) saturate(145%)!important;-webkit-backdrop-filter:blur(14px) saturate(145%)!important}
+body.rev3 .topbar-inner{grid-template-columns:minmax(0,1fr) 46px 46px!important;min-height:62px}
+body.rev3 .title h1{font-size:clamp(23px,7vw,29px)!important;overflow-wrap:anywhere;white-space:normal!important;text-shadow:none!important}
+body.rev3 .title p{font-size:12px!important}
+body.rev3 .icon-btn,body.rev3 .period-row .period-btn{width:46px!important;height:46px!important;min-width:44px;min-height:44px}
+body.rev3 .period-row .period-pill,body.rev3 .input,body.rev3 .select,body.rev3 .setting-input,body.rev3 .setting-select,body.rev3 .secondary,body.rev3 .primary,body.rev3 .glass-back-btn,body.rev3 .drawer-help-fab,body.rev3 .modal-close,body.rev3 .drawer-menu-item,body.rev3 .collapse-btn,body.rev3 .detail-summary{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3 .filter-chips button,body.rev3 .entry-types button,body.rev3 #toggleMovements,body.rev3 #movements .move-actions button,body.rev3 #movementCalcBtn,body.rev3 #resetFilters{min-height:44px!important}
+body.rev3 .card,body.rev3 .stat,body.rev3 .info-tile,body.rev3 .budget-row,body.rev3 .chart-wrap,body.rev3 .setting-card,body.rev3 .drawer-card,body.rev3 .move-card,body.rev3 .category-toolbar,body.rev3 .settings-sheet,body.rev3 .side-drawer{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3 .view.active .card,body.rev3 canvas{animation:none!important;filter:none!important}
+body.rev3 #revampBackdrop:before,body.rev3 #revampBackdrop:after{filter:none!important;animation:none!important}
+body.rev3 #bottomNav.rev3-nav{left:max(12px,env(safe-area-inset-left))!important;right:max(12px,env(safe-area-inset-right))!important;bottom:calc(9px + env(safe-area-inset-bottom))!important;height:70px!important;background:linear-gradient(155deg,rgba(255,255,255,.55),rgba(245,250,255,.22))!important;border:1px solid rgba(255,255,255,.88)!important;border-radius:33px!important;box-shadow:0 10px 24px rgba(23,40,69,.15),inset 0 1px 1px rgba(255,255,255,.95),inset 0 -1px 2px rgba(255,255,255,.6)!important;backdrop-filter:blur(16px) saturate(165%)!important;-webkit-backdrop-filter:blur(16px) saturate(165%)!important;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+body.rev3.dark-mode #bottomNav.rev3-nav{background:linear-gradient(155deg,rgba(53,70,95,.65),rgba(25,38,56,.48))!important;border-color:rgba(255,255,255,.25)!important}
+body.rev3 #bottomNav .nav-item{height:56px!important;min-height:44px!important;min-width:0!important;color:#37485d!important;touch-action:none}
+body.rev3.dark-mode #bottomNav .nav-item{color:#d1deef!important}
+body.rev3 #bottomNav .nav-item.active,body.rev3 #bottomNav .nav-item.previewed{color:var(--blue)!important;background:rgba(61,117,220,.10)!important}
+body.rev3[data-nav-dragging="1"] #bottomNav .nav-item{background:transparent!important;opacity:1!important;filter:none!important}
+body.rev3 #bottomNav .nav-label{font-size:11px!important}
+body.rev3 #bottomNav .nav-drag-lens{background:radial-gradient(ellipse at 18% 0%,rgba(255,255,255,.92),transparent 55%),linear-gradient(155deg,rgba(255,255,255,.68),rgba(177,211,255,.24) 70%,rgba(255,255,255,.45))!important;border-radius:28px!important;clip-path:inset(0 round 28px)!important;border:1px solid rgba(255,255,255,.86)!important;box-shadow:0 5px 16px rgba(37,71,142,.17),inset 0 1px 2px white,inset 0 -2px 3px rgba(99,156,217,.25)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;animation:none!important;filter:none!important;transition:transform .20s cubic-bezier(.2,.8,.25,1.08),opacity .13s ease!important}
+body.rev3 #bottomNav .nav-drag-lens:before,body.rev3 #bottomNav .nav-drag-lens:after{display:none!important}
+body.rev3.dark-mode #bottomNav .nav-drag-lens{background:linear-gradient(155deg,rgba(148,185,231,.54),rgba(80,113,160,.28))!important;border-color:rgba(200,225,255,.5)!important}
+/* Remove the inner blue rectangle without touching the outer card. */
+body.rev3 #analysis .category-chart-wrap{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important;overflow:visible!important;filter:none!important}
+body.rev3 #analysis .category-chart-wrap:before,body.rev3 #analysis .category-chart-wrap:after,body.rev3 #analysis .category-viz-row:before,body.rev3 #analysis .category-viz-row:after{display:none!important;content:none!important}
+body.rev3 #analysis .category-viz{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+body.rev3 #analysis .category-viz-row{appearance:none;-webkit-appearance:none;padding:13px 0!important;min-height:70px!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important;outline-offset:3px;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;min-width:0}
+body.rev3 #analysis .category-viz-row:last-child{border-bottom:0!important}
+body.rev3 #analysis .category-viz-meta{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center!important;gap:8px;min-width:0}
+body.rev3 #analysis .category-viz-name{font-size:14px!important;font-weight:720!important;color:var(--ink)!important;line-height:1.28;overflow-wrap:anywhere;min-width:0}
+body.rev3 #analysis .category-viz-values{display:flex;flex-direction:column;align-items:flex-end;gap:3px;margin:0!important;min-width:0;text-align:right;max-width:100%;font-variant-numeric:tabular-nums}
+body.rev3 #analysis .category-viz-spent{font-size:15px!important;font-weight:790!important;line-height:1.2;overflow-wrap:anywhere}
+body.rev3 #analysis .category-viz-max{font-size:12px!important;color:var(--muted)!important;line-height:1.2;overflow-wrap:anywhere}
+body.rev3 #analysis .category-viz-track{height:8px!important;box-shadow:none!important}
+body.rev3 #analysis .legend{font-size:12px!important;gap:9px!important;flex-wrap:wrap}
+body.rev3 #analysis .legend span{font-size:12px!important;color:var(--muted)!important}
+body.rev3 .monthly-live-point:before{animation-duration:3.4s!important}
+body.rev3:not([data-active-tab="analysis"]) .monthly-live-point:before,body.rev3.page-hidden .monthly-live-point:before{animation-play-state:paused!important}
+@media(max-width:365px){body.rev3 #bottomNav .nav-label{font-size:9px!important}body.rev3 #analysis .category-viz-name{font-size:13px!important}}
+@media(prefers-reduced-motion:reduce){body.rev3 #revampBackdrop:before,body.rev3 #revampBackdrop:after{transform:none!important}body.rev3 #bottomNav .nav-drag-lens,body.rev3 .view{transition:none!important;animation:none!important}}
+@media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav,body.rev3 .sticky-head{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav,body.rev3.dark-mode .sticky-head{background:#233248!important}}
+</style>
 </head>
-<body data-app-version="3" class="rev3">
+<body data-app-version="3.3" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
@@ -1419,7 +1416,7 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
           <div class="title"><span class="brand-kicker">TRACCIATORE SPESE</span>
             <h1 id="screenTitle">Home</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">v3</span></p>
+            <p>Lorenzo Vizzini <span class="profile-badge">v3.3</span></p>
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -2041,9 +2038,7 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
   .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.meta-box{padding:12px 14px;border-radius:16px;background:#fff;border:1px solid #e4ebff}.meta-box small{display:block;color:#667085;font-weight:800}.meta-box b{display:block;margin-top:6px;font-size:15px}
   .empty-row{text-align:center;color:#667085;padding:18px}.foot{margin-top:18px;color:#667085;font-size:11px;text-align:center}
   @media print{body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:14px}.hero,.section{box-shadow:none}.section{page-break-inside:avoid}table{page-break-inside:auto}tr{page-break-inside:avoid;page-break-after:auto}}
-</style>
-
-</head><body>
+</style></head><body>
 <div class="page">
   <div class="hero">
     <h1>Report mensile - ${escapeReportHtml(p.label)}</h1>
@@ -2074,78 +2069,6 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
   <div class="foot">Suggerimento: nella finestra di stampa del browser scegli “Salva come PDF” per esportare il report sul tuo dispositivo.</div>
 </div>
 <scr${'ipt'}>window.onload=()=>{setTimeout(()=>window.print(),180)};window.onafterprint=()=>window.close();<\/script>
-
-
-  <script id="v32-liquid-optimization-script">
-    (()=>{
-      document.body.classList.add('rev3-optimized');
-      const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-      const bg = document.getElementById('revampBackdrop');
-      let bgPending = false;
-      function updateBgMotion(){
-        bgPending = false;
-        if(!bg) return;
-        const y = Math.max(0, window.scrollY || 0);
-        const shift = reduced.matches ? 0 : Math.max(-36, Math.min(24, -y * .045));
-        bg.style.setProperty('--dynamic-shift', shift + 'px');
-      }
-      function scheduleBg(){ if(!bgPending){ bgPending = true; requestAnimationFrame(updateBgMotion); } }
-      window.addEventListener('scroll', scheduleBg, {passive:true});
-      window.addEventListener('resize', scheduleBg, {passive:true});
-      scheduleBg();
-      const _drawMonthlyChart = window.drawMonthlyChart;
-      const _drawCategoryChart = window.drawCategoryChart;
-      let analysisRAF = 0;
-      const chartCache = {monthly:'', category:''};
-      function buildMonthlySignature(){
-        try{
-          const p = window.currentPeriod();
-          const periods=[];
-          for(let i=5;i>=0;i--){const d=new Date(p.labelYear,p.labelMonth-i,1); periods.push(window.periodForLabel(d.getFullYear(),d.getMonth()));}
-          return JSON.stringify(periods.map(pp=>{const s=window.periodBudgetSummary(pp); return [pp.labelYear,pp.labelMonth,Number(s.value||0).toFixed(2),Number(s.budget||0).toFixed(2),s.out?1:0]})) + '|' + ((document.getElementById('monthlyCanvas')||{}).clientWidth||0) + 'x' + ((document.getElementById('monthlyCanvas')||{}).clientHeight||0);
-        }catch(e){return String(Date.now());}
-      }
-      function buildCategorySignature(){
-        try{
-          const rows = window.budgetRows().map(r=>[r.name,Number(r.spent||0).toFixed(2),Number(r.max||0).toFixed(2),r.out?1:0]);
-          const host = document.getElementById('categoryViz');
-          return JSON.stringify(rows) + '|' + (host ? host.clientWidth : 0);
-        }catch(e){return String(Date.now());}
-      }
-      window.drawMonthlyChart = function(force=false){
-        const sig = buildMonthlySignature();
-        if(!force && sig === chartCache.monthly) return;
-        chartCache.monthly = sig;
-        _drawMonthlyChart();
-        const canvas = document.getElementById('monthlyCanvas');
-        if(canvas) canvas.classList.add('chart-premium-enter');
-      };
-      window.drawCategoryChart = function(force=false){
-        const sig = buildCategorySignature();
-        if(!force && sig === chartCache.category) return;
-        chartCache.category = sig;
-        _drawCategoryChart();
-      };
-      window.drawCharts = function(force=false){
-        if(window.activeTab !== 'analysis') return;
-        cancelAnimationFrame(analysisRAF);
-        analysisRAF = requestAnimationFrame(()=>{
-          if(force){ chartCache.monthly=''; chartCache.category=''; }
-          window.hideMonthlyChartTooltip && window.hideMonthlyChartTooltip();
-          window.hideCategoryChartTooltip && window.hideCategoryChartTooltip();
-          window.drawMonthlyChart(force);
-          window.drawCategoryChart(force);
-        });
-      };
-      const _setTab = window.setTab;
-      window.setTab = function(tab, scroll=true){ _setTab(tab, scroll); if(tab === 'analysis') window.drawCharts(true); };
-      function refreshIfAnalysis(){ if(window.activeTab === 'analysis') window.drawCharts(true); }
-      window.addEventListener('orientationchange', ()=>setTimeout(refreshIfAnalysis, 180), {passive:true});
-      window.addEventListener('pageshow', refreshIfAnalysis, {passive:true});
-      setTimeout(refreshIfAnalysis, 160);
-    })();
-  </script>
-
 </body></html>`;
       const win = window.open('', '_blank', 'width=1100,height=850');
       if(!win){ showToast('Consenti i popup per esportare il PDF'); return; }
@@ -2924,9 +2847,12 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
       if(activeTab==='analysis') setTimeout(drawCharts,80);
       if(scroll) window.scrollTo({top:0,behavior:'smooth'});
     }
+    let chartFrame=0;
     function drawCharts(){
-      if(activeTab!=='analysis')return;
-      hideMonthlyChartTooltip();hideCategoryChartTooltip();drawMonthlyChart();drawCategoryChart();
+      if(activeTab!=='analysis'||chartFrame)return;
+      chartFrame=requestAnimationFrame(()=>{chartFrame=0;if(activeTab!=='analysis'||document.hidden)return;
+        hideMonthlyChartTooltip();hideCategoryChartTooltip();drawMonthlyChart();drawCategoryChart();
+      });
     }
     function resizeCanvas(canvas){const w=canvas.clientWidth,h=canvas.clientHeight;const dpr=Math.min(2,window.devicePixelRatio||1);canvas.width=Math.max(1,Math.round(w*dpr));canvas.height=Math.max(1,Math.round(h*dpr));const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);return {ctx,w,h}}
     let monthlyGlowPhase=0;
@@ -2943,7 +2869,7 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
 
     function drawMonthlyChart(){
       const canvas=document.getElementById('monthlyCanvas'); if(!canvas) return;
-      const {ctx,w,h}=resizeCanvas(canvas); ctx.clearRect(0,0,w,h);
+      if(!canvas.clientWidth||!canvas.clientHeight)return;
       const p=currentPeriod(); const todayPeriod=getPeriod(new Date()); const periods=[];
       for(let i=5;i>=0;i--){const d=new Date(p.labelYear,p.labelMonth-i,1);periods.push(periodForLabel(d.getFullYear(),d.getMonth()))}
       const data=periods.map(pp=>{
@@ -2957,7 +2883,10 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
           isCurrent:pp.labelMonth===todayPeriod.labelMonth && pp.labelYear===todayPeriod.labelYear
         };
       });
-      drawLine(ctx,w,h,data,canvas);
+      const signature=JSON.stringify([data,canvas.clientWidth,canvas.clientHeight,Math.min(2,window.devicePixelRatio||1),window.innerWidth<=560,state.theme]);
+      if(canvas._renderSignature===signature)return;
+      const {ctx,w,h}=resizeCanvas(canvas);ctx.clearRect(0,0,w,h);
+      drawLine(ctx,w,h,data,canvas);canvas._renderSignature=signature;
     }
     function niceChartStep(maxValue){
       const raw=Math.max(1,maxValue)/4;
@@ -3119,8 +3048,10 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
     function drawCategoryChart(){
       const host=document.getElementById('categoryViz');if(!host)return;
       const data=budgetRows().sort((a,b)=>b.spent-a.spent||byAlpha(a,b)).map(r=>({label:r.name,value:r.spent,max:r.max,out:r.out}));
+      const signature=JSON.stringify(data);if(host._renderSignature===signature)return;
       host.innerHTML=data.length?data.map((d,i)=>{const ratio=d.max>0?Math.max(0,Math.min(1,d.value/d.max)):(d.value>0?1:0);return `<button type="button" class="category-viz-row ${d.out?'out':''} ${d.value===0?'zero':''}" data-i="${i}" aria-label="${escapeHtml(d.label)}: ${fmt.format(d.value)}, budget ${fmt.format(d.max)}"><span class="category-viz-meta"><span class="category-viz-name">${emojiBadge(d.label)} ${escapeHtml(d.label)}</span><span class="category-viz-values"><span class="category-viz-spent">${fmt.format(d.value)}</span><span class="category-viz-max">max ${fmt.format(d.max)}</span></span></span><span class="category-viz-track"><span class="category-viz-fill" style="width:${ratio*100}%"></span></span></button>`}).join(''):'<div class="empty">Nessuna categoria uscita.</div>';
       host.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>showCategoryChartTooltip({data:data[Number(btn.dataset.i)],row:btn})));
+      host._renderSignature=signature;
     }
     function hideCategoryChartTooltip(){const tip=document.getElementById('categoryChartTooltip');if(tip)tip.classList.remove('show','ok','ko','below')}
     function showCategoryChartTooltip(hit){const tip=document.getElementById('categoryChartTooltip');if(!tip||!hit)return;const d=hit.data,wrap=tip.parentElement,track=hit.row.querySelector('.category-viz-track');const r=track.getBoundingClientRect(),wr=wrap.getBoundingClientRect();tip.classList.remove('ok','ko');tip.classList.add(d.out?'ko':'ok');tip.innerHTML=`<strong>${escapeHtml(d.label)}</strong><b>${fmt.format(d.value)}</b><small>${d.out?'Fuori budget':'Dentro budget'} · max. ${fmt.format(d.max)}</small>`;placeChartTooltip(tip,wrap,r.left-wr.left+r.width/2,r.top-wr.top+r.height/2)}
@@ -3362,7 +3293,7 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
     function updateNavDragFromPoint(x,y){
       if(!navInteractionActive) return;
       const btn=getNavButtonFromPoint(x,y);
-      if(btn) previewNavButton(btn);
+      if(btn&&btn!==navPressedButton) previewNavButton(btn);
     }
     function startNavInteraction(btn,pointerId=null){
       navInteractionActive=true;
@@ -3437,7 +3368,7 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
     }
     const premiumRippleSelector='.icon-btn,.period-btn,.primary,.secondary,.ghost,.collapse-btn,.mini-primary,.drawer-menu-item,.nav-item,.nav-home-btn,.nav-add,.detail-summary';
     document.addEventListener('pointerdown',e=>{
-      const btn=e.target.closest(premiumRippleSelector);if(!btn||btn.id==='resetFilters')return;
+      const btn=e.target.closest(premiumRippleSelector);if(!btn||btn.id==='resetFilters'||btn.matches('.nav-item,.nav-home-btn')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
       const r=btn.getBoundingClientRect();const drop=document.createElement('span');drop.className='liquid-ripple';
       drop.style.left=(e.clientX-r.left)+'px';drop.style.top=(e.clientY-r.top)+'px';btn.appendChild(drop);
       setTimeout(()=>drop.remove(),780);
@@ -3545,7 +3476,7 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
   </script>
 
   <script>
-    (()=>{const bg=document.getElementById('revampBackdrop');let pending=false;const reduced=matchMedia('(prefers-reduced-motion: reduce)');function update(){pending=false;if(reduced.matches){bg.style.setProperty('--v65-shift','0px');bg.style.setProperty('--v65-shift2','0px');return;}const y=Math.max(0,window.scrollY||0);bg.style.setProperty('--v65-shift',Math.max(-120,-y*.12)+'px');bg.style.setProperty('--v65-shift2',Math.min(110,y*.09)+'px');}function schedule(){if(!pending){pending=true;requestAnimationFrame(update)}}window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});schedule();})();
+    (()=>{const bg=document.getElementById('revampBackdrop');let pending=false;const reduced=matchMedia('(prefers-reduced-motion: reduce)');function update(){pending=false;if(reduced.matches){bg.style.setProperty('--v65-shift','0px');bg.style.setProperty('--v65-shift2','0px');return;}const y=Math.max(0,window.scrollY||0);bg.style.setProperty('--v65-shift',Math.max(-120,-y*.12)+'px');bg.style.setProperty('--v65-shift2',Math.min(110,y*.09)+'px');}function schedule(){if(!pending){pending=true;requestAnimationFrame(update)}}window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});document.addEventListener('visibilitychange',()=>{document.body.classList.toggle('page-hidden',document.hidden);if(!document.hidden){schedule();if(activeTab==='analysis')drawCharts();}});schedule();})();
   </script>
 
   <script>
@@ -3558,8 +3489,8 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.3')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.3', '1');
               location.reload();
             }
           });
@@ -3573,8 +3504,8 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v31')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v31', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v33')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v33', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
@@ -3591,6 +3522,5 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
       if (typeof showToast === 'function') showToast('Connessione ripristinata');
     });
   </script>
-
 </body>
 </html>

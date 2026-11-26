@@ -1,5 +1,4 @@
-Versione: v3.2
-Ottimizzazione fluidità Liquid Glass, safe area e grafici.
+v3.3 – Ripristino su base v3 funzionante, Liquid Glass leggero, fix grafico categorie, cache grafici. Storage e backup invariati.
 
 TRACCIATORE SPESE REVAMPING – v3
 Nuova Home compatta, registro raggruppato per data, emoji automatiche, form a pannello, navigazione Liquid Glass.
