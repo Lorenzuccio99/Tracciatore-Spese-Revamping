@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v3.4</title>
+  <title>Tracciatore Spese · v3.5</title>
   <meta name="theme-color" content="#dce6f4" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1362,41 +1362,6 @@ body.rev3 #analysis .chart-wrap{border-radius:17px!important;background:transpar
 
 body.rev3 #movements .move-amount{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}body.rev3 #movements .move-amount:before,body.rev3 #movements .move-amount:after{display:none!important}
 
-/* === v3.4 premium liquid glass refresh === */
-body.rev3 .category-emoji{width:auto!important;height:auto!important;flex:0 0 auto!important;display:inline-flex!important;align-items:center;justify-content:center;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;font-size:1.22em;line-height:1}
-body.rev3 .selection-dot{font-size:14px!important;color:var(--blue)!important;min-width:18px;justify-content:center}
-body.rev3 #bottomNav{position:fixed!important;left:max(14px,calc(env(safe-area-inset-left) + 12px))!important;right:max(14px,calc(env(safe-area-inset-right) + 12px))!important;bottom:max(10px,calc(env(safe-area-inset-bottom) + 8px))!important;height:72px!important;padding:8px 10px!important;border-radius:32px!important;display:grid!important;grid-template-columns:1fr 64px 1fr!important;grid-template-areas:"left add right"!important;align-items:center!important;gap:10px!important;background:linear-gradient(180deg,rgba(255,255,255,.52),rgba(255,255,255,.26))!important;border:1px solid rgba(255,255,255,.58)!important;box-shadow:0 16px 42px rgba(31,54,102,.16),inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.16)!important;backdrop-filter:blur(24px) saturate(180%)!important;-webkit-backdrop-filter:blur(24px) saturate(180%)!important;overflow:visible!important;transition:transform .28s cubic-bezier(.22,.86,.24,1),opacity .22s ease,filter .22s ease!important;will-change:transform,opacity}
-body.rev3.dark-mode #bottomNav{background:linear-gradient(180deg,rgba(27,39,59,.56),rgba(19,28,43,.32))!important;border-color:rgba(207,223,255,.18)!important;box-shadow:0 16px 42px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.14)!important}
-body.rev3 #bottomNav.nav-hidden{transform:translateY(calc(100% + 24px))!important;opacity:0!important;filter:blur(9px)!important;pointer-events:none!important}
-body.rev3 #bottomNav .nav-item,body.rev3 #bottomNav .nav-home-btn{height:54px!important;min-height:54px!important;border-radius:22px!important;background:transparent!important}
-body.rev3 #bottomNav .nav-item.active,body.rev3 #bottomNav .nav-home-btn.active,body.rev3 #bottomNav .nav-item.previewed,body.rev3 #bottomNav .nav-home-btn.previewed{background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.08))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.46)!important}
-body.rev3 #bottomNav .nav-label{font-size:10px!important;font-weight:760!important;letter-spacing:-.02em!important}
-body.rev3 #bottomNav .nav-drag-lens{backdrop-filter:blur(30px) saturate(190%)!important;-webkit-backdrop-filter:blur(30px) saturate(190%)!important;background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(182,213,255,.22))!important;border:1px solid rgba(255,255,255,.85)!important;box-shadow:0 8px 24px rgba(58,93,166,.18),inset 0 1px 0 rgba(255,255,255,.78)!important}
-body.rev3 .nav-add{width:58px!important;height:58px!important;box-shadow:0 10px 26px rgba(35,90,217,.28),inset 0 2px 2px rgba(255,255,255,.55)!important}
-body.rev3 #movementEntry{background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,250,255,.91))!important;border:1px solid rgba(255,255,255,.78)!important;backdrop-filter:blur(20px) saturate(160%)!important;-webkit-backdrop-filter:blur(20px) saturate(160%)!important}
-body.rev3.dark-mode #movementEntry{background:linear-gradient(180deg,rgba(24,37,58,.92),rgba(18,28,43,.92))!important;border-color:rgba(202,221,255,.14)!important}
-body.rev3 .entry-category-picker-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:4px}
-body.rev3 .entry-category-chip{display:flex;align-items:center;gap:10px;width:100%;min-height:52px;padding:12px 13px;border-radius:18px;border:1px solid rgba(194,206,224,.75);background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(246,250,255,.86));color:var(--ink);box-shadow:0 4px 12px rgba(33,55,91,.05);text-align:left;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .18s ease}
-body.rev3 .entry-category-chip.active{border-color:rgba(47,91,255,.52);box-shadow:0 8px 20px rgba(47,91,255,.12),inset 0 1px 0 rgba(255,255,255,.7);background:linear-gradient(180deg,rgba(234,242,255,.95),rgba(225,238,255,.92))}
-body.rev3 .entry-category-chip:active{transform:scale(.98)}
-body.rev3 .entry-category-emoji{font-size:22px;line-height:1;flex:0 0 auto}
-body.rev3 .entry-category-name{font-size:13px;font-weight:700;letter-spacing:-.02em;line-height:1.18;overflow-wrap:anywhere}
-body.rev3.dark-mode .entry-category-chip{background:linear-gradient(180deg,rgba(33,49,73,.82),rgba(25,38,57,.86));border-color:rgba(143,168,203,.25);box-shadow:none}
-body.rev3.dark-mode .entry-category-chip.active{background:linear-gradient(180deg,rgba(45,72,110,.86),rgba(33,57,91,.90));border-color:rgba(120,174,255,.5)}
-body.rev3 .emoji-preview-box{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:28px;background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(244,248,255,.90));border:1px solid rgba(201,214,232,.84);box-shadow:0 4px 12px rgba(39,58,97,.06);margin-bottom:10px}
-body.rev3 .emoji-picker-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
-body.rev3 .emoji-choice{height:44px;border-radius:14px;border:1px solid rgba(201,214,232,.75);background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(244,248,255,.90));font-size:22px;line-height:1;display:grid;place-items:center;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
-body.rev3 .emoji-choice.active{border-color:rgba(47,91,255,.48);box-shadow:0 6px 16px rgba(47,91,255,.12);background:linear-gradient(180deg,rgba(234,242,255,.95),rgba(225,238,255,.92))}
-body.rev3 .emoji-choice:active{transform:scale(.97)}
-body.rev3.dark-mode .emoji-preview-box,body.rev3.dark-mode .emoji-choice{background:linear-gradient(180deg,rgba(33,49,73,.84),rgba(25,38,57,.88));border-color:rgba(143,168,203,.25);box-shadow:none}
-body.rev3.dark-mode .emoji-choice.active{background:linear-gradient(180deg,rgba(45,72,110,.86),rgba(33,57,91,.90));border-color:rgba(120,174,255,.5)}
-body.rev3 .category-create-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
-body.rev3 .category-emoji-field label,body.rev3 .entry-category-field label{display:block;margin-bottom:8px}
-body.rev3 #analysis .category-viz-row{border-bottom:1px solid rgba(114,132,158,.16)!important}
-body.rev3 #analysis .category-viz-row:focus-visible{outline:2px solid rgba(47,91,255,.28)!important;outline-offset:2px}
-body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{background:transparent!important}
-@media (max-width:420px){body.rev3 .emoji-picker-grid{grid-template-columns:repeat(5,minmax(0,1fr))}body.rev3 .entry-category-picker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body.rev3 #bottomNav{height:70px!important;padding-inline:8px!important}}
-
 </style>
 
 <style id="rev33-glass">
@@ -1442,7 +1407,7 @@ body.rev3:not([data-active-tab="analysis"]) .monthly-live-point:before,body.rev3
 @media(prefers-reduced-motion:reduce){body.rev3 #revampBackdrop:before,body.rev3 #revampBackdrop:after{transform:none!important}body.rev3 #bottomNav .nav-drag-lens,body.rev3 .view{transition:none!important;animation:none!important}}
 @media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav,body.rev3 .sticky-head{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav,body.rev3.dark-mode .sticky-head{background:#233248!important}}
 
-/* === v3.4 premium liquid glass refresh === */
+/* === v3.5 premium liquid glass refresh === */
 body.rev3 .category-emoji{width:auto!important;height:auto!important;flex:0 0 auto!important;display:inline-flex!important;align-items:center;justify-content:center;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;font-size:1.22em;line-height:1}
 body.rev3 .selection-dot{font-size:14px!important;color:var(--blue)!important;min-width:18px;justify-content:center}
 body.rev3 #bottomNav{position:fixed!important;left:max(14px,calc(env(safe-area-inset-left) + 12px))!important;right:max(14px,calc(env(safe-area-inset-right) + 12px))!important;bottom:max(10px,calc(env(safe-area-inset-bottom) + 8px))!important;height:72px!important;padding:8px 10px!important;border-radius:32px!important;display:grid!important;grid-template-columns:1fr 64px 1fr!important;grid-template-areas:"left add right"!important;align-items:center!important;gap:10px!important;background:linear-gradient(180deg,rgba(255,255,255,.52),rgba(255,255,255,.26))!important;border:1px solid rgba(255,255,255,.58)!important;box-shadow:0 16px 42px rgba(31,54,102,.16),inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.16)!important;backdrop-filter:blur(24px) saturate(180%)!important;-webkit-backdrop-filter:blur(24px) saturate(180%)!important;overflow:visible!important;transition:transform .28s cubic-bezier(.22,.86,.24,1),opacity .22s ease,filter .22s ease!important;will-change:transform,opacity}
@@ -1478,17 +1443,70 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
 @media (max-width:420px){body.rev3 .emoji-picker-grid{grid-template-columns:repeat(5,minmax(0,1fr))}body.rev3 .entry-category-picker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body.rev3 #bottomNav{height:70px!important;padding-inline:8px!important}}
 
 </style>
+
+<style id="rev35-design">
+html,body{overscroll-behavior:none!important; -webkit-touch-callout:none; -webkit-user-select:none; user-select:none;}
+body *{-webkit-touch-callout:none; -webkit-user-select:none; user-select:none;}
+body input,body textarea{-webkit-user-select:text!important;user-select:text!important;}
+html:has(.modal-backdrop.open),body:has(.modal-backdrop.open){overflow:hidden!important;overscroll-behavior:none!important;}
+.modal-backdrop,.settings-sheet,.side-drawer,#movementEntry{overscroll-behavior:none!important;}
+body.rev3 .sticky-head{padding-top:calc(env(safe-area-inset-top) + 22px)!important;padding-bottom:10px!important;isolation:isolate;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(232,239,250,.95)!important;}
+body.rev3.dark-mode .sticky-head{background:rgba(23,35,51,.96)!important;}
+/* Blur only the status-bar strip, never the title or month text. */
+body.rev3 .sticky-head::before{content:"";position:absolute;inset:0 0 auto;height:calc(env(safe-area-inset-top) + 13px);z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(215,228,246,.55),rgba(232,239,250,0));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+body.rev3.dark-mode .sticky-head::before{background:linear-gradient(180deg,rgba(23,35,51,.75),rgba(23,35,51,0));}
+@media(prefers-reduced-transparency:reduce){body.rev3 .sticky-head::before{backdrop-filter:none;-webkit-backdrop-filter:none;}}
+
+body.rev3 .topbar,body.rev3 .topbar-inner,body.rev3 .title,body.rev3 .title h1,body.rev3 .title p{filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;mask-image:none!important;-webkit-mask-image:none!important;text-shadow:none!important;}
+body.rev3 .topbar-inner{min-height:54px!important;}
+body.rev3 .title h1{font-size:28px!important;line-height:1.12!important;}
+body.rev3 .title p{font-size:12px!important;}
+body.rev3 .period-row{display:grid!important;grid-template-columns:44px minmax(0,1fr) 44px!important;gap:4px!important;padding:4px!important;border-radius:24px!important;background:linear-gradient(145deg,rgba(255,255,255,.72),rgba(255,255,255,.30))!important;border:1px solid rgba(255,255,255,.84)!important;box-shadow:0 6px 16px rgba(37,66,113,.08),inset 0 1px 0 white!important;overflow:hidden!important;align-items:center!important;}
+body.rev3 .period-row .period-pill{display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:2px!important;height:56px!important;padding:0!important;min-width:0!important;max-width:100%!important;overflow:hidden!important;white-space:nowrap;}
+body.rev3 .period-caption{font-size:9px;font-weight:750;letter-spacing:.13em;color:var(--muted);}
+body.rev3 #periodLabel{font-size:17px;font-weight:800;letter-spacing:-.03em;line-height:1.2;}
+body.rev3 #periodSubrange{font-size:10px;line-height:1.2;color:var(--muted);font-weight:550;}
+body.rev3 .period-row .period-btn{width:44px!important;height:44px!important;min-width:44px;min-height:44px;background:rgba(255,255,255,.45)!important;border:1px solid rgba(255,255,255,.75)!important;}
+body.rev3.dark-mode .period-row{background:linear-gradient(145deg,#33465e,#26374c)!important;border-color:#536278!important;box-shadow:0 6px 16px rgba(0,0,0,.15)!important;}
+body.rev3.dark-mode .period-row .period-btn{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.12)!important;}
+body.rev3 #bottomNav.rev3-nav{height:56px!important;min-height:0!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;grid-template-areas:none!important;gap:2px!important;bottom:calc(env(safe-area-inset-bottom) + 4px)!important;padding:4px 5px!important;border-radius:29px!important;background:linear-gradient(155deg,rgba(255,255,255,.50),rgba(247,251,255,.20))!important;backdrop-filter:blur(16px) saturate(170%)!important;-webkit-backdrop-filter:blur(16px) saturate(170%)!important;transition:transform .26s cubic-bezier(.22,.85,.25,1),opacity .20s!important;}
+body.rev3 #bottomNav.rev3-nav.nav-hidden{transform:translateY(calc(100% + env(safe-area-inset-bottom) + 10px))!important;opacity:0!important;filter:none!important;pointer-events:none!important;}
+body.rev3.dark-mode #bottomNav.rev3-nav{background:linear-gradient(155deg,rgba(53,70,95,.65),rgba(25,38,56,.48))!important;}
+body.rev3 #bottomNav.rev3-nav .nav-item{height:46px!important;min-height:44px!important;min-width:0!important;gap:2px!important;border-radius:23px!important;padding:2px 0!important;}
+body.rev3 #bottomNav.rev3-nav .nav-item svg,body.rev3 #bottomNav.rev3-nav .nav-item .ico{width:19px!important;height:19px!important;}
+body.rev3 #bottomNav.rev3-nav .nav-label{font-size:10px!important;line-height:1.1!important;letter-spacing:-.02em!important;}
+body.rev3 #bottomNav .nav-add{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;}
+body.rev3 #bottomNav .nav-add svg{width:23px;height:23px;}
+body.rev3 #bottomNav .nav-drag-lens{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-radius:24px!important;clip-path:inset(0 round 24px)!important;}
+body.rev3 #entryModal{padding: max(12px,env(safe-area-inset-top)) 12px max(10px,env(safe-area-inset-bottom))!important;align-items:flex-end!important;overflow:hidden!important;}
+body.rev3 #movementEntry{display:block!important;flex:0 1 auto!important;height:auto!important;min-height:0!important;max-height:calc(100dvh - max(12px,env(safe-area-inset-top)) - max(10px,env(safe-area-inset-bottom)))!important;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 19px 18px!important;scrollbar-width:none;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
+body.rev3 #movementEntry::-webkit-scrollbar{display:none;}
+body.rev3 #movementEntry .card-title{display:flex!important;justify-content:space-between;align-items:center;min-height:44px!important;height:auto!important;margin:0 0 9px!important;}
+body.rev3 #movementEntry .entry-grabber{margin:0 auto 8px;}
+body.rev3 #movementEntry .entry-types{margin:0 0 14px;}
+body.rev3 #movementEntry .entry-types button{min-height:44px;}
+body.rev3 #movementEntry .fields,body.rev3 #movementEntry .fields.bottom{gap:10px!important;}
+body.rev3 #movementEntry .fields.bottom{margin-top:10px!important;}
+body.rev3 #movementEntry .entry-native-type{display:none!important;}
+body.rev3 #movementEntry .input,body.rev3 #movementEntry .select{min-width:0;max-width:100%;}
+body.rev3 .emoji-input{font-size:22px!important;}
+body.rev3 .emoji-input::placeholder{font-size:15px;}
+body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:block;}
+@media(prefers-reduced-motion:reduce){body.rev3 #bottomNav.rev3-nav{transition:none!important;}}
+@media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important;}}
+</style>
+
 </head>
-<body data-app-version="3.4" class="rev3">
+<body data-app-version="3.5" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
       <header class="topbar">
         <div class="topbar-inner">
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
-          <div class="title"><span class="brand-kicker">TRACCIATORE SPESE</span>
+          <div class="title">
             <h1 id="screenTitle">Home</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">v3.4</span></p>
+            <p>Lorenzo Vizzini <span class="profile-badge">v3.5</span></p>
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -1496,7 +1514,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
 
       <div class="period-row">
         <button class="period-btn" id="prevPeriod" aria-label="Periodo precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
-        <div class="period-pill"><span id="periodLabel">Maggio 2026</span></div>
+        <div class="period-pill"><div class="period-caption">MESE FINANZIARIO</div><span id="periodLabel" aria-live="polite">Maggio 2026</span><small id="periodSubrange"></small></div>
         <button class="period-btn" id="nextPeriod" aria-label="Periodo successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
       </div>
     </div>
@@ -1594,10 +1612,9 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
                   </select>
                 </div>
                 <div class="field category-emoji-field">
-                  <label>Emoji categoria</label>
-                  <input type="hidden" id="newCatEmoji" value="🧾" />
-                  <div class="emoji-preview-box" id="newCatEmojiPreview" aria-hidden="true">🧾</div>
-                  <div class="emoji-picker-grid" id="newCatEmojiPicker" aria-label="Scegli emoji categoria"></div>
+                  <label for="newCatEmoji">Che emoji vuoi assegnare?</label>
+                  <input class="input emoji-input" type="text" id="newCatEmoji" placeholder="Tocca e scegli un’emoji" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required />
+                  <small class="emoji-hint">Usa la tastiera emoji del tuo iPhone.</small>
                 </div>
                 <button class="primary category-add-btn" type="submit">+ Aggiungi</button>
               </div>
@@ -1635,7 +1652,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
   </div>
 
 <div class="modal-backdrop entry-backdrop" id="entryModal" aria-hidden="true"><article class="card card-pad form-card" id="movementEntry" role="dialog" aria-modal="true" aria-labelledby="entryTitle">
-            <div class="entry-grabber" aria-hidden="true"></div><div class="card-title"><div><span class="eyebrow">REGISTRAZIONE</span><h2 id="entryTitle">Aggiungi movimento</h2></div><button class="icon-btn" type="button" id="entryClose" aria-label="Chiudi">×</button></div><span class="pill blue" id="modePill">Nuovo</span><div class="entry-types" aria-label="Tipo movimento"><button type="button" data-entry-type="uscita">↘ Uscita</button><button type="button" data-entry-type="entrata">↗ Entrata</button></div><div id="entryEmoji" class="entry-emoji" aria-hidden="true">🧾</div>
+            <div class="entry-grabber" aria-hidden="true"></div><div class="card-title"><div><h2 id="entryTitle">Nuovo Movimento</h2></div><button class="icon-btn" type="button" id="entryClose" aria-label="Chiudi">×</button></div><span class="pill blue" id="modePill">Nuovo</span><div class="entry-types" aria-label="Tipo movimento"><button type="button" data-entry-type="uscita">↘ Uscita</button><button type="button" data-entry-type="entrata">↗ Entrata</button></div>
             <form id="movementForm">
               <input type="hidden" id="editId" />
               <div class="fields">
@@ -1649,10 +1666,6 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
                   <label>Categoria</label>
                   <select class="select" id="mCategory" required></select>
                 </div>
-                <div class="field entry-category-field">
-                  <label>Scelta rapida categoria</label>
-                  <div class="entry-category-picker-grid" id="entryCategoryPicker" aria-label="Scelta rapida categoria"></div>
-                </div>
                 <div style="display:flex;gap:10px;align-items:center"><button class="primary" style="flex:1" id="saveMovement" type="submit">+ Aggiungi movimento</button><button class="secondary" id="cancelEdit" type="button" style="display:none">Annulla</button></div>
               </div>
             </form>
@@ -1665,7 +1678,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
       <div class="drawer-head">
         <div>
           <h2 id="sideMenuTitle">Menu rapido</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.4</p>
+          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.5</p>
         </div>
         <button class="modal-close" id="sideMenuClose" aria-label="Chiudi menu">×</button>
       </div>
@@ -1870,11 +1883,17 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     const nf = new Intl.NumberFormat('it-IT',{maximumFractionDigits:2});
     const monthNames = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
 
-    const CATEGORY_EMOJI_PRESETS = ['🏠','💡','🛒','⛽','💊','🎬','🍕','🧰','✈️','🩺','💳','📱','🎁','✨','🚗','🏋️','💰','💵','📈','🔄','🧾','🎉','🍼','🐶'];
     function inferCategoryEmoji(name,type='uscita'){
       const n=String(name||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
       const rules=[[/stipend|salari|paga/,'💰'],[/rimbors|anticip/,'🔄'],[/abbon|rat[ea]\b|finanzi|mutuo/,'💳'],[/viagg|vacanz|vol[oi]|hotel/,'✈️'],[/shopping|vestit|abbigli|cura personal/,'🛍️'],[/ristor|pranz|cen[ae]|social|svago|tempo libero|aperitiv/,'🍕'],[/aliment|supermerc|spesa casa/,'🛒'],[/tass|sanzion|mult[ae]|tribut/,'🧾'],[/invest|risparm|etf/,'📈'],[/salut|medic|farmac/,'🩺'],[/auto|trasport|benz|carbur|mobilit/,'🚗'],[/casa|affitt/,'🏠'],[/sport|palestr/,'🏋️'],[/regal/,'🎁'],[/luce|bollett|utenz|gas|acqua/,'💡'],[/bambin|figl|neonat/,'🍼'],[/anim|cane|gatto|pet/,'🐶'],[/extra|imprevist|vari[eo]/,'✨']];
       return (rules.find(([r])=>r.test(n))||[null,type==='entrata'?'💵':'🏷️'])[1];
+    }
+    function isSingleEmoji(value){
+      const v=String(value||'').trim();
+      if(!v || !/^[\p{Extended_Pictographic}\p{Regional_Indicator}\p{Emoji_Modifier}\u200d\ufe0e\ufe0f\u20e3\u{e0020}-\u{e007f}0-9#*]+$/u.test(v))return false;
+      if(!/[\p{Extended_Pictographic}\p{Regional_Indicator}\u20e3]/u.test(v))return false;
+      if(typeof Intl.Segmenter==='function')return [...new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(v)].length===1;
+      return true;
     }
     function normalizeCategoryRecord(c){
       const type = String(c.type || 'uscita').toLowerCase() === 'entrata' ? 'entrata' : 'uscita';
@@ -1882,7 +1901,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
       const normalized = { ...c, id: String(c.id || uid()), name, type };
       if(type==='uscita') normalized.budget = Number(c.budget ?? c.budgetPercent ?? c.percentualeBudget ?? c.budget_percent ?? 0) || 0;
       else if('budget' in normalized && normalized.budget === undefined) delete normalized.budget;
-      normalized.emoji = String(c.emoji || c.icona || c.icona || '').trim() || inferCategoryEmoji(name, type);
+      const emoji=String(c.emoji || c.icona || '').trim(); normalized.emoji=isSingleEmoji(emoji)?emoji:inferCategoryEmoji(name,type);
       return normalized;
     }
 
@@ -2141,41 +2160,6 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
   .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.meta-box{padding:12px 14px;border-radius:16px;background:#fff;border:1px solid #e4ebff}.meta-box small{display:block;color:#667085;font-weight:800}.meta-box b{display:block;margin-top:6px;font-size:15px}
   .empty-row{text-align:center;color:#667085;padding:18px}.foot{margin-top:18px;color:#667085;font-size:11px;text-align:center}
   @media print{body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:14px}.hero,.section{box-shadow:none}.section{page-break-inside:avoid}table{page-break-inside:auto}tr{page-break-inside:avoid;page-break-after:auto}}
-
-/* === v3.4 premium liquid glass refresh === */
-body.rev3 .category-emoji{width:auto!important;height:auto!important;flex:0 0 auto!important;display:inline-flex!important;align-items:center;justify-content:center;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;font-size:1.22em;line-height:1}
-body.rev3 .selection-dot{font-size:14px!important;color:var(--blue)!important;min-width:18px;justify-content:center}
-body.rev3 #bottomNav{position:fixed!important;left:max(14px,calc(env(safe-area-inset-left) + 12px))!important;right:max(14px,calc(env(safe-area-inset-right) + 12px))!important;bottom:max(10px,calc(env(safe-area-inset-bottom) + 8px))!important;height:72px!important;padding:8px 10px!important;border-radius:32px!important;display:grid!important;grid-template-columns:1fr 64px 1fr!important;grid-template-areas:"left add right"!important;align-items:center!important;gap:10px!important;background:linear-gradient(180deg,rgba(255,255,255,.52),rgba(255,255,255,.26))!important;border:1px solid rgba(255,255,255,.58)!important;box-shadow:0 16px 42px rgba(31,54,102,.16),inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.16)!important;backdrop-filter:blur(24px) saturate(180%)!important;-webkit-backdrop-filter:blur(24px) saturate(180%)!important;overflow:visible!important;transition:transform .28s cubic-bezier(.22,.86,.24,1),opacity .22s ease,filter .22s ease!important;will-change:transform,opacity}
-body.rev3.dark-mode #bottomNav{background:linear-gradient(180deg,rgba(27,39,59,.56),rgba(19,28,43,.32))!important;border-color:rgba(207,223,255,.18)!important;box-shadow:0 16px 42px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.14)!important}
-body.rev3 #bottomNav.nav-hidden{transform:translateY(calc(100% + 24px))!important;opacity:0!important;filter:blur(9px)!important;pointer-events:none!important}
-body.rev3 #bottomNav .nav-item,body.rev3 #bottomNav .nav-home-btn{height:54px!important;min-height:54px!important;border-radius:22px!important;background:transparent!important}
-body.rev3 #bottomNav .nav-item.active,body.rev3 #bottomNav .nav-home-btn.active,body.rev3 #bottomNav .nav-item.previewed,body.rev3 #bottomNav .nav-home-btn.previewed{background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.08))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.46)!important}
-body.rev3 #bottomNav .nav-label{font-size:10px!important;font-weight:760!important;letter-spacing:-.02em!important}
-body.rev3 #bottomNav .nav-drag-lens{backdrop-filter:blur(30px) saturate(190%)!important;-webkit-backdrop-filter:blur(30px) saturate(190%)!important;background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(182,213,255,.22))!important;border:1px solid rgba(255,255,255,.85)!important;box-shadow:0 8px 24px rgba(58,93,166,.18),inset 0 1px 0 rgba(255,255,255,.78)!important}
-body.rev3 .nav-add{width:58px!important;height:58px!important;box-shadow:0 10px 26px rgba(35,90,217,.28),inset 0 2px 2px rgba(255,255,255,.55)!important}
-body.rev3 #movementEntry{background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,250,255,.91))!important;border:1px solid rgba(255,255,255,.78)!important;backdrop-filter:blur(20px) saturate(160%)!important;-webkit-backdrop-filter:blur(20px) saturate(160%)!important}
-body.rev3.dark-mode #movementEntry{background:linear-gradient(180deg,rgba(24,37,58,.92),rgba(18,28,43,.92))!important;border-color:rgba(202,221,255,.14)!important}
-body.rev3 .entry-category-picker-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:4px}
-body.rev3 .entry-category-chip{display:flex;align-items:center;gap:10px;width:100%;min-height:52px;padding:12px 13px;border-radius:18px;border:1px solid rgba(194,206,224,.75);background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(246,250,255,.86));color:var(--ink);box-shadow:0 4px 12px rgba(33,55,91,.05);text-align:left;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .18s ease}
-body.rev3 .entry-category-chip.active{border-color:rgba(47,91,255,.52);box-shadow:0 8px 20px rgba(47,91,255,.12),inset 0 1px 0 rgba(255,255,255,.7);background:linear-gradient(180deg,rgba(234,242,255,.95),rgba(225,238,255,.92))}
-body.rev3 .entry-category-chip:active{transform:scale(.98)}
-body.rev3 .entry-category-emoji{font-size:22px;line-height:1;flex:0 0 auto}
-body.rev3 .entry-category-name{font-size:13px;font-weight:700;letter-spacing:-.02em;line-height:1.18;overflow-wrap:anywhere}
-body.rev3.dark-mode .entry-category-chip{background:linear-gradient(180deg,rgba(33,49,73,.82),rgba(25,38,57,.86));border-color:rgba(143,168,203,.25);box-shadow:none}
-body.rev3.dark-mode .entry-category-chip.active{background:linear-gradient(180deg,rgba(45,72,110,.86),rgba(33,57,91,.90));border-color:rgba(120,174,255,.5)}
-body.rev3 .emoji-preview-box{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:28px;background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(244,248,255,.90));border:1px solid rgba(201,214,232,.84);box-shadow:0 4px 12px rgba(39,58,97,.06);margin-bottom:10px}
-body.rev3 .emoji-picker-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
-body.rev3 .emoji-choice{height:44px;border-radius:14px;border:1px solid rgba(201,214,232,.75);background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(244,248,255,.90));font-size:22px;line-height:1;display:grid;place-items:center;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
-body.rev3 .emoji-choice.active{border-color:rgba(47,91,255,.48);box-shadow:0 6px 16px rgba(47,91,255,.12);background:linear-gradient(180deg,rgba(234,242,255,.95),rgba(225,238,255,.92))}
-body.rev3 .emoji-choice:active{transform:scale(.97)}
-body.rev3.dark-mode .emoji-preview-box,body.rev3.dark-mode .emoji-choice{background:linear-gradient(180deg,rgba(33,49,73,.84),rgba(25,38,57,.88));border-color:rgba(143,168,203,.25);box-shadow:none}
-body.rev3.dark-mode .emoji-choice.active{background:linear-gradient(180deg,rgba(45,72,110,.86),rgba(33,57,91,.90));border-color:rgba(120,174,255,.5)}
-body.rev3 .category-create-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
-body.rev3 .category-emoji-field label,body.rev3 .entry-category-field label{display:block;margin-bottom:8px}
-body.rev3 #analysis .category-viz-row{border-bottom:1px solid rgba(114,132,158,.16)!important}
-body.rev3 #analysis .category-viz-row:focus-visible{outline:2px solid rgba(47,91,255,.28)!important;outline-offset:2px}
-body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{background:transparent!important}
-@media (max-width:420px){body.rev3 .emoji-picker-grid{grid-template-columns:repeat(5,minmax(0,1fr))}body.rev3 .entry-category-picker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body.rev3 #bottomNav{height:70px!important;padding-inline:8px!important}}
 
 </style></head><body>
 <div class="page">
@@ -2500,7 +2484,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
                 <p><b>Archivio mesi:</b> apre periodi già registrati, divisi per anno. L’anno corrente resta aperto, gli anni passati restano chiusi.</p>
                 <p><b>Punto interrogativo:</b> apre questa guida e resta sempre sotto il contenuto dell’accesso rapido aperto, senza sovrapporsi alle liste.</p>
                 <p><b>Home:</b> il saldo e il riepilogo sono in alto. Premi il pulsante centrale + da qualsiasi sezione per aprire il modulo di inserimento. Le emoji sono associate automaticamente alle categorie, anche per i movimenti importati.</p>
-                <p><b>Calcola spese:</b> nella sezione Movimenti attiva una selezione temporanea delle sole uscite. Tocca le spese che vuoi sommare e premi “Totale” per visualizzare l’importo complessivo in un popup dell’app.</p>
+                <p><b>Calcola spese:</b> nella sezione Movimenti attiva una selezione temporanea delle sole uscite. Tocca le spese che vuoi sommare, anche in mesi diversi, e premi “Totale” per visualizzare l’importo complessivo in un popup dell’app.</p>
               </div>
             </details>
             <details>
@@ -2675,6 +2659,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     function renderPeriod(){
       const p=currentPeriod();
       document.getElementById('periodLabel').textContent=p.label;
+      document.getElementById('periodSubrange').textContent=p.range;
       document.getElementById('periodRange').textContent=p.range;
       document.getElementById('lineChartBadge').textContent=p.label;
       const dateInput=document.getElementById('mDate');
@@ -2691,38 +2676,12 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
       const cur=f.value;
       f.innerHTML='<option value="all">Tutte le categorie</option>'+state.categories.slice().sort(byAlpha).map(c=>`<option value="${escapeHtml(c.name)}">${escapeHtml((c.emoji||inferCategoryEmoji(c.name,c.type))+' '+c.name)}</option>`).join('');
       f.value=[...f.options].some(o=>o.value===cur)?cur:'all';
-      renderEntryCategoryPicker();
     }
     function categoryEmoji(name,type='uscita'){
       const direct = state.categories.find(c=>String(c.name).toLowerCase()===String(name||'').toLowerCase() && (c.type===type || !type));
       return (direct && direct.emoji) ? direct.emoji : inferCategoryEmoji(name,type);
     }
-    function emojiBadge(name,type='uscita'){return `<span class="category-emoji" aria-hidden="true">${categoryEmoji(name,type)}</span>`}
-    function getCategoryByName(name,type=''){return state.categories.find(c=>String(c.name).toLowerCase()===String(name||'').toLowerCase() && (!type || c.type===type)) || null}
-    function renderEntryCategoryPicker(){
-      const host=document.getElementById('entryCategoryPicker');
-      if(!host) return;
-      const type=document.getElementById('mType').value;
-      const selected=document.getElementById('mCategory').value;
-      const cats=activeCategories(type);
-      host.innerHTML=cats.map(c=>`<button type="button" class="entry-category-chip ${c.name===selected?'active':''}" data-entry-cat="${escapeHtml(c.name)}"><span class="entry-category-emoji">${escapeHtml(c.emoji||inferCategoryEmoji(c.name,c.type))}</span><span class="entry-category-name">${escapeHtml(c.name)}</span></button>`).join('');
-      host.querySelectorAll('[data-entry-cat]').forEach(btn=>btn.addEventListener('click',()=>{document.getElementById('mCategory').value=btn.dataset.entryCat; updateEntryVisual(); renderEntryCategoryPicker();}));
-    }
-    function setCategoryEmojiField(emoji){
-      const input=document.getElementById('newCatEmoji');
-      const preview=document.getElementById('newCatEmojiPreview');
-      const value=emoji || '🧾';
-      if(input) input.value=value;
-      if(preview) preview.textContent=value;
-      document.querySelectorAll('#newCatEmojiPicker .emoji-choice').forEach(btn=>btn.classList.toggle('active',btn.dataset.emoji===value));
-    }
-    function renderCategoryEmojiPicker(){
-      const host=document.getElementById('newCatEmojiPicker');
-      if(!host) return;
-      host.innerHTML=CATEGORY_EMOJI_PRESETS.map(emoji=>`<button type="button" class="emoji-choice" data-emoji="${emoji}" aria-label="${emoji}">${emoji}</button>`).join('');
-      host.querySelectorAll('.emoji-choice').forEach(btn=>btn.addEventListener('click',()=>setCategoryEmojiField(btn.dataset.emoji)));
-      setCategoryEmojiField(document.getElementById('newCatEmoji')?.value || '🧾');
-    }
+    function emojiBadge(name,type='uscita'){return `<span class="category-emoji" aria-hidden="true">${escapeHtml(categoryEmoji(name,type))}</span>`}
     function renderDashboard(){
       const t=totals(),p=currentPeriod();
       const ratio=t.entrate>0?t.uscite/t.entrate*100:0;
@@ -2771,19 +2730,11 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     }
     let movementSelectionMode=false;
     const selectedExpenseIds=new Set();
-    let movementSelectionPeriodKey='';
-
-    function currentMovementSelectionPeriodKey(){
-      const p=currentPeriod();
-      return `${dateKey(p.start)}|${dateKey(p.end)}`;
-    }
     function ensureMovementSelectionContext(){
-      const key=currentMovementSelectionPeriodKey();
-      if(movementSelectionPeriodKey!==key){
-        movementSelectionPeriodKey=key;
-        selectedExpenseIds.clear();
-        movementSelectionMode=false;
-      }
+      // Preserve selections across financial periods; remove stale IDs only.
+      if(!selectedExpenseIds.size)return;
+      const valid=new Set(state.movements.filter(m=>m.type==='uscita').map(m=>m.id));
+      for(const id of selectedExpenseIds)if(!valid.has(id))selectedExpenseIds.delete(id);
     }
     function selectedExpenseMovements(){
       return state.movements.filter(m=>selectedExpenseIds.has(m.id)&&m.type==='uscita');
@@ -2805,7 +2756,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
         btn.textContent=movementSelectionMode?'Selezione attiva':'Calcola spese';
       }
       const selected=selectedExpenseMovements();
-      if(count) count.textContent=`${selected.length} ${selected.length===1?'spesa selezionata':'spese selezionate'}`;
+      if(count){const periods=new Set(selected.map(m=>getPeriod(toDate(m.date)).label));count.textContent=`${selected.length} ${selected.length===1?'spesa selezionata':'spese selezionate'}`+(periods.size>1?` · ${periods.size} mesi`:'');}
       if(sumEl) sumEl.textContent=`Totale provvisorio: ${fmt.format(selectedExpenseTotal())}`;
       if(totalBtn) totalBtn.disabled=selected.length===0;
     }
@@ -2816,7 +2767,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
       state.movementsOpen=true;
       saveState();
       renderMovements();
-      showToast('Tocca le uscite che vuoi sommare');
+      showToast('Seleziona le uscite, anche cambiando mese');
     }
     function cancelMovementExpenseSelection(){
       movementSelectionMode=false;
@@ -3344,8 +3295,8 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     }
     function csv(rows){const header=['data','descrizione','tipo','categoria','importo'];const lines=[header.join(';')];rows.forEach(m=>lines.push([m.date,m.desc,m.type,m.category,String(m.amount).replace('.',',')].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(';')));return lines.join('\n')}
 
-    function updateEntryVisual(){const type=document.getElementById('mType').value;document.querySelectorAll('[data-entry-type]').forEach(b=>{b.classList.toggle('active',b.dataset.entryType===type);b.setAttribute('aria-pressed',String(b.dataset.entryType===type))});document.getElementById('entryEmoji').textContent=categoryEmoji(document.getElementById('mCategory').value,type);renderEntryCategoryPicker();}
-    function openEntry(){const modal=document.getElementById('entryModal');document.body.classList.remove('movements-scroll-locked');document.getElementById('entryTitle').textContent=document.getElementById('editId').value?'Modifica movimento':'Nuovo movimento';updateEntryVisual();modal.classList.add('open');modal.setAttribute('aria-hidden','false');}
+    function updateEntryVisual(){const type=document.getElementById('mType').value;document.querySelectorAll('[data-entry-type]').forEach(b=>{b.classList.toggle('active',b.dataset.entryType===type);b.setAttribute('aria-pressed',String(b.dataset.entryType===type))});}
+    function openEntry(){const modal=document.getElementById('entryModal');document.body.classList.remove('movements-scroll-locked');document.getElementById('entryTitle').textContent=document.getElementById('editId').value?'Modifica Movimento':'Nuovo Movimento';updateEntryVisual();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.getElementById('movementEntry').scrollTop=0;}
     function closeEntry(){const modal=document.getElementById('entryModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');syncMovementScrollLock();}
     function cancelEntry(){document.getElementById('cancelEdit').click();resetHomeDefaults(true);closeEntry();}
     document.getElementById('navAdd').addEventListener('click',openEntry);
@@ -3361,7 +3312,6 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
       e.preventDefault(); const id=document.getElementById('editId').value;
       const descValue=document.getElementById('mDesc').value.trim();
       const amountRaw=document.getElementById('mAmount').value.trim();
-      if(/\d/.test(descValue)){showAppPopup('Non sono ammessi caratteri numerici');document.getElementById('mDesc').focus();return}
       if(/[a-zA-ZÀ-ÖØ-öø-ÿ]/.test(amountRaw)){showAppPopup('Non sono ammessi caratteri alfabetici');document.getElementById('mAmount').focus();return}
       const existing=id?state.movements.find(x=>x.id===id):null;const m={id:id||uid(),date:document.getElementById('mDate').value,desc:descValue||'Movimento',amount:parseEuroInput(amountRaw),type:document.getElementById('mType').value,category:document.getElementById('mCategory').value,createdAt:existing?.createdAt||new Date().toISOString()};
       if(id){state.movements=state.movements.map(x=>x.id===id?m:x)} else state.movements.push(m);
@@ -3371,12 +3321,9 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     document.getElementById('mType').addEventListener('change',()=>{renderCategorySelects();updateEntryVisual()});
     document.getElementById('mDate').addEventListener('change',e=>{state.selectedDate=e.target.value||todayKey();saveState()});
 
-    document.getElementById('mDesc').addEventListener('input',e=>{if(/\d/.test(e.target.value)){showAppPopup('Non sono ammessi caratteri numerici');e.target.value=e.target.value.replace(/\d/g,'')}});
     const newCatNameInput=document.getElementById('newCatName');
     newCatNameInput.addEventListener('keydown',e=>{if(/^\d$/.test(e.key)){e.preventDefault();showAppPopup('Non sono ammessi caratteri numerici nel nome della categoria.')}});
     newCatNameInput.addEventListener('input',e=>{if(/\d/.test(e.target.value)){showAppPopup('Non sono ammessi caratteri numerici nel nome della categoria.');e.target.value=e.target.value.replace(/\d/g,'')}});
-    renderCategoryEmojiPicker();
-    document.getElementById('newCatType').addEventListener('change',()=>{const name=(document.getElementById('newCatName').value||'').trim(); setCategoryEmojiField(inferCategoryEmoji(name, document.getElementById('newCatType').value));});
 
     document.getElementById('mAmount').addEventListener('input',e=>{if(/[a-zA-ZÀ-ÖØ-öø-ÿ]/.test(e.target.value)){showAppPopup('Non sono ammessi caratteri alfabetici');e.target.value=e.target.value.replace(/[a-zA-ZÀ-ÖØ-öø-ÿ]/g,'')}});
     document.getElementById('messageModalOk').addEventListener('click',closeAppPopup);
@@ -3390,7 +3337,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     document.getElementById('saveCurrentBudgetProfile').addEventListener('click',createBudgetProfileFromCurrent);
     document.getElementById('categorySortMode').addEventListener('change',renderCategories);
     document.getElementById('categoryDetails')?.addEventListener('toggle',updateCategoryDetailsLabel);
-    document.getElementById('categoryForm').addEventListener('submit',e=>{e.preventDefault();const nameInput=document.getElementById('newCatName');const name=nameInput.value.trim();const type=document.getElementById('newCatType').value;const emoji=(document.getElementById('newCatEmoji').value||'').trim()||inferCategoryEmoji(name,type);if(!name)return;if(/\d/.test(name)){showAppPopup('Non sono ammessi caratteri numerici nel nome della categoria.');nameInput.focus();return}if(state.categories.some(c=>c.name.toLowerCase()===name.toLowerCase())){showToast('Categoria già presente');return}state.categories.push(normalizeCategoryRecord({id:uid(),name,type,budget:type==='uscita'?0:undefined,emoji}));saveState();e.target.reset();setCategoryEmojiField('🧾');renderAll();showToast('Categoria aggiunta')});
+    document.getElementById('categoryForm').addEventListener('submit',e=>{e.preventDefault();const nameInput=document.getElementById('newCatName');const name=nameInput.value.trim();const type=document.getElementById('newCatType').value;const emoji=document.getElementById('newCatEmoji').value.trim();if(!name)return;if(!isSingleEmoji(emoji)){showAppPopup('Scegli una sola emoji dalla tastiera.');return;}if(/\d/.test(name)){showAppPopup('Non sono ammessi caratteri numerici nel nome della categoria.');nameInput.focus();return}if(state.categories.some(c=>c.name.toLowerCase()===name.toLowerCase())){showToast('Categoria già presente');return}state.categories.push(normalizeCategoryRecord({id:uid(),name,type,budget:type==='uscita'?0:undefined,emoji}));saveState();e.target.reset();renderAll();showToast('Categoria aggiunta')});
     ['searchMov','filterType','filterCategory','sortMov'].forEach(id=>document.getElementById(id).addEventListener('input',renderMovements));
     document.getElementById('resetFilters').addEventListener('click',()=>{document.getElementById('searchMov').value='';document.getElementById('filterType').value='all';document.getElementById('filterCategory').value='all';document.getElementById('sortMov').value='recent';renderMovements()});
     document.getElementById('toggleMovements').addEventListener('click',()=>{state.movementsOpen=!state.movementsOpen;saveState();renderMovements();syncMovementScrollLock()});
@@ -3416,8 +3363,8 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
       const navRect=nav.getBoundingClientRect();
       const r=btn.getBoundingClientRect();
       const isHome=btn.classList.contains('nav-home-btn');
-      const extraW=isHome?18:22;
-      const extraH=isHome?16:18;
+      const extraW=8;
+      const extraH=6;
       const w=Math.round(r.width+extraW);
       const h=Math.round(r.height+extraH);
       const x=Math.round(r.left-navRect.left-(extraW/2));
@@ -3592,6 +3539,37 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     ['scroll','touchmove','wheel'].forEach(evt=>window.addEventListener(evt,hideBottomNavTemporarily,{passive:true}));
     ['touchend','pointerup'].forEach(evt=>window.addEventListener(evt,()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(showBottomNav,500);},{passive:true}));
     window.addEventListener('resize',showBottomNav,{passive:true});
+    // iOS fallback for rubber-band at the boundary, including scrollable sheets.
+    let edgeTouch=null;
+    document.addEventListener('touchstart',e=>{
+      if(e.touches.length!==1){edgeTouch=null;return;}
+      edgeTouch={x:e.touches[0].clientX,y:e.touches[0].clientY,target:e.target};
+    },{passive:true});
+    document.addEventListener('touchmove',e=>{
+      if(!edgeTouch||e.touches.length!==1||!e.cancelable||navInteractionActive)return;
+      const t=e.touches[0],dy=t.clientY-edgeTouch.y,dx=t.clientX-edgeTouch.x;
+      edgeTouch.x=t.clientX;edgeTouch.y=t.clientY;
+      if(!dy||Math.abs(dx)>Math.abs(dy))return;
+      const target=edgeTouch.target,overlay=target.closest('.modal-backdrop.open');
+      let node=target;
+      while(node&&node!==document.body&&node!==document.documentElement){
+        const style=getComputedStyle(node);
+        if(/auto|scroll/.test(style.overflowY)&&node.scrollHeight>node.clientHeight+1){
+          if(dy>0?node.scrollTop>1:node.scrollTop+node.clientHeight<node.scrollHeight-1)return;
+          e.preventDefault();return;
+        }
+        if(node===overlay)break;
+        node=node.parentElement;
+      }
+      if(overlay||isAnyOverlayOpen()){e.preventDefault();return;}
+      const root=document.scrollingElement;
+      if(root&&(dy>0?root.scrollTop<=1:root.scrollTop+root.clientHeight>=root.scrollHeight-1))e.preventDefault();
+    },{passive:false});
+    ['touchend','touchcancel'].forEach(evt=>document.addEventListener(evt,()=>{edgeTouch=null;},{passive:true}));
+    // Block browser selection/context actions while leaving native text entry/caret usable.
+    ['contextmenu','copy','cut','paste','dragstart'].forEach(evt=>document.addEventListener(evt,e=>e.preventDefault(),{capture:true,passive:false}));
+    document.addEventListener('selectstart',e=>{if(!e.target.closest('input,textarea'))e.preventDefault();},{capture:true,passive:false});
+
 
     document.getElementById('menuBtn').addEventListener('click',()=>openSideMenu('quick'));
     document.getElementById('sideMenuClose').addEventListener('click',closeSideMenu);
@@ -3607,8 +3585,18 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     settingsModal.addEventListener('click',e=>{if(e.target===settingsModal)closeSettings()});
     document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('entryModal').classList.contains('open'))cancelEntry();closeSettings();closeAppPopup();closeCategoryReplaceModal();closePdfExportModal();closeWipeAllModal();closeMonthlyBackupReminder(true)}});
 
-    document.getElementById('prevPeriod').addEventListener('click',()=>{const p=currentPeriod();const d=new Date(p.labelYear,p.labelMonth-1,15);state.periodDate=dateKey(d);state.selectedDate=todayKey();saveState();renderAll();resetHomeDefaults(true)});
-    document.getElementById('nextPeriod').addEventListener('click',()=>{const p=currentPeriod();const d=new Date(p.labelYear,p.labelMonth+1,15);state.periodDate=dateKey(d);state.selectedDate=todayKey();saveState();renderAll();resetHomeDefaults(true)});
+    let monthSlideAnimation=null;
+    function changeDisplayedMonth(direction){
+      const p=currentPeriod();const d=new Date(p.labelYear,p.labelMonth+direction,15);
+      state.periodDate=dateKey(d);state.selectedDate=todayKey();saveState();renderAll();resetHomeDefaults(true);
+      const pill=document.querySelector('.period-pill');
+      if(monthSlideAnimation)monthSlideAnimation.cancel();
+      if(!matchMedia('(prefers-reduced-motion: reduce)').matches && pill.animate){
+        monthSlideAnimation=pill.animate([{transform:`translateX(${direction*13}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],{duration:245,easing:'cubic-bezier(.2,.8,.2,1)'});
+      }
+    }
+    document.getElementById('prevPeriod').addEventListener('click',()=>changeDisplayedMonth(-1));
+    document.getElementById('nextPeriod').addEventListener('click',()=>changeDisplayedMonth(1));
     document.getElementById('themeToggle').addEventListener('click',()=>{applyTheme(state.theme==='dark'?'light':'dark');saveState();showToast(state.theme==='dark'?'Dark mode attiva':'Tema chiaro attivo')});
     document.getElementById('saveSavingsTarget').addEventListener('click',saveSavingsTargetValue);
     document.getElementById('savingsGoalNotifyToggle').addEventListener('click',toggleSavingsGoalNotification);
@@ -3628,7 +3616,7 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
     document.getElementById('cancelWipeAll').addEventListener('click',closeWipeAllModal);
     document.getElementById('confirmWipeAll').addEventListener('click',confirmWipeAll);
     document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
-    document.getElementById('importFile').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const parsed=JSON.parse(reader.result);state=normalizeImportedBackup(parsed);activeTab=state.activeTab||'home';applyTheme(state.theme);saveState();renderAll();syncSettingsControls();setTab(activeTab,false);showAppPopup(`Backup importato correttamente. Personalizzazioni, impostazioni, movimenti e categorie sono stati ripristinati. Movimenti importati: ${state.movements.length}. Categorie importate: ${state.categories.length}.`)}catch(err){showAppPopup('Backup non valido o non compatibile. Controlla che sia un file JSON esportato dall’app precedente.')}finally{e.target.value=''}};reader.readAsText(file)});
+    document.getElementById('importFile').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const parsed=JSON.parse(reader.result);state=normalizeImportedBackup(parsed);movementSelectionMode=false;selectedExpenseIds.clear();activeTab=state.activeTab||'home';applyTheme(state.theme);saveState();renderAll();syncSettingsControls();setTab(activeTab,false);showAppPopup(`Backup importato correttamente. Personalizzazioni, impostazioni, movimenti e categorie sono stati ripristinati. Movimenti importati: ${state.movements.length}. Categorie importate: ${state.categories.length}.`)}catch(err){showAppPopup('Backup non valido o non compatibile. Controlla che sia un file JSON esportato dall’app precedente.')}finally{e.target.value=''}};reader.readAsText(file)});
     let chartResizeTimer=null;
     window.addEventListener('resize',()=>{
       clearTimeout(chartResizeTimer);
@@ -3667,8 +3655,8 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.4')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.4', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.5')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.5', '1');
               location.reload();
             }
           });
@@ -3682,8 +3670,8 @@ body.rev3 #analysis .category-chart-wrap,body.rev3 #analysis .category-viz{backg
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v34')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v34', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v35')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v35', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
