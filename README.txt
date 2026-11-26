@@ -1,4 +1,4 @@
-TRACCIATORE SPESE REVAMP v2.1
-Correzione CSS dashboard e aggiornamento cache.
-Caricare i file nella radice di main, inclusa la cartella icons e .nojekyll.
-Aprire ?v=2.1 online, poi riaprire. Chiave dati v2 invariata. Prima del deploy esportare backup JSON. Non pubblicare backup personali.
+TRACCIATORE SPESE REVAMPING – v3
+Nuova Home compatta, registro raggruppato per data, emoji automatiche, form a pannello, navigazione Liquid Glass.
+Dati: chiave localStorage invariata dalla v2/v2.1; importatore JSON precedente mantenuto.
+Caricare tutti i file dello ZIP nella radice di main del repository Tracciatore-Spese-Revamping, sovrascrivendo i file. Aprire ?v=3 dopo pubblicazione. Eseguire backup JSON prima dell’aggiornamento; non caricarlo su GitHub. Primo avvio online necessario per cache offline.

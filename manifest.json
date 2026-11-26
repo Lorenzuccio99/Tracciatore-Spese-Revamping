@@ -1,13 +1,13 @@
 {
-  "name": "Tracking Spese Revamp",
-  "short_name": "Spese Revamp",
+  "name": "Tracciatore Spese Revamping",
+  "short_name": "Tracciatore Spese",
   "description": "App personale offline per il tracking delle spese mensili, ridisegnata in stile Liquid Glass.",
   "lang": "it",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#dce4ef",
-  "theme_color": "#dce4ef",
+  "background_color": "#edf1f7",
+  "theme_color": "#dce6f4",
   "orientation": "portrait",
   "icons": [
     {

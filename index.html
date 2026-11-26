@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracking Spese Revamp</title>
-  <meta name="theme-color" content="#eef2ff" />
+  <title>Tracciatore Spese · v3</title>
+  <meta name="theme-color" content="#dce6f4" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Tracking Spese" />
+  <meta name="apple-mobile-web-app-title" content="Tracciatore Spese" />
   <meta name="mobile-web-app-capable" content="yes" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -1306,275 +1306,73 @@ body.dark-mode .category-viz-row.zero .category-viz-spent{color:var(--muted)!imp
 .nav-drag-lens{z-index:3!important;opacity:0}body[data-nav-dragging="1"] .nav-drag-lens{opacity:.72!important}body[data-nav-dragging="1"] .nav-item.pressed,body[data-nav-dragging="1"] .nav-home-btn.pressed{z-index:4!important}
 
 
-    /* ===== v66 complete visual revamp ===== */
-    :root{
-      --bg:#eff2f9;
-      --ink:#0f172a;
-      --muted:#667085;
-      --blue:#316dff;
-      --blue2:#6a7dff;
-      --teal:#33d0c3;
-      --card:rgba(255,255,255,.62);
-      --card-strong:rgba(255,255,255,.86);
-      --radius:28px;
-      --shadow:0 18px 48px rgba(15,23,42,.10);
-      --shadow-soft:0 10px 28px rgba(15,23,42,.07);
-    }
-    html,body{background:transparent!important}
-    body{color:var(--ink);}
-    #revampBackdrop{
-      position:fixed; inset:0; z-index:-2; pointer-events:none; overflow:hidden;
-      background:
-        linear-gradient(180deg,#8aa1bf 0%,#b0c1d7 16%,#d6deeb 34%,#eef2f8 58%,#f7f9fd 100%);
-    }
-    #revampBackdrop::before,
-    #revampBackdrop::after{content:"";position:absolute;inset:auto;pointer-events:none;will-change:transform,opacity;filter:blur(10px)}
-    #revampBackdrop::before{
-      width:80vw;height:60vh;left:-18vw;top:-8vh;border-radius:44% 56% 52% 48%/49% 39% 61% 51%;
-      background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.28),transparent 24%),linear-gradient(135deg,rgba(63,103,255,.42),rgba(108,170,255,.26),rgba(131,214,217,.16));
-      transform:translate3d(0,var(--v65-shift,0px),0);
-      opacity:.95;
-    }
-    #revampBackdrop::after{
-      width:72vw;height:52vh;right:-10vw;top:34vh;border-radius:60% 40% 54% 46%/42% 53% 47% 58%;
-      background:radial-gradient(circle at 28% 22%,rgba(255,255,255,.34),transparent 18%),linear-gradient(145deg,rgba(248,176,210,.20),rgba(163,197,255,.22),rgba(255,255,255,.12));
-      transform:translate3d(0,var(--v65-shift2,0px),0);
-      opacity:.86;
-    }
-    body::before,body::after{display:none!important}
+/* v3 — new content-first interface. Legacy financial engine and sheet controls retained. */
+body.rev3{--ink:#17243a;--muted:#647388;--blue:#2260d4;--blue2:#397cff;--green:#108658;--red:#c13a4a;--surface:#fff;--line:rgba(38,57,87,.09);--navH:80px;background:#edf1f7!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;isolation:isolate;color:var(--ink)}
+body.rev3.dark-mode{--ink:#edf2fa;--muted:#a9b8cb;--blue:#92bcff;--green:#65d5a5;--red:#ff929d;--surface:#202b3d;--line:rgba(255,255,255,.09);background:#121c2c!important}
+body.rev3 #revampBackdrop{z-index:-1;background:linear-gradient(180deg,#cbd9ed 0%,#e9edf6 28%,#f0f3f8 65%,#e9f2f4 100%)!important}body.rev3 #revampBackdrop:before{background:radial-gradient(ellipse at 30% 20%,rgba(128,156,217,.46),transparent 52%),radial-gradient(ellipse at 75% 40%,rgba(173,161,220,.40),transparent 54%)}body.rev3 #revampBackdrop:after{background:radial-gradient(ellipse at 20% 65%,rgba(156,211,198,.34),transparent 55%)}body.rev3.dark-mode #revampBackdrop{background:linear-gradient(180deg,#26394f,#121c2c 60%)!important}body.rev3.dark-mode #revampBackdrop:before{opacity:.3}body.rev3.dark-mode #revampBackdrop:after{opacity:.18}
+body.rev3 .shell{width:min(720px,100%);padding:0 16px calc(120px + env(safe-area-inset-bottom))!important}
+body.rev3 .sticky-head{margin:0 -16px!important;padding:calc(10px + env(safe-area-inset-top)) 16px 9px!important;background:rgba(237,243,251,.83)!important;box-shadow:none!important;border-bottom:1px solid var(--line)!important;backdrop-filter:blur(19px) saturate(155%)!important;-webkit-backdrop-filter:blur(19px) saturate(155%)!important}
+body.rev3.dark-mode .sticky-head{background:rgba(23,35,51,.88)!important}
+body.rev3 .topbar-inner{width:100%;min-height:62px;grid-template-columns: minmax(0,1fr) 44px 44px!important;gap:8px!important;background:none!important;box-shadow:none!important;border:0!important;padding:0!important}
+body.rev3 .title{grid-column:1;grid-row:1;text-align:left!important;align-self:center;line-height:1.04!important;padding:0!important}
+body.rev3 #menuBtn{grid-column:2;grid-row:1}body.rev3 #settingsBtn{grid-column:3;grid-row:1}
+body.rev3 .brand-kicker{display:block;color:var(--muted);font-size:9px;font-weight:800;letter-spacing:.13em;margin-bottom:4px}
+body.rev3 .title h1{font-size:29px!important;font-weight:790!important;letter-spacing:-.055em!important;color:var(--ink)!important;line-height:1.05!important;margin:0!important}
+body.rev3 .title p{display:flex;align-items:center;justify-content:flex-start;gap:6px;margin:4px 0 0!important;font-size:10px!important;line-height:1.25;color:var(--muted)!important}
+body.rev3 .profile-badge{font-size:9px;letter-spacing:.03em;font-weight:750;color:var(--blue);background:rgba(49,109,255,.10);border-radius:5px;padding:2px 5px}
+body.rev3 .icon-btn,body.rev3 .period-btn{width:44px!important;height:44px!important;border-radius:50%!important;color:var(--blue)!important;background:linear-gradient(150deg,rgba(255,255,255,.86),rgba(255,255,255,.38))!important;box-shadow:0 3px 9px rgba(32,54,94,.08),inset 0 1px 0 #fff!important;border:1px solid rgba(255,255,255,.86)!important;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;position:relative;overflow:hidden}
+body.rev3.dark-mode .icon-btn,body.rev3.dark-mode .period-btn{background:linear-gradient(150deg,#3b4d65,#27364a)!important;border-color:#536278!important;box-shadow:inset 0 1px 0 #536278!important}
+body.rev3 .period-row{margin-top:8px!important;gap:8px!important;width:100%;max-width:none!important}
+body.rev3 .period-row .period-pill{height:40px!important;min-width:0!important;flex:1;background:transparent!important;box-shadow:none!important;border:0!important;color:var(--ink)!important;text-transform:none;font-size:14px!important;font-weight:760!important;letter-spacing:-.01em!important}
+body.rev3 .period-row .period-btn{width:40px!important;height:40px!important;background:rgba(255,255,255,.38)!important;box-shadow:none!important;border-color:rgba(255,255,255,.50)!important}
+body.rev3.dark-mode .period-row .period-btn{background:#26374c!important;border-color:#40516a!important}
+body.rev3 main{padding-top:14px!important}body.rev3 .view{scroll-margin-top:140px}body.rev3 .home-grid,body.rev3 #home .home-grid,body.rev3 .analysis-grid,body.rev3 .mov-budget-grid,body.rev3 .cat-page-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:21px!important}
+body.rev3 .card,body.rev3.dark-mode .card{background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:22px!important;box-shadow:0 3px 15px rgba(30,48,82,.045)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;overflow:hidden}
+body.rev3 .card-pad,body.rev3 .chart-card{padding:16px!important}body.rev3 .card-title h2{color:var(--ink)!important;font-size:20px!important;font-weight:770!important;letter-spacing:-.04em!important}body.rev3 .card-title{margin-bottom:13px!important}
+body.rev3 .balance-panel{position:relative;overflow:hidden;isolation:isolate;padding:19px;border-radius:24px;color:#eef6ff;background:radial-gradient(ellipse at 93% -10%,#395a7f 0%,transparent 58%),linear-gradient(145deg,#17263b,#243d56 76%,#27475b);box-shadow:0 12px 25px rgba(21,42,72,.19),inset 0 1px 0 rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.2)}
+body.rev3 .balance-panel:after{content:'';position:absolute;z-index:-1;inset:auto -12% -50% 45%;height:100%;border-radius:50%;border:1px solid rgba(255,255,255,.09);box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 56px rgba(255,255,255,.022);transform:rotate(-25deg);pointer-events:none}
+body.rev3 .balance-top{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#b9c9de;font-size:10px;font-weight:650;letter-spacing:0}
+body.rev3 .eyebrow{font-size:10px;font-weight:800;letter-spacing:.12em}
+body.rev3 #dashboardStats{display:block!important;margin-top:12px!important}
+body.rev3 .hero-saldo{display:flex;flex-direction:column;gap:4px}.hero-saldo span{font-size:12px;font-weight:600;color:#bfd0e1}.hero-saldo strong{font-size:clamp(34px,10vw,46px);line-height:1.12;letter-spacing:-.055em;font-weight:780;font-variant-numeric:tabular-nums;color:#78e3b8;overflow-wrap:anywhere}.hero-saldo.negative strong{color:#ffabb4}
+.hero-track,.preview-track{height:7px;border-radius:99px;background:rgba(255,255,255,.13);overflow:hidden;margin-top:13px}.hero-track i,.preview-track i{height:100%;display:block;border-radius:inherit;background:linear-gradient(90deg,#35d9a1,#92e7b6);transition:width .24s ease}.hero-track i.over,.preview-track i.over{background:linear-gradient(90deg,#fa9c8d,#f05d72)}.hero-progress{display:flex;justify-content:space-between;gap:8px;margin-top:6px;color:#b5c5d8;font-size:10px;font-weight:600}
+.hero-flow{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid rgba(255,255,255,.13);margin-top:14px;padding-top:13px}.hero-flow>div{min-width:0;display:grid;gap:4px}.hero-flow>div+div{padding-left:12px;border-left:1px solid rgba(255,255,255,.13)}.hero-flow span{font-size:11px;color:#c3d2e3;font-weight:650}.hero-flow strong{font-size:clamp(18px,5.5vw,25px);letter-spacing:-.04em;color:#78e3b8;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.hero-flow>div+div strong{color:#ffabb4}.hero-extra{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:#c3d2e3;margin-top:10px}.hero-extra b{color:#78e3b8}
+.section-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.section-heading h2{margin:0;color:var(--ink);font-size:17px;font-weight:760;letter-spacing:-.035em}.section-heading>span{font-size:10px;color:var(--muted)}.text-link{color:var(--blue);font-size:12px;font-weight:700;background:transparent;border:0;padding:8px 0;min-height:36px}
+body.rev3 #infoStrip.insight-list,body.rev3 .preview-list{display:block!important;border-radius:19px;background:var(--surface)!important;border:1px solid var(--line);margin:0!important;padding:0;overflow:hidden;box-shadow:0 3px 12px rgba(30,48,82,.04)}
+.insight-row,.budget-preview-row,.recent-row{display:flex;gap:10px;align-items:center;padding:11px 12px;min-width:0}.insight-row+.insight-row,.budget-preview-row+.budget-preview-row,.recent-row+.recent-row{border-top:1px solid var(--line)}.category-emoji{width:36px;height:36px;flex:0 0 36px;display:inline-grid;place-items:center;border-radius:12px;background:#eef3f8;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:19px;line-height:1;vertical-align:middle}.dark-mode .category-emoji{background:#324259}.insight-row>div,.recent-row>div{min-width:0;flex:1}.insight-row span:not(.category-emoji),.recent-row small{display:block;color:var(--muted);font-size:11px;font-weight:550;margin-bottom:3px}.insight-row b,.recent-row b{display:block;color:var(--ink);font-size:13px;font-weight:700;overflow-wrap:anywhere}.recent-row strong{font-size:13px;font-weight:760;white-space:nowrap;letter-spacing:-.02em}.budget-preview-main{flex:1;min-width:0}.budget-preview-main>div:first-child{display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap;align-items:baseline;font-size:12px}.budget-preview-main b{font-weight:680;overflow-wrap:anywhere}.budget-preview-main span{font-weight:750;font-size:11px;white-space:nowrap}.budget-preview-main small{color:var(--muted);font-size:10px;font-weight:550}.preview-track{height:5px;margin-top:6px;background:var(--line)}.preview-track i{background:linear-gradient(90deg,#39cfa0,#0a9c6a)}
+/* Ledger: actual date groups, one clean row per movement. */
+body.rev3 #movements .mov-budget-grid>article{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;overflow:visible!important}.movement-overview{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;color:var(--muted);font-size:12px;font-weight:700;margin-bottom:10px}.filter-chips{display:flex;gap:7px;margin-bottom:10px}.filter-chips button,.entry-types button{border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);min-height:40px;padding:0 17px;font-size:13px;font-weight:720;transition:background .16s,transform .15s}.filter-chips button.active,.entry-types button.active{background:#2868e5;color:#fff;border-color:transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 3px 8px rgba(35,91,185,.15)}
+body.rev3 #movements .movement-card-title{flex-wrap:nowrap!important;align-items:center!important}.movement-title-actions{width:auto!important;flex-wrap:nowrap!important}.movement-title-actions button{white-space:nowrap!important;font-size:11px!important;padding-inline:9px!important}body.rev3 #movements .filters{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:7px!important}body.rev3 #searchMov{grid-column:1/-1}body.rev3 #filterType{position:absolute;width:1px!important;height:1px!important;min-height:0!important;opacity:0;pointer-events:none;overflow:hidden;padding:0!important}body.rev3 #movements .filters select{font-size:13px!important;min-height:42px!important;height:42px!important;padding-inline:9px!important}body.rev3 #toggleMovements{height:40px!important;min-height:40px!important;margin-top:8px!important;font-size:12px!important;background:transparent!important;box-shadow:none!important;border:1px solid var(--line)!important;color:var(--blue)!important}
+body.rev3 .movement-list{gap:15px!important;margin-top:12px!important}.day-group{min-width:0}.day-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:3px 3px 7px;color:var(--muted);font-size:11px}.day-heading b{font-weight:700;text-transform:capitalize}.day-heading span{text-align:right;font-size:10px;white-space:normal}.day-list{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 3px 10px rgba(30,48,82,.04)}
+body.rev3 #movements .move-card{display:block!important;padding:0!important;border:0!important;border-radius:0!important;background:var(--surface)!important;box-shadow:none!important;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;overflow:hidden!important}body.rev3 #movements .move-card+.move-card{border-top:1px solid var(--line)!important}body.rev3 #movements .move-card:before,body.rev3 #movements .move-card:after{display:none!important}.movement-row-button{width:100%;display:flex;align-items:center;gap:9px;min-height:67px;padding:11px 12px;border:0;background:transparent;color:var(--ink);text-align:left;position:relative}.movement-row-button .move-main{flex:1;min-width:0}.movement-row-button .move-main b{display:block;font-size:14px;line-height:1.2;font-weight:730;overflow-wrap:anywhere}.movement-row-button .move-main small{display:block;font-size:11px;font-weight:550;color:var(--muted)!important;line-height:1.3;margin-top:4px;overflow-wrap:anywhere}body.rev3 #movements .move-amount{font-size:14px!important;letter-spacing:-.035em!important;line-height:1.2;white-space:nowrap;font-weight:780!important;max-width:45%;overflow:hidden;text-overflow:ellipsis}.row-chevron{color:var(--muted);font-size:19px;opacity:.65}.move-actions[hidden]{display:none!important}body.rev3 #movements .move-actions{padding:0 12px 10px;display:flex;gap:8px}body.rev3 #movements .move-actions button{min-height:40px;height:40px}body.rev3 #movements.expense-selection-mode .move-card.selected{background:#e5efff!important}body.rev3.dark-mode #movements.expense-selection-mode .move-card.selected{background:#284367!important}.selection-dot{color:var(--blue);font-size:22px;font-weight:800;background:transparent;border:1px solid var(--line)}.move-card.selected .selection-dot{background:#2868e5;color:white;border:0}body.rev3 #movements.expense-selection-mode .move-card.entrata{opacity:.5!important}body.rev3 .greenText{color:var(--green)!important}body.rev3 .redText{color:var(--red)!important}
+/* One floating glass plane; + is a separate tactile control. */
+body.rev3 #bottomNav.rev3-nav{position:fixed;display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;align-items:center!important;gap:2px!important;left:12px!important;right:12px!important;bottom:calc(9px + env(safe-area-inset-bottom))!important;max-width:540px!important;margin:0 auto!important;width:auto!important;height:68px!important;padding:5px 7px!important;border-radius:29px!important;overflow:visible!important;filter:none!important;transform:none!important;z-index:60!important;background:linear-gradient(155deg,rgba(255,255,255,.88),rgba(249,252,255,.55))!important;border:1px solid rgba(255,255,255,.92)!important;box-shadow:0 9px 26px rgba(23,40,69,.15),inset 0 1px 0 white,inset 0 -1px 0 rgba(255,255,255,.55)!important;backdrop-filter:blur(22px) saturate(170%)!important;-webkit-backdrop-filter:blur(22px) saturate(170%)!important}
+body.rev3.dark-mode #bottomNav.rev3-nav{background:linear-gradient(155deg,rgba(53,70,95,.94),rgba(25,38,56,.82))!important;border-color:rgba(255,255,255,.19)!important;box-shadow:0 9px 26px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.2)!important}
+body.rev3 #bottomNav .nav-item{position:relative!important;z-index:4!important;display:flex!important;flex-direction:column!important;gap:3px!important;align-items:center!important;justify-content:center!important;min-width:0;width:100%!important;height:55px!important;border-radius:21px!important;background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;filter:none!important;color:var(--muted)!important;overflow:hidden!important;opacity:1!important;transition:color .18s,transform .16s,background .18s!important}
+body.rev3 #bottomNav .nav-item.active,body.rev3 #bottomNav .nav-item.previewed{color:var(--blue)!important;background:rgba(61,117,220,.11)!important}body.rev3 #bottomNav .nav-item:before,body.rev3 #bottomNav .nav-item:after{display:none!important}body.rev3 #bottomNav .nav-item svg{width:22px!important;height:22px!important;stroke-width:1.85!important;filter:none!important}body.rev3 #bottomNav .nav-label{position:static!important;width:auto!important;height:auto!important;clip:auto!important;overflow:visible!important;margin:0!important;font-size:10px!important;line-height:1.1!important;font-weight:690!important;white-space:nowrap!important;display:block!important}body.rev3 #bottomNav .nav-home-btn .ico{width:22px!important;height:22px!important}
+.nav-add{position:relative;z-index:5;justify-self:center;width:53px;height:53px;border-radius:50%;color:white;border:1px solid rgba(255,255,255,.80);background:radial-gradient(circle at 27% 13%,#75a9ff,#3278ef 43%,#2252d5 100%);box-shadow:0 7px 16px rgba(34,88,211,.30),inset 0 2px 1px rgba(255,255,255,.50),inset 0 -2px 3px rgba(14,48,144,.28);display:grid;place-items:center;overflow:hidden;transition:transform .16s ease}.nav-add svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round}.nav-add:active{transform:scale(.91)}body.rev3 #bottomNav .nav-drag-lens{z-index:3!important;backdrop-filter:blur(8px) saturate(175%)!important;-webkit-backdrop-filter:blur(8px) saturate(175%)!important;filter:none!important;border:1px solid rgba(255,255,255,.85)!important;background:linear-gradient(145deg,rgba(255,255,255,.77),rgba(196,222,255,.27))!important;box-shadow:0 5px 18px rgba(45,76,145,.14),inset 0 1px 1px white!important}body.rev3 #bottomNav .nav-drag-lens:before{animation:none!important;opacity:.46}body.rev3[data-nav-dragging="1"] #bottomNav .nav-drag-lens{opacity:.90!important}
+/* New entry sheet: independent of the selected tab. */
+body.rev3:has(#entryModal.open){overflow:hidden!important}body.rev3 #entryModal{z-index:105!important;padding:12px 12px max(12px,env(safe-area-inset-bottom))!important;align-items:flex-end!important}body.rev3 #movementEntry{width:min(520px,100%);max-height:calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 25px);overflow:auto!important;overscroll-behavior:contain;touch-action:pan-y!important;-webkit-overflow-scrolling:touch;border-radius:30px!important;padding:15px 19px 22px!important;background:var(--surface)!important;box-shadow:0 18px 55px rgba(18,36,64,.28)!important}body.rev3 #entryModal.open #movementEntry{animation:entryRise .25s cubic-bezier(.2,.8,.2,1) both}@keyframes entryRise{from{transform:translateY(25px);opacity:.7}to{transform:none;opacity:1}}.entry-grabber{width:34px;height:4px;border-radius:99px;background:var(--line);margin:0 auto 13px}.entry-types{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0}.entry-emoji{font-size:31px;text-align:center;margin:5px 0 10px}.entry-native-type{display:none!important}body.rev3 #movementEntry .fields,body.rev3 #movementEntry .fields.bottom{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:11px!important}body.rev3 #movementEntry #mAmount{font-size:24px!important;font-weight:760;letter-spacing:-.03em}body.rev3 #movementEntry #modePill{display:none!important}body.rev3 #movementEntry .card-title{margin:0 0 6px!important}body.rev3 #movementEntry .eyebrow{color:var(--muted);display:block;margin-bottom:4px}body.rev3 #movementEntry #saveMovement{font-size:15px!important;min-height:50px}
+/* Remaining sections keep functionality but use the same material palette. */
+body.rev3 #analysis .chart-wrap{border-radius:17px!important;background:transparent!important;border:1px solid var(--line)!important;box-shadow:none!important}body.rev3 #analysis .category-viz-name{display:flex;align-items:center;gap:6px}body.rev3 #analysis .category-viz-name .category-emoji,body.rev3 .cat-main .category-emoji{width:27px;height:27px;flex:0 0 27px;font-size:15px;border-radius:8px}body.rev3 #analysis .category-viz-row{min-height:66px}body.rev3 #analysis .chart-card{min-height:0!important}body.rev3 #analysis .legend{font-size:10px!important}body.rev3 #analysis .analysis-budget-card{margin-top:20px}body.rev3 .category-viz-track{height:7px}body.rev3 .cat-card,body.rev3 .setting-card,body.rev3 .category-toolbar,body.rev3 .drawer-card,body.rev3 .budget-row{background:var(--surface)!important;border:1px solid var(--line)!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3 .cat-card:before,body.rev3 .setting-card:before,body.rev3 .drawer-card:before{display:none!important}body.rev3 .settings-sheet,body.rev3 .side-drawer{background:var(--surface)!important}body.rev3 .input,body.rev3 .select{background:#f2f5fa!important;border:1px solid #e0e6ef!important;color:var(--ink)!important;border-radius:13px!important}body.rev3.dark-mode .input,body.rev3.dark-mode .select{background:#172438!important;border-color:#394a61!important}body.rev3 .empty{color:var(--muted)!important;background:transparent!important;font-size:13px!important;padding:18px!important}body.rev3 .premium-card-pressed{transform:none!important}body.rev3 .liquid-ripple{filter:none!important;mix-blend-mode:normal!important;border-radius:50%!important}
+@media (max-width:365px){body.rev3 .shell{padding-inline:11px!important}body.rev3 .sticky-head{margin-inline:-11px!important;padding-inline:11px!important}body.rev3 #bottomNav .nav-label{font-size:9px!important}.nav-add{width:48px;height:48px}.movement-row-button{padding:9px 8px;gap:6px}.category-emoji{width:31px;height:31px;flex-basis:31px;font-size:17px}.hero-progress{font-size:9px}}
+@media(prefers-reduced-motion:reduce){body.rev3 #entryModal.open #movementEntry,body.rev3 .liquid-ripple{animation:none!important}.hero-track i,.preview-track i,.nav-add{transition:none!important}}
+@media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav,body.rev3 .sticky-head{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav,body.rev3.dark-mode .sticky-head{background:#233248!important}}
 
-    .sticky-head{
-      top:0; margin:0 auto 6px; padding:calc(10px + env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) 14px max(14px,env(safe-area-inset-left));
-      background:linear-gradient(180deg,rgba(247,249,253,.72),rgba(247,249,253,.34) 74%,rgba(247,249,253,0));
-      box-shadow:none;
-      backdrop-filter:saturate(120%) blur(18px);
-      -webkit-backdrop-filter:saturate(120%) blur(18px);
-    }
-    .topbar-inner{
-      width:min(760px,100%);
-      padding:10px 12px;
-      border-radius:30px;
-      background:linear-gradient(145deg,rgba(255,255,255,.44),rgba(255,255,255,.22));
-      box-shadow:0 14px 35px rgba(26,39,76,.08), inset 0 1px 0 rgba(255,255,255,.75), inset 0 -1px 0 rgba(255,255,255,.18);
-      backdrop-filter:blur(24px) saturate(150%);
-      -webkit-backdrop-filter:blur(24px) saturate(150%);
-      border:1px solid rgba(255,255,255,.48);
-      grid-template-columns:52px 1fr 52px;
-    }
-    .icon-btn{
-      width:48px;height:48px;border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.76),rgba(255,255,255,.32));
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.84), inset 0 -1px 0 rgba(255,255,255,.22),0 10px 20px rgba(38,61,117,.08);
-      color:#295de6;border:1px solid rgba(255,255,255,.55);
-    }
-    .title{text-align:center;padding-inline:8px}
-    .title h1{
-      font-size:clamp(24px,4.4vw,34px);margin:0;font-weight:900;letter-spacing:-.05em;line-height:1.04;color:#0d1b37;
-      text-shadow:0 1px 0 rgba(255,255,255,.35);
-    }
-    .title h1::after{
-      content:"Liquid Glass";display:block;margin-top:6px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#4f6d97;opacity:.9;
-    }
-    .title p{margin:6px 0 0;color:#66728c;font-size:13px;font-weight:650;display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
-    .profile-badge{display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border-radius:999px;background:rgba(49,109,255,.10);color:#316dff;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(49,109,255,.12)}
 
-    .period-row{gap:12px;margin-top:14px}
-    .period-pill{
-      min-width:min(420px,76vw); padding:13px 18px; font-size:14px; letter-spacing:.08em;
-      background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(255,255,255,.42));
-      border:1px solid rgba(255,255,255,.56);
-      color:#295de6; box-shadow:0 16px 30px rgba(38,61,117,.08), inset 0 1px 0 rgba(255,255,255,.78);
-    }
-    .period-btn{
-      width:44px;height:44px;border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(255,255,255,.34));
-      border:1px solid rgba(255,255,255,.52); color:#295de6; box-shadow:0 10px 20px rgba(38,61,117,.08), inset 0 1px 0 rgba(255,255,255,.78);
-    }
-    .shell{width:min(900px,100%);padding:0 14px calc(var(--navH) + env(safe-area-inset-bottom) + 62px)}
-    main{padding-top:10px}
-
-    .home-grid,.analysis-grid,.mov-budget-grid,.cat-page-grid{display:grid;grid-template-columns:1fr;gap:18px}
-    .card{
-      background:linear-gradient(145deg,rgba(255,255,255,.68),rgba(255,255,255,.36));
-      border:1px solid rgba(255,255,255,.54);
-      border-radius:30px;
-      box-shadow:0 18px 42px rgba(27,44,86,.10), inset 0 1px 0 rgba(255,255,255,.75), inset 0 -1px 0 rgba(255,255,255,.16);
-      backdrop-filter:blur(26px) saturate(160%);
-      -webkit-backdrop-filter:blur(26px) saturate(160%);
-      overflow:hidden;
-    }
-    .card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.26),transparent 38%);opacity:.8}
-    .card-pad{padding:22px}
-    .card-title{margin-bottom:16px}
-    .card-title h2{font-size:clamp(24px,5vw,32px);font-weight:900;letter-spacing:-.05em;color:#0d1b37}
-    .subtle{color:#6a7286;font-weight:700}
-
-    .home-summary{
-      background:linear-gradient(165deg,rgba(13,27,55,.96),rgba(32,72,136,.94) 55%,rgba(69,120,171,.90));
-      border-color:rgba(255,255,255,.16);
-      box-shadow:0 20px 50px rgba(18,35,70,.30), inset 0 1px 0 rgba(255,255,255,.16);
-    }
-    .home-summary::before{background:radial-gradient(circle at 82% 14%,rgba(255,255,255,.16),transparent 24%),radial-gradient(circle at 24% 110%,rgba(94,214,225,.24),transparent 30%),linear-gradient(180deg,rgba(255,255,255,.04),transparent 48%)}
-    .home-summary .card-title h2,.home-summary .subtle{color:#eef4ff}
-    #dashboardStats{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin-top:4px}
-    #dashboardStats .stat{border-radius:24px!important;min-height:96px!important;padding:16px!important;background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.09))!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:none!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important}
-    #dashboardStats .stat .label{color:#d7e6ff!important;font-size:11px!important;text-transform:uppercase;letter-spacing:.08em;font-weight:800!important}
-    #dashboardStats .stat .value{color:#ffffff!important;font-size:clamp(24px,6vw,33px)!important;line-height:1.02!important;font-weight:900!important}
-    #dashboardStats .stat .stat-foot{color:#d0ddff!important;font-size:11px!important}
-    #dashboardStats .stat .mini-icon{background:rgba(255,255,255,.16)!important;color:#fff!important;box-shadow:none!important}
-    #dashboardStats .stat-saldo{grid-column:1/-1!important;min-height:164px!important;padding:22px!important;background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.04))!important}
-    #dashboardStats .stat-saldo .label{font-size:12px!important}
-    #dashboardStats .stat-saldo .value{font-size:clamp(34px,9vw,46px)!important;letter-spacing:-.065em!important}
-
-    #infoStrip{grid-template-columns:repeat(3,1fr)!important;gap:10px!important;margin-top:14px!important}
-    #infoStrip .info-tile{
-      padding:14px 10px!important;border-radius:20px!important;background:rgba(255,255,255,.14)!important;
-      box-shadow:none!important;border:1px solid rgba(255,255,255,.10)!important
-    }
-    #infoStrip .info-tile span,#infoStrip .info-tile small{color:#dbe8fb!important}
-    #infoStrip .info-tile b{color:#ffffff!important;font-size:clamp(18px,4.4vw,24px)!important}
-    #jumpToMovement{
-      width:100%;height:56px;margin-top:16px;border:0;border-radius:20px;font-weight:900;color:#0d1b37;
-      background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(255,255,255,.72));
-      box-shadow:0 10px 24px rgba(11,22,44,.14); font-size:15px;
-    }
-
-    .form-card{background:linear-gradient(145deg,rgba(255,255,255,.80),rgba(252,252,255,.54))!important}
-    .pill.blue{background:rgba(49,109,255,.10);color:#295de6;border:1px solid rgba(49,109,255,.10)}
-    .input,.select{
-      height:54px;border-radius:18px;border:1px solid rgba(195,205,225,.72);background:rgba(255,255,255,.86);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 2px 10px rgba(15,23,42,.02)
-    }
-    .field label{font-size:12px;font-weight:800;color:#50607a}
-    .primary{height:54px;border-radius:18px;background:linear-gradient(135deg,#316dff,#6e73ff 58%,#7b4dff);box-shadow:0 16px 28px rgba(49,109,255,.24)}
-    .secondary{height:54px;border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,255,255,.68));color:#344054}
-
-    .chart-card{padding:22px 22px 18px;min-height:auto!important}
-    .chart-wrap{
-      border-radius:26px;background:linear-gradient(180deg,rgba(249,250,255,.88),rgba(239,244,255,.56));
-      border:1px solid rgba(255,255,255,.55);padding:16px 14px 12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.66)
-    }
-    #lineChartBadge{background:rgba(49,109,255,.10);border:1px solid rgba(49,109,255,.10);color:#295de6;padding:9px 12px;border-radius:16px}
-    .legend span{background:rgba(255,255,255,.72);padding:7px 10px;border-radius:999px;border:1px solid rgba(212,219,233,.8)}
-    .category-viz{gap:14px}
-    .budget-row,.setting-card,.category-toolbar,.drawer-card{background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(255,255,255,.48))!important;border:1px solid rgba(255,255,255,.52)!important;box-shadow:0 14px 32px rgba(27,44,86,.06)!important}
-
-    .movement-card-title{align-items:flex-start}
-    .movement-title-actions{display:flex;gap:10px;flex-wrap:wrap}
-    .movement-calc-btn,.ghost#resetFilters{
-      height:42px;padding:0 14px;border-radius:15px;border:1px solid rgba(255,255,255,.54);
-      background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(255,255,255,.44));
-      color:#295de6;font-weight:850;box-shadow:0 8px 18px rgba(39,62,113,.06)
-    }
-    .filters{gap:12px}
-    .collapse-btn{height:48px;border-radius:18px;background:linear-gradient(145deg,rgba(235,242,255,.95),rgba(255,255,255,.60));border:1px solid rgba(255,255,255,.55);color:#295de6;box-shadow:0 10px 18px rgba(39,62,113,.05)}
-    .movement-list{gap:12px}
-    .move-card{
-      padding:16px!important;border-radius:24px!important;background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(255,255,255,.56))!important;border:1px solid rgba(255,255,255,.56)!important;box-shadow:0 14px 30px rgba(27,44,86,.06)!important
-    }
-    .move-card.entrata{background:linear-gradient(145deg,rgba(237,255,246,.92),rgba(255,255,255,.62))!important}
-    .move-card.uscita{background:linear-gradient(145deg,rgba(255,248,247,.92),rgba(255,255,255,.62))!important}
-    .move-sign{border-radius:16px!important;background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(246,248,255,.72))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 8px 16px rgba(15,23,42,.04)!important}
-    .move-card h3{font-size:16px!important;font-weight:850!important;color:#101828!important}
-    .move-card p{color:#667085!important}
-    .move-card small{color:#3e5875!important;font-weight:800!important}
-    .move-amount{font-size:22px!important;letter-spacing:-.05em!important}
-    .move-actions .secondary,.move-actions .danger{height:38px;border-radius:14px}
-
-    .category-create-form .primary,.category-add-btn{border-radius:18px}
-    .detail-summary{background:linear-gradient(145deg,rgba(255,255,255,.86),rgba(255,255,255,.52));border:1px solid rgba(255,255,255,.55);border-radius:18px;padding:14px 16px;font-weight:850;color:#0f172a}
-
-    .liquid-nav.split-nav{
-      background:linear-gradient(145deg,rgba(255,255,255,.30),rgba(255,255,255,.10));
-      backdrop-filter:blur(34px) saturate(175%);
-      -webkit-backdrop-filter:blur(34px) saturate(175%);
-      border:1px solid rgba(255,255,255,.42);
-      box-shadow:0 18px 36px rgba(17,24,39,.12), inset 0 1px 0 rgba(255,255,255,.54);
-    }
-    .nav-main-group{background:linear-gradient(145deg,rgba(255,255,255,.20),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.28)}
-    .nav-home-btn{background:linear-gradient(145deg,rgba(255,255,255,.34),rgba(255,255,255,.12));border:1px solid rgba(255,255,255,.36)}
-    .nav-item{color:#19263f}
-    .nav-item.active,.nav-home-btn.active{color:#295de6}
-
-    .settings-sheet{background:linear-gradient(145deg,rgba(247,249,254,.92),rgba(242,245,253,.72));border:1px solid rgba(255,255,255,.56)}
-    .toast{background:rgba(13,23,55,.84);border:1px solid rgba(255,255,255,.14)}
-
-    body.dark-mode #revampBackdrop{
-      background:linear-gradient(180deg,#132338 0%,#18283d 18%,#1d2f47 36%,#162233 70%,#11192a 100%);
-    }
-    body.dark-mode #revampBackdrop::before{background:linear-gradient(145deg,rgba(69,110,255,.30),rgba(72,198,224,.18),rgba(255,255,255,.03))}
-    body.dark-mode #revampBackdrop::after{background:linear-gradient(145deg,rgba(115,83,255,.22),rgba(89,170,255,.12),rgba(255,255,255,.03))}
-    body.dark-mode .topbar-inner,body.dark-mode .period-pill,body.dark-mode .period-btn,body.dark-mode .icon-btn,
-    body.dark-mode .card,body.dark-mode .move-card,body.dark-mode .setting-card,body.dark-mode .budget-row,body.dark-mode .category-toolbar,body.dark-mode .drawer-card,
-    body.dark-mode .settings-sheet{background:linear-gradient(145deg,rgba(19,31,49,.78),rgba(18,28,44,.58))!important;border-color:rgba(255,255,255,.08)!important;box-shadow:0 16px 40px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.04)!important}
-    body.dark-mode .title h1,body.dark-mode .card-title h2,body.dark-mode .move-card h3,body.dark-mode .detail-summary{color:#f4f7ff!important}
-    body.dark-mode .title p,body.dark-mode .subtle,body.dark-mode .field label,body.dark-mode .move-card p,body.dark-mode .move-card small{color:#b7c4d7!important}
-    body.dark-mode .input,body.dark-mode .select{background:rgba(15,23,42,.72)!important;border-color:rgba(255,255,255,.08)!important;color:#eef4ff!important}
-    body.dark-mode .movement-calc-btn,body.dark-mode .ghost#resetFilters,body.dark-mode .collapse-btn,body.dark-mode .secondary,body.dark-mode .detail-summary{background:linear-gradient(145deg,rgba(20,35,57,.92),rgba(17,30,48,.72))!important;color:#d9e5ff!important}
-    body.dark-mode #jumpToMovement{background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(233,241,255,.72));color:#0d1b37}
-    body.dark-mode .chart-wrap{background:linear-gradient(180deg,rgba(17,26,41,.74),rgba(20,30,47,.54));border-color:rgba(255,255,255,.06)}
-    body.dark-mode .legend span{background:rgba(17,30,48,.8);border-color:rgba(255,255,255,.08);color:#d7e2f6}
-    body.dark-mode .move-sign{background:linear-gradient(145deg,rgba(21,36,59,.86),rgba(17,28,46,.66))!important}
-    body.dark-mode .liquid-nav.split-nav{background:linear-gradient(145deg,rgba(17,27,43,.64),rgba(17,27,43,.38));border-color:rgba(255,255,255,.08)}
-
-    @media (max-width:860px){
-      .shell{padding-inline:12px}
-      .topbar-inner{grid-template-columns:48px 1fr 48px;padding:10px}
-      .title h1{font-size:clamp(21px,7vw,30px)}
-      .title h1::after{font-size:10px;letter-spacing:.14em}
-      .period-pill{min-width:min(290px,66vw);font-size:13px;padding:12px 14px}
-      #dashboardStats{grid-template-columns:1fr 1fr!important}
-      #dashboardStats .stat-saldo{min-height:148px!important}
-      #infoStrip{grid-template-columns:1fr!important}
-      .fields,.fields.bottom,.filters{grid-template-columns:1fr!important}
-      .movement-title-actions{width:100%}
-      .movement-calc-btn,.ghost#resetFilters{flex:1 1 auto;justify-content:center}
-    }
-    @media (max-width:540px){
-      .card-pad,.chart-card{padding:18px}
-      .card-title h2{font-size:clamp(22px,7vw,28px)}
-      #dashboardStats .stat{padding:14px!important;min-height:90px!important}
-      #dashboardStats .stat .value{font-size:clamp(21px,6vw,28px)!important}
-      #dashboardStats .stat-saldo .value{font-size:clamp(30px,10vw,40px)!important}
-      .move-amount{font-size:20px!important}
-    }
-
-  
-/* v2.1 — final cascade: restore the intended dark financial dashboard. */
-body #home .home-summary.card{background:linear-gradient(145deg,#10263e 0%,#183b59 58%,#20576b 100%)!important;border-color:rgba(255,255,255,.25)!important;box-shadow:0 12px 30px rgba(15,35,60,.22)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
-body #home .home-summary .card-title h2{color:#f4f8ff!important;font-size:23px!important}
-body #home .home-summary #periodRange{color:#c1d6e8!important;line-height:1.4}
-body #home #dashboardStats .stat{background:rgba(255,255,255,.095)!important;border:1px solid rgba(255,255,255,.15)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;min-height:84px!important;padding:12px!important}
-body #home #dashboardStats .stat-saldo{background:linear-gradient(125deg,#294b67,#254b65)!important;min-height:130px!important;padding:17px!important}
-body #home #dashboardStats .stat-saldo.saldoNegative{background:linear-gradient(125deg,#623144,#783b4d)!important}
-body #home #dashboardStats .stat .label,body #home #dashboardStats .stat .stat-foot{color:#d3e2ef!important}
-body #home #dashboardStats .stat .value{color:#f7fbff!important;font-variant-numeric:tabular-nums}
-body #home #dashboardStats .stat.green .value{color:#75edbb!important}body #home #dashboardStats .stat.red .value{color:#ffabb2!important}
-body #home #dashboardStats .stat-saldo .value{font-size:clamp(31px,9vw,44px)!important}
-body #home #dashboardStats .stat-saldo.saldoNegative .value{color:#ffb5bb!important}
-body #home #infoStrip{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
-body #home #infoStrip .info-tile{background:rgba(255,255,255,.085)!important;border:1px solid rgba(255,255,255,.12)!important;padding:10px 5px!important;min-width:0}
-body #home #infoStrip .info-tile span,body #home #infoStrip .info-tile small{color:#c6d9e7!important;font-size:10px!important;line-height:1.25!important}
-body #home #infoStrip .info-tile b{color:#f5fbff!important;font-size:clamp(13px,3.8vw,20px)!important}
-body #home #infoStrip .info-tile b.info-alert{color:#ffb5bb!important}
-body #home #jumpToMovement{background:linear-gradient(145deg,#eafff8,#bcebe5)!important;color:#153a49!important;border:1px solid rgba(255,255,255,.5)!important;font-size:15px!important;min-height:48px!important}
-body:not(.dark-mode) #revampBackdrop{z-index:-1;background:linear-gradient(155deg,#819dbf,#b5c8de 30%,#e0e9f4 75%,#f2f6fb)!important}
-body:not(.dark-mode) .sticky-head{background:linear-gradient(180deg,rgba(235,244,253,.67),rgba(228,238,249,.42))!important;border-bottom:1px solid rgba(255,255,255,.55)!important}
-body .title h1::after{display:none!important}.profile-badge{font-variant-numeric:tabular-nums}
-body #resetFilters{background:none!important;border:0!important;box-shadow:none!important}
-body .liquid-nav.split-nav{background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-@media(max-width:560px){body #home .home-summary.card{padding:16px!important}body #home #dashboardStats{gap:8px!important}body #home #dashboardStats .stat:not(.stat-saldo) .value{font-size:clamp(17px,5vw,25px)!important}body #home #infoStrip{gap:5px!important}body .topbar-inner{padding:6px 9px!important}body .period-row{gap:7px!important}}
-
+body.rev3 #movements .move-amount{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}body.rev3 #movements .move-amount:before,body.rev3 #movements .move-amount:after{display:none!important}
 </style>
 </head>
-<body data-app-version="65">
+<body data-app-version="3" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
       <header class="topbar">
         <div class="topbar-inner">
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
-          <div class="title">
-            <h1>Tracking Spese</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">v2.1</span></p>
+          <div class="title"><span class="brand-kicker">TRACCIATORE SPESE</span>
+            <h1 id="screenTitle">Home</h1>
+            <p>Lorenzo Vizzini <span class="profile-badge">v3</span></p>
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -1590,27 +1388,13 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
     <main>
       <section class="view active" id="home" data-title="Home">
         <div class="home-grid">
-          <article class="card card-pad home-summary">
-            <div class="card-title"><h2>Dashboard</h2><span class="subtle" id="periodRange">27/04 - 26/05</span></div>
-            <div class="stats" id="dashboardStats"></div>
-            <div class="info-strip" id="infoStrip"></div>
-          <button id="jumpToMovement" type="button">＋ Registra movimento</button></article>
-<article class="card card-pad form-card" id="movementEntry">
-            <div class="card-title"><h2>Aggiungi movimento</h2><span class="pill blue" id="modePill">Nuovo</span></div>
-            <form id="movementForm">
-              <input type="hidden" id="editId" />
-              <div class="fields">
-                <div class="field"><label>Data</label><input class="input" type="date" id="mDate" required /></div>
-                <div class="field"><label>Descrizione</label><input class="input" type="text" id="mDesc" placeholder="Es. Stipendio, Spesa coop..." /></div>
-                <div class="field"><label>Importo</label><input class="input" type="text" inputmode="decimal" id="mAmount" placeholder="0,00 €" required /></div>
-              </div>
-              <div class="fields bottom">
-                <div class="field"><label>Tipo</label><select class="select" id="mType"><option value="uscita" selected>Uscita</option><option value="entrata">Entrata</option></select></div>
-                <div class="field"><label>Categoria</label><select class="select" id="mCategory" required></select></div>
-                <div style="display:flex;gap:10px;align-items:center"><button class="primary" style="flex:1" id="saveMovement" type="submit">+ Aggiungi movimento</button><button class="secondary" id="cancelEdit" type="button" style="display:none">Annulla</button></div>
-              </div>
-            </form>
+          <article class="balance-panel">
+            <div class="balance-top"><span class="eyebrow">IL TUO MESE</span><span id="periodRange"></span></div>
+            <div id="dashboardStats"></div>
           </article>
+          <section class="home-insights"><div class="section-heading"><h2>In evidenza</h2><span>Il punto sulle tue finanze</span></div><div class="insight-list" id="infoStrip"></div></section>
+          <section class="home-budget"><div class="section-heading"><h2>Budget categorie</h2><button class="text-link" type="button" id="homeBudgetLink">Vedi tutti ›</button></div><div class="preview-list" id="homeBudgetPreview"></div></section>
+          <section class="home-recent"><div class="section-heading"><h2>Ultimi movimenti</h2><button class="text-link" type="button" id="homeMovementsLink">Vedi tutti ›</button></div><div class="preview-list" id="homeRecent"></div></section>
         </div>
       </section>
 
@@ -1646,14 +1430,16 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
         <div class="mov-budget-grid">
           <article class="card card-pad full">
             <div class="card-title movement-card-title">
-              <h2>Movimenti</h2>
+              <h2>Registro</h2>
               <div class="movement-title-actions">
                 <button class="movement-calc-btn" id="movementCalcBtn" type="button">Calcola spese</button>
                 <button class="ghost" id="resetFilters" type="button">Reset filtri</button>
               </div>
             </div>
+            <div class="movement-overview" id="movementOverview"></div>
+            <div class="filter-chips" id="typeChips" aria-label="Filtra per tipo"><button type="button" data-filter="all">Tutti</button><button type="button" data-filter="uscita">Uscite</button><button type="button" data-filter="entrata">Entrate</button></div>
             <div class="filters">
-              <input class="input" id="searchMov" placeholder="Cerca movimento..." />
+              <input class="input" id="searchMov" placeholder="Cerca movimento..." aria-label="Cerca movimento" />
               <select class="select" id="filterType"><option value="all">Tutti i tipi</option><option value="entrata">Entrate</option><option value="uscita">Uscite</option></select>
               <select class="select" id="filterCategory"><option value="all">Tutte le categorie</option></select>
               <select class="select" id="sortMov"><option value="recent">Più recenti</option><option value="oldest">Meno recenti</option><option value="high">Importo alto</option><option value="low">Importo basso</option></select>
@@ -1726,16 +1512,23 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
     </main>
   </div>
 
-  <nav class="liquid-nav split-nav" id="bottomNav" aria-label="Navigazione principale">
-    <div class="nav-main-group" aria-label="Sezioni principali">
-      <span class="nav-liquid-bubble" aria-hidden="true"></span>
-      <button type="button" class="nav-item" data-tab="movements" aria-label="Movimenti"><span class="ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10 6v18"/><path d="M5 11l5-5 5 5"/><path d="M22 26V8"/><path d="M17 21l5 5 5-5"/></svg></span><span class="nav-label">Movimenti</span></button>
-      <button type="button" class="nav-item" data-tab="analysis" aria-label="Analisi"><span class="ico"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="9"/><path d="M16 7v9h9"/></svg></span><span class="nav-label">Analisi</span></button>
-      <button type="button" class="nav-item" data-tab="categories" aria-label="Categorie"><span class="ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4l12 12-12 12L4 16 16 4z"/><path d="M16 9l7 7-7 7-7-7 7-7z"/></svg></span><span class="nav-label">Categorie</span></button>
-    </div>
-    <span class="nav-drag-lens" id="navDragLens" aria-hidden="true"></span>
-    <button type="button" class="nav-home-btn active" data-tab="home" aria-label="Home"><span class="ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="8" width="17" height="17" rx="4"/><path d="M20 6h6v6"/><path d="M25 7l-12 12"/></svg></span><span class="nav-label">Home</span></button>
-  </nav>
+<div class="modal-backdrop entry-backdrop" id="entryModal" aria-hidden="true"><article class="card card-pad form-card" id="movementEntry" role="dialog" aria-modal="true" aria-labelledby="entryTitle">
+            <div class="entry-grabber" aria-hidden="true"></div><div class="card-title"><div><span class="eyebrow">REGISTRAZIONE</span><h2 id="entryTitle">Aggiungi movimento</h2></div><button class="icon-btn" type="button" id="entryClose" aria-label="Chiudi">×</button></div><span class="pill blue" id="modePill">Nuovo</span><div class="entry-types" aria-label="Tipo movimento"><button type="button" data-entry-type="uscita">↘ Uscita</button><button type="button" data-entry-type="entrata">↗ Entrata</button></div><div id="entryEmoji" class="entry-emoji" aria-hidden="true">🧾</div>
+            <form id="movementForm">
+              <input type="hidden" id="editId" />
+              <div class="fields">
+                <div class="field"><label>Data</label><input class="input" type="date" id="mDate" required /></div>
+                <div class="field"><label>Descrizione</label><input class="input" type="text" id="mDesc" placeholder="Es. Stipendio, Spesa coop..." /></div>
+                <div class="field"><label>Importo</label><input class="input" type="text" inputmode="decimal" id="mAmount" placeholder="0,00 €" required /></div>
+              </div>
+              <div class="fields bottom">
+                <div class="field entry-native-type"><label>Tipo</label><select class="select" id="mType"><option value="uscita" selected>Uscita</option><option value="entrata">Entrata</option></select></div>
+                <div class="field"><label>Categoria</label><select class="select" id="mCategory" required></select></div>
+                <div style="display:flex;gap:10px;align-items:center"><button class="primary" style="flex:1" id="saveMovement" type="submit">+ Aggiungi movimento</button><button class="secondary" id="cancelEdit" type="button" style="display:none">Annulla</button></div>
+              </div>
+            </form>
+          </article></div>
+<nav class="liquid-nav rev3-nav" id="bottomNav" aria-label="Navigazione principale"><button type="button" class="nav-item nav-home-btn" data-tab="home" aria-label="Home"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><span class="nav-label">Home</span></button><button type="button" class="nav-item " data-tab="movements" aria-label="Movimenti"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span><span class="nav-label">Movimenti</span></button><button type="button" class="nav-add" id="navAdd" aria-label="Aggiungi movimento"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" class="nav-item " data-tab="analysis" aria-label="Analisi"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16v-5M12 16V4M18 16V8"/></svg></span><span class="nav-label">Analisi</span></button><button type="button" class="nav-item " data-tab="categories" aria-label="Categorie"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span><span class="nav-label">Categorie</span></button><span class="nav-drag-lens" id="navDragLens" aria-hidden="true"></span></nav>
 
 
   <div class="modal-backdrop drawer-backdrop" id="sideMenu" aria-hidden="true">
@@ -1743,7 +1536,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
       <div class="drawer-head">
         <div>
           <h2 id="sideMenuTitle">Menu rapido</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario.</p>
+          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3</p>
         </div>
         <button class="modal-close" id="sideMenuClose" aria-label="Chiudi menu">×</button>
       </div>
@@ -2231,7 +2024,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
   </div>
   <div class="foot">Suggerimento: nella finestra di stampa del browser scegli “Salva come PDF” per esportare il report sul tuo dispositivo.</div>
 </div>
-<script>window.onload=()=>{setTimeout(()=>window.print(),180)};window.onafterprint=()=>window.close();<\/script>
+<scr${'ipt'}>window.onload=()=>{setTimeout(()=>window.print(),180)};window.onafterprint=()=>window.close();<\/script>
 </body></html>`;
       const win = window.open('', '_blank', 'width=1100,height=850');
       if(!win){ showToast('Consenti i popup per esportare il PDF'); return; }
@@ -2523,7 +2316,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
                 <p><b>Investimenti:</b> aggrega i movimenti della categoria Investimenti.</p>
                 <p><b>Archivio mesi:</b> apre periodi già registrati, divisi per anno. L’anno corrente resta aperto, gli anni passati restano chiusi.</p>
                 <p><b>Punto interrogativo:</b> apre questa guida e resta sempre sotto il contenuto dell’accesso rapido aperto, senza sovrapporsi alle liste.</p>
-                <p><b>Home:</b> il saldo e il riepilogo sono in alto. Tocca “Registra movimento” per raggiungere il modulo di inserimento.</p>
+                <p><b>Home:</b> il saldo e il riepilogo sono in alto. Premi il pulsante centrale + da qualsiasi sezione per aprire il modulo di inserimento. Le emoji sono associate automaticamente alle categorie, anche per i movimenti importati.</p>
                 <p><b>Calcola spese:</b> nella sezione Movimenti attiva una selezione temporanea delle sole uscite. Tocca le spese che vuoi sommare e premi “Totale” per visualizzare l’importo complessivo in un popup dell’app.</p>
               </div>
             </details>
@@ -2716,32 +2509,29 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
       f.innerHTML='<option value="all">Tutte le categorie</option>'+state.categories.slice().sort(byAlpha).map(c=>`<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join('');
       f.value=[...f.options].some(o=>o.value===cur)?cur:'all';
     }
+    function categoryEmoji(name,type='uscita'){
+      const n=String(name||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      const rules=[[/stipend|salari|paga/,'💰'],[/rimbors|anticip/,'🔄'],[/abbon|rat[ea]\b|finanzi|mutuo/,'💳'],[/viagg|vacanz|vol[oi]|hotel/,'✈️'],[/shopping|vestit|abbigli|cura personal/,'🛍️'],[/ristor|pranz|cen[ae]|social|svago|tempo libero|aperitiv/,'🍕'],[/aliment|supermerc|spesa casa/,'🛒'],[/tass|sanzion|mult[ae]|tribut/,'🧾'],[/invest|risparm|etf/,'📈'],[/salut|medic|farmac/,'🩺'],[/auto|trasport|benz|carbur|mobilit/,'🚗'],[/casa|affitt/,'🏠'],[/sport|palestr/,'🏋️'],[/regal/,'🎁'],[/extra|imprevist|vari[eo]/,'✨']];
+      return (rules.find(([r])=>r.test(n))||[null,type==='entrata'?'💵':'🏷️'])[1];
+    }
+    function emojiBadge(name,type='uscita'){return `<span class="category-emoji" aria-hidden="true">${categoryEmoji(name,type)}</span>`}
     function renderDashboard(){
-      const t=totals();
-      const saldoIsPositive = t.saldo >= 0;
-      const stats=[
-        {label:'Entrate Totali',value:t.entrate,cardClass:'green',textClass:'greenText',icon:'↗',foot:'',sizeClass:'stat-compact'},
-        ...(t.extra>0?[{label:'Entrate Extra',value:t.extra,cardClass:'green',textClass:'greenText',icon:'✦',foot:'periodo attuale',sizeClass:''}]:[]),
-        {label:'Uscite Totali',value:t.uscite,cardClass:'red',textClass:'redText',icon:'↘',foot:'',sizeClass:'stat-compact'},
-        {label:'Saldo',value:t.saldo,cardClass:saldoIsPositive?'saldoPositive':'saldoNegative',textClass:saldoIsPositive?'saldoPositiveText':'saldoNegativeText',icon:saldoIsPositive?'✓':'!',foot:saldoIsPositive?'saldo positivo':'saldo negativo',sizeClass:'stat-saldo'}
-      ];
-      document.getElementById('dashboardStats').innerHTML=stats.map(s=>`<div class="stat ${s.cardClass} ${s.sizeClass||''}"><div><div class="label">${s.label}</div><div class="value ${s.textClass}">${fmt.format(s.value)}</div></div><div class="stat-foot"><span>${s.foot}</span><span class="mini-icon">${s.icon}</span></div></div>`).join('');
-      const p=currentPeriod();
-      const realToday=toDate(dateKey(new Date()));
-      const refDate = realToday < p.start ? p.start : (realToday > p.end ? p.end : realToday);
-      const days=Math.max(0,Math.ceil((p.end-refDate)/86400000));
-      const totalDays=Math.ceil((p.end-p.start+1)/86400000);
-      const elapsed=Math.max(1,Math.ceil((refDate-p.start+1)/86400000));
-      const elapsedWeeks=Math.max(1,Math.ceil(elapsed/7));
-      const avg=t.uscite/elapsedWeeks;
-      const projection=t.uscite/elapsed*totalDays;
-      const daysAlert=days<=7;
-      const avgAlert=avg>=250;
-      const projectionAlert=t.entrate>0 && projection>=t.entrate*0.25;
-      document.getElementById('infoStrip').innerHTML=`
-        <div class="info-tile"><span>Giorni rimanenti</span><b class="${daysAlert?'info-alert':''}">${days}</b><small>fino al ${formatDate(p.end).slice(0,5)}</small></div>
-        <div class="info-tile"><span>Media settimanale uscite</span><b class="${avgAlert?'info-alert':''}">${fmt.format(avg)}</b><small>su ${elapsedWeeks} settimane trascorse</small></div>
-        <div class="info-tile"><span>Proiezione fine periodo</span><b class="${projectionAlert?'info-alert':''}">${fmt.format(projection)}</b><small>uscite stimate</small></div>`;
+      const t=totals(),p=currentPeriod();
+      const ratio=t.entrate>0?t.uscite/t.entrate*100:0;
+      const fill=t.entrate>0?Math.max(0,Math.min(100,ratio)):(t.uscite>0?100:0);
+      document.getElementById('dashboardStats').innerHTML=`<div class="hero-saldo ${t.saldo<0?'negative':''}"><span>Saldo del periodo</span><strong>${fmt.format(t.saldo)}</strong></div><div class="hero-track"><i class="${t.saldo<0?'over':''}" style="width:${fill}%"></i></div><div class="hero-progress"><span>${t.entrate>0?'Speso '+nf.format(ratio)+'% delle entrate':'Entrate non ancora registrate'}</span><span>${t.saldo>=0?'Saldo positivo':'Saldo negativo'}</span></div><div class="hero-flow"><div><span>↗ Entrate</span><strong>${fmt.format(t.entrate)}</strong></div><div><span>↘ Uscite</span><strong>${fmt.format(t.uscite)}</strong></div></div>${t.extra>0?`<div class="hero-extra">Di cui entrate extra <b>${fmt.format(t.extra)}</b></div>`:''}`;
+      const realToday=toDate(dateKey(new Date())),refDate=realToday<p.start?p.start:realToday>p.end?p.end:realToday;
+      const days=Math.max(0,Math.ceil((p.end-refDate)/86400000)),totalDays=Math.ceil((p.end-p.start+1)/86400000),elapsed=Math.max(1,Math.ceil((refDate-p.start+1)/86400000)),elapsedWeeks=Math.max(1,Math.ceil(elapsed/7)),avg=t.uscite/elapsedWeeks,projection=t.uscite/elapsed*totalDays;
+      const rows=budgetRows().sort((a,b)=>b.spent-a.spent||byAlpha(a,b));
+      const top=rows.find(r=>r.spent>0);
+      const prevMonth=new Date(p.labelYear,p.labelMonth-1,15);const prev=totalsForPeriod(periodForLabel(prevMonth.getFullYear(),prevMonth.getMonth()));
+      const diff=prev.uscite>0?(t.uscite-prev.uscite)/prev.uscite*100:null;
+      const insights=[['💡','Categoria più costosa',top?top.name+' · '+fmt.format(top.spent):'Nessuna uscita registrata'],['📊','Media settimanale',fmt.format(avg)+' · '+elapsedWeeks+' sett. trascorse'],['🔮','Proiezione fine periodo',fmt.format(projection)+' di uscite stimate'],['🗓️','Giorni rimanenti',days+' · fino al '+formatDate(p.end).slice(0,5)]];
+      if(diff!==null)insights.splice(1,0,['📉','Confronto con il periodo precedente',(diff>0?'+':'')+nf.format(diff)+'% di uscite'+(realToday<p.end?' (periodo parziale)':'')]);
+      document.getElementById('infoStrip').innerHTML=insights.map(([icon,title,value])=>`<div class="insight-row"><span class="category-emoji">${icon}</span><div><span>${title}</span><b>${escapeHtml(value)}</b></div></div>`).join('');
+      document.getElementById('homeBudgetPreview').innerHTML=rows.length?rows.slice(0,4).map(r=>`<div class="budget-preview-row">${emojiBadge(r.name)}<div class="budget-preview-main"><div><b>${escapeHtml(r.name)}</b><span class="${r.out?'redText':''}">${fmt.format(r.spent)} <small>/ ${fmt.format(r.max)}</small></span></div><div class="preview-track"><i class="${r.out?'over':''}" style="width:${r.max>0?Math.max(0,Math.min(100,r.spent/r.max*100)):(r.spent>0?100:0)}%"></i></div></div></div>`).join(''):'<div class="empty">Nessuna categoria disponibile.</div>';
+      const recent=currentMovements().slice().sort((a,b)=>movementDateTimestamp(b)-movementDateTimestamp(a)||movementInsertTimestamp(b)-movementInsertTimestamp(a)).slice(0,4);
+      document.getElementById('homeRecent').innerHTML=recent.length?recent.map(m=>`<div class="recent-row">${emojiBadge(m.category,m.type)}<div><b>${escapeHtml(m.desc)}</b><small>${escapeHtml(m.category)} · ${formatDate(toDate(m.date)).slice(0,5)}</small></div><strong class="${m.type==='entrata'?'greenText':'redText'}">${m.type==='entrata'?'+':'−'}${fmt.format(m.amount)}</strong></div>`).join(''):'<div class="empty">Nessun movimento. Premi + per iniziare.</div>';
     }
     function renderBudget(){
       const t=totals();
@@ -2831,7 +2621,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
     }
     function toggleMovementExpenseSelection(id,event){
       if(!movementSelectionMode) return;
-      if(event && event.target.closest('button')) return;
+      if(event && event.target.closest('[data-move-action]')) return;
       const movement=state.movements.find(m=>m.id===id);
       if(!movement) return;
       if(movement.type!=='uscita'){
@@ -2873,27 +2663,27 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
       box.style.display=state.movementsOpen?'grid':'none';
       document.getElementById('toggleMovements').innerHTML=state.movementsOpen?'Nascondi movimenti ▴':'Mostra movimenti ▾';
       syncMovementScrollLock();
-      box.innerHTML=ms.map(m=>{
-        const isIncome=m.type==='entrata';
-        const selected=selectedExpenseIds.has(m.id);
-        const selectionSign=movementSelectionMode&&!isIncome
-          ? `<span class="expense-check">${selected?'✓':'○'}</span>`
-          : (isIncome?'↗':'↘');
-        const clickAttr=movementSelectionMode?` onclick="toggleMovementExpenseSelection('${m.id}',event)"`:'';
-        return `<div class="move-card ${isIncome?'entrata':'uscita'} ${selected?'selected':''}"${clickAttr}>
-          <div class="move-sign ${movementSelectionMode&&!isIncome?'blueText':(isIncome?'greenText':'redText')}">${selectionSign}</div>
-          <div class="move-main">
-            <div class="move-top">
-              <h3>${escapeHtml(m.desc||'Movimento')}</h3>
-              <span class="pill ${isIncome?'ok':'ko'}">${isIncome?'Entrata':'Uscita'}</span>
-            </div>
-            <p>${movementDateTimeLabel(m)}</p>
-            <small>${escapeHtml(m.category)}</small>
-          </div>
-          <div class="move-amount amount ${isIncome?'greenText':'redText'}">${isIncome?'+':'-'} ${fmt.format(m.amount)}</div>
-          <div class="move-actions"><button class="secondary" onclick="editMovement('${m.id}')">Modifica</button><button class="danger" onclick="deleteMovement('${m.id}')">Elimina</button></div>
+      const summary=document.getElementById('movementOverview');
+      const expenses=sum(ms.filter(m=>m.type==='uscita')),income=sum(ms.filter(m=>m.type==='entrata'));
+      summary.innerHTML=`<span>${ms.length} movimenti</span><span class="redText">−${fmt.format(expenses)}</span><span class="greenText">+${fmt.format(income)}</span>`;
+      document.querySelectorAll('#typeChips button').forEach(b=>{b.classList.toggle('active',b.dataset.filter===ft);b.setAttribute('aria-pressed',String(b.dataset.filter===ft))});
+      const renderRow=m=>{
+        const isIncome=m.type==='entrata',selected=selectedExpenseIds.has(m.id),id=escapeHtml(m.id),selectable=movementSelectionMode&&!isIncome;
+        return `<div class="move-card ${isIncome?'entrata':'uscita'} ${selected?'selected':''}" data-movement-id="${id}">
+          <button type="button" class="movement-row-button" aria-label="${escapeHtml(m.desc)}: ${fmt.format(m.amount)}" ${movementSelectionMode?'aria-pressed="'+String(selected)+'"':'aria-expanded="false"'}>
+            ${selectable?`<span class="category-emoji selection-dot">${selected?'✓':'○'}</span>`:emojiBadge(m.category,m.type)}
+            <span class="move-main"><b>${escapeHtml(m.desc||'Movimento')}</b><small>${escapeHtml(m.category)}${movementInsertTime(m)?' · '+movementInsertTime(m):''}${sort==='high'||sort==='low'?' · '+formatDate(toDate(m.date)).slice(0,5):''}</small></span>
+            <strong class="move-amount ${isIncome?'greenText':'redText'}">${isIncome?'+':'−'}${fmt.format(m.amount)}</strong>
+            ${movementSelectionMode?'':'<span class="row-chevron" aria-hidden="true">›</span>'}
+          </button>
+          <div class="move-actions" hidden><button type="button" class="secondary" data-move-action="edit">Modifica</button><button type="button" class="danger" data-move-action="delete">Elimina</button></div>
         </div>`;
-      }).join('') || '<div class="empty">Nessun movimento nel periodo selezionato.</div>';
+      };
+      if(!ms.length)box.innerHTML='<div class="empty">Nessun movimento nel periodo selezionato.</div>';
+      else if(sort==='recent'||sort==='oldest'){
+        const groups=new Map();ms.forEach(m=>{if(!groups.has(m.date))groups.set(m.date,[]);groups.get(m.date).push(m)});
+        box.innerHTML=[...groups].map(([date,items])=>`<section class="day-group"><div class="day-heading"><b>${toDate(date).toLocaleDateString('it-IT',{day:'numeric',month:'short',year:'numeric'})}</b><span>${sum(items.filter(m=>m.type==='uscita'))?'−'+fmt.format(sum(items.filter(m=>m.type==='uscita'))):''} ${sum(items.filter(m=>m.type==='entrata'))?'+'+fmt.format(sum(items.filter(m=>m.type==='entrata'))):''}</span></div><div class="day-list">${items.map(renderRow).join('')}</div></section>`).join('');
+      }else box.innerHTML='<div class="day-list">'+ms.map(renderRow).join('')+'</div>';
       updateExpenseSelectionUI();
     }
     function renderCategories(){
@@ -2930,7 +2720,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
             const pct=max>0?Math.min(100,spent/max*100):0;
             return `<div class="cat-card ${type==='uscita'?'cat-out':'cat-in'}">
               <div class="cat-main">
-                <h3 title="${escapeHtml(c.name)}">${escapeHtml(c.name)}</h3>
+                <h3 title="${escapeHtml(c.name)}">${emojiBadge(c.name,c.type)} ${escapeHtml(c.name)}</h3>
                 <small>${type==='uscita'?'Categoria uscita':'Categoria entrata'}</small>
                 ${type==='uscita'?`
                   <div class="cat-budget-line">
@@ -2974,7 +2764,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
       }
     }
     function isAnyOverlayOpen(){
-      return !!document.querySelector('#sideMenu.open,#settingsModal.open,#messageModal.open,#wipeAllModal.open,#categoryReplaceModal.open,#pdfExportModal.open,#monthlyBackupModal.open');
+      return !!document.querySelector('#entryModal.open,#sideMenu.open,#settingsModal.open,#messageModal.open,#wipeAllModal.open,#categoryReplaceModal.open,#pdfExportModal.open,#monthlyBackupModal.open');
     }
     function syncMovementScrollLock(){
       const locked=activeTab==='movements' && !state.movementsOpen && !isAnyOverlayOpen();
@@ -2998,6 +2788,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
       });
       document.querySelectorAll('.nav-item,.nav-home-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===safeTab));
       document.body.dataset.activeTab=safeTab;
+      document.getElementById('screenTitle').textContent={home:'Home',movements:'Movimenti',analysis:'Analisi',categories:'Categorie'}[safeTab];
       document.querySelectorAll('.nav-item,.nav-home-btn').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===safeTab?'page':'false')); 
       updateNavPreview(null);
       syncMovementScrollLock();
@@ -3006,6 +2797,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
       const previousTab=activeTab;
       activeTab=['home','analysis','movements','categories'].includes(tab)?tab:'home';
       state.activeTab=activeTab;
+      if(activeTab==='movements' && previousTab!==activeTab){state.movementsOpen=true;renderMovements();}
       saveState();
       syncActiveTabUI(previousTab);
       if(activeTab==='analysis') setTimeout(drawCharts,80);
@@ -3206,7 +2998,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
     function drawCategoryChart(){
       const host=document.getElementById('categoryViz');if(!host)return;
       const data=budgetRows().sort((a,b)=>b.spent-a.spent||byAlpha(a,b)).map(r=>({label:r.name,value:r.spent,max:r.max,out:r.out}));
-      host.innerHTML=data.length?data.map((d,i)=>{const ratio=d.max>0?Math.max(0,Math.min(1,d.value/d.max)):(d.value>0?1:0);return `<button type="button" class="category-viz-row ${d.out?'out':''} ${d.value===0?'zero':''}" data-i="${i}" aria-label="${escapeHtml(d.label)}: ${fmt.format(d.value)}, budget ${fmt.format(d.max)}"><span class="category-viz-meta"><span class="category-viz-name">${escapeHtml(d.label)}</span><span class="category-viz-values"><span class="category-viz-spent">${fmt.format(d.value)}</span><span class="category-viz-max">max ${fmt.format(d.max)}</span></span></span><span class="category-viz-track"><span class="category-viz-fill" style="width:${ratio*100}%"></span></span></button>`}).join(''):'<div class="empty">Nessuna categoria uscita.</div>';
+      host.innerHTML=data.length?data.map((d,i)=>{const ratio=d.max>0?Math.max(0,Math.min(1,d.value/d.max)):(d.value>0?1:0);return `<button type="button" class="category-viz-row ${d.out?'out':''} ${d.value===0?'zero':''}" data-i="${i}" aria-label="${escapeHtml(d.label)}: ${fmt.format(d.value)}, budget ${fmt.format(d.max)}"><span class="category-viz-meta"><span class="category-viz-name">${emojiBadge(d.label)} ${escapeHtml(d.label)}</span><span class="category-viz-values"><span class="category-viz-spent">${fmt.format(d.value)}</span><span class="category-viz-max">max ${fmt.format(d.max)}</span></span></span><span class="category-viz-track"><span class="category-viz-fill" style="width:${ratio*100}%"></span></span></button>`}).join(''):'<div class="empty">Nessuna categoria uscita.</div>';
       host.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>showCategoryChartTooltip({data:data[Number(btn.dataset.i)],row:btn})));
     }
     function hideCategoryChartTooltip(){const tip=document.getElementById('categoryChartTooltip');if(tip)tip.classList.remove('show','ok','ko','below')}
@@ -3217,7 +3009,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
     function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
     function editMovement(id){
       const m=state.movements.find(x=>x.id===id); if(!m) return;
-      document.getElementById('movementForm').classList.add('editing'); document.getElementById('editId').value=m.id; document.getElementById('mDate').value=m.date; document.getElementById('mDesc').value=m.desc; document.getElementById('mAmount').value=m.amount; document.getElementById('mType').value=m.type; renderCategorySelects(); document.getElementById('mCategory').value=m.category; document.getElementById('saveMovement').textContent='Aggiorna movimento'; document.getElementById('cancelEdit').style.display='inline-flex'; document.getElementById('modePill').textContent='Modifica'; setTab('home',false); requestAnimationFrame(()=>document.getElementById('movementEntry').scrollIntoView({block:'start',behavior:'smooth'})); showToast('Movimento in modifica');
+      document.getElementById('movementForm').classList.add('editing'); document.getElementById('editId').value=m.id; document.getElementById('mDate').value=m.date; document.getElementById('mDesc').value=m.desc; document.getElementById('mAmount').value=m.amount; document.getElementById('mType').value=m.type; renderCategorySelects(); document.getElementById('mCategory').value=m.category; document.getElementById('saveMovement').textContent='Aggiorna movimento'; document.getElementById('cancelEdit').style.display='inline-flex'; document.getElementById('modePill').textContent='Modifica'; openEntry(); showToast('Movimento in modifica');
     }
     function deleteMovement(id){state.movements=state.movements.filter(m=>m.id!==id);saveState();renderAll();showToast('Movimento eliminato')}
     function blockNonNumericBudgetKey(e){
@@ -3336,7 +3128,19 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
     }
     function csv(rows){const header=['data','descrizione','tipo','categoria','importo'];const lines=[header.join(';')];rows.forEach(m=>lines.push([m.date,m.desc,m.type,m.category,String(m.amount).replace('.',',')].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(';')));return lines.join('\n')}
 
-    document.getElementById('jumpToMovement').addEventListener('click',()=>document.getElementById('movementEntry').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+    function updateEntryVisual(){const type=document.getElementById('mType').value;document.querySelectorAll('[data-entry-type]').forEach(b=>{b.classList.toggle('active',b.dataset.entryType===type);b.setAttribute('aria-pressed',String(b.dataset.entryType===type))});document.getElementById('entryEmoji').textContent=categoryEmoji(document.getElementById('mCategory').value,type);}
+    function openEntry(){const modal=document.getElementById('entryModal');document.body.classList.remove('movements-scroll-locked');document.getElementById('entryTitle').textContent=document.getElementById('editId').value?'Modifica movimento':'Nuovo movimento';updateEntryVisual();modal.classList.add('open');modal.setAttribute('aria-hidden','false');}
+    function closeEntry(){const modal=document.getElementById('entryModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');syncMovementScrollLock();}
+    function cancelEntry(){document.getElementById('cancelEdit').click();resetHomeDefaults(true);closeEntry();}
+    document.getElementById('navAdd').addEventListener('click',openEntry);
+    document.getElementById('entryClose').addEventListener('click',cancelEntry);
+    document.getElementById('entryModal').addEventListener('click',e=>{if(e.target.id==='entryModal')cancelEntry()});
+    document.querySelectorAll('[data-entry-type]').forEach(b=>b.addEventListener('click',()=>{document.getElementById('mType').value=b.dataset.entryType;renderCategorySelects();updateEntryVisual()}));
+    document.getElementById('mCategory').addEventListener('change',updateEntryVisual);
+    document.getElementById('homeBudgetLink').addEventListener('click',()=>setTab('analysis'));
+    document.getElementById('homeMovementsLink').addEventListener('click',()=>setTab('movements'));
+    document.getElementById('typeChips').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;document.getElementById('filterType').value=b.dataset.filter;renderMovements()});
+    document.getElementById('movementList').addEventListener('click',e=>{const card=e.target.closest('[data-movement-id]');if(!card)return;const id=card.dataset.movementId;const action=e.target.closest('[data-move-action]');if(action){if(action.dataset.moveAction==='edit')editMovement(id);else if(confirm('Eliminare questo movimento?'))deleteMovement(id);return;}const row=e.target.closest('.movement-row-button');if(!row)return;if(movementSelectionMode){toggleMovementExpenseSelection(id,e);return;}const actions=card.querySelector('.move-actions');actions.hidden=!actions.hidden;row.setAttribute('aria-expanded',String(!actions.hidden));});
     document.getElementById('movementForm').addEventListener('submit',e=>{
       e.preventDefault(); const id=document.getElementById('editId').value;
       const descValue=document.getElementById('mDesc').value.trim();
@@ -3345,10 +3149,10 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
       if(/[a-zA-ZÀ-ÖØ-öø-ÿ]/.test(amountRaw)){showAppPopup('Non sono ammessi caratteri alfabetici');document.getElementById('mAmount').focus();return}
       const existing=id?state.movements.find(x=>x.id===id):null;const m={id:id||uid(),date:document.getElementById('mDate').value,desc:descValue||'Movimento',amount:parseEuroInput(amountRaw),type:document.getElementById('mType').value,category:document.getElementById('mCategory').value,createdAt:existing?.createdAt||new Date().toISOString()};
       if(id){state.movements=state.movements.map(x=>x.id===id?m:x)} else state.movements.push(m);
-      state.selectedDate=todayKey(); saveState(); e.target.reset(); e.target.classList.remove('editing'); document.getElementById('editId').value=''; document.getElementById('mType').value='uscita'; document.getElementById('saveMovement').textContent='+ Aggiungi movimento'; document.getElementById('cancelEdit').style.display='none'; document.getElementById('modePill').textContent='Nuovo'; renderAll(); resetHomeDefaults(true); showToast(id?'Movimento aggiornato':'Movimento aggiunto'); setTimeout(()=>{checkInternalNotifications(false);checkSavingsGoalNotification(false)},260);
+      state.selectedDate=todayKey(); saveState(); e.target.reset(); e.target.classList.remove('editing'); document.getElementById('editId').value=''; document.getElementById('mType').value='uscita'; document.getElementById('saveMovement').textContent='+ Aggiungi movimento'; document.getElementById('cancelEdit').style.display='none'; document.getElementById('modePill').textContent='Nuovo'; renderAll(); resetHomeDefaults(true); closeEntry(); showToast(id?'Movimento aggiornato':'Movimento aggiunto'); setTimeout(()=>{checkInternalNotifications(false);checkSavingsGoalNotification(false)},260);
     });
-    document.getElementById('cancelEdit').addEventListener('click',()=>{const form=document.getElementById('movementForm');form.reset();form.classList.remove('editing');state.selectedDate=dateKey(new Date());saveState();document.getElementById('editId').value='';document.getElementById('saveMovement').textContent='+ Aggiungi movimento';document.getElementById('cancelEdit').style.display='none';document.getElementById('modePill').textContent='Nuovo';renderAll()});
-    document.getElementById('mType').addEventListener('change',renderCategorySelects);
+    document.getElementById('cancelEdit').addEventListener('click',()=>{const form=document.getElementById('movementForm');form.reset();form.classList.remove('editing');state.selectedDate=dateKey(new Date());saveState();document.getElementById('editId').value='';document.getElementById('saveMovement').textContent='+ Aggiungi movimento';document.getElementById('cancelEdit').style.display='none';document.getElementById('modePill').textContent='Nuovo';renderAll();resetHomeDefaults(true);closeEntry()});
+    document.getElementById('mType').addEventListener('change',()=>{renderCategorySelects();updateEntryVisual()});
     document.getElementById('mDate').addEventListener('change',e=>{state.selectedDate=e.target.value||todayKey();saveState()});
 
     document.getElementById('mDesc').addEventListener('input',e=>{if(/\d/.test(e.target.value)){showAppPopup('Non sono ammessi caratteri numerici');e.target.value=e.target.value.replace(/\d/g,'')}});
@@ -3510,7 +3314,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
         endNavInteraction(e.clientX,e.clientY,true);
       });
     }
-    const premiumRippleSelector='.icon-btn,.period-btn,.primary,.secondary,.ghost,.collapse-btn,.mini-primary,.drawer-menu-item,.nav-item,.nav-home-btn,.detail-summary';
+    const premiumRippleSelector='.icon-btn,.period-btn,.primary,.secondary,.ghost,.collapse-btn,.mini-primary,.drawer-menu-item,.nav-item,.nav-home-btn,.nav-add,.detail-summary';
     document.addEventListener('pointerdown',e=>{
       const btn=e.target.closest(premiumRippleSelector);if(!btn||btn.id==='resetFilters')return;
       const r=btn.getBoundingClientRect();const drop=document.createElement('span');drop.className='liquid-ripple';
@@ -3534,7 +3338,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
     /* Micro-pressione fisica delle card, senza interferire con controlli/input */
     document.addEventListener('pointerdown',e=>{
       const card=e.target.closest('.card');
-      if(!card || e.target.closest('button,input,select,textarea,a,summary')) return;
+      if(!card || e.target.closest('button,input,select,textarea,a,summary') || card.id==='movementEntry') return;
       card.classList.add('premium-card-pressed');
     },{passive:true});
     ['pointerup','pointercancel'].forEach(evt=>document.addEventListener(evt,()=>{
@@ -3571,7 +3375,7 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
     document.getElementById('settingsBack').addEventListener('click',closeSettings);
     const settingsCloseBtn=document.getElementById('settingsClose');if(settingsCloseBtn)settingsCloseBtn.addEventListener('click',closeSettings);
     settingsModal.addEventListener('click',e=>{if(e.target===settingsModal)closeSettings()});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSettings();closeAppPopup();closeCategoryReplaceModal();closePdfExportModal();closeWipeAllModal();closeMonthlyBackupReminder(true)}});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('entryModal').classList.contains('open'))cancelEntry();closeSettings();closeAppPopup();closeCategoryReplaceModal();closePdfExportModal();closeWipeAllModal();closeMonthlyBackupReminder(true)}});
 
     document.getElementById('prevPeriod').addEventListener('click',()=>{const p=currentPeriod();const d=new Date(p.labelYear,p.labelMonth-1,15);state.periodDate=dateKey(d);state.selectedDate=todayKey();saveState();renderAll();resetHomeDefaults(true)});
     document.getElementById('nextPeriod').addEventListener('click',()=>{const p=currentPeriod();const d=new Date(p.labelYear,p.labelMonth+1,15);state.periodDate=dateKey(d);state.selectedDate=todayKey();saveState();renderAll();resetHomeDefaults(true)});
@@ -3633,8 +3437,8 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v2')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v2', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3', '1');
               location.reload();
             }
           });
@@ -3648,8 +3452,8 @@ body .liquid-nav.split-nav{background:none!important;border:0!important;box-shad
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v21')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v21', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v31')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v31', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
