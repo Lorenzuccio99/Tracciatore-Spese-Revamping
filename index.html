@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v3.5</title>
+  <title>Tracciatore Spese · v3.6</title>
   <meta name="theme-color" content="#dce6f4" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1407,7 +1407,7 @@ body.rev3:not([data-active-tab="analysis"]) .monthly-live-point:before,body.rev3
 @media(prefers-reduced-motion:reduce){body.rev3 #revampBackdrop:before,body.rev3 #revampBackdrop:after{transform:none!important}body.rev3 #bottomNav .nav-drag-lens,body.rev3 .view{transition:none!important;animation:none!important}}
 @media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav,body.rev3 .sticky-head{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav,body.rev3.dark-mode .sticky-head{background:#233248!important}}
 
-/* === v3.5 premium liquid glass refresh === */
+/* === v3.6 premium liquid glass refresh === */
 body.rev3 .category-emoji{width:auto!important;height:auto!important;flex:0 0 auto!important;display:inline-flex!important;align-items:center;justify-content:center;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;font-size:1.22em;line-height:1}
 body.rev3 .selection-dot{font-size:14px!important;color:var(--blue)!important;min-width:18px;justify-content:center}
 body.rev3 #bottomNav{position:fixed!important;left:max(14px,calc(env(safe-area-inset-left) + 12px))!important;right:max(14px,calc(env(safe-area-inset-right) + 12px))!important;bottom:max(10px,calc(env(safe-area-inset-bottom) + 8px))!important;height:72px!important;padding:8px 10px!important;border-radius:32px!important;display:grid!important;grid-template-columns:1fr 64px 1fr!important;grid-template-areas:"left add right"!important;align-items:center!important;gap:10px!important;background:linear-gradient(180deg,rgba(255,255,255,.52),rgba(255,255,255,.26))!important;border:1px solid rgba(255,255,255,.58)!important;box-shadow:0 16px 42px rgba(31,54,102,.16),inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.16)!important;backdrop-filter:blur(24px) saturate(180%)!important;-webkit-backdrop-filter:blur(24px) saturate(180%)!important;overflow:visible!important;transition:transform .28s cubic-bezier(.22,.86,.24,1),opacity .22s ease,filter .22s ease!important;will-change:transform,opacity}
@@ -1496,8 +1496,95 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
 @media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important;}}
 </style>
 
+
+<style id="rev36-design">
+/* Compact period selector */
+body.rev3 .sticky-head{padding-bottom:7px!important;}
+body.rev3 .period-row{grid-template-columns:44px minmax(0,1fr) 44px!important;height:46px!important;min-height:0!important;margin-top:7px!important;padding:0!important;gap:2px!important;border-radius:20px!important;background:transparent!important;border:0!important;box-shadow:none!important;}
+body.rev3 .period-row .period-pill{height:44px!important;min-height:0!important;display:grid!important;place-items:center;position:relative;}
+body.rev3 #periodLabel{font-size:16px!important;font-weight:750!important;letter-spacing:-.02em;}
+body.rev3 #periodSubrange{position:absolute!important;width:1px!important;height:1px!important;clip-path:inset(50%);overflow:hidden!important;}
+body.rev3 .period-row .period-btn{width:44px!important;height:44px!important;border:0!important;box-shadow:none!important;background:transparent!important;color:var(--blue)!important;}
+body.rev3 .period-row .period-btn:active{background:rgba(48,103,183,.12)!important;transform:scale(.94);}
+body.rev3.dark-mode .period-row{background:transparent!important;border:0!important;box-shadow:none!important;}
+/* Single transparent glass layer, crisp icon-only controls */
+body.rev3{--navH:60px;}
+body.rev3 #bottomNav.rev3-nav{height:52px!important;bottom:env(safe-area-inset-bottom,0px)!important;left:max(12px,env(safe-area-inset-left))!important;right:max(12px,env(safe-area-inset-right))!important;padding:3px 5px!important;border-radius:28px!important;gap:3px!important;background:linear-gradient(155deg,rgba(255,255,255,.15),rgba(255,255,255,.045) 58%,rgba(255,255,255,.13))!important;border:1px solid rgba(255,255,255,.65)!important;box-shadow:0 7px 21px rgba(24,44,74,.15),inset 0 1px 2px rgba(255,255,255,.78),inset 0 -1px 2px rgba(255,255,255,.22)!important;backdrop-filter:blur(7px) saturate(165%) contrast(1.04)!important;-webkit-backdrop-filter:blur(7px) saturate(165%) contrast(1.04)!important;overflow:hidden!important;}
+body.rev3 #bottomNav.rev3-nav .nav-item{height:44px!important;min-height:44px!important;border-radius:24px!important;padding:0!important;gap:0!important;color:#26374c!important;text-shadow:none!important;}
+body.rev3 #bottomNav.rev3-nav .nav-item svg,body.rev3 #bottomNav.rev3-nav .nav-item .ico{width:24px!important;height:24px!important;stroke-width:1.9!important;filter:drop-shadow(0 1px 1px rgba(255,255,255,.65))!important;}
+body.rev3 #bottomNav.rev3-nav .nav-label{display:none!important;}
+body.rev3 #bottomNav.rev3-nav .nav-item.active,body.rev3 #bottomNav.rev3-nav .nav-item.previewed{color:#1454bb!important;background:rgba(52,102,160,.17)!important;box-shadow:inset 0 1px 1px rgba(255,255,255,.35)!important;}
+body.rev3 #bottomNav .nav-add{width:44px!important;height:44px!important;background:radial-gradient(circle at 30% 15%,rgba(112,164,255,.95),rgba(34,90,209,.95) 75%)!important;border-color:rgba(255,255,255,.65)!important;box-shadow:inset 0 1px 2px rgba(255,255,255,.65),0 3px 8px rgba(30,75,170,.24)!important;}
+body.rev3 #bottomNav .nav-drag-lens{background:linear-gradient(145deg,rgba(255,255,255,.40),rgba(165,204,245,.13))!important;border:1px solid rgba(255,255,255,.75)!important;box-shadow:inset 0 1px 2px rgba(255,255,255,.65),0 3px 10px rgba(36,67,113,.12)!important;}
+body.rev3.dark-mode #bottomNav.rev3-nav{background:linear-gradient(145deg,rgba(25,36,52,.28),rgba(15,24,37,.14))!important;border-color:rgba(223,237,255,.28)!important;box-shadow:0 7px 20px rgba(0,0,0,.24),inset 0 1px 1px rgba(255,255,255,.22)!important;}
+body.rev3.dark-mode #bottomNav.rev3-nav .nav-item{color:#e8f0fc!important;}
+body.rev3.dark-mode #bottomNav.rev3-nav .nav-item svg{filter:none!important;}
+body.rev3.dark-mode #bottomNav.rev3-nav .nav-item.active,body.rev3.dark-mode #bottomNav.rev3-nav .nav-item.previewed{background:rgba(180,204,248,.19)!important;color:#b9d1ff!important;}
+/* All dialogs except the quick side drawer: centered, safe-area bounded. */
+body.rev3 .modal-backdrop:not(#sideMenu){--dialog-pad:max(14px,env(safe-area-inset-top),env(safe-area-inset-bottom));position:fixed!important;inset:auto 0 auto 0!important;top:var(--dialog-top,0px)!important;height:var(--dialog-height,100dvh)!important;align-items:center!important;justify-content:center!important;padding:var(--dialog-pad) max(12px,env(safe-area-inset-right)) var(--dialog-pad) max(12px,env(safe-area-inset-left))!important;overflow:hidden!important;background:rgba(15,27,45,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;box-sizing:border-box!important;}
+body.rev3.dark-mode .modal-backdrop:not(#sideMenu){background:rgba(3,8,18,.48)!important;}
+body.rev3 .modal-backdrop:not(#sideMenu)>[role="dialog"]{box-sizing:border-box!important;flex:0 1 auto!important;min-width:0!important;min-height:0!important;max-width:100%!important;max-height:100%!important;height:auto!important;margin:0!important;border-radius:27px!important;overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior:none!important;touch-action:pan-y!important;transform:none!important;animation:none!important;}
+body.rev3 #entryModal #movementEntry{width:min(440px,100%)!important;padding:18px!important;max-height:100%!important;box-shadow:0 22px 65px rgba(18,36,64,.25),inset 0 1px 0 rgba(255,255,255,.65)!important;}
+body.rev3 #entryModal.open #movementEntry{animation:rev36DialogIn .20s ease-out both!important;}
+@keyframes rev36DialogIn{from{opacity:0;transform:scale(.975)}to{opacity:1;transform:none}}
+/* Settings: one stable header, one independently scrolling content area. */
+body.rev3 #settingsModal .settings-sheet{display:flex!important;flex-direction:column!important;width:min(470px,100%)!important;max-height:100%!important;overflow:hidden!important;padding:0!important;background:#f1f4f9!important;border:1px solid rgba(255,255,255,.82)!important;box-shadow:0 24px 70px rgba(18,36,64,.24)!important;}
+body.rev3 .pref-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 17px 12px;flex-shrink:0;border-bottom:1px solid var(--line);}
+body.rev3 .pref-header h2{font-size:24px;letter-spacing:-.045em;line-height:1.1;margin:0;color:var(--ink);}
+body.rev3 .pref-header p{margin:4px 0 0;font-size:12px;color:var(--muted);}
+body.rev3 #settingsBack{position:relative;flex:0 0 44px;width:44px!important;height:44px!important;font-size:28px;font-weight:400;color:var(--blue)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)!important;border:1px solid var(--line)!important;background:rgba(255,255,255,.65)!important;}
+body.rev3 #settingsBack:before{display:none!important;}
+body.rev3 .pref-body{padding:10px 14px 18px;min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:none;touch-action:pan-y;-webkit-overflow-scrolling:touch;}
+body.rev3 .pref-group{margin:10px 0 18px;min-width:0;}
+body.rev3 .pref-group h3{margin:0 0 7px 8px;color:var(--muted);font-size:11px;font-weight:760;text-transform:uppercase;letter-spacing:.09em;}
+body.rev3 .pref-list{border:1px solid var(--line);background:var(--surface);border-radius:18px;overflow:hidden;min-width:0;}
+body.rev3 #settingsModal .setting-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:10px!important;padding:13px!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;min-width:0;}
+body.rev3 #settingsModal .pref-list>.setting-card:has(#themeToggle){flex-direction:row!important;align-items:center!important;justify-content:space-between!important;}
+body.rev3 #settingsModal .setting-copy{min-width:0;}
+body.rev3 #settingsModal .setting-copy strong{font-size:14px;line-height:1.25;color:var(--ink);}
+body.rev3 #settingsModal .setting-copy small{font-size:12px;font-weight:500;line-height:1.4;margin-top:4px;overflow-wrap:anywhere;}
+body.rev3 #settingsModal .theme-switch{flex:0 0 58px;min-height:32px!important;}
+body.rev3 .pref-fold{border:0;border-radius:0;margin:0;background:transparent;}
+body.rev3 .pref-fold+.pref-fold{border-top:1px solid var(--line);}
+body.rev3 .pref-fold summary{display:flex;align-items:center;gap:10px;min-height:52px;padding:8px 13px;list-style:none;color:var(--ink);font-weight:690;font-size:14px;cursor:pointer;}
+body.rev3 .pref-fold summary::-webkit-details-marker{display:none;}
+body.rev3 .pref-symbol{width:25px;height:25px;display:grid;place-items:center;color:var(--blue);font-size:20px;}
+body.rev3 .pref-chevron{margin-left:auto;color:var(--muted);font-size:21px;transition:transform .18s;}
+body.rev3 .pref-fold[open] .pref-chevron{transform:rotate(90deg);}
+body.rev3 .pref-fold[open] summary{border-bottom:1px solid var(--line);}
+body.rev3 #settingsModal .settings-control{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:8px!important;min-width:0!important;width:100%!important;}
+body.rev3 #settingsModal .setting-input,body.rev3 #settingsModal .setting-select{width:100%!important;min-width:0!important;max-width:100%!important;font-size:16px!important;}
+body.rev3 #settingsModal .savings-input-row{display:grid!important;grid-template-columns:minmax(0,1fr) 82px!important;gap:8px!important;}
+body.rev3 #settingsModal .savings-notify-top{display:flex!important;align-items:center;gap:9px;min-width:0;}
+body.rev3 #settingsModal .settings-status{font-size:11px!important;white-space:normal!important;overflow-wrap:anywhere;}
+body.rev3 #settingsModal .backup-grid{margin:0!important;padding:10px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;}
+body.rev3 #settingsModal .backup-btn{min-width:0!important;min-height:72px!important;font-size:12px!important;border-radius:13px!important;background:rgba(45,105,202,.07)!important;color:var(--blue)!important;box-shadow:none!important;}
+body.rev3 #settingsModal .export-pdf-btn{width:100%;min-height:44px;box-shadow:none!important;}
+body.rev3 #settingsModal .info-note{margin:0!important;padding:12px!important;border-radius:0!important;font-size:11px!important;min-width:0;overflow-wrap:anywhere;}
+body.rev3 #settingsModal .danger-zone{display:flex!important;flex-direction:column!important;align-items:stretch!important;margin:0!important;border-radius:0!important;padding:13px!important;min-width:0;}
+body.rev3 #settingsModal .wipe-btn{width:100%!important;min-height:44px!important;white-space:normal;}
+body.rev3.dark-mode #settingsModal .settings-sheet{background:#172438!important;border-color:rgba(255,255,255,.15)!important;}
+body.rev3.dark-mode #settingsBack{background:rgba(255,255,255,.08)!important;}
+body.rev3.dark-mode #settingsModal .backup-btn{background:rgba(120,169,255,.13)!important;color:#bad3ff!important;}
+/* Alerts share one centered, compact, readable presentation. */
+body.rev3 #messageModal{z-index:190!important;}
+body.rev3 .modal-backdrop:not(#sideMenu):not(#entryModal):not(#settingsModal)>[role="dialog"]{width:min(340px,100%)!important;padding:22px 19px 19px!important;border:1px solid rgba(255,255,255,.86)!important;background:var(--surface)!important;box-shadow:0 22px 60px rgba(12,28,53,.28)!important;text-align:center;}
+body.rev3 .modal-backdrop:not(#sideMenu):not(#entryModal):not(#settingsModal) h2{font-size:19px!important;line-height:1.18!important;margin:0 0 9px!important;overflow-wrap:anywhere;}
+body.rev3 .modal-backdrop:not(#sideMenu):not(#entryModal):not(#settingsModal) p{font-size:14px!important;font-weight:500!important;line-height:1.45!important;color:var(--muted)!important;overflow-wrap:anywhere;}
+body.rev3 .modal-backdrop .modal-actions{display:flex!important;gap:8px!important;flex-wrap:wrap!important;justify-content:center!important;margin-top:16px!important;}
+body.rev3 .modal-backdrop .modal-actions button{flex:1 1 105px!important;min-width:0!important;min-height:44px!important;height:auto!important;padding:12px 9px!important;border-radius:15px!important;font-size:13px!important;white-space:normal!important;line-height:1.25;box-shadow:none!important;}
+body.rev3 #messageModalCancel[hidden]{display:none!important;}
+body.rev3 #messageModalOk.confirm-destructive{background:#b92e3c!important;color:white!important;}
+body.rev3 .modal-backdrop .field{min-width:0;max-width:100%;text-align:left;}
+body.rev3 .modal-backdrop .field input,body.rev3 .modal-backdrop .field select{min-width:0;max-width:100%;width:100%;font-size:16px!important;}
+body.rev3.dark-mode .modal-backdrop:not(#sideMenu):not(#entryModal):not(#settingsModal)>[role="dialog"]{border-color:rgba(255,255,255,.14)!important;}
+body.rev3 #toast{top:50%!important;bottom:auto!important;transform:translate(-50%,-50%) scale(.96)!important;z-index:195!important;pointer-events:none!important;min-width:0!important;max-width:calc(100vw - 54px)!important;border-radius:19px!important;padding:13px 18px!important;background:rgba(22,36,55,.89)!important;font-size:13px!important;line-height:1.35;box-shadow:0 8px 28px rgba(12,28,53,.18)!important;backdrop-filter:blur(7px)!important;-webkit-backdrop-filter:blur(7px)!important;}
+body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
+@media(prefers-reduced-motion:reduce){body.rev3 #entryModal.open #movementEntry{animation:none!important;}.pref-chevron{transition:none!important;}}
+@media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important;}}
+</style>
 </head>
-<body data-app-version="3.5" class="rev3">
+<body data-app-version="3.6" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
@@ -1506,7 +1593,7 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
           <div class="title">
             <h1 id="screenTitle">Home</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">v3.5</span></p>
+            <p>Lorenzo Vizzini <span class="profile-badge">v3.6</span></p>
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -1514,7 +1601,7 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
 
       <div class="period-row">
         <button class="period-btn" id="prevPeriod" aria-label="Periodo precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
-        <div class="period-pill"><div class="period-caption">MESE FINANZIARIO</div><span id="periodLabel" aria-live="polite">Maggio 2026</span><small id="periodSubrange"></small></div>
+        <div class="period-pill"><span id="periodLabel" aria-live="polite">Maggio 2026</span><small id="periodSubrange"></small></div>
         <button class="period-btn" id="nextPeriod" aria-label="Periodo successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
       </div>
     </div>
@@ -1652,7 +1739,7 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
   </div>
 
 <div class="modal-backdrop entry-backdrop" id="entryModal" aria-hidden="true"><article class="card card-pad form-card" id="movementEntry" role="dialog" aria-modal="true" aria-labelledby="entryTitle">
-            <div class="entry-grabber" aria-hidden="true"></div><div class="card-title"><div><h2 id="entryTitle">Nuovo Movimento</h2></div><button class="icon-btn" type="button" id="entryClose" aria-label="Chiudi">×</button></div><span class="pill blue" id="modePill">Nuovo</span><div class="entry-types" aria-label="Tipo movimento"><button type="button" data-entry-type="uscita">↘ Uscita</button><button type="button" data-entry-type="entrata">↗ Entrata</button></div>
+            <div class="card-title"><div><h2 id="entryTitle">Nuovo Movimento</h2></div><button class="icon-btn" type="button" id="entryClose" aria-label="Chiudi">×</button></div><span class="pill blue" id="modePill">Nuovo</span><div class="entry-types" aria-label="Tipo movimento"><button type="button" data-entry-type="uscita">↘ Uscita</button><button type="button" data-entry-type="entrata">↗ Entrata</button></div>
             <form id="movementForm">
               <input type="hidden" id="editId" />
               <div class="fields">
@@ -1678,7 +1765,7 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
       <div class="drawer-head">
         <div>
           <h2 id="sideMenuTitle">Menu rapido</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.5</p>
+          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.6</p>
         </div>
         <button class="modal-close" id="sideMenuClose" aria-label="Chiudi menu">×</button>
       </div>
@@ -1695,111 +1782,79 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
     </aside>
   </div>
 
-  <div class="modal-backdrop" id="settingsModal" aria-hidden="true">
-    <section class="settings-sheet card card-pad" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
-      <div class="settings-toolbar">
-        <button class="glass-back-btn" id="settingsBack" aria-label="Indietro">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg>
-        </button>
-      </div>
-      <div class="card-title">
-        <div>
-          <h2 id="settingsTitle">Impostazioni</h2>
-          <p class="settings-copy">Backup e ripristino dell'app. Sezione spostata qui per tenere più pulita la schermata Categorie.</p>
-        </div>
-      </div>
-      <div class="settings-section">
-        <div class="card-title"><h2>Personalizzazione</h2><span class="subtle">Aspetto e strumenti</span></div>
-        <div class="settings-grid">
-          <div class="setting-card">
-            <div class="setting-copy">
-              <strong>Dark Mode</strong>
-              <small>Attiva un tema scuro moderno, più riposante per l'uso serale sul tuo iPhone.</small>
-            </div>
-            <button class="theme-switch" id="themeToggle" aria-label="Attiva o disattiva dark mode" aria-pressed="false"></button>
-          </div>
-          <div class="setting-card">
-            <div class="setting-copy">
-              <strong>Obiettivo mensile di risparmio</strong>
-              <small>Imposta quanto vuoi conservare ogni mese. L'app confronterà il target con il saldo del periodo.</small>
-            </div>
-            <div class="settings-control savings-control-wrap">
-              <div class="savings-notify-top">
-                <button class="theme-switch" id="savingsGoalNotifyToggle" aria-label="Attiva o disattiva notifica obiettivo risparmio" aria-pressed="false"></button>
-                <span class="settings-status" id="savingsGoalNotifyStatus">Notifica obiettivo disattivata</span>
-              </div>
-              <div class="savings-input-row">
-                <input class="setting-input" id="savingsTargetInput" type="number" min="0" step="10" placeholder="250 €" />
-                <button class="mini-primary" id="saveSavingsTarget" type="button">Salva</button>
-              </div>
-              <div class="settings-status" id="savingsTargetStatus">Target non impostato</div>
-            </div>
-          </div>
-          <div class="setting-card">
-            <div class="setting-copy">
-              <strong>Budget stagionale</strong>
-              <small>Applica rapidamente i profili budget creati da te nella sezione Categorie.</small>
-            </div>
-            <div class="settings-control">
-              <select class="setting-select" id="seasonalBudgetSelect"></select>
-              <button class="mini-primary" id="applySeasonalBudget" type="button">Applica</button>
-              <input class="setting-input" id="seasonalProfileNameInput" type="text" placeholder="Rinomina profilo" />
-              <button class="mini-dark" id="renameSeasonalProfile" type="button">Rinomina</button>
-              <button class="mini-danger" id="deleteSeasonalProfile" type="button">Elimina profilo</button>
-              <div class="settings-status" id="seasonalBudgetStatus">Nessun profilo creato</div>
-            </div>
-          </div>
-          <div class="setting-card">
-            <div class="setting-copy">
-              <strong>Notifiche interne</strong>
-              <small>Avvisa quando una categoria raggiunge una soglia del budget o va fuori budget.</small>
-            </div>
-            <div class="settings-control">
-              <button class="theme-switch" id="notificationToggle" aria-label="Attiva o disattiva notifiche interne" aria-pressed="false"></button>
-              <select class="setting-select" id="notificationThreshold">
-                <option value="70">Soglia 70%</option>
-                <option value="80">Soglia 80%</option>
-                <option value="90">Soglia 90%</option>
-                <option value="100">Fuori budget</option>
-              </select>
-              <button class="mini-dark" id="testNotificationsBtn" type="button">Verifica</button>
-              <div class="settings-status" id="notificationStatus">Notifiche interne attive</div>
-            </div>
-          </div>
-          <div class="setting-card">
-            <div class="setting-copy">
-              <strong>Esporta mese di riferimento in PDF</strong>
-              <small>Crea un report ordinato del mese finanziario selezionato con riepilogo, budget e tutti i movimenti tracciati.</small>
-            </div>
-            <button class="export-pdf-btn" id="exportPdfBtn">Esporta PDF</button>
-          </div>
-        </div>
-      </div>
-      <div class="settings-section">
-        <div class="card-title"><h2>Backup e Ripristino</h2><span class="subtle">Compatto e locale</span></div>
-        <div class="backup-grid backup-grid-minimal">
-          <button class="backup-btn" id="backupJson"><span>💾</span>Backup Completo<br>(JSON)</button>
-          <button class="backup-btn purple" id="importBtn"><span>📥</span>Importa Backup<br>precedente</button>
-        </div>
-        <div class="danger-zone">
-          <div>
-            <strong>Zona pericolosa</strong>
-            <small>Elimina tutti i dati locali dell'app. Prima della cancellazione verrà scaricato automaticamente un backup completo JSON.</small>
-          </div>
-          <button class="wipe-btn" id="wipeAllBtn" type="button">Elimina tutto</button>
-        </div>
-        <input id="importFile" type="file" accept="application/json" hidden />
-        <div class="info-note" style="margin-top:18px"><span class="info-badge">!</span><span>Non caricare mai il Backup Completo JSON in un repository pubblico: contiene i tuoi dati reali.</span></div>
-      </div>
-    </section>
-  </div>
+<div class="modal-backdrop" id="settingsModal" aria-hidden="true"><section class="settings-sheet card card-pad" role="dialog" aria-modal="true" aria-labelledby="settingsTitle"><div class="pref-header"><div><h2 id="settingsTitle">Impostazioni</h2><p>Preferenze e gestione dati</p></div><button aria-label="Chiudi impostazioni" class="glass-back-btn" id="settingsBack">×</button></div><div class="pref-body"><section class="pref-group"><h3>Aspetto</h3><div class="pref-list"><div class="setting-card">
+<div class="setting-copy">
+<strong>Dark Mode</strong>
+<small>Tema scuro per tutta l’app.</small>
+</div>
+<button aria-label="Attiva o disattiva dark mode" aria-pressed="false" class="theme-switch" id="themeToggle"></button>
+</div></div></section><section class="pref-group"><h3>Finanze</h3><div class="pref-list"><details class="pref-fold"><summary><span class="pref-symbol" aria-hidden="true">◎</span><span>Obiettivo risparmio</span><span class="pref-chevron" aria-hidden="true">›</span></summary><div class="setting-card">
+<div class="setting-copy">
 
+<small>Imposta un target mensile e il relativo avviso.</small>
+</div>
+<div class="settings-control savings-control-wrap">
+<div class="savings-notify-top">
+<button aria-label="Attiva o disattiva notifica obiettivo risparmio" aria-pressed="false" class="theme-switch" id="savingsGoalNotifyToggle"></button>
+<span class="settings-status" id="savingsGoalNotifyStatus">Notifica obiettivo disattivata</span>
+</div>
+<div class="savings-input-row">
+<input class="setting-input" id="savingsTargetInput" min="0" placeholder="250 €" step="10" type="number"/>
+<button class="mini-primary" id="saveSavingsTarget" type="button">Salva</button>
+</div>
+<div class="settings-status" id="savingsTargetStatus">Target non impostato</div>
+</div>
+</div></details><details class="pref-fold"><summary><span class="pref-symbol" aria-hidden="true">▤</span><span>Profili budget</span><span class="pref-chevron" aria-hidden="true">›</span></summary><div class="setting-card">
+<div class="setting-copy">
+
+<small>Applica, rinomina o elimina i profili di budget.</small>
+</div>
+<div class="settings-control">
+<select class="setting-select" id="seasonalBudgetSelect"></select>
+<button class="mini-primary" id="applySeasonalBudget" type="button">Applica</button>
+<input class="setting-input" id="seasonalProfileNameInput" placeholder="Rinomina profilo" type="text"/>
+<button class="mini-dark" id="renameSeasonalProfile" type="button">Rinomina</button>
+<button class="mini-danger" id="deleteSeasonalProfile" type="button">Elimina profilo</button>
+<div class="settings-status" id="seasonalBudgetStatus">Nessun profilo creato</div>
+</div>
+</div></details></div></section><section class="pref-group"><h3>Notifiche</h3><div class="pref-list"><details class="pref-fold"><summary><span class="pref-symbol" aria-hidden="true">◉</span><span>Avvisi di budget</span><span class="pref-chevron" aria-hidden="true">›</span></summary><div class="setting-card">
+<div class="setting-copy">
+
+<small>Soglia di avviso per le categorie.</small>
+</div>
+<div class="settings-control">
+<button aria-label="Attiva o disattiva notifiche interne" aria-pressed="false" class="theme-switch" id="notificationToggle"></button>
+<select class="setting-select" id="notificationThreshold">
+<option value="70">Soglia 70%</option>
+<option value="80">Soglia 80%</option>
+<option value="90">Soglia 90%</option>
+<option value="100">Fuori budget</option>
+</select>
+<button class="mini-dark" id="testNotificationsBtn" type="button">Verifica</button>
+<div class="settings-status" id="notificationStatus">Notifiche interne attive</div>
+</div>
+</div></details></div></section><section class="pref-group"><h3>Dati e report</h3><div class="pref-list"><div class="backup-grid backup-grid-minimal">
+<button class="backup-btn" id="backupJson"><span>💾</span>Backup Completo<br/>(JSON)</button>
+<button class="backup-btn purple" id="importBtn"><span>📥</span>Importa Backup<br/>precedente</button>
+</div><div class="setting-card">
+<div class="setting-copy">
+<strong>Esporta mese di riferimento in PDF</strong>
+<small>Report del mese finanziario con movimenti e budget.</small>
+</div>
+<button class="export-pdf-btn" id="exportPdfBtn">Esporta PDF</button>
+</div><div class="info-note" style="margin-top:18px"><span class="info-badge">!</span><span>Non caricare mai il Backup Completo JSON in un repository pubblico: contiene i tuoi dati reali.</span></div></div></section><section class="pref-group"><h3>Eliminazione dati</h3><div class="pref-list"><div class="danger-zone">
+<div>
+<strong>Zona pericolosa</strong>
+<small>Elimina tutti i dati locali dell'app. Prima della cancellazione verrà scaricato automaticamente un backup completo JSON.</small>
+</div>
+<button class="wipe-btn" id="wipeAllBtn" type="button">Elimina tutto</button>
+</div></div></section><input accept="application/json" hidden="" id="importFile" type="file"/></div></section></div>
 
   <div class="modal-backdrop" id="messageModal" aria-hidden="true">
     <section class="settings-sheet validation-sheet" role="dialog" aria-modal="true" aria-labelledby="messageModalTitle">
       <h2 id="messageModalTitle">Attenzione</h2>
       <p id="messageModalText"></p>
-      <button class="primary" id="messageModalOk" type="button">Ok</button>
+      <div class="modal-actions alert-actions"><button class="secondary" id="messageModalCancel" type="button" hidden>Annulla</button><button class="primary" id="messageModalOk" type="button">OK</button></div>
     </section>
   </div>
 
@@ -1970,16 +2025,31 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
     let toastTimer=null;
     function showToast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2300)}
 
-    function showAppPopup(msg){
+    let pendingAppConfirmation=null;
+    function closeAppPopup(accepted=false){
       const modal=document.getElementById('messageModal');
-      document.getElementById('messageModalText').textContent=msg;
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden','false');
+      modal.classList.remove('open');modal.setAttribute('aria-hidden','true');
+      const resolve=pendingAppConfirmation;pendingAppConfirmation=null;
+      if(resolve)resolve(accepted===true);
     }
-    function closeAppPopup(){
+    function showAppPopup(msg){
+      if(pendingAppConfirmation)closeAppPopup(false);
+      clearTimeout(toastTimer);document.getElementById('toast').classList.remove('show');
+      if(document.activeElement instanceof HTMLElement)document.activeElement.blur();
       const modal=document.getElementById('messageModal');
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden','true');
+      document.getElementById('messageModalTitle').textContent='Avviso';
+      document.getElementById('messageModalText').textContent=msg;
+      document.getElementById('messageModalCancel').hidden=true;
+      document.getElementById('messageModalOk').textContent='OK';
+      document.getElementById('messageModalOk').classList.remove('confirm-destructive');
+      modal.classList.add('open');modal.setAttribute('aria-hidden','false');
+    }
+    function confirmInApp(msg){
+      showAppPopup(msg);
+      document.getElementById('messageModalTitle').textContent='Conferma eliminazione';
+      document.getElementById('messageModalCancel').hidden=false;
+      const ok=document.getElementById('messageModalOk');ok.textContent='Elimina';ok.classList.add('confirm-destructive');
+      return new Promise(resolve=>{pendingAppConfirmation=resolve;});
     }
     function parseEuroInput(value){
       return Number(String(value||'').replace(',', '.').replace(/[^0-9.\-]/g,'')) || 0;
@@ -2266,7 +2336,7 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
       if(!custom){showAppPopup('Puoi rinominare solo i profili creati da te');return}
       custom.name=name; saveState(); syncSettingsControls(); showToast('Nome profilo aggiornato');
     }
-    function deleteSelectedSeasonalProfile(){
+    async function deleteSelectedSeasonalProfile(){
       state.settings={...defaultSettings(),...(state.settings||{})};
       const select=document.getElementById('seasonalBudgetSelect');
       const id=select?.value || state.settings.seasonalProfile;
@@ -2274,7 +2344,7 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
       const custom=state.settings.customBudgetProfiles||[];
       const profile=custom.find(p=>p.id===id);
       if(!profile){showAppPopup('Puoi eliminare solo i profili creati da te.');return}
-      if(!confirm(`Eliminare il profilo budget "${profile.name}"?`)) return;
+      if(!await confirmInApp(`Eliminare il profilo budget "${profile.name}"?`)) return;
       state.settings.customBudgetProfiles=custom.filter(p=>p.id!==id);
       state.settings.seasonalProfile=state.settings.customBudgetProfiles[0]?.id || '';
       saveState();
@@ -3307,7 +3377,7 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
     document.getElementById('homeBudgetLink').addEventListener('click',()=>setTab('analysis'));
     document.getElementById('homeMovementsLink').addEventListener('click',()=>setTab('movements'));
     document.getElementById('typeChips').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;document.getElementById('filterType').value=b.dataset.filter;renderMovements()});
-    document.getElementById('movementList').addEventListener('click',e=>{const card=e.target.closest('[data-movement-id]');if(!card)return;const id=card.dataset.movementId;const action=e.target.closest('[data-move-action]');if(action){if(action.dataset.moveAction==='edit')editMovement(id);else if(confirm('Eliminare questo movimento?'))deleteMovement(id);return;}const row=e.target.closest('.movement-row-button');if(!row)return;if(movementSelectionMode){toggleMovementExpenseSelection(id,e);return;}const actions=card.querySelector('.move-actions');actions.hidden=!actions.hidden;row.setAttribute('aria-expanded',String(!actions.hidden));});
+    document.getElementById('movementList').addEventListener('click',e=>{const card=e.target.closest('[data-movement-id]');if(!card)return;const id=card.dataset.movementId;const action=e.target.closest('[data-move-action]');if(action){if(action.dataset.moveAction==='edit')editMovement(id);else confirmInApp('Eliminare questo movimento?').then(yes=>{if(yes)deleteMovement(id)});return;}const row=e.target.closest('.movement-row-button');if(!row)return;if(movementSelectionMode){toggleMovementExpenseSelection(id,e);return;}const actions=card.querySelector('.move-actions');actions.hidden=!actions.hidden;row.setAttribute('aria-expanded',String(!actions.hidden));});
     document.getElementById('movementForm').addEventListener('submit',e=>{
       e.preventDefault(); const id=document.getElementById('editId').value;
       const descValue=document.getElementById('mDesc').value.trim();
@@ -3326,7 +3396,8 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
     newCatNameInput.addEventListener('input',e=>{if(/\d/.test(e.target.value)){showAppPopup('Non sono ammessi caratteri numerici nel nome della categoria.');e.target.value=e.target.value.replace(/\d/g,'')}});
 
     document.getElementById('mAmount').addEventListener('input',e=>{if(/[a-zA-ZÀ-ÖØ-öø-ÿ]/.test(e.target.value)){showAppPopup('Non sono ammessi caratteri alfabetici');e.target.value=e.target.value.replace(/[a-zA-ZÀ-ÖØ-öø-ÿ]/g,'')}});
-    document.getElementById('messageModalOk').addEventListener('click',closeAppPopup);
+    document.getElementById('messageModalOk').addEventListener('click',()=>closeAppPopup(true));
+    document.getElementById('messageModalCancel').addEventListener('click',()=>closeAppPopup(false));
     document.getElementById('monthlyBackupYes').addEventListener('click',confirmMonthlyBackup);
     document.getElementById('monthlyBackupNo').addEventListener('click',()=>closeMonthlyBackupReminder(true));
     document.getElementById('monthlyBackupModal').addEventListener('click',e=>{if(e.target.id==='monthlyBackupModal')closeMonthlyBackupReminder(true)});
@@ -3363,8 +3434,8 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
       const navRect=nav.getBoundingClientRect();
       const r=btn.getBoundingClientRect();
       const isHome=btn.classList.contains('nav-home-btn');
-      const extraW=8;
-      const extraH=6;
+      const extraW=2;
+      const extraH=0;
       const w=Math.round(r.width+extraW);
       const h=Math.round(r.height+extraH);
       const x=Math.round(r.left-navRect.left-(extraW/2));
@@ -3576,8 +3647,19 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
     document.getElementById('sideMenu').addEventListener('click',e=>{if(e.target.id==='sideMenu')closeSideMenu()});
     document.getElementById('drawerHelpFab').addEventListener('click',()=>renderDrawerContent('help'));
     document.querySelectorAll('.drawer-menu-item').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.panel==='current'){goToCurrentMonth(false);renderDrawerContent('current');return}renderDrawerContent(b.dataset.panel)}));
+    // Keep dialogs inside the visible viewport when the iOS keyboard opens.
+    if(window.visualViewport){
+      const updateDialogViewport=()=>{
+        const v=window.visualViewport;
+        document.documentElement.style.setProperty('--dialog-height',v.height+'px');
+        document.documentElement.style.setProperty('--dialog-top',v.offsetTop+'px');
+      };
+      window.visualViewport.addEventListener('resize',updateDialogViewport,{passive:true});
+      window.visualViewport.addEventListener('scroll',updateDialogViewport,{passive:true});
+      updateDialogViewport();
+    }
     const settingsModal=document.getElementById('settingsModal');
-    function openSettings(){document.body.classList.remove('movements-scroll-locked');syncSettingsControls();settingsModal.classList.add('open');settingsModal.setAttribute('aria-hidden','false')}
+    function openSettings(){document.body.classList.remove('movements-scroll-locked');syncSettingsControls();settingsModal.classList.add('open');settingsModal.setAttribute('aria-hidden','false');settingsModal.querySelector('.pref-body').scrollTop=0;}
     function closeSettings(){settingsModal.classList.remove('open');settingsModal.setAttribute('aria-hidden','true');syncMovementScrollLock()}
     document.getElementById('settingsBtn').addEventListener('click',openSettings);
     document.getElementById('settingsBack').addEventListener('click',closeSettings);
@@ -3655,8 +3737,8 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.5')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.5', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.6')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.6', '1');
               location.reload();
             }
           });
@@ -3670,8 +3752,8 @@ body.rev3 .emoji-hint{font-size:11px;color:var(--muted);margin-top:5px;display:b
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v35')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v35', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v36')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v36', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
