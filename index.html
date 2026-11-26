@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v3</title>
+  <title>Tracciatore Spese · v3.2</title>
   <meta name="theme-color" content="#dce6f4" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1362,6 +1362,53 @@ body.rev3 #analysis .chart-wrap{border-radius:17px!important;background:transpar
 
 body.rev3 #movements .move-amount{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}body.rev3 #movements .move-amount:before,body.rev3 #movements .move-amount:after{display:none!important}
 </style>
+
+<style id="v32-liquid-optimization">
+    :root{--safe-top:max(env(safe-area-inset-top), 14px);--safe-right:max(env(safe-area-inset-right), 14px);--safe-left:max(env(safe-area-inset-left), 14px);--safe-bottom:max(env(safe-area-inset-bottom), 12px)}
+    html,body{overscroll-behavior-y:contain}
+    body.rev3{--dynamic-shift:0px}
+    body.rev3 #revampBackdrop{background:linear-gradient(180deg, rgba(122,145,182,.92) 0%, rgba(166,186,214,.78) 18%, rgba(227,234,243,.92) 46%, rgba(241,245,249,.98) 78%, rgba(236,244,246,.96) 100%)!important}
+    body.rev3 #revampBackdrop:before{background:radial-gradient(ellipse at 28% 15%, rgba(90,119,176,.62), transparent 54%),radial-gradient(ellipse at 76% 30%, rgba(165,155,221,.42), transparent 56%)!important;opacity:.96;transform:translate3d(0, calc(var(--v65-shift, 0px) + var(--dynamic-shift, 0px)), 0);filter:blur(6px)}
+    body.rev3 #revampBackdrop:after{background:radial-gradient(ellipse at 18% 44%, rgba(134,186,191,.32), transparent 52%),radial-gradient(ellipse at 82% 76%, rgba(199,210,229,.34), transparent 54%)!important;opacity:.9;transform:translate3d(0, calc(var(--v65-shift2, 0px) - var(--dynamic-shift, 0px) * .35), 0);filter:blur(8px)}
+    body.rev3 .shell{padding-left:max(14px,var(--safe-left));padding-right:max(14px,var(--safe-right));padding-bottom:calc(var(--navH) + var(--safe-bottom) + 56px)}
+    body.rev3 .sticky-head{padding-top:calc(var(--safe-top) + 6px)!important;padding-left:max(16px,var(--safe-left))!important;padding-right:max(16px,var(--safe-right))!important;padding-bottom:18px!important;backdrop-filter:blur(18px) saturate(150%)!important;-webkit-backdrop-filter:blur(18px) saturate(150%)!important;background:linear-gradient(180deg,rgba(255,255,255,.38),rgba(255,255,255,.16))!important;box-shadow:0 10px 24px rgba(16,24,40,.05), inset 0 -1px 0 rgba(255,255,255,.36)!important}
+    body.rev3 .topbar-inner{grid-template-columns:52px minmax(0,1fr) 52px!important;min-height:56px}
+    body.rev3 .title{padding-top:2px}
+    body.rev3 .title h1{font-size:clamp(22px,4vw,30px)!important;line-height:1.04;text-wrap:balance;text-shadow:none!important}
+    body.rev3 .title p{font-size:13px!important;font-weight:650!important;color:#516074!important}
+    body.rev3 .period-row{margin-top:14px!important}
+    body.rev3 .icon-btn,body.rev3 .period-btn,body.rev3 .nav-item,body.rev3 .nav-home-btn,body.rev3 .drawer-toggle-mini,body.rev3 .drawer-help-fab,body.rev3 .mini-primary,body.rev3 .collapse-btn,body.rev3 .secondary,body.rev3 .primary{min-width:48px;min-height:48px}
+    body.rev3 .icon-btn,body.rev3 .period-btn{width:48px!important;height:48px!important;border-radius:17px!important}
+    body.rev3 .card,body.rev3 .stat,body.rev3 .info-tile,body.rev3 .setting-card,body.rev3 .drawer-card,body.rev3 .move-card,body.rev3 .budget-row,body.rev3 .category-toolbar{backdrop-filter:blur(16px) saturate(145%)!important;-webkit-backdrop-filter:blur(16px) saturate(145%)!important;box-shadow:0 14px 34px rgba(15,23,42,.06), inset 0 1px 0 rgba(255,255,255,.50)!important}
+    body.rev3 .chart-card,body.rev3 .chart-wrap,body.rev3 .settings-sheet,body.rev3 .side-drawer,body.rev3 .nav-main-group,body.rev3 .nav-home-btn,body.rev3 .nav-drag-lens{backdrop-filter:blur(20px) saturate(155%)!important;-webkit-backdrop-filter:blur(20px) saturate(155%)!important}
+    body.rev3 .liquid-nav.split-nav{left:max(14px,var(--safe-left))!important;right:max(14px,var(--safe-right))!important;bottom:max(12px,calc(var(--safe-bottom) + 6px))!important;filter:drop-shadow(0 14px 24px rgba(22,37,66,.08))}
+    body.rev3 .nav-main-group{background:linear-gradient(135deg,rgba(255,255,255,.30),rgba(255,255,255,.12) 58%,rgba(255,255,255,.08))!important;border:1px solid rgba(255,255,255,.58)!important;box-shadow:0 14px 30px rgba(17,24,39,.08), inset 0 1px 0 rgba(255,255,255,.62)!important}
+    body.rev3 .nav-home-btn{background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.08))!important;border:1px solid rgba(255,255,255,.64)!important;box-shadow:0 14px 30px rgba(17,24,39,.10), inset 0 1px 0 rgba(255,255,255,.72)!important}
+    body.rev3 .nav-item{min-height:52px!important;border-radius:20px!important;color:#5d6b80!important}
+    body.rev3 .nav-item.active{color:var(--blue)!important}
+    body.rev3 .nav-liquid-bubble{background:linear-gradient(145deg,rgba(255,255,255,.58),rgba(229,238,255,.42))!important;border:1px solid rgba(255,255,255,.82)!important;box-shadow:0 10px 24px rgba(52,120,246,.10), inset 0 1px 0 rgba(255,255,255,.94)!important}
+    body.rev3 .nav-drag-lens{background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(255,255,255,.07))!important;border:1px solid rgba(255,255,255,.72)!important;box-shadow:0 14px 28px rgba(52,120,246,.10), inset 0 1px 0 rgba(255,255,255,.82)!important}
+    body.rev3 #analysis .card-title h2,body.rev3 .section-title,body.rev3 .card-title h2{letter-spacing:-.04em}
+    body.rev3 #analysis .chart-card{padding:20px 18px 16px!important}
+    body.rev3 #analysis .analysis-budget-card,body.rev3 #analysis .chart-wrap{background:rgba(248,250,252,.78)!important;border:1px solid rgba(15,23,42,.07)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.72)!important}
+    body.rev3 #analysis .category-viz{padding:2px 2px 0}
+    body.rev3 #analysis .category-viz-row{padding:15px 0 14px!important;min-height:72px!important;border-bottom:1px solid rgba(15,23,42,.08)!important;outline:none!important;background:transparent!important}
+    body.rev3 #analysis .category-viz-row:last-child{border-bottom:0!important}
+    body.rev3 #analysis .category-viz-row:focus-visible{border-radius:18px;box-shadow:0 0 0 3px rgba(47,91,255,.12)!important}
+    body.rev3 #analysis .category-viz-name{font-size:15px!important;font-weight:760!important;color:#142034!important}
+    body.rev3 #analysis .category-viz-spent{font-size:15px!important;font-weight:840!important}
+    body.rev3 #analysis .category-viz-max{font-size:13px!important;color:#667085!important}
+    body.rev3 #analysis .category-viz-track{height:10px!important;background:#e6ebf2!important;box-shadow:inset 0 1px 2px rgba(15,23,42,.07)}
+    body.rev3 #analysis .legend{gap:14px;row-gap:8px}
+    body.rev3 #analysis .legend span{font-size:12px!important;font-weight:700;color:#475467}
+    body.rev3 .chart-tip{max-width:min(240px,72vw);font-size:13px;line-height:1.35}
+    body.rev3 .chart-tip strong{display:block;font-size:18px;line-height:1.1;margin-bottom:4px}
+    body.rev3 .chart-tip b{font-size:15px}
+    body.rev3 .chart-wrap{will-change:transform}
+    body.rev3 .monthly-live-point{will-change:transform,opacity}
+    @media (max-width:560px){body.rev3 .sticky-head{padding-top:calc(var(--safe-top) + 8px)!important;padding-bottom:16px!important}body.rev3 .title h1{font-size:clamp(21px,7vw,26px)!important}body.rev3 .title p{font-size:12.5px!important}body.rev3 .period-pill{min-width:min(290px,68vw)!important;font-size:12px!important}body.rev3 .nav-item{min-height:50px!important}body.rev3 .nav-home-btn{width:60px!important;height:60px!important}body.rev3 #analysis .category-viz-meta{align-items:flex-start!important}body.rev3 #analysis .category-viz-values{width:100%;justify-content:flex-start!important}}
+    @media (prefers-reduced-motion: reduce){body.rev3 #revampBackdrop:before,body.rev3 #revampBackdrop:after,body.rev3 .nav-drag-lens,body.rev3 .monthly-live-point,body.rev3 .chart-wrap{animation:none!important;transition:none!important}}
+  </style>
 </head>
 <body data-app-version="3" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
@@ -1994,7 +2041,9 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
   .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.meta-box{padding:12px 14px;border-radius:16px;background:#fff;border:1px solid #e4ebff}.meta-box small{display:block;color:#667085;font-weight:800}.meta-box b{display:block;margin-top:6px;font-size:15px}
   .empty-row{text-align:center;color:#667085;padding:18px}.foot{margin-top:18px;color:#667085;font-size:11px;text-align:center}
   @media print{body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:14px}.hero,.section{box-shadow:none}.section{page-break-inside:avoid}table{page-break-inside:auto}tr{page-break-inside:avoid;page-break-after:auto}}
-</style></head><body>
+</style>
+
+</head><body>
 <div class="page">
   <div class="hero">
     <h1>Report mensile - ${escapeReportHtml(p.label)}</h1>
@@ -2025,6 +2074,78 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
   <div class="foot">Suggerimento: nella finestra di stampa del browser scegli “Salva come PDF” per esportare il report sul tuo dispositivo.</div>
 </div>
 <scr${'ipt'}>window.onload=()=>{setTimeout(()=>window.print(),180)};window.onafterprint=()=>window.close();<\/script>
+
+
+  <script id="v32-liquid-optimization-script">
+    (()=>{
+      document.body.classList.add('rev3-optimized');
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+      const bg = document.getElementById('revampBackdrop');
+      let bgPending = false;
+      function updateBgMotion(){
+        bgPending = false;
+        if(!bg) return;
+        const y = Math.max(0, window.scrollY || 0);
+        const shift = reduced.matches ? 0 : Math.max(-36, Math.min(24, -y * .045));
+        bg.style.setProperty('--dynamic-shift', shift + 'px');
+      }
+      function scheduleBg(){ if(!bgPending){ bgPending = true; requestAnimationFrame(updateBgMotion); } }
+      window.addEventListener('scroll', scheduleBg, {passive:true});
+      window.addEventListener('resize', scheduleBg, {passive:true});
+      scheduleBg();
+      const _drawMonthlyChart = window.drawMonthlyChart;
+      const _drawCategoryChart = window.drawCategoryChart;
+      let analysisRAF = 0;
+      const chartCache = {monthly:'', category:''};
+      function buildMonthlySignature(){
+        try{
+          const p = window.currentPeriod();
+          const periods=[];
+          for(let i=5;i>=0;i--){const d=new Date(p.labelYear,p.labelMonth-i,1); periods.push(window.periodForLabel(d.getFullYear(),d.getMonth()));}
+          return JSON.stringify(periods.map(pp=>{const s=window.periodBudgetSummary(pp); return [pp.labelYear,pp.labelMonth,Number(s.value||0).toFixed(2),Number(s.budget||0).toFixed(2),s.out?1:0]})) + '|' + ((document.getElementById('monthlyCanvas')||{}).clientWidth||0) + 'x' + ((document.getElementById('monthlyCanvas')||{}).clientHeight||0);
+        }catch(e){return String(Date.now());}
+      }
+      function buildCategorySignature(){
+        try{
+          const rows = window.budgetRows().map(r=>[r.name,Number(r.spent||0).toFixed(2),Number(r.max||0).toFixed(2),r.out?1:0]);
+          const host = document.getElementById('categoryViz');
+          return JSON.stringify(rows) + '|' + (host ? host.clientWidth : 0);
+        }catch(e){return String(Date.now());}
+      }
+      window.drawMonthlyChart = function(force=false){
+        const sig = buildMonthlySignature();
+        if(!force && sig === chartCache.monthly) return;
+        chartCache.monthly = sig;
+        _drawMonthlyChart();
+        const canvas = document.getElementById('monthlyCanvas');
+        if(canvas) canvas.classList.add('chart-premium-enter');
+      };
+      window.drawCategoryChart = function(force=false){
+        const sig = buildCategorySignature();
+        if(!force && sig === chartCache.category) return;
+        chartCache.category = sig;
+        _drawCategoryChart();
+      };
+      window.drawCharts = function(force=false){
+        if(window.activeTab !== 'analysis') return;
+        cancelAnimationFrame(analysisRAF);
+        analysisRAF = requestAnimationFrame(()=>{
+          if(force){ chartCache.monthly=''; chartCache.category=''; }
+          window.hideMonthlyChartTooltip && window.hideMonthlyChartTooltip();
+          window.hideCategoryChartTooltip && window.hideCategoryChartTooltip();
+          window.drawMonthlyChart(force);
+          window.drawCategoryChart(force);
+        });
+      };
+      const _setTab = window.setTab;
+      window.setTab = function(tab, scroll=true){ _setTab(tab, scroll); if(tab === 'analysis') window.drawCharts(true); };
+      function refreshIfAnalysis(){ if(window.activeTab === 'analysis') window.drawCharts(true); }
+      window.addEventListener('orientationchange', ()=>setTimeout(refreshIfAnalysis, 180), {passive:true});
+      window.addEventListener('pageshow', refreshIfAnalysis, {passive:true});
+      setTimeout(refreshIfAnalysis, 160);
+    })();
+  </script>
+
 </body></html>`;
       const win = window.open('', '_blank', 'width=1100,height=850');
       if(!win){ showToast('Consenti i popup per esportare il PDF'); return; }
@@ -3470,5 +3591,6 @@ body.rev3 #movements .move-amount{background:transparent!important;border:0!impo
       if (typeof showToast === 'function') showToast('Connessione ripristinata');
     });
   </script>
+
 </body>
 </html>

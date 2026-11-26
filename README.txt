@@ -1,3 +1,6 @@
+Versione: v3.2
+Ottimizzazione fluidità Liquid Glass, safe area e grafici.
+
 TRACCIATORE SPESE REVAMPING – v3
 Nuova Home compatta, registro raggruppato per data, emoji automatiche, form a pannello, navigazione Liquid Glass.
 Dati: chiave localStorage invariata dalla v2/v2.1; importatore JSON precedente mantenuto.
