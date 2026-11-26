@@ -1,6 +1,1 @@
-v3.3 – Ripristino su base v3 funzionante, Liquid Glass leggero, fix grafico categorie, cache grafici. Storage e backup invariati.
-
-TRACCIATORE SPESE REVAMPING – v3
-Nuova Home compatta, registro raggruppato per data, emoji automatiche, form a pannello, navigazione Liquid Glass.
-Dati: chiave localStorage invariata dalla v2/v2.1; importatore JSON precedente mantenuto.
-Caricare tutti i file dello ZIP nella radice di main del repository Tracciatore-Spese-Revamping, sovrascrivendo i file. Aprire ?v=3 dopo pubblicazione. Eseguire backup JSON prima dell’aggiornamento; non caricarlo su GitHub. Primo avvio online necessario per cache offline.
+v3.4 – Liquid glass premium, barra di navigazione trasparente con auto-hide/show, categorie con emoji assegnabile e selezione rapida emoji anche nel nuovo movimento. Cache service worker aggiornata a v3.4.
