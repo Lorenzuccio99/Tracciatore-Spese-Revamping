@@ -1537,7 +1537,33 @@ body.dark-mode .category-viz-row.zero .category-viz-spent{color:var(--muted)!imp
       .move-amount{font-size:20px!important}
     }
 
-  </style>
+  
+/* v2.1 — final cascade: restore the intended dark financial dashboard. */
+body #home .home-summary.card{background:linear-gradient(145deg,#10263e 0%,#183b59 58%,#20576b 100%)!important;border-color:rgba(255,255,255,.25)!important;box-shadow:0 12px 30px rgba(15,35,60,.22)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
+body #home .home-summary .card-title h2{color:#f4f8ff!important;font-size:23px!important}
+body #home .home-summary #periodRange{color:#c1d6e8!important;line-height:1.4}
+body #home #dashboardStats .stat{background:rgba(255,255,255,.095)!important;border:1px solid rgba(255,255,255,.15)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;min-height:84px!important;padding:12px!important}
+body #home #dashboardStats .stat-saldo{background:linear-gradient(125deg,#294b67,#254b65)!important;min-height:130px!important;padding:17px!important}
+body #home #dashboardStats .stat-saldo.saldoNegative{background:linear-gradient(125deg,#623144,#783b4d)!important}
+body #home #dashboardStats .stat .label,body #home #dashboardStats .stat .stat-foot{color:#d3e2ef!important}
+body #home #dashboardStats .stat .value{color:#f7fbff!important;font-variant-numeric:tabular-nums}
+body #home #dashboardStats .stat.green .value{color:#75edbb!important}body #home #dashboardStats .stat.red .value{color:#ffabb2!important}
+body #home #dashboardStats .stat-saldo .value{font-size:clamp(31px,9vw,44px)!important}
+body #home #dashboardStats .stat-saldo.saldoNegative .value{color:#ffb5bb!important}
+body #home #infoStrip{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+body #home #infoStrip .info-tile{background:rgba(255,255,255,.085)!important;border:1px solid rgba(255,255,255,.12)!important;padding:10px 5px!important;min-width:0}
+body #home #infoStrip .info-tile span,body #home #infoStrip .info-tile small{color:#c6d9e7!important;font-size:10px!important;line-height:1.25!important}
+body #home #infoStrip .info-tile b{color:#f5fbff!important;font-size:clamp(13px,3.8vw,20px)!important}
+body #home #infoStrip .info-tile b.info-alert{color:#ffb5bb!important}
+body #home #jumpToMovement{background:linear-gradient(145deg,#eafff8,#bcebe5)!important;color:#153a49!important;border:1px solid rgba(255,255,255,.5)!important;font-size:15px!important;min-height:48px!important}
+body:not(.dark-mode) #revampBackdrop{z-index:-1;background:linear-gradient(155deg,#819dbf,#b5c8de 30%,#e0e9f4 75%,#f2f6fb)!important}
+body:not(.dark-mode) .sticky-head{background:linear-gradient(180deg,rgba(235,244,253,.67),rgba(228,238,249,.42))!important;border-bottom:1px solid rgba(255,255,255,.55)!important}
+body .title h1::after{display:none!important}.profile-badge{font-variant-numeric:tabular-nums}
+body #resetFilters{background:none!important;border:0!important;box-shadow:none!important}
+body .liquid-nav.split-nav{background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+@media(max-width:560px){body #home .home-summary.card{padding:16px!important}body #home #dashboardStats{gap:8px!important}body #home #dashboardStats .stat:not(.stat-saldo) .value{font-size:clamp(17px,5vw,25px)!important}body #home #infoStrip{gap:5px!important}body .topbar-inner{padding:6px 9px!important}body .period-row{gap:7px!important}}
+
+</style>
 </head>
 <body data-app-version="65">
   <div id="revampBackdrop" aria-hidden="true"></div>
@@ -1548,7 +1574,7 @@ body.dark-mode .category-viz-row.zero .category-viz-spent{color:var(--muted)!imp
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
           <div class="title">
             <h1>Tracking Spese</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">Revamp</span></p>
+            <p>Lorenzo Vizzini <span class="profile-badge">v2.1</span></p>
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -3622,8 +3648,8 @@ body.dark-mode .category-viz-row.zero .category-viz-spent{color:var(--muted)!imp
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v2')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v2', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v21')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v21', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {

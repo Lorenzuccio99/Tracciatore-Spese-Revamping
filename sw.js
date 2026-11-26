@@ -1,6 +1,6 @@
-const CACHE_NAME = 'tracking-spese-next-v66';
+const CACHE_NAME = 'tracking-spese-next-revamp-v2.1';
 const INDEX_URL = './index.html';
-const VERSIONED_INDEX_URL = './index.html?v=66';
+const VERSIONED_INDEX_URL = './index.html?v=2.1';
 
 const APP_SHELL = [
   './',
@@ -74,7 +74,7 @@ self.addEventListener('activate', event => {
 
 async function updateNavigationCache(request) {
   try {
-    const response = await fetch(request);
+    const response = await fetch(request, {cache: "no-store"});
     if (!response || !response.ok) return null;
 
     const cache = await caches.open(CACHE_NAME);
@@ -88,6 +88,11 @@ async function updateNavigationCache(request) {
 }
 
 async function cacheFirstNavigation(request, event) {
+  // An explicit version URL requests the published build, not an older cached page.
+  if (new URL(request.url).searchParams.has('v')) {
+    const network = await Promise.race([updateNavigationCache(request),new Promise(resolve=>setTimeout(()=>resolve(null),1800))]);
+    if(network) return network;
+  }
   const cache = await caches.open(CACHE_NAME);
 
   const cached =
