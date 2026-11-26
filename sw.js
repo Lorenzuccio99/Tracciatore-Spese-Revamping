@@ -1,6 +1,6 @@
-const CACHE_NAME = 'tracking-spese-next-v1';
+const CACHE_NAME = 'tracking-spese-next-v66';
 const INDEX_URL = './index.html';
-const VERSIONED_INDEX_URL = './index.html?v=1';
+const VERSIONED_INDEX_URL = './index.html?v=66';
 
 const APP_SHELL = [
   './',
@@ -105,7 +105,7 @@ async function cacheFirstNavigation(request, event) {
   if (networkResponse) return networkResponse;
 
   return new Response(
-    '<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>APP Tracking Spese</title><body style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;padding:24px;background:#f7f8ff;color:#101828"><h1>APP Tracking Spese</h1><p>La modalità offline non è stata ancora installata in questo contesto. Collegati una volta a internet e apri l’app dall’icona Home fino al messaggio “App pronta anche senza connessione”.</p></body></html>',
+    '<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Tracking Spese Revamp</title><body style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;padding:24px;background:#f7f8ff;color:#101828"><h1>Tracking Spese Revamp</h1><p>La modalità offline non è stata ancora installata in questo contesto. Collegati una volta a internet e apri l’app dall’icona Home fino al messaggio “App pronta anche senza connessione”.</p></body></html>',
     {
       status: 503,
       headers: { 'Content-Type': 'text/html; charset=utf-8' }

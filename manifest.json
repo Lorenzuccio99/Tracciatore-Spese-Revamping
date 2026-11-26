@@ -1,13 +1,13 @@
 {
-  "name": "APP Tracking Spese Next",
-  "short_name": "Spese Next",
-  "description": "App personale offline per il tracking delle spese mensili.",
+  "name": "Tracking Spese Revamp",
+  "short_name": "Spese Revamp",
+  "description": "App personale offline per il tracking delle spese mensili, ridisegnata in stile Liquid Glass.",
   "lang": "it",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#dce7f1",
-  "theme_color": "#dce7f1",
+  "background_color": "#dce4ef",
+  "theme_color": "#dce4ef",
   "orientation": "portrait",
   "icons": [
     {
