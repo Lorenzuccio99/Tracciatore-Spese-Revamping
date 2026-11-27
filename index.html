@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v3.7</title>
+  <title>Tracciatore Spese · v3.8</title>
   <meta name="theme-color" content="#dce6f4" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1645,8 +1645,52 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
 @media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important}body.rev3 .chart-cloud-tooltip{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
 </style>
 
+
+<style id="rev38-refraction">
+/* Compact safe header: preserve 44px touch targets. */
+body.rev3 .sticky-head{padding-top:calc(env(safe-area-inset-top) + 10px)!important;padding-bottom:1px!important}
+body.rev3 .sticky-head::before{height:env(safe-area-inset-top)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3 .topbar-inner{min-height:50px!important}
+body.rev3 .period-row{margin-top:0!important;height:44px!important}
+body.rev3 #periodLabel{font-size:15px!important}
+/* A stable dialog header and exactly one scrollable form region. */
+body.rev3 #entryModal.modal-backdrop{--entry-safe-top:env(safe-area-inset-top,0px);--entry-safe-bottom:env(safe-area-inset-bottom,0px);--entry-offset:0px;--entry-vh:100dvh;top:var(--entry-offset)!important;height:var(--entry-vh)!important;padding:max(8px,calc(var(--entry-safe-top) - var(--entry-offset))) max(12px,env(safe-area-inset-right)) max(8px,var(--entry-safe-bottom)) max(12px,env(safe-area-inset-left))!important;align-items:center!important;justify-content:center!important;}
+body.rev3 #entryModal.modal-backdrop.keyboard-open{padding-bottom:8px!important;align-items:flex-start!important;}
+body.rev3 #entryModal #movementEntry{display:flex!important;flex-direction:column!important;gap:0!important;min-height:0!important;max-height:100%!important;padding:0!important;overflow:hidden!important;scroll-margin:0!important;}
+body.rev3 #entryModal #movementEntry>.card-title{flex:0 0 auto;min-height:0!important;margin:0!important;padding:12px 18px 8px!important;border-bottom:1px solid var(--line);}
+body.rev3 #movementEntry #entryTitle{font-size:21px!important;line-height:1.15!important;}
+body.rev3 #entryModal #entryClose{flex:0 0 44px;width:44px!important;height:44px!important;}
+body.rev3 #entryModal .entry-scroll{flex:0 1 auto;min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:12px 18px 18px;scroll-padding-block:10px;}
+body.rev3 #entryModal .entry-scroll::-webkit-scrollbar{display:none}
+body.rev3 #entryModal.keyboard-open #movementEntry{height:100%!important;animation:none!important;border-radius:22px!important;}
+body.rev3 #entryModal.keyboard-open .entry-scroll{flex:1 1 0;}
+body.rev3 #entryModal.keyboard-open #movementEntry>.card-title{padding:5px 12px!important;}
+body.rev3 #entryModal.keyboard-open .entry-scroll{padding:9px 14px 14px;}
+body.rev3 #entryModal .entry-types{margin:0 0 12px!important;}
+body.rev3 #entryModal #movementEntry .input,body.rev3 #entryModal #movementEntry .select{font-size:16px!important;}
+body.rev3 #entryModal #movementEntry #mAmount{font-size:24px!important;}
+body.rev3 #entryModal #movementEntry .input:focus{outline:none!important;box-shadow:0 0 0 2px #6298df55!important;}
+/* Optical edge, one backdrop filter per control surface. Reflections are static until interaction. */
+body.rev3 #bottomNav.rev3-nav{background:linear-gradient(165deg,#ffffff22,#ffffff05 52%,#ffffff18)!important;border-color:#ffffff92!important;box-shadow:0 8px 23px #263e6024,inset 0 1px 1px #ffffffdf,inset 0 -1px 2px #b4cbe94d!important;backdrop-filter:blur(6px) saturate(175%) contrast(1.035)!important;-webkit-backdrop-filter:blur(6px) saturate(175%) contrast(1.035)!important;}
+body.rev3 #bottomNav.rev3-nav:before{background:radial-gradient(ellipse at 18% 0%,#ffffff9c,transparent 42%),linear-gradient(115deg,#c7e9ff35,transparent 25%,transparent 73%,#e0cfff36)!important;opacity:.72;}
+body.rev3 #bottomNav.rev3-nav:after{content:'';position:absolute;inset:1px;border-radius:inherit;pointer-events:none;border:1px solid #ffffff24;box-shadow:inset 1px 0 1px #ffffff4d,inset -1px 0 1px #b4c7f52f;}
+body.rev3 #bottomNav .nav-drag-lens{background:radial-gradient(ellipse at var(--light-x,30%) 0%,#ffffffd1,transparent 53%),linear-gradient(155deg,#ffffff4d,#a9c8ef22 48%,#d1c1ff40)!important;border-color:#ffffffe3!important;box-shadow:inset 0 1px 2px #fff,inset 0 -1px 3px #8eacd861,0 4px 12px #203c6229!important;transform-origin:center;}
+body.rev3[data-nav-dragging="1"] #bottomNav .nav-drag-lens{transform:translate3d(var(--nav-lens-x,0px),var(--nav-lens-y,0px),0) scale(var(--lens-sx,1.04),var(--lens-sy,1.0))!important;transition:transform .15s cubic-bezier(.16,.85,.25,1.1),opacity .13s ease!important;}
+body.rev3 #bottomNav .nav-item .ico{transition:transform .20s cubic-bezier(.18,.8,.25,1.25)!important;}
+body.rev3 #bottomNav .nav-item.pressed .ico{transform:scale(1.12)!important;}
+body.rev3 #bottomNav .nav-add{background:radial-gradient(ellipse at 30% 4%,#b1ceff 0%,#5e98f8 24%,#2f6ddd 58%,#204cbe 100%)!important;border-color:#dbe9ffb5!important;box-shadow:inset 0 1px 2px #ffffffad,inset 0 -2px 3px #143b944d,0 3px 9px #2456b83b!important;}
+body.rev3 .icon-btn{background:radial-gradient(ellipse at 28% 0%,#ffffffd9,transparent 65%),linear-gradient(155deg,#ffffff65,#ffffff1a)!important;border-color:#ffffffaf!important;box-shadow:inset 0 1px 1px #ffffffc0,inset 0 -1px 2px #aec8ed35,0 3px 9px #243d6710!important;}
+body.rev3.dark-mode #bottomNav.rev3-nav{background:linear-gradient(155deg,#26394f61,#101c302b)!important;border-color:#c8dfff45!important;box-shadow:0 8px 23px #0005,inset 0 1px 1px #ffffff39!important;}
+body.rev3.dark-mode #bottomNav.rev3-nav:before{opacity:.23;}
+body.rev3.dark-mode #bottomNav .nav-drag-lens{background:radial-gradient(ellipse at var(--light-x,30%) 0%,#c6e1ff80,transparent 55%),linear-gradient(145deg,#a4c5f340,#607da536)!important;border-color:#c2dfff7a!important;box-shadow:inset 0 1px 2px #d5e8ff78,0 4px 12px #0003!important;}
+body.rev3.dark-mode .icon-btn{background:linear-gradient(155deg,#ffffff24,#ffffff08)!important;border-color:#ffffff30!important;box-shadow:inset 0 1px 1px #ffffff24!important;}
+body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38DialogIn .24s cubic-bezier(.18,.8,.25,1.02) both!important;}
+@keyframes rev38DialogIn{from{opacity:0;transform:translateY(7px) scale(.98)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){body.rev3 #entryModal.open #movementEntry,body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:none!important}body.rev3 #bottomNav .nav-item .ico,body.rev3[data-nav-dragging="1"] #bottomNav .nav-drag-lens{transition:none!important}body.rev3[data-nav-dragging="1"] #bottomNav .nav-drag-lens{transform:translate3d(var(--nav-lens-x,0px),var(--nav-lens-y,0px),0)!important}}
+@media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important}}
+</style>
 </head>
-<body data-app-version="3.7" class="rev3">
+<body data-app-version="3.8" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
@@ -1655,7 +1699,7 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
           <div class="title">
             <h1 id="screenTitle">Home</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">v3.7</span></p>
+            <p>Lorenzo Vizzini <span class="profile-badge">v3.8</span></p>
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -1802,7 +1846,7 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
   </div>
 
 <div class="modal-backdrop entry-backdrop" id="entryModal" aria-hidden="true"><article class="card card-pad form-card" id="movementEntry" role="dialog" aria-modal="true" aria-labelledby="entryTitle">
-            <div class="card-title"><div><h2 id="entryTitle">Nuovo Movimento</h2></div><button class="icon-btn" type="button" id="entryClose" aria-label="Chiudi">×</button></div><span class="pill blue" id="modePill">Nuovo</span><div class="entry-types" aria-label="Tipo movimento"><button type="button" data-entry-type="uscita">↘ Uscita</button><button type="button" data-entry-type="entrata">↗ Entrata</button></div>
+            <div class="card-title"><div><h2 id="entryTitle">Nuovo Movimento</h2></div><button class="icon-btn" type="button" id="entryClose" aria-label="Chiudi">×</button></div><div class="entry-scroll"><span class="pill blue" id="modePill">Nuovo</span><div class="entry-types" aria-label="Tipo movimento"><button type="button" data-entry-type="uscita">↘ Uscita</button><button type="button" data-entry-type="entrata">↗ Entrata</button></div>
             <form id="movementForm">
               <input type="hidden" id="editId" />
               <div class="fields">
@@ -1818,7 +1862,7 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
                 </div>
                 <div style="display:flex;gap:10px;align-items:center"><button class="primary" style="flex:1" id="saveMovement" type="submit">+ Aggiungi movimento</button><button class="secondary" id="cancelEdit" type="button" style="display:none">Annulla</button></div>
               </div>
-            </form>
+            </form></div>
           </article></div>
 <nav class="liquid-nav rev3-nav" id="bottomNav" aria-label="Navigazione principale"><button type="button" class="nav-item nav-home-btn" data-tab="home" aria-label="Home"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><span class="nav-label">Home</span></button><button type="button" class="nav-item " data-tab="movements" aria-label="Movimenti"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span><span class="nav-label">Movimenti</span></button><button type="button" class="nav-add" id="navAdd" aria-label="Aggiungi movimento"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" class="nav-item " data-tab="analysis" aria-label="Analisi"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16v-5M12 16V4M18 16V8"/></svg></span><span class="nav-label">Analisi</span></button><button type="button" class="nav-item " data-tab="categories" aria-label="Categorie"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span><span class="nav-label">Categorie</span></button><span class="nav-drag-lens" id="navDragLens" aria-hidden="true"></span></nav>
 
@@ -1828,7 +1872,7 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
       <div class="drawer-head">
         <div>
           <h2 id="sideMenuTitle">Menu rapido</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.7</p>
+          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.8</p>
         </div>
         <button class="modal-close" id="sideMenuClose" aria-label="Chiudi menu">×</button>
       </div>
@@ -3439,8 +3483,8 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
     function csv(rows){const header=['data','descrizione','tipo','categoria','importo'];const lines=[header.join(';')];rows.forEach(m=>lines.push([m.date,m.desc,m.type,m.category,String(m.amount).replace('.',',')].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(';')));return lines.join('\n')}
 
     function updateEntryVisual(){const type=document.getElementById('mType').value;document.querySelectorAll('[data-entry-type]').forEach(b=>{b.classList.toggle('active',b.dataset.entryType===type);b.setAttribute('aria-pressed',String(b.dataset.entryType===type))});}
-    function openEntry(){const modal=document.getElementById('entryModal');document.body.classList.remove('movements-scroll-locked');document.getElementById('entryTitle').textContent=document.getElementById('editId').value?'Modifica Movimento':'Nuovo Movimento';updateEntryVisual();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.getElementById('movementEntry').scrollTop=0;}
-    function closeEntry(){const modal=document.getElementById('entryModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');syncMovementScrollLock();}
+    function openEntry(){const modal=document.getElementById('entryModal');document.body.classList.remove('movements-scroll-locked');document.getElementById('entryTitle').textContent=document.getElementById('editId').value?'Modifica Movimento':'Nuovo Movimento';updateEntryVisual();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.querySelector('#entryModal .entry-scroll').scrollTop=0;queueEntryViewport();}
+    function closeEntry(){const modal=document.getElementById('entryModal');if(modal.contains(document.activeElement))document.activeElement.blur();modal.classList.remove('open','keyboard-open');modal.setAttribute('aria-hidden','true');syncMovementScrollLock();}
     function cancelEntry(){document.getElementById('cancelEdit').click();resetHomeDefaults(true);closeEntry();}
     document.getElementById('navAdd').addEventListener('click',openEntry);
     document.getElementById('entryClose').addEventListener('click',cancelEntry);
@@ -3518,6 +3562,14 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
       nav.style.setProperty('--nav-lens-w',w+'px');
       nav.style.setProperty('--nav-lens-h',h+'px');
       nav.style.setProperty('--nav-lens-r',isHome?'999px':'28px');
+      const previous=Number(nav.dataset.lensCenter||x);
+      const direction=x-previous;
+      nav.dataset.lensCenter=String(x);
+      const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      nav.style.setProperty('--light-x',direction>0?'76%':direction<0?'24%':'34%');
+      nav.style.setProperty('--lens-sx',!reduced&&Math.abs(direction)>5?'1.10':'1.04');
+      nav.style.setProperty('--lens-sy',!reduced&&Math.abs(direction)>5?'.96':'1');
+      clearTimeout(nav._lensSettle);nav._lensSettle=setTimeout(()=>{nav.style.setProperty('--lens-sx','1.04');nav.style.setProperty('--lens-sy','1');},130);
     }
     function previewNavButton(btn){
       if(!btn) return;
@@ -3724,17 +3776,37 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
     document.getElementById('sideMenu').addEventListener('click',e=>{if(e.target.id==='sideMenu')closeSideMenu()});
     document.getElementById('drawerHelpFab').addEventListener('click',()=>renderDrawerContent('help'));
     document.querySelectorAll('.drawer-menu-item').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.panel==='current'){goToCurrentMonth(false);renderDrawerContent('current');return}renderDrawerContent(b.dataset.panel)}));
-    // Keep dialogs inside the visible viewport when the iOS keyboard opens.
-    if(window.visualViewport){
-      const updateDialogViewport=()=>{
-        const v=window.visualViewport;
-        document.documentElement.style.setProperty('--dialog-height',v.height+'px');
-        document.documentElement.style.setProperty('--dialog-top',v.offsetTop+'px');
-      };
-      window.visualViewport.addEventListener('resize',updateDialogViewport,{passive:true});
-      window.visualViewport.addEventListener('scroll',updateDialogViewport,{passive:true});
-      updateDialogViewport();
+    // Visual viewport keyboard handling: no double safe-area padding.
+    let entryViewportFrame=0;
+    let entryNormalHeight=Math.round(window.visualViewport?.height||window.innerHeight);
+    function updateDialogViewport(){
+      entryViewportFrame=0;
+      const v=window.visualViewport;
+      const h=Math.round(v?.height||window.innerHeight), top=Math.max(0,Math.round(v?.offsetTop||0));
+      const root=document.documentElement;
+      root.style.setProperty('--dialog-height',h+'px');root.style.setProperty('--dialog-top',top+'px');
+      const modal=document.getElementById('entryModal'), scroll=modal.querySelector('.entry-scroll');
+      const focus=document.activeElement;
+      const editing=modal.contains(focus)&&focus.matches('input:not([type=hidden]),textarea,select');
+      const open=modal.classList.contains('open');
+      if(!open&&!editing)entryNormalHeight=h;
+      if(open&&!editing&&h>entryNormalHeight)entryNormalHeight=h;
+      const keyboard=open&&(Math.max(entryNormalHeight,window.innerHeight,root.clientHeight)-h>100);
+      modal.style.setProperty('--entry-vh',h+'px');modal.style.setProperty('--entry-offset',top+'px');
+      modal.classList.toggle('keyboard-open',keyboard);
+      // Scroll only the form, never the outer page. Do not fight the user's own scrolling.
+      if(keyboard&&editing&&scroll.contains(focus)){
+        const box=scroll.getBoundingClientRect(), field=focus.getBoundingClientRect();
+        if(field.bottom>box.bottom-8)scroll.scrollTop+=field.bottom-box.bottom+8;
+        else if(field.top<box.top+8)scroll.scrollTop+=field.top-box.top-8;
+      }
     }
+    function queueEntryViewport(){if(!entryViewportFrame)entryViewportFrame=requestAnimationFrame(updateDialogViewport);}
+    window.addEventListener('resize',queueEntryViewport,{passive:true});
+    if(window.visualViewport){window.visualViewport.addEventListener('resize',queueEntryViewport,{passive:true});window.visualViewport.addEventListener('scroll',queueEntryViewport,{passive:true});}
+    document.getElementById('entryModal').addEventListener('focusin',queueEntryViewport);
+    document.getElementById('entryModal').addEventListener('focusout',queueEntryViewport);
+    updateDialogViewport();
     const settingsModal=document.getElementById('settingsModal');
     function openSettings(){document.body.classList.remove('movements-scroll-locked');syncSettingsControls();settingsModal.classList.add('open');settingsModal.setAttribute('aria-hidden','false');settingsModal.querySelector('.pref-body').scrollTop=0;}
     function closeSettings(){settingsModal.classList.remove('open');settingsModal.setAttribute('aria-hidden','true');syncMovementScrollLock()}
@@ -3814,8 +3886,8 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.7')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.7', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.8')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.8', '1');
               location.reload();
             }
           });
@@ -3829,8 +3901,8 @@ body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:a
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v37')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v37', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v38')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v38', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {

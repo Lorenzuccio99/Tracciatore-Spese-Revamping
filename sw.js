@@ -1,6 +1,6 @@
-const CACHE_NAME = 'tracking-spese-next-revamp-v37';
+const CACHE_NAME = 'tracking-spese-next-revamp-v38';
 const INDEX_URL = './index.html';
-const VERSIONED_INDEX_URL = './index.html?v=3.7';
+const VERSIONED_INDEX_URL = './index.html?v=3.8';
 
 const APP_SHELL = [
   './',

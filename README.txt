@@ -16,3 +16,6 @@ Collaudo Chromium: viewport 393 x 852, safe area simulata 59/34 px, archiviazion
 Versione 3.7 – Premium Design & Motion
 Palette, materiali, contorni, barra glass, grafico mensile interattivo con linea guida, animazioni brevi e dettaglio residuo budget. Dati e importazione invariati.
 Test Chromium 393×852 con storage simulato; offline da verificare su iPhone.
+
+
+v3.8: gestione VisualViewport e tastiera con intestazione fissa e form scorrevole; header compatto; riflessi e lente elastica senza loop di rendering. Dati e backup invariati.
