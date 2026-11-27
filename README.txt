@@ -1,3 +1,4 @@
-v4.2 – Premium Visual Experience + Financial Intelligence
-Menu rapido in navigazione, categorie da Analisi, insight locali, correzione selettori.
-Conserva i backup JSON e lo storage della v4.1. Pubblicare tutti i file nella root del repository. Non caricare backup personali su GitHub.
+Tracciatore Spese – aggiornamento interfaccia
+Caricare tutti i file nella radice del repository GitHub Pages.
+Effettuare un backup completo JSON prima dell’aggiornamento. Non pubblicare mai i backup personali.
+Aprire online dopo la pubblicazione per aggiornare la cache offline.

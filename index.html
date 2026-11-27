@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v4.2</title>
+  <title>Tracciatore Spese</title>
   <meta name="theme-color" content="#dfe7f2" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1841,8 +1841,37 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
 @media(prefers-reduced-motion:reduce){body.rev3 #revampBackdrop::before,body.rev3 #revampBackdrop::after{transition:none!important}}@media(prefers-reduced-transparency:reduce){body.rev3[data-glass="clear"] #bottomNav.rev3-nav{background:var(--surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
 </style>
 
+
+<style id="visual-polish">
+/* Explicit grid coordinates prevent inherited placements from splitting the title. */
+body.rev3[data-active-tab="categories"] .shell .sticky-head .topbar-inner{grid-template-columns:44px minmax(0,1fr) 44px!important;grid-template-rows:minmax(44px,auto)!important;gap:8px!important;align-items:center!important}
+body.rev3[data-active-tab="categories"] .shell .sticky-head .topbar-inner #menuBtn{grid-column:1!important;grid-row:1!important;justify-self:start!important;display:grid!important}
+body.rev3[data-active-tab="categories"] .shell .sticky-head .topbar-inner .title{grid-column:2!important;grid-row:1!important;text-align:center!important;min-width:0!important;width:100%!important}
+body.rev3[data-active-tab="categories"] .shell .sticky-head #screenTitle{white-space:nowrap!important;overflow-wrap:normal!important;word-break:normal!important;font-size:clamp(21px,6.6vw,29px)!important;line-height:1.15!important}
+body.rev3[data-active-tab="categories"] .shell .sticky-head .topbar-inner #settingsBtn{grid-column:3!important;grid-row:1!important}
+/* Four separate financial colors, not affected by UI palette. */
+body.rev3{--annual-income:#087b52;--annual-expense:#bd3049;--annual-positive:#29742f;--annual-negative:#b52235;--annual-average:#a84060}
+body.rev3.dark-mode{--annual-income:#63e2ac;--annual-expense:#ff879b;--annual-positive:#a2e582;--annual-negative:#ff9b93;--annual-average:#f3a5bd}
+body.rev3 #menu .annual-income{color:var(--annual-income)!important}body.rev3 #menu .annual-expense{color:var(--annual-expense)!important}body.rev3 #menu .annual-positive{color:var(--annual-positive)!important}body.rev3 #menu .annual-negative{color:var(--annual-negative)!important}body.rev3 #menu .annual-average{color:var(--annual-average)!important}body.rev3 #menu .annual-neutral{color:var(--muted)!important}
+body.rev3 #menu .v41-legend span:first-child{color:var(--annual-income)!important}body.rev3 #menu .v41-legend span:nth-child(2){color:var(--annual-expense)!important}
+body.rev3 #menu .v41-bars i{background:linear-gradient(180deg,#52cfa4,var(--annual-income))!important}body.rev3 #menu .v41-bars i+i{background:linear-gradient(180deg,#f48a96,var(--annual-expense))!important}
+body.rev3 #menu .v41-month:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+/* Near-clear glass with optical edge only: do not wash out the content beneath. */
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav{background:linear-gradient(155deg,#ffffff0d,#ffffff02 55%,#c9ddf50a)!important;border:1px solid #ffffff85!important;box-shadow:0 6px 18px #21375020,inset 0 1px 1px #ffffffc0,inset 0 -1px 1px #92abd33d!important;backdrop-filter:blur(1.5px) saturate(125%)!important;-webkit-backdrop-filter:blur(1.5px) saturate(125%)!important;filter:none!important}
+body.rev3.dark-mode[data-glass="clear"] #bottomNav.rev3-nav{background:linear-gradient(155deg,#26394a25,#101a2812)!important;border-color:#dcecff50!important;box-shadow:0 6px 18px #0004,inset 0 1px 1px #f4f9ff48!important}
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav::before{background:linear-gradient(115deg,#ffffff40,transparent 18%,transparent 82%,#ffffff30)!important;opacity:.35!important}
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav::after{border-color:#ffffff20!important;box-shadow:inset 1px 0 1px #ffffff40,inset -1px 0 1px #a5bfe32b!important}
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav .nav-item:not(.active):not(.previewed){background:transparent!important;box-shadow:none!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav .nav-item.active,body.rev3[data-glass="clear"] #bottomNav.rev3-nav .nav-item.previewed{background:#ffffff16!important;box-shadow:inset 0 0 0 1px #ffffff60!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3.dark-mode[data-glass="clear"] #bottomNav.rev3-nav .nav-item.active,body.rev3.dark-mode[data-glass="clear"] #bottomNav.rev3-nav .nav-item.previewed{background:#b4d2ff18!important;box-shadow:inset 0 0 0 1px #cce4ff35!important}
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav .nav-item svg{filter:drop-shadow(0 1px 1px #ffffff90)!important}
+body.rev3.dark-mode[data-glass="clear"] #bottomNav.rev3-nav .nav-item svg{filter:drop-shadow(0 1px 1px #0008)!important}
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav .nav-drag-lens{background:radial-gradient(ellipse at var(--light-x,30%) 0%,#ffffff70,transparent 55%),linear-gradient(145deg,#ffffff12,#bdd8ff16 42%,#c8b4ef25)!important;border-color:#ffffffb0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+@media(prefers-reduced-transparency:reduce){body.rev3[data-glass="clear"] #bottomNav.rev3-nav{background:var(--surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3[data-glass="clear"] #bottomNav.rev3-nav::before,body.rev3[data-glass="clear"] #bottomNav.rev3-nav::after{display:none!important}}
+</style>
+
 </head>
-<body data-app-version="4.2" class="rev3">
+<body data-app-version="4.3" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
@@ -1872,9 +1901,9 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
             <div id="dashboardStats"></div>
           </article>
           <section class="home-insights"><div class="section-heading"><h2>In evidenza</h2><span>Il punto sulle tue finanze</span></div><div class="insight-list" id="infoStrip"></div></section>
-          <section class="home-intelligence"><div class="section-heading"><h2>Analisi intelligente</h2><span>Solo sul dispositivo</span></div><div class="intelligence-list" id="financialIntelligence"></div></section>
           <section class="home-budget"><div class="section-heading"><h2>Budget categorie</h2><button class="text-link" type="button" id="homeBudgetLink">Vedi tutti ›</button></div><div class="preview-list" id="homeBudgetPreview"></div></section>
           <section class="home-recent"><div class="section-heading"><h2>Ultimi movimenti</h2><button class="text-link" type="button" id="homeMovementsLink">Vedi tutti ›</button></div><div class="preview-list" id="homeRecent"></div></section>
+          <section class="home-intelligence"><div class="section-heading"><h2>Analisi intelligente</h2><span>Solo sul dispositivo</span></div><div class="intelligence-list" id="financialIntelligence"></div></section>
         </div>
       </section>
 
@@ -2000,7 +2029,7 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
       <div class="drawer-head">
         <div>
           <h2 id="sideMenuTitle">I tuoi strumenti</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario. · v4.2</p>
+          <p>Accessi rapidi e lettura veloce del mese finanziario.</p>
         </div>
         <button class="modal-close" id="sideMenuClose" aria-label="Torna alla Home">⌂</button>
       </div>
@@ -2269,16 +2298,17 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
       const months=Array.from({length:12},(_,i)=>a.rows.find(r=>r.labelMonth===i)||null);
       const max=Math.max(1,...a.rows.flatMap(r=>[r.entrate,r.uscite]));
       const initial=a.rows.length?a.rows[0].labelMonth:0;
-      return `<div class="v41-annual"><div class="v41-legend"><span><i></i> Entrate</span><span><i></i> Uscite</span></div><div class="v41-chart" role="group" aria-label="Entrate e uscite per mese"><div class="v41-axis"><span>${fmt.format(max)}</span><span>${fmt.format(max/2)}</span><span>0 €</span></div><div class="v41-columns">${months.map((r,i)=>`<button type="button" class="v41-month ${i===initial?'active':''}" data-v41-month="${i}" data-v41-year="${year}" aria-pressed="${i===initial}" aria-label="${monthNames[i]} ${year}${r?', entrate '+fmt.format(r.entrate)+', uscite '+fmt.format(r.uscite):', nessun dato'}"><span class="v41-bars"><i style="--bar-height:${r?r.entrate/max*100:0}%"></i><i style="--bar-height:${r?r.uscite/max*100:0}%"></i></span><span>${monthNames[i].slice(0,3)}</span></button>`).join('')}</div></div><label>Mese da consultare<select id="v41AnnualMonth" data-year="${year}">${monthNames.map((name,i)=>`<option value="${i}" ${i===initial?'selected':''}>${name}</option>`).join('')}</select></label><div id="v41AnnualDetail">${v41AnnualDetail(a,year,initial)}</div><small>Tocca un mese per il dettaglio. I mesi senza movimenti non sono stime.</small></div>`;
+      return `<div class="v41-annual"><div class="v41-legend"><span><i></i> Entrate</span><span><i></i> Uscite</span></div><div class="v41-chart" role="group" aria-label="Entrate e uscite per mese"><div class="v41-axis"><span>${fmt.format(max)}</span><span>${fmt.format(max/2)}</span><span>0 €</span></div><div class="v41-columns">${months.map((r,i)=>`<button type="button" class="v41-month ${i===initial?'active':''}" data-v41-month="${i}" data-v41-year="${year}" aria-pressed="${i===initial}" aria-label="${monthNames[i]} ${year}${r?', entrate '+fmt.format(r.entrate)+', uscite '+fmt.format(r.uscite):', nessun dato'}"><span class="v41-bars"><i style="--bar-height:${r?r.entrate/max*100:0}%"></i><i style="--bar-height:${r?r.uscite/max*100:0}%"></i></span><span>${monthNames[i].slice(0,3)}</span></button>`).join('')}</div></div><div id="v41AnnualDetail" aria-live="polite">${v41AnnualDetail(a,year,initial)}</div><small>Tocca un mese per il dettaglio. I mesi senza movimenti non sono stime.</small></div>`;
     }
-    function v41AnnualDetail(a,year,i){const r=a.rows.find(x=>x.labelMonth===i);return `<div class="v41-detail"><strong>${monthNames[i]} ${year}</strong>${r?`<div class="drawer-grid">${v40Metric('Entrate',r.entrate)}${v40Metric('Uscite',r.uscite)}${v40Metric('Saldo',r.saldo)}</div>`:'<p>Nessun movimento registrato.</p>'}</div>`;}
+    function v41AnnualDetail(a,year,i){const r=a.rows.find(x=>x.labelMonth===i);return `<div class="v41-detail"><strong>${monthNames[i]} ${year}</strong>${r?`<div class="drawer-grid">${v40Metric('Entrate',r.entrate,'annual-income')}${v40Metric('Uscite',r.uscite,'annual-expense')}${v40Metric('Saldo',r.saldo,annualBalanceTone(r.saldo))}</div>`:'<p>Nessun movimento registrato.</p>'}</div>`;}
     function v41Days(date,base=todayKey()){const ms=x=>{const [y,m,d]=x.split('-').map(Number);return Date.UTC(y,m-1,d);};return Math.round((ms(date)-ms(base))/86400000);}
     function v41NextDate(r){const d=toDate(r.date),day=r.anchorDay||d.getDate();d.setDate(1);d.setMonth(d.getMonth()+(r.frequency==='yearly'?12:1));d.setDate(Math.min(day,new Date(d.getFullYear(),d.getMonth()+1,0).getDate()));return dateKey(d);}
     function v41Due(r){const days=v41Days(r.date);return {days,label:days<0?'Scaduta da '+(-days)+' g':days===0?'Scade oggi':days===1?'Scade domani':'Tra '+days+' giorni',kind:days<0?'late':days<=7?'soon':'future'};}
     function v41RecurringOverview(rows){let next30=0,count=0,overdue=0,soon=0;for(const r of rows){let d={...r};if(v41Days(d.date)<0){overdue++;continue;}if(v41Days(d.date)<=7)soon++;for(let n=0;n<3&&v41Days(d.date)<=30;n++){next30+=d.amount;count++;d.date=v41NextDate(d);}}return `<div class="drawer-grid">${v40Metric('Prossimi 30 giorni',next30)}<div class="drawer-metric"><span>Scadenze nei prossimi 30 gg</span><b>${count}</b></div></div><div class="v41-due-summary"><span class="v41-due late">${overdue} scadute</span><span class="v41-due soon">${soon} entro 7 giorni</span></div><small>Previsione delle ricorrenze non scadute; le arretrate sono segnalate a parte.</small>`;}
     function v41RecurringForm(r=null){return `<form id="v40RecurringForm" ${r?'data-edit-id="'+escapeHtml(r.id)+'"':''}><label>Nome<input name="name" required maxlength="100" placeholder="Es. Netflix" value="${escapeHtml(r?.name||'')}"></label><label>Importo (€)<input name="amount" type="number" min="0.01" max="100000000" step="0.01" required value="${r?.amount??''}"></label><label>Frequenza<select name="frequency"><option value="monthly" ${r?.frequency!=='yearly'?'selected':''}>Mensile</option><option value="yearly" ${r?.frequency==='yearly'?'selected':''}>Annuale</option></select></label><label>Prossima scadenza<input name="date" type="date" required value="${r?.date||todayKey()}"></label><button class="primary" type="submit">${r?'Salva modifiche':'Aggiungi'}</button>${r?'<button class="secondary" type="button" data-v41-cancel-edit> Annulla</button>':''}</form>`;}
     function v40Annual(year){const rows=buildArchive().filter(r=>r.labelYear===year&&r.count>0);return {entrate:rows.reduce((s,r)=>s+r.entrate,0),uscite:rows.reduce((s,r)=>s+r.uscite,0),saldo:rows.reduce((s,r)=>s+r.saldo,0),count:rows.length,rows};}
-    function v40Metric(label,value){return `<div class="drawer-metric"><span>${escapeHtml(label)}</span><b class="v40-sensitive">${fmt.format(value)}</b></div>`;}
+    function v40Metric(label,value,tone=''){return `<div class="drawer-metric"><span>${escapeHtml(label)}</span><b class="v40-sensitive ${tone}">${fmt.format(value)}</b></div>`;}
+    function annualBalanceTone(value){return value>0?'annual-positive':value<0?'annual-negative':'annual-neutral';}
     function renderV40Panel(panel,box){
       const s=state.settings, empty='<p>Nessun elemento salvato.</p>';
       const card=(title,body)=>`<div class="drawer-card"><h3>${title}</h3>${body}</div>`;
@@ -2286,7 +2316,7 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
       let body='';
       if(panel==='annual'){
         const years=[...new Set([getPeriod(new Date()).labelYear,...buildArchive().map(r=>r.labelYear)])].sort((a,b)=>b-a);const year=years.includes(Number(box.dataset.annualYear))?Number(box.dataset.annualYear):years[0];const a=v40Annual(year),prev=v40Annual(year-1);
-        body=card('Bilancio annuale',`<p>Anno finanziario: i periodi sono attribuiti all’anno della loro etichetta.</p><label>Anno<select id="v40AnnualYear">${years.map(y=>`<option ${y===year?'selected':''}>${y}</option>`).join('')}</select></label><div class="drawer-grid">${v40Metric('Entrate',a.entrate)}${v40Metric('Uscite',a.uscite)}${v40Metric('Saldo',a.saldo)}${v40Metric('Media uscite / mese registrato',a.count?a.uscite/a.count:0)}</div><p>${a.count} ${a.count===1?'periodo con movimenti':'periodi con movimenti'} · confronto su dati registrati, anche parziali.</p>`)+card('Andamento annuale',v41AnnualChart(a,year))+card('Anno precedente',prev.count?`<div class="drawer-grid">${v40Metric('Entrate '+(year-1),prev.entrate)}${v40Metric('Uscite '+(year-1),prev.uscite)}${v40Metric('Saldo '+(year-1),prev.saldo)}${v40Metric('Differenza saldo',a.saldo-prev.saldo)}</div><p>${prev.count} ${prev.count===1?'periodo registrato':'periodi registrati'} nel ${year-1}.</p>`:'<p>Nessun dato nell’anno precedente.</p>')+card('Dettaglio mensile',a.rows.map(r=>`<div class="drawer-row"><div>${escapeHtml(r.label)}</div><b>${fmt.format(r.saldo)}</b></div>`).join('')||empty);
+        body=card('Bilancio annuale',`<p>Anno finanziario: i periodi sono attribuiti all’anno della loro etichetta.</p><label>Anno<select id="v40AnnualYear">${years.map(y=>`<option ${y===year?'selected':''}>${y}</option>`).join('')}</select></label><div class="drawer-grid">${v40Metric('Entrate',a.entrate,'annual-income')}${v40Metric('Uscite',a.uscite,'annual-expense')}${v40Metric('Saldo',a.saldo,annualBalanceTone(a.saldo))}${v40Metric('Media uscite / mese registrato',a.count?a.uscite/a.count:0,'annual-average')}</div><p>${a.count} ${a.count===1?'periodo con movimenti':'periodi con movimenti'} · confronto su dati registrati, anche parziali.</p>`)+card('Andamento annuale',v41AnnualChart(a,year))+card('Anno precedente',prev.count?`<div class="drawer-grid">${v40Metric('Entrate '+(year-1),prev.entrate,'annual-income')}${v40Metric('Uscite '+(year-1),prev.uscite,'annual-expense')}${v40Metric('Saldo '+(year-1),prev.saldo,annualBalanceTone(prev.saldo))}${v40Metric('Differenza saldo',a.saldo-prev.saldo,annualBalanceTone(a.saldo-prev.saldo))}</div><p>${prev.count} ${prev.count===1?'periodo registrato':'periodi registrati'} nel ${year-1}.</p>`:'<p>Nessun dato nell’anno precedente.</p>')+card('Dettaglio mensile',a.rows.map(r=>`<div class="drawer-row"><div>${escapeHtml(r.label)}</div><b class="${annualBalanceTone(r.saldo)}">${fmt.format(r.saldo)}</b></div>`).join('')||empty);
       }else if(panel==='summaries'){
         body=card('Riepiloghi personali','<p>In Movimenti → Calcola spese → Salva puoi archiviare un gruppo di spese, anche di mesi diversi. È una fotografia del calcolo: non cambia i saldi e non si aggiorna se modifichi i movimenti originali.</p>')+s.savedSummaries.map(r=>card(escapeHtml(r.name),`<div class="v40-row"><div><strong class="v40-sensitive">${fmt.format(sum(r.items))}</strong><small>${r.items.length} spese · ${escapeHtml(r.createdAt?new Date(r.createdAt).toLocaleDateString('it-IT'):'')}</small></div>${remove('savedSummaries',r.id)}</div><details><summary>Dettaglio spese</summary>${r.items.map(m=>`<div class="drawer-row"><div>${escapeHtml(m.desc)}<small>${escapeHtml(m.date)} · ${escapeHtml(m.category)}</small></div><b>${fmt.format(m.amount)}</b></div>`).join('')}</details>`)).join('');if(!s.savedSummaries.length)body+=card('Archivio',empty);
       }else if(panel==='recurring'){
@@ -2834,7 +2864,7 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
               </div>
             </details>
             <details>
-              <summary>5. Indicatori rapidi</summary><p class="help-body">v4.2: apri il Menu rapido dalla barra inferiore. Le categorie sono in Analisi → Gestisci. Nel Menu rapido trovi bilancio annuale, riepiloghi salvati, ricorrenze e obiettivi personali. In Impostazioni puoi scegliere tema e palette, controllare backup e modalità offline. Il vetro è sempre cristallino. Nella Home, usa l’occhio per nascondere saldo ed entrate; le uscite restano visibili. I riepiloghi non duplicano movimenti.</p>
+              <summary>5. Indicatori rapidi</summary><p class="help-body">Apri il Menu rapido dalla barra inferiore. Le categorie sono in Analisi → Gestisci. Nel Menu rapido trovi bilancio annuale, riepiloghi salvati, ricorrenze e obiettivi personali. In Impostazioni puoi scegliere tema e palette, controllare backup e modalità offline. Il vetro è sempre cristallino. Nella Home, usa l’occhio per nascondere saldo ed entrate; le uscite restano visibili. I riepiloghi non duplicano movimenti.</p>
               <div class="help-body">
                 <p><b>Giorni rimanenti:</b> giorni mancanti alla chiusura del periodo.</p>
                 <p><b>Media settimanale uscite:</b> uscite registrate finora ÷ settimane realmente trascorse.</p>
@@ -2900,12 +2930,12 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
               <div class="help-body">
                 <p>L’app è offline-first: dopo una prima apertura online salva i file principali in cache.</p>
                 <ul class="help-list">
-                  <li>Carica la nuova versione su GitHub.</li>
-                  <li>Aprila online con il nuovo parametro, per esempio <b>?v=44</b>.</li>
+                  <li>Pubblica i file aggiornati su GitHub.</li>
+                  <li>Apri l’app online dal link di aggiornamento.</li>
                   <li>Aspetta qualche secondo.</li>
                   <li>Poi puoi usarla anche senza connessione.</li>
                 </ul>
-                <p>Se offline vedi una versione vecchia, apri prima la nuova versione online.</p>
+                <p>Se offline non vedi le modifiche, apri l’app online per aggiornare i file salvati.</p>
               </div>
             </details>
             <details>
@@ -4147,9 +4177,9 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
     document.getElementById('v40Integrity').addEventListener('click',()=>{const p=v40Integrity();showAppPopup(p.length?'Controllo: '+p.join('; ')+'. Nessun dato modificato.':`Nessuna anomalia rilevata nei controlli di date, importi, ID e categorie. ${state.movements.length} movimenti, ${state.categories.length} categorie.`);});
     document.getElementById('v40Offline').addEventListener('click',v40OfflineCheck);
     const v40Drawer=document.getElementById('drawerContent');
-    v40Drawer.addEventListener('change',e=>{if(e.target.id==='v40AnnualYear'){v40Drawer.dataset.annualYear=e.target.value;renderDrawerContent('annual');}else if(e.target.id==='v41AnnualMonth'){v40Drawer.querySelector('[data-v41-month="'+e.target.value+'"]')?.click();}});
+    v40Drawer.addEventListener('change',e=>{if(e.target.id==='v40AnnualYear'){v40Drawer.dataset.annualYear=e.target.value;renderDrawerContent('annual');}});
     v40Drawer.addEventListener('submit',e=>{const f=e.target;if(!f.matches('#v40RecurringForm,#v40GoalForm,[data-v40-goal]'))return;e.preventDefault();const d=Object.fromEntries(new FormData(f));const name=String(d.name||'').trim();const cents=n=>Math.round(Number(n)*100)/100;let panel;if(f.id==='v40RecurringForm'){if(!name||!(cents(d.amount)>0)||!d.date)return;const existing=state.settings.recurringExpenses.find(r=>r.id===f.dataset.editId);const record={id:existing?.id||uid(),name,amount:cents(d.amount),frequency:d.frequency,date:d.date,anchorDay:existing&&existing.date===d.date?existing.anchorDay:toDate(d.date).getDate()};if(existing)Object.assign(existing,record);else state.settings.recurringExpenses.push(record);panel='recurring';}else if(f.id==='v40GoalForm'){if(!name||!(cents(d.target)>0)||!(cents(d.saved)>=0))return;state.settings.personalGoals.push({id:uid(),name,target:cents(d.target),saved:cents(d.saved)});panel='goals';}else{const r=state.settings.personalGoals.find(x=>x.id===f.dataset.v40Goal);if(!r||!(cents(d.saved)>=0))return;r.saved=cents(d.saved);panel='goals';}saveState();renderDrawerContent(panel);showToast('Salvato');});
-    v40Drawer.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.v41Month!==undefined){const i=Number(b.dataset.v41Month),year=Number(b.dataset.v41Year);v40Drawer.querySelectorAll('[data-v41-month]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});document.getElementById('v41AnnualMonth').value=String(i);document.getElementById('v41AnnualDetail').innerHTML=v41AnnualDetail(v40Annual(year),year,i);return;}if(b.dataset.v41Edit){const r=state.settings.recurringExpenses.find(x=>x.id===b.dataset.v41Edit);if(!r)return;document.getElementById('v41RecurringFormHost').innerHTML=v41RecurringForm(r);const editor=document.getElementById('v41RecurringEditor');editor.open=true;editor.scrollIntoView({block:'nearest'});return;}if(b.hasAttribute('data-v41-cancel-edit')){document.getElementById('v41RecurringFormHost').innerHTML=v41RecurringForm();return;}if(b.dataset.v40Remove){const k=b.dataset.v40Remove;if(!['savedSummaries','recurringExpenses','personalGoals'].includes(k))return;if(!await confirmInApp('Eliminare questo elemento? I movimenti contabili rimangono invariati.'))return;state.settings[k]=state.settings[k].filter(x=>x.id!==b.dataset.id);saveState();renderDrawerContent({savedSummaries:'summaries',recurringExpenses:'recurring',personalGoals:'goals'}[k]);}else if(b.dataset.v40Next){const r=state.settings.recurringExpenses.find(x=>x.id===b.dataset.v40Next);if(!r)return;r.date=v41NextDate(r);saveState();renderDrawerContent('recurring');}});
+    v40Drawer.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.v41Month!==undefined){const i=Number(b.dataset.v41Month),year=Number(b.dataset.v41Year);v40Drawer.querySelectorAll('[data-v41-month]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});document.getElementById('v41AnnualDetail').innerHTML=v41AnnualDetail(v40Annual(year),year,i);return;}if(b.dataset.v41Edit){const r=state.settings.recurringExpenses.find(x=>x.id===b.dataset.v41Edit);if(!r)return;document.getElementById('v41RecurringFormHost').innerHTML=v41RecurringForm(r);const editor=document.getElementById('v41RecurringEditor');editor.open=true;editor.scrollIntoView({block:'nearest'});return;}if(b.hasAttribute('data-v41-cancel-edit')){document.getElementById('v41RecurringFormHost').innerHTML=v41RecurringForm();return;}if(b.dataset.v40Remove){const k=b.dataset.v40Remove;if(!['savedSummaries','recurringExpenses','personalGoals'].includes(k))return;if(!await confirmInApp('Eliminare questo elemento? I movimenti contabili rimangono invariati.'))return;state.settings[k]=state.settings[k].filter(x=>x.id!==b.dataset.id);saveState();renderDrawerContent({savedSummaries:'summaries',recurringExpenses:'recurring',personalGoals:'goals'}[k]);}else if(b.dataset.v40Next){const r=state.settings.recurringExpenses.find(x=>x.id===b.dataset.v40Next);if(!r)return;r.date=v41NextDate(r);saveState();renderDrawerContent('recurring');}});
 
     let v40HeaderScrolled=false;function syncV40Header(){const next=(window.scrollY||0)>8;if(next!==v40HeaderScrolled){v40HeaderScrolled=next;document.body.classList.toggle('header-scrolled',next);}}window.addEventListener('scroll',syncV40Header,{passive:true});window.addEventListener('pageshow',syncV40Header);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkMonthlyBackupReminder();});syncV40Header();
     // All'apertura dell'app porta sempre il riferimento alla data odierna.
@@ -4184,8 +4214,8 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v4.2')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v4.2', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v4.3')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v4.3', '1');
               location.reload();
             }
           });
@@ -4199,8 +4229,8 @@ body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:roun
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v42')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v42', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v43')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v43', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
