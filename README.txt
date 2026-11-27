@@ -19,3 +19,5 @@ Test Chromium 393×852 con storage simulato; offline da verificare su iPhone.
 
 
 v3.8: gestione VisualViewport e tastiera con intestazione fissa e form scorrevole; header compatto; riflessi e lente elastica senza loop di rendering. Dati e backup invariati.
+
+V3.9: header opaco isolato, dimmer senza blur, lente continua, riflessi al tocco, morph SVG mensile a durata finita e transizioni barre dal valore precedente, animazioni registro. Storage e backup invariati.

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v3.8</title>
-  <meta name="theme-color" content="#dce6f4" />
+  <title>Tracciatore Spese · v3.9</title>
+  <meta name="theme-color" content="#dfe7f2" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Tracciatore Spese" />
@@ -1453,7 +1453,7 @@ html:has(.modal-backdrop.open),body:has(.modal-backdrop.open){overflow:hidden!im
 body.rev3 .sticky-head{padding-top:calc(env(safe-area-inset-top) + 22px)!important;padding-bottom:10px!important;isolation:isolate;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(232,239,250,.95)!important;}
 body.rev3.dark-mode .sticky-head{background:rgba(23,35,51,.96)!important;}
 /* Blur only the status-bar strip, never the title or month text. */
-body.rev3 .sticky-head::before{content:"";position:absolute;inset:0 0 auto;height:calc(env(safe-area-inset-top) + 13px);z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(215,228,246,.55),rgba(232,239,250,0));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+body.rev3 .sticky-head::before{content:none!important;display:none!important}
 body.rev3.dark-mode .sticky-head::before{background:linear-gradient(180deg,rgba(23,35,51,.75),rgba(23,35,51,0));}
 @media(prefers-reduced-transparency:reduce){body.rev3 .sticky-head::before{backdrop-filter:none;-webkit-backdrop-filter:none;}}
 
@@ -1689,8 +1689,44 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
 @media(prefers-reduced-motion:reduce){body.rev3 #entryModal.open #movementEntry,body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:none!important}body.rev3 #bottomNav .nav-item .ico,body.rev3[data-nav-dragging="1"] #bottomNav .nav-drag-lens{transition:none!important}body.rev3[data-nav-dragging="1"] #bottomNav .nav-drag-lens{transform:translate3d(var(--nav-lens-x,0px),var(--nav-lens-y,0px),0)!important}}
 @media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important}}
 </style>
+
+<style id="rev39-optical-motion">
+/* An opaque, isolated status/header plane. No blur pseudo-element or mask above glyphs. */
+body.rev3 .shell > .sticky-head,body.rev3:not(.dark-mode) .shell > .sticky-head{background:#dfe7f2!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;filter:none!important;isolation:isolate;opacity:1!important;box-shadow:none!important;border-bottom:1px solid #fff9!important;z-index:40!important}
+body.rev3.dark-mode .shell > .sticky-head{background:#192638!important;border-bottom-color:#ffffff20!important}
+body.rev3 .shell > .sticky-head::before,body.rev3 .shell > .sticky-head::after{content:none!important;display:none!important;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3 .sticky-head .topbar,body.rev3 .sticky-head .topbar-inner,body.rev3 .sticky-head .title,body.rev3 .sticky-head .title *,body.rev3 .sticky-head .period-row,body.rev3 .sticky-head .period-pill,body.rev3 .sticky-head .period-btn,body.rev3 .sticky-head .icon-btn{filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;mask-image:none!important;-webkit-mask-image:none!important;text-shadow:none!important}
+/* Dialog dimmer rather than a full-screen blur: foreground panels are always sharp. */
+body.rev3 .modal-backdrop,body.rev3 .modal-backdrop:not(#sideMenu){backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(15,27,45,.38)!important}
+body.rev3 .modal-backdrop.open > [role="dialog"],body.rev3 .modal-backdrop.open .settings-sheet,body.rev3 .modal-backdrop.open .side-drawer{filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+/* Optical rim approximation, with one backdrop-filter, not a second blurred lens. */
+body.rev3 #bottomNav.rev3-nav{background:linear-gradient(164deg,#ffffff22,#ffffff08 46%,#dfeaff18)!important;box-shadow:0 6px 19px #263e6029,inset 0 1px 1px #ffffffdb,inset 0 -1px 2px #a6c2e94f!important;backdrop-filter:blur(5px) saturate(180%) contrast(1.05)!important;-webkit-backdrop-filter:blur(5px) saturate(180%) contrast(1.05)!important}
+body.rev3 #bottomNav.rev3-nav::before{background:radial-gradient(ellipse at var(--nav-light,22%) 0%,#ffffffa8,transparent 37%),linear-gradient(100deg,#a7dafa55,transparent 20%,transparent 80%,#dfcbff50)!important;opacity:.63}
+body.rev3 #bottomNav.rev3-nav::after{border-color:#ffffff28;box-shadow:inset 1px 0 2px #ffffff69,inset -1px 0 2px #acc7ff42;}
+body.rev3 #bottomNav .nav-drag-lens{background:radial-gradient(ellipse at var(--light-x,30%) 0%,#ffffffdf,transparent 58%),linear-gradient(145deg,#ffffff35,#b2d8fa25 48%,#d4c2ff42)!important;border-color:#ffffffe8!important;box-shadow:inset 0 1px 2px #fff,inset 0 -2px 3px #8eacd861,0 4px 11px #203c6220!important;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3[data-nav-dragging="1"] #bottomNav .nav-drag-lens{transition:transform .105s cubic-bezier(.15,.83,.3,1),opacity .14s ease!important}
+body.rev3 .icon-btn,body.rev3 .nav-add{--press-x:30%;--press-y:0%;}
+body.rev3 .icon-btn{background:radial-gradient(ellipse at var(--press-x) var(--press-y),#ffffffed,transparent 70%),linear-gradient(155deg,#ffffff65,#ffffff1a)!important}
+body.rev3 .nav-add{background:radial-gradient(ellipse at var(--press-x) var(--press-y),#bfd9ff 0%,#6098f2 26%,#2e6ddd 59%,#204cbe 100%)!important}
+body.rev3 .liquid-ripple{box-shadow:none!important;background:radial-gradient(circle,#ffffff99 0%,#a7d7ff45 35%,transparent 72%)!important;animation-duration:.36s!important}
+body.rev3 .balance-panel{background:radial-gradient(ellipse at 87% 2%,#4b728b 0%,transparent 56%),radial-gradient(ellipse at 4% 110%,#286b6950,transparent 62%),linear-gradient(145deg,#142438,#203d56 76%,#204b51);border-color:#ffffff58;box-shadow:0 13px 28px #1e34522c,inset 0 1px 0 #ffffff46,inset 0 -1px 0 #ffffff14}
+body.rev3 .hero-track i{box-shadow:inset 0 1px 0 #ffffff4d;transition:width .28s cubic-bezier(.2,.8,.25,1)}
+body.rev3 .hero-saldo strong{letter-spacing:-.05em;line-height:1.13}
+/* Only a finite SVG geometry transition when the monthly data changes. Canvas holds static axes. */
+#monthlyOpticalPlot{position:absolute;pointer-events:none;z-index:1;overflow:visible}
+body.rev3 .plot-enter #monthlyCanvas,body.rev3 .plot-enter #monthlyPointLayer{animation:none!important;clip-path:none!important;opacity:1!important}
+body.rev3 .category-viz.render-enter .category-viz-fill{animation:none!important}
+body.rev3 #analysis .category-viz-fill{transition:none!important}
+body.rev3.dark-mode #bottomNav.rev3-nav{background:linear-gradient(155deg,#293b5369,#14223836)!important;border-color:#c8dfff45!important;box-shadow:0 7px 21px #0005,inset 0 1px 1px #ffffff39!important}
+body.rev3.dark-mode #bottomNav.rev3-nav::before{opacity:.23}
+body.rev3.dark-mode #bottomNav .nav-drag-lens{background:radial-gradient(ellipse at var(--light-x,30%) 0%,#c6e1ff80,transparent 55%),linear-gradient(145deg,#a4c5f340,#607da536)!important;border-color:#c2dfff7a!important;box-shadow:inset 0 1px 2px #d5e8ff78,0 4px 12px #0003!important}
+body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-x) var(--press-y),#a6c6ff32,transparent 70%),linear-gradient(155deg,#ffffff24,#ffffff08)!important}
+@media(prefers-reduced-motion:reduce){body.rev3 .hero-track i,body.rev3[data-nav-dragging="1"] #bottomNav .nav-drag-lens{transition:none!important}body.rev3 .liquid-ripple{animation:none!important}}
+@media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important}body.rev3 #bottomNav.rev3-nav::before,body.rev3 #bottomNav.rev3-nav::after{display:none!important}}
+</style>
+
 </head>
-<body data-app-version="3.8" class="rev3">
+<body data-app-version="3.9" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
@@ -1699,7 +1735,7 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
           <div class="title">
             <h1 id="screenTitle">Home</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">v3.8</span></p>
+            <p>Lorenzo Vizzini <span class="profile-badge">v3.9</span></p>
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -1872,7 +1908,7 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
       <div class="drawer-head">
         <div>
           <h2 id="sideMenuTitle">Menu rapido</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.8</p>
+          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.9</p>
         </div>
         <button class="modal-close" id="sideMenuClose" aria-label="Chiudi menu">×</button>
       </div>
@@ -2861,11 +2897,13 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
     function emojiBadge(name,type='uscita'){return `<span class="category-emoji" aria-hidden="true">${escapeHtml(categoryEmoji(name,type))}</span>`}
     function renderDashboard(){
       const t=totals(),p=currentPeriod();
+      const oldHeroFill=parseFloat(document.querySelector('#dashboardStats .hero-track i')?.style.width||'0');
       const oldAmounts=[...document.querySelectorAll("#dashboardStats .hero-saldo strong,#dashboardStats .hero-flow strong")].map(el=>el.textContent);
       const ratio=t.entrate>0?t.uscite/t.entrate*100:0;
       const fill=t.entrate>0?Math.max(0,Math.min(100,ratio)):(t.uscite>0?100:0);
       document.getElementById('dashboardStats').innerHTML=`<div class="hero-saldo ${t.saldo<0?'negative':''}"><span>Saldo del periodo</span><strong>${fmt.format(t.saldo)}</strong></div><div class="hero-track"><i class="${t.saldo<0?'over':''}" style="width:${fill}%"></i></div><div class="hero-progress"><span>${t.entrate>0?'Speso '+nf.format(ratio)+'% delle entrate':'Entrate non ancora registrate'}</span><span>${t.saldo>=0?'Saldo positivo':'Saldo negativo'}</span></div><div class="hero-flow"><div><span>↗ Entrate</span><strong>${fmt.format(t.entrate)}</strong></div><div><span>↘ Uscite</span><strong>${fmt.format(t.uscite)}</strong></div></div>${t.extra>0?`<div class="hero-extra">Di cui entrate extra <b>${fmt.format(t.extra)}</b></div>`:''}`;
       if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&activeTab==='home'&&!document.hidden){document.querySelectorAll('#dashboardStats .hero-saldo strong,#dashboardStats .hero-flow strong').forEach((el,i)=>{if(oldAmounts[i]!==el.textContent)el.animate([{opacity:.48,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:240,easing:'ease-out'});});}
+      if(activeTab==='home'&&opticalMotionAllowed()&&Math.abs(oldHeroFill-fill)>.1){const bar=document.querySelector('#dashboardStats .hero-track i');bar?.animate([{width:oldHeroFill+'%'},{width:fill+'%'}],{duration:280,easing:'cubic-bezier(.2,.8,.25,1)'});}
       const realToday=toDate(dateKey(new Date())),refDate=realToday<p.start?p.start:realToday>p.end?p.end:realToday;
       const days=Math.max(0,Math.ceil((p.end-refDate)/86400000)),totalDays=Math.ceil((p.end-p.start+1)/86400000),elapsed=Math.max(1,Math.ceil((refDate-p.start+1)/86400000)),elapsedWeeks=Math.max(1,Math.ceil(elapsed/7)),avg=t.uscite/elapsedWeeks,projection=t.uscite/elapsed*totalDays;
       const rows=budgetRows().sort((a,b)=>b.spent-a.spent||byAlpha(a,b));
@@ -2998,6 +3036,11 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
       });
       ms.sort((a,b)=>sort==='oldest'?((movementDateTimestamp(a)-movementDateTimestamp(b))||(movementInsertTimestamp(a)-movementInsertTimestamp(b))):sort==='high'?b.amount-a.amount:sort==='low'?a.amount-b.amount:((movementDateTimestamp(b)-movementDateTimestamp(a))||(movementInsertTimestamp(b)-movementInsertTimestamp(a))));
       const box=document.getElementById('movementList');
+      const motionKey=currentPeriod().label+'|'+q+'|'+ft+'|'+fc+'|'+sort;
+      const motionSignature=JSON.stringify(ms.map(m=>[m.id,m.date,m.desc,m.amount,m.category,m.type]));
+      const animateRows=activeTab==='movements'&&state.movementsOpen&&box._motionKey===motionKey&&box._motionSignature!==motionSignature&&opticalMotionAllowed();
+      const oldRows=animateRows?new Map([...box.querySelectorAll('[data-movement-id]')].map(el=>[el.dataset.movementId,{rect:el.getBoundingClientRect(),text:el.querySelector('.movement-row-button')?.textContent}])):new Map();
+      box._motionKey=motionKey;box._motionSignature=motionSignature;
       box.style.display=state.movementsOpen?'grid':'none';
       document.getElementById('toggleMovements').innerHTML=state.movementsOpen?'Nascondi movimenti ▴':'Mostra movimenti ▾';
       syncMovementScrollLock();
@@ -3023,6 +3066,17 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
         box.innerHTML=[...groups].map(([date,items])=>`<section class="day-group"><div class="day-heading"><b>${toDate(date).toLocaleDateString('it-IT',{day:'numeric',month:'short',year:'numeric'})}</b><span>${sum(items.filter(m=>m.type==='uscita'))?'−'+fmt.format(sum(items.filter(m=>m.type==='uscita'))):''} ${sum(items.filter(m=>m.type==='entrata'))?'+'+fmt.format(sum(items.filter(m=>m.type==='entrata'))):''}</span></div><div class="day-list">${items.map(renderRow).join('')}</div></section>`).join('');
       }else box.innerHTML='<div class="day-list">'+ms.map(renderRow).join('')+'</div>';
       updateExpenseSelectionUI();
+      if(animateRows){
+        if(!ms.length&&oldRows.size)box.querySelector('.empty')?.animate([{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'none'}],{duration:180,easing:'ease-out'});
+        box.querySelectorAll('[data-movement-id]').forEach(el=>{
+          const before=oldRows.get(el.dataset.movementId),after=el.getBoundingClientRect();
+          if(after.bottom<0||after.top>window.innerHeight)return;
+          if(!before){el.animate([{opacity:0,transform:'translateY(7px) scale(.99)'},{opacity:1,transform:'none'}],{duration:220,easing:'cubic-bezier(.2,.8,.25,1)'});return;}
+          const dy=before.rect.top-after.top;
+          if(Math.abs(dy)>1&&Math.abs(dy)<window.innerHeight)el.animate([{transform:`translateY(${dy}px)`},{transform:'none'}],{duration:230,easing:'cubic-bezier(.2,.8,.25,1)'});
+          else if(before.text!==el.querySelector('.movement-row-button')?.textContent)el.animate([{opacity:.6,transform:'scale(.985)'},{opacity:1,transform:'none'}],{duration:180,easing:'ease-out'});
+        });
+      }
     }
     function renderCategories(){
       const mode=document.getElementById('categorySortMode')?.value || 'type-alpha';
@@ -3132,6 +3186,7 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
       syncMovementScrollLock();
     }
     function setTab(tab,scroll=true){
+      if(tab!=='analysis')finishMonthlyMorph();
       const previousTab=activeTab;
       activeTab=['home','analysis','movements','categories'].includes(tab)?tab:'home';
       state.activeTab=activeTab;
@@ -3223,28 +3278,6 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
       }));
       if(canvas) canvas._monthlyPoints=pts.map(p=>({...p}));
 
-      if(pts.length){
-        const area=ctx.createLinearGradient(0,pad.t,0,pad.t+plotH);
-        area.addColorStop(0,colors.dark?'rgba(88,132,255,.27)':'rgba(76,137,255,.21)');
-        area.addColorStop(.55,colors.dark?'rgba(88,132,255,.09)':'rgba(105,156,255,.065)');
-        area.addColorStop(1,'rgba(52,120,246,0)');
-        ctx.beginPath();smoothChartPath(ctx,pts);ctx.lineTo(pts[pts.length-1].x,pad.t+plotH);ctx.lineTo(pts[0].x,pad.t+plotH);ctx.closePath();ctx.fillStyle=area;ctx.fill();
-
-        const line=ctx.createLinearGradient(pad.l,0,w-pad.r,0);
-        line.addColorStop(0,'#3593d6');line.addColorStop(.55,'#246acb');line.addColorStop(1,'#565fc7');
-        ctx.beginPath();smoothChartPath(ctx,pts);ctx.strokeStyle=line;ctx.lineWidth=3.05;ctx.lineCap='round';ctx.lineJoin='round';
-        ctx.shadowColor=colors.dark?'rgba(75,125,255,.28)':'rgba(52,120,246,.18)';ctx.shadowBlur=10;ctx.stroke();ctx.shadowBlur=0;
-
-        pts.forEach(p=>{
-          const pointColor=p.out?'#d43f50':'#09966c';
-          ctx.save();
-          ctx.beginPath();ctx.arc(p.x,p.y,p.isCurrent?4.6:3.9,0,Math.PI*2);
-          ctx.fillStyle=pointColor;ctx.fill();
-          ctx.strokeStyle=colors.dark?'rgba(18,22,34,.95)':'rgba(255,255,255,.98)';
-          ctx.lineWidth=2;ctx.stroke();
-          ctx.restore();
-        });
-      }
 
       data.forEach((d,i)=>{
         ctx.fillStyle=d.isCurrent?'#3478f6':colors.text;
@@ -3254,20 +3287,48 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
       ctx.fillStyle=colors.muted;ctx.font='500 10px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
       ctx.textAlign='center';ctx.fillText('Mese finanziario',pad.l+plotW/2,h-6);
       ctx.restore();ctx.textAlign='left';
-      if(canvas) syncMonthlyPointLayer(canvas,pts);
+      if(canvas) syncMonthlyOpticalPlot(canvas,pts,w,h,pad.t+plotH,colors.dark);
     }
 
-    function syncMonthlyPointLayer(canvas,points){
-      const layer=document.getElementById('monthlyPointLayer');
-      if(!layer||!canvas) return;
-      const wrap=canvas.parentElement;
-      const canvasRect=canvas.getBoundingClientRect();
-      const wrapRect=wrap.getBoundingClientRect();
-      const offsetX=canvas.offsetLeft;
-      const offsetY=canvas.offsetTop;
+    let monthlyMorphFrame=0,monthlyMorphFinish=null;
+    function finishMonthlyMorph(){
+      if(monthlyMorphFrame)cancelAnimationFrame(monthlyMorphFrame);monthlyMorphFrame=0;
+      if(monthlyMorphFinish){const finish=monthlyMorphFinish;monthlyMorphFinish=null;finish();}
+    }
+    function opticalMotionAllowed(){return !document.hidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
+    function monthlyPath(points){
+      if(!points.length)return '';
+      let d=`M${points[0].x},${points[0].y}`;
+      for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],mid=(a.x+b.x)/2;d+=` C${mid},${a.y} ${mid},${b.y} ${b.x},${b.y}`;}
+      return d;
+    }
+    function syncMonthlyOpticalPlot(canvas,points,w,h,base,dark){
+      finishMonthlyMorph();
+      const layer=document.getElementById('monthlyPointLayer');if(!layer)return;
+      const prior=canvas._opticalGeometry;const offsetX=canvas.offsetLeft,offsetY=canvas.offsetTop;
+      let svg=document.getElementById('monthlyOpticalPlot');
+      if(!svg){
+        svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.id='monthlyOpticalPlot';svg.setAttribute('aria-hidden','true');
+        svg.innerHTML='<defs><linearGradient id="monthlyOpticalArea" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#398cf1" stop-opacity=".24"/><stop offset="100%" stop-color="#398cf1" stop-opacity="0"/></linearGradient><linearGradient id="monthlyOpticalLine"><stop offset="0%" stop-color="#3593d6"/><stop offset="55%" stop-color="#246acb"/><stop offset="100%" stop-color="#6260d1"/></linearGradient></defs><path class="optical-area" fill="url(#monthlyOpticalArea)"/><path class="optical-line" fill="none" stroke="url(#monthlyOpticalLine)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>';
+        canvas.parentElement.insertBefore(svg,layer);
+      }
+      svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.setAttribute('width',w);svg.setAttribute('height',h);svg.style.left=offsetX+'px';svg.style.top=offsetY+'px';
       layer.innerHTML=points.map((p,i)=>`<span class="monthly-live-point ${p.out?'ko':'ok'} ${p.isCurrent?'current':''}" style="left:${offsetX+p.x}px;top:${offsetY+p.y}px" data-point-index="${i}"></span>`).join('');
+      const dots=[...layer.children],line=svg.querySelector('.optical-line'),area=svg.querySelector('.optical-area');
+      function paint(pts){const d=monthlyPath(pts);line.setAttribute('d',d);area.setAttribute('d',d+` L${pts.at(-1).x},${base} L${pts[0].x},${base} Z`);pts.forEach((p,i)=>{dots[i].style.top=offsetY+p.y+'px';});}
+      canvas._opticalGeometry={points:points.map(p=>({...p})),w,h,dark};
+      const changed=prior&&prior.w===w&&prior.h===h&&prior.dark===dark&&prior.points.length===points.length&&points.some((p,i)=>Math.abs(p.y-prior.points[i].y)>.5);
+      if(!changed||!opticalMotionAllowed()){paint(points);return;}
+      paint(prior.points);
+      const start=performance.now();
+      monthlyMorphFinish=()=>paint(points);
+      function frame(now){
+        if(document.hidden||activeTab!=='analysis'||now-start>=240){finishMonthlyMorph();return;}
+        const t=1-Math.pow(1-Math.max(0,(now-start)/240),3);
+        paint(points.map((p,i)=>({...p,y:prior.points[i].y+(p.y-prior.points[i].y)*t})));monthlyMorphFrame=requestAnimationFrame(frame);
+      }
+      monthlyMorphFrame=requestAnimationFrame(frame);
     }
-
     function startMonthlyGlowAnimation(){
       /* v61: il glow è animato via CSS sui punti DOM.
          Nessun ridisegno continuo del canvas: risparmio CPU/GPU su iPhone. */
@@ -3310,6 +3371,7 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
       placeChartTooltip(tip,canvas.parentElement,canvas.offsetLeft+point.x,canvas.offsetTop+point.y);
     }
     function handleMonthlyChartPointer(event){
+      finishMonthlyMorph();
       const canvas=document.getElementById('monthlyCanvas');if(!canvas?._monthlyPoints?.length)return;
       const rect=canvas.getBoundingClientRect();const x=(event.clientX-rect.left)*canvas.clientWidth/rect.width;
       const nearest=canvas._monthlyPoints.reduce((a,b)=>Math.abs(a.x-x)<=Math.abs(b.x-x)?a:b);
@@ -3351,9 +3413,15 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
       const host=document.getElementById('categoryViz');if(!host)return;
       const data=budgetRows().sort((a,b)=>b.spent-a.spent||byAlpha(a,b)).map(r=>({label:r.name,value:r.spent,max:r.max,out:r.out}));
       const signature=JSON.stringify(data.map(d=>[d,categoryEmoji(d.label)]));if(host._renderSignature===signature)return;
+      const previousWidths=new Map(host._opticalWidths||[]);
       host.innerHTML=data.length?data.map((d,i)=>{const ratio=d.max>0?Math.max(0,Math.min(1,d.value/d.max)):(d.value>0?1:0);return `<button type="button" class="category-viz-row ${d.out?'out':''} ${d.value===0?'zero':''}" data-i="${i}" aria-label="${escapeHtml(d.label)}: ${fmt.format(d.value)}, budget ${fmt.format(d.max)}"><span class="category-viz-meta"><span class="category-viz-name">${emojiBadge(d.label)} ${escapeHtml(d.label)}</span><span class="category-viz-values"><span class="category-viz-spent">${fmt.format(d.value)}</span><span class="category-viz-max">max ${fmt.format(d.max)}</span></span></span><span class="category-viz-track"><span class="category-viz-fill" style="width:${ratio*100}%"></span></span></button>`}).join(''):'<div class="empty">Nessuna categoria uscita.</div>';
       host.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>showCategoryChartTooltip({data:data[Number(btn.dataset.i)],row:btn})));
-      host._renderSignature=signature;host.classList.remove('render-enter');void host.offsetWidth;host.classList.add('render-enter');
+      host._renderSignature=signature;
+      host._opticalWidths=data.map(d=>[d.label,d.max>0?Math.max(0,Math.min(1,d.value/d.max)):(d.value>0?1:0)]);
+      if(opticalMotionAllowed())host.querySelectorAll('.category-viz-fill').forEach((el,i)=>{
+        const [name,ratio]=host._opticalWidths[i],old=previousWidths.get(name)??0;
+        if(Math.abs(ratio-old)>.002)el.animate([{width:(old*100)+'%'},{width:(ratio*100)+'%'}],{duration:280,easing:'cubic-bezier(.2,.8,.25,1)'});
+      });
     }
     function hideCategoryChartTooltip(){const tip=document.getElementById('categoryChartTooltip');if(tip)tip.classList.remove('show','ok','ko','below')}
     function showCategoryChartTooltip(hit){const tip=document.getElementById('categoryChartTooltip');if(!tip||!hit)return;const d=hit.data,wrap=tip.parentElement,track=hit.row.querySelector('.category-viz-track');const r=track.getBoundingClientRect(),wr=wrap.getBoundingClientRect();tip.classList.remove('ok','ko');tip.classList.add(d.out?'ko':'ok');tip.innerHTML=`<strong>${escapeHtml(d.label)}</strong><b>${fmt.format(d.value)}</b><small>${d.out?'Fuori budget':'Dentro budget'} · max. ${fmt.format(d.max)}<br>${d.out?'Superato di':'Residuo'} ${fmt.format(Math.abs(d.max-d.value))}</small>`;placeChartTooltip(tip,wrap,r.left-wr.left+r.width/2,r.top-wr.top+r.height/2)}
@@ -3603,10 +3671,20 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
       if(!navInteractionActive) return;
       const btn=getNavButtonFromPoint(x,y);
       if(btn&&btn!==navPressedButton) previewNavButton(btn);
+      if(!navPressedButton||!opticalMotionAllowed())return;
+      const nav=document.getElementById('bottomNav'),nr=nav.getBoundingClientRect(),br=navPressedButton.getBoundingClientRect();
+      const local=Math.max(2,Math.min(nr.width-br.width-2,x-nr.left-br.width/2));
+      const delta=local-Number(nav.dataset.liveLensX??local);nav.dataset.liveLensX=String(local);
+      nav.style.setProperty('--nav-lens-x',local.toFixed(1)+'px');
+      nav.style.setProperty('--nav-light',Math.max(0,Math.min(100,(x-nr.left)/nr.width*100))+'%');
+      nav.style.setProperty('--light-x',delta>1?'76%':delta< -1?'24%':'45%');
+      nav.style.setProperty('--lens-sx',String(1.03+Math.min(.16,Math.abs(delta)/90)));
+      nav.style.setProperty('--lens-sy',String(1-Math.min(.10,Math.abs(delta)/160)));
     }
     function startNavInteraction(btn,pointerId=null){
       navInteractionActive=true;
       navPointerId=pointerId;
+      delete document.getElementById('bottomNav').dataset.liveLensX;
       previewNavButton(btn);
     }
     function endNavInteraction(x,y,shouldCommit=true){
@@ -3678,7 +3756,10 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
     const premiumRippleSelector='.icon-btn,.period-btn,.primary,.secondary,.ghost,.collapse-btn,.mini-primary,.drawer-menu-item,.nav-item,.nav-home-btn,.nav-add,.detail-summary';
     document.addEventListener('pointerdown',e=>{
       const btn=e.target.closest(premiumRippleSelector);if(!btn||btn.id==='resetFilters'||btn.matches('.nav-item,.nav-home-btn')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-      const r=btn.getBoundingClientRect();const drop=document.createElement('span');drop.className='liquid-ripple';
+      const r=btn.getBoundingClientRect();
+      btn.style.setProperty('--press-x',Math.max(0,Math.min(100,(e.clientX-r.left)/r.width*100))+'%');
+      btn.style.setProperty('--press-y',Math.max(0,Math.min(100,(e.clientY-r.top)/r.height*100))+'%');
+      const drop=document.createElement('span');drop.className='liquid-ripple';
       drop.style.left=(e.clientX-r.left)+'px';drop.style.top=(e.clientY-r.top)+'px';btn.appendChild(drop);
       setTimeout(()=>drop.remove(),780);
     },{passive:true});
@@ -3886,8 +3967,8 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.8')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.8', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.9')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.9', '1');
               location.reload();
             }
           });
@@ -3901,8 +3982,8 @@ body.rev3 #entryModal.open:not(.keyboard-open) #movementEntry{animation:rev38Dia
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v38')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v38', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v39')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v39', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
