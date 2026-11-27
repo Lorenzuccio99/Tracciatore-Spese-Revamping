@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v4.1</title>
+  <title>Tracciatore Spese · v4.2</title>
   <meta name="theme-color" content="#dfe7f2" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1816,14 +1816,39 @@ body.rev3 .v41-axis{position:relative;display:block;padding:0;}
 body.rev3 .v41-axis span{position:absolute;right:0;top:8px;transform:translateY(-50%);white-space:nowrap;}
 body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-child(3){top:148px;}
 </style>
+
+<style id="rev42-premium">
+body.rev3 .shell .topbar-inner{grid-template-columns:minmax(0,1fr) 44px!important;gap:8px!important}
+body.rev3 #menuBtn{display:none!important}body.rev3[data-active-tab="categories"] .shell .topbar-inner{grid-template-columns:44px minmax(0,1fr) 44px!important}body.rev3[data-active-tab="categories"] #menuBtn{display:grid!important}
+body.rev3 .shell .topbar-inner .title{grid-column:auto!important;grid-row:auto!important;text-align:left!important}body.rev3 .shell .topbar-inner #settingsBtn{grid-column:auto!important;grid-row:auto!important;justify-self:end}
+body.rev3 #movements.expense-selection-mode .movement-row-button .selection-dot{display:grid!important;place-items:center!important;flex:0 0 17px!important;width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;padding:0!important;margin:0 5px 0 1px!important;border:1.6px solid var(--blue)!important;border-radius:50%!important;background:none!important;box-shadow:none!important;outline:0!important;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3 #movements.expense-selection-mode .move-card.selected .selection-dot{background:var(--blue)!important;color:white!important;border-color:var(--blue)!important}body.rev3 #movements .selection-dot svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}body.rev3 #movements .selection-dot::before,body.rev3 #movements .selection-dot::after{content:none!important;display:none!important}
+body.rev3 .manage-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:74px;padding:0 10px;border:1px solid var(--line);border-radius:13px;background:var(--surface);color:var(--blue);font-size:12px;font-weight:760;box-shadow:inset 0 1px 0 #ffffff60;cursor:pointer}body.rev3 .manage-link:active{transform:scale(.96)}body.rev3 #analysis .category-chart-card .card-title,body.rev3 #analysis .analysis-budget-card .card-title{display:grid!important;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:center}body.rev3 #analysis .card-title .legend,body.rev3 #analysis .analysis-budget-card .card-title .subtle{grid-column:1/-1}
+body.rev3 #menu .quick-page{display:grid;gap:12px;min-width:0;padding:0 0 10px}body.rev3 #menu .drawer-head{margin:0;align-items:center;padding:0 2px}body.rev3 #menu .drawer-head h2{font-size:19px}body.rev3 #menu .drawer-head p{font-size:12px;line-height:1.45}body.rev3 #menu #sideMenuClose{display:none!important}body.rev3 #menu .drawer-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:0!important}body.rev3 #menu .drawer-menu-item{display:flex;align-items:center;gap:9px;min-height:56px!important;padding:10px!important;font-size:12px!important;font-weight:700;line-height:1.25;border-radius:17px;background:var(--surface)!important;color:var(--ink)!important;border:1px solid var(--line)!important;box-shadow:0 3px 10px #152b4010!important}body.rev3 #menu .drawer-menu-item svg{width:23px;height:23px;flex:0 0 23px;fill:none;stroke:var(--blue);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}body.rev3 #menu .drawer-menu-item.active{color:var(--blue)!important;background:color-mix(in srgb,var(--blue) 9%,var(--surface))!important;border-color:color-mix(in srgb,var(--blue) 35%,transparent)!important}body.rev3 #menu .drawer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body.rev3 #menu .drawer-metric{min-width:0;overflow-wrap:anywhere}body.rev3 #menu .drawer-help-fab{position:relative!important;inset:auto!important;margin:0 0 0 auto!important;min-width:44px;min-height:44px}body.rev3 #menu .drawer-content{scroll-margin-top:160px}
+body.rev3 .home-intelligence{min-width:0}body.rev3 .intelligence-list{display:grid;background:var(--surface);border:1px solid var(--line);border-radius:21px;overflow:hidden;box-shadow:0 6px 18px #2136530a}body.rev3 .intelligence-row{display:flex;align-items:flex-start;gap:12px;padding:13px 14px;min-width:0}body.rev3 .intelligence-row+.intelligence-row{border-top:1px solid var(--line)}body.rev3 .intelligence-icon{flex:0 0 27px;width:27px;text-align:center;color:var(--blue);font-weight:750;font-size:21px;line-height:1.2}body.rev3 .intelligence-row.good .intelligence-icon{color:var(--green)}body.rev3 .intelligence-row.warn .intelligence-icon{color:var(--red)}body.rev3 .intelligence-row div{min-width:0}body.rev3 .intelligence-row strong{font-size:14px;line-height:1.3;color:var(--ink);font-weight:760;overflow-wrap:anywhere}body.rev3 .intelligence-row p{font-size:12px;line-height:1.45;margin:4px 0 0;color:var(--muted);overflow-wrap:anywhere}
+/* Optical edge, one live glass plane, no nested blur on icons. */
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav{background:linear-gradient(145deg,#ffffff33,#ffffff0a 50%,#ffffff25)!important;border:1px solid #ffffff95!important;box-shadow:0 9px 23px #26395224,inset 0 1px 1px #ffffffc0,inset 0 -1px 1px #9fb3d260!important;backdrop-filter:blur(7px) saturate(155%)!important;-webkit-backdrop-filter:blur(7px) saturate(155%)!important}
+body.rev3.dark-mode[data-glass="clear"] #bottomNav.rev3-nav{background:linear-gradient(145deg,#26394a5c,#101a2829)!important;border-color:#dcecff50!important;box-shadow:0 9px 23px #0005,inset 0 1px 1px #f4f9ff48!important}
+body.rev3 #bottomNav.rev3-nav::before{background:linear-gradient(115deg,#ffffff9c,transparent 23%,#e0d4ff40 52%,transparent 78%,#ffffff6b)!important;opacity:.65!important;pointer-events:none!important}
+body.rev3 #bottomNav .nav-drag-lens{background:radial-gradient(ellipse at var(--light-x,30%) 4%,#ffffffb0,transparent 60%),linear-gradient(145deg,#ffffff24,#bdd8ff22 42%,#c8b4ef40)!important;box-shadow:inset 0 1px 2px #ffffffd0,inset 0 -1px 3px #8eacd880,0 3px 10px #203c6220!important}
+body.rev3 .balance-panel{background:radial-gradient(ellipse at var(--press-x,87%) var(--press-y,3%),color-mix(in srgb,var(--p-a) 50%,#253c51) 0%,transparent 65%),radial-gradient(ellipse at 2% 110%,#327c7750,transparent 62%),linear-gradient(145deg,#122337,#203e54 70%,#1d4b4d)!important;border:1px solid #e8f4ff76!important;box-shadow:0 16px 31px #172f4830,inset 0 1px 1px #e8f4ff55,inset 0 -1px 0 #96dbcc35!important;border-radius:25px!important}
+body.rev3 .balance-panel::after{opacity:.7;box-shadow:0 0 0 24px #ffffff06,0 0 0 48px #ffffff04!important}body.rev3 .hero-saldo strong{font-weight:790;letter-spacing:-.045em!important}body.rev3 .hero-track i{box-shadow:inset 0 1px 1px #ffffff60,0 1px 5px #4cdba33a!important}
+body.rev3 #analysis .category-viz-track{border-radius:999px!important;overflow:hidden!important;box-shadow:inset 0 1px 2px #152b4010!important}body.rev3 #analysis .category-viz-fill{box-shadow:inset 0 1px 1px #ffffff80!important}body.rev3 .chart-cloud-tooltip{border-radius:17px!important;box-shadow:0 9px 25px #172e4820,inset 0 1px 0 #ffffff70!important}
+body.rev3 .card,body.rev3 .preview-list,body.rev3 .insight-list{border-radius:22px!important}
+body.rev3{--wall-x:0px;--wall-x2:0px}body.rev3[data-active-tab="movements"]{--wall-x:18px;--wall-x2:-12px}body.rev3[data-active-tab="analysis"]{--wall-x:-16px;--wall-x2:15px}body.rev3[data-active-tab="menu"]{--wall-x:10px;--wall-x2:-18px}body.rev3 #revampBackdrop::before{transform:translate3d(var(--wall-x),var(--v65-shift),0)!important}body.rev3 #revampBackdrop::after{transform:translate3d(var(--wall-x2),var(--v65-shift2),0)!important}
+body.rev3 #monthlyOpticalPlot .optical-line{stroke-width:3.3;stroke-linecap:round;stroke-linejoin:round}body.rev3 .monthly-live-point.selected{transition:transform .18s cubic-bezier(.2,.8,.2,1.15)!important}body.rev3 .monthly-guide.show{transition:opacity .15s ease!important}body.rev3 .v41-bars i{box-shadow:inset 0 1px 1px #ffffff90}body.rev3 .v41-month.active{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--blue) 25%,transparent)}
+@media(prefers-reduced-motion:reduce){body.rev3{--wall-x:0px!important;--wall-x2:0px!important}body.rev3 #revampBackdrop::before,body.rev3 #revampBackdrop::after{transform:none!important}body.rev3 .monthly-live-point.selected{transition:none!important}}body.rev3 #revampBackdrop::before,body.rev3 #revampBackdrop::after{transition:transform .19s ease-out}body.rev3 .drawer-menu-item:active{transform:scale(.98)}
+@media(prefers-reduced-motion:reduce){body.rev3 #revampBackdrop::before,body.rev3 #revampBackdrop::after{transition:none!important}}@media(prefers-reduced-transparency:reduce){body.rev3[data-glass="clear"] #bottomNav.rev3-nav{background:var(--surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
+</style>
+
 </head>
-<body data-app-version="4.1" class="rev3">
+<body data-app-version="4.2" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
       <header class="topbar">
         <div class="topbar-inner">
-          <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
+          <button class="icon-btn" id="menuBtn" aria-label="Torna ad Analisi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
           <div class="title">
             <h1 id="screenTitle">Home</h1>
             
@@ -1847,6 +1872,7 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
             <div id="dashboardStats"></div>
           </article>
           <section class="home-insights"><div class="section-heading"><h2>In evidenza</h2><span>Il punto sulle tue finanze</span></div><div class="insight-list" id="infoStrip"></div></section>
+          <section class="home-intelligence"><div class="section-heading"><h2>Analisi intelligente</h2><span>Solo sul dispositivo</span></div><div class="intelligence-list" id="financialIntelligence"></div></section>
           <section class="home-budget"><div class="section-heading"><h2>Budget categorie</h2><button class="text-link" type="button" id="homeBudgetLink">Vedi tutti ›</button></div><div class="preview-list" id="homeBudgetPreview"></div></section>
           <section class="home-recent"><div class="section-heading"><h2>Ultimi movimenti</h2><button class="text-link" type="button" id="homeMovementsLink">Vedi tutti ›</button></div><div class="preview-list" id="homeRecent"></div></section>
         </div>
@@ -1864,7 +1890,7 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
             </div>
           </article>
           <article class="card chart-card category-chart-card">
-            <div class="card-title"><h2>Spesa per categoria</h2><div class="legend"><span><i class="dot green"></i>Dentro budget</span><span><i class="dot red"></i>Fuori budget</span></div></div>
+            <div class="card-title"><h2>Spesa per categoria</h2><button class="manage-link" type="button" data-manage-categories>Gestisci</button><div class="legend"><span><i class="dot green"></i>Dentro budget</span><span><i class="dot red"></i>Fuori budget</span></div></div>
             <div class="chart-wrap category-chart-wrap">
               <canvas id="categoryCanvas" hidden></canvas><div id="categoryViz" class="category-viz" aria-label="Spese rispetto al budget"></div>
               <div class="chart-cloud-tooltip category-cloud-tooltip" id="categoryChartTooltip" role="status" aria-live="polite"></div>
@@ -1874,7 +1900,7 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
         </div>
 
           <article class="card card-pad full analysis-budget-card">
-            <div class="card-title"><h2>Budget</h2><span class="subtle">Categorie ordinate per criticità</span></div>
+            <div class="card-title"><h2>Budget</h2><button class="manage-link" type="button" data-manage-categories>Gestisci</button><span class="subtle">Categorie ordinate per criticità</span></div>
             <div class="grid-3" id="budgetSummary"></div>
             <div class="grid" id="budgetMini" style="margin-top:18px"></div>
             <div class="budget-list" id="budgetList" style="display:none"></div>
@@ -1969,6 +1995,31 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
           </article>
         </div>
       </section>
+  <section class="view" id="menu" data-title="Menu rapido"><div id="sideMenu">
+    <div class="quick-page">
+      <div class="drawer-head">
+        <div>
+          <h2 id="sideMenuTitle">I tuoi strumenti</h2>
+          <p>Accessi rapidi e lettura veloce del mese finanziario. · v4.2</p>
+        </div>
+        <button class="modal-close" id="sideMenuClose" aria-label="Torna alla Home">⌂</button>
+      </div>
+      <div class="drawer-menu" id="drawerMenuButtons">
+        <button class="drawer-menu-item active" data-panel="quick"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M16 10h5v5h-5a2.5 2.5 0 0 1 0-5Z"/></svg><span>Riepilogo Rapido</span></button>
+        <button class="drawer-menu-item" data-panel="piggy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10c0-4 4-6 8-5l4-2v4l3 3h2v5h-3l-2 4h-3v-2H8v2H5v-4l-3-3v-2Z"/><path d="M11 8h4"/></svg><span>Salvadanaio</span></button>
+        <button class="drawer-menu-item" data-panel="current"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-12 5h6"/></svg><span>Mese Corrente</span></button>
+        <button class="drawer-menu-item" data-panel="critical"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 10 18H2Z M12 9v5m0 3v.1"/></svg><span>Categorie Critiche</span></button>
+        <button class="drawer-menu-item" data-panel="investments"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 6-6 4 4 8-9m-6 0h6v6"/></svg><span>Investimenti</span></button>
+        <button class="drawer-menu-item" data-panel="archive"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="13" rx="2"/><rect x="2" y="3" width="20" height="5" rx="2"/><path d="M9 12h6"/></svg><span>Archivio Mesi</span></button>
+        <button class="drawer-menu-item" data-panel="annual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 17V9m6 8V4m6 13v-6"/></svg><span>Bilancio annuale</span></button>
+        <button class="drawer-menu-item" data-panel="summaries"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8m-8 4h8m-8 4h5"/></svg><span>Riepiloghi personali</span></button>
+        <button class="drawer-menu-item" data-panel="recurring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m17 2 4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 0 1-3 3H3"/></svg><span>Spese ricorrenti</span></button>
+        <button class="drawer-menu-item" data-panel="goals"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Obiettivi risparmio</span></button>
+      </div>
+      <div class="drawer-content" id="drawerContent"></div>
+      <button class="drawer-help-fab" id="drawerHelpFab" type="button" aria-label="Apri Help">?</button>
+    </div>
+  </div></section>
     </main>
   </div>
 
@@ -1991,34 +2042,9 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
               </div>
             </form></div>
           </article></div>
-<nav class="liquid-nav rev3-nav" id="bottomNav" aria-label="Navigazione principale"><button type="button" class="nav-item nav-home-btn" data-tab="home" aria-label="Home"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><span class="nav-label">Home</span></button><button type="button" class="nav-item " data-tab="movements" aria-label="Movimenti"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span><span class="nav-label">Movimenti</span></button><button type="button" class="nav-add" id="navAdd" aria-label="Aggiungi movimento"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" class="nav-item " data-tab="analysis" aria-label="Analisi"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16v-5M12 16V4M18 16V8"/></svg></span><span class="nav-label">Analisi</span></button><button type="button" class="nav-item " data-tab="categories" aria-label="Categorie"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span><span class="nav-label">Categorie</span></button><span class="nav-drag-lens" id="navDragLens" aria-hidden="true"></span></nav>
+<nav class="liquid-nav rev3-nav" id="bottomNav" aria-label="Navigazione principale"><button type="button" class="nav-item nav-home-btn" data-tab="home" aria-label="Home"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><span class="nav-label">Home</span></button><button type="button" class="nav-item " data-tab="movements" aria-label="Movimenti"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span><span class="nav-label">Movimenti</span></button><button type="button" class="nav-add" id="navAdd" aria-label="Aggiungi movimento"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" class="nav-item " data-tab="analysis" aria-label="Analisi"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16v-5M12 16V4M18 16V8"/></svg></span><span class="nav-label">Analisi</span></button><button type="button" class="nav-item" data-tab="menu" aria-label="Menu rapido"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="6" cy="6" r="1" fill="currentColor"/></svg></span><span class="nav-label">Menu rapido</span></button><span class="nav-drag-lens" id="navDragLens" aria-hidden="true"></span></nav>
 
 
-  <div class="modal-backdrop drawer-backdrop" id="sideMenu" aria-hidden="true">
-    <aside class="side-drawer" role="dialog" aria-modal="true" aria-labelledby="sideMenuTitle">
-      <div class="drawer-head">
-        <div>
-          <h2 id="sideMenuTitle">Menu rapido</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario. · v4.1</p>
-        </div>
-        <button class="modal-close" id="sideMenuClose" aria-label="Chiudi menu">×</button>
-      </div>
-      <div class="drawer-menu" id="drawerMenuButtons">
-        <button class="drawer-menu-item active" data-panel="quick">Riepilogo<br>Rapido</button>
-        <button class="drawer-menu-item" data-panel="piggy">Salvadanaio</button>
-        <button class="drawer-menu-item" data-panel="current">Mese<br>Corrente</button>
-        <button class="drawer-menu-item" data-panel="critical">Categorie<br>Critiche</button>
-        <button class="drawer-menu-item" data-panel="investments">Investimenti</button>
-        <button class="drawer-menu-item" data-panel="archive">Archivio<br>Mesi</button>
-        <button class="drawer-menu-item" data-panel="annual">Bilancio<br>annuale</button>
-        <button class="drawer-menu-item" data-panel="summaries">Riepiloghi<br>personali</button>
-        <button class="drawer-menu-item" data-panel="recurring">Spese<br>ricorrenti</button>
-        <button class="drawer-menu-item" data-panel="goals">Obiettivi<br>risparmio</button>
-      </div>
-      <div class="drawer-content" id="drawerContent"></div>
-      <button class="drawer-help-fab" id="drawerHelpFab" type="button" aria-label="Apri Help">?</button>
-    </aside>
-  </div>
 
 <div class="modal-backdrop" id="settingsModal" aria-hidden="true"><section class="settings-sheet card card-pad" role="dialog" aria-modal="true" aria-labelledby="settingsTitle"><div class="pref-header"><div><h2 id="settingsTitle">Impostazioni</h2><p>Preferenze e gestione dati</p></div><button aria-label="Chiudi impostazioni" class="glass-back-btn" id="settingsBack">×</button></div><div class="pref-body"><section class="pref-group"><h3>Aspetto</h3><div class="pref-list"><div class="setting-card">
 <div class="setting-copy">
@@ -2698,8 +2724,8 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
     function closePdfExportModal(){const modal=document.getElementById('pdfExportModal'); modal.classList.remove('open'); modal.setAttribute('aria-hidden','true')}
     function confirmPdfExport(){const select=document.getElementById('pdfPeriodSelect'); const p=(select._periods||[])[Number(select.value)||0]; closePdfExportModal(); exportCurrentPeriodPdf(p||currentPeriod())}
 
-    function openSideMenu(panel='quick'){document.body.classList.remove('movements-scroll-locked');const m=document.getElementById('sideMenu');m.classList.add('open');m.setAttribute('aria-hidden','false');renderDrawerContent(panel)}
-    function closeSideMenu(){const m=document.getElementById('sideMenu');m.classList.remove('open');m.setAttribute('aria-hidden','true');syncMovementScrollLock()}
+    function openSideMenu(panel='quick'){setTab('menu');renderDrawerContent(panel)}
+    function closeSideMenu(){if(activeTab==='menu')setTab('home');else syncMovementScrollLock()}
     function setDrawerActive(panel){document.querySelectorAll('.drawer-menu-item').forEach(b=>b.classList.toggle('active',b.dataset.panel===panel))}
     function groupDrawerRowsByYear(items,renderRow,emptyText='Nessun periodo disponibile.'){
       if(!items.length) return `<div class="drawer-card"><p>${escapeHtml(emptyText)}</p></div>`;
@@ -2725,7 +2751,7 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
       btn.textContent=hidden?'Nascondi':'Mostra';
     }
     function renderDrawerContent(panel='quick'){
-      setDrawerActive(panel); const box=document.getElementById('drawerContent'); const p=currentPeriod(); const t=totals(); const rows=budgetRows();
+      document.getElementById('sideMenu').dataset.panel=panel; setDrawerActive(panel); const box=document.getElementById('drawerContent'); const p=currentPeriod(); const t=totals(); const rows=budgetRows();
       if(['annual','summaries','recurring','goals'].includes(panel)){renderV40Panel(panel,box);return;}
       if(panel==='quick'){
         box.innerHTML=`<div class="drawer-card"><h3>Riepilogo Rapido</h3><p>${p.label} · ${p.range}</p><div class="drawer-grid" style="margin-top:12px"><div class="drawer-metric"><span>Entrate</span><b class="greenText">${fmt.format(t.entrate)}</b></div><div class="drawer-metric"><span>Uscite</span><b class="redText">${fmt.format(t.uscite)}</b></div><div class="drawer-metric"><span>Saldo</span><b class="${t.saldo>=0?'saldoPositiveText':'saldoNegativeText'}">${fmt.format(t.saldo)}</b></div><div class="drawer-metric"><span>Target risparmio</span><b>${fmt.format(Number(state.settings.savingsTarget)||0)}</b></div></div></div>`;
@@ -2808,7 +2834,7 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
               </div>
             </details>
             <details>
-              <summary>5. Indicatori rapidi</summary><p class="help-body">v4.1: nel Menu rapido trovi bilancio annuale, riepiloghi salvati, ricorrenze e obiettivi personali. In Impostazioni puoi scegliere tema e palette, controllare backup e modalità offline. Il vetro è sempre cristallino. Nella Home, usa l’occhio per nascondere saldo ed entrate; le uscite restano visibili. I riepiloghi non duplicano movimenti.</p>
+              <summary>5. Indicatori rapidi</summary><p class="help-body">v4.2: apri il Menu rapido dalla barra inferiore. Le categorie sono in Analisi → Gestisci. Nel Menu rapido trovi bilancio annuale, riepiloghi salvati, ricorrenze e obiettivi personali. In Impostazioni puoi scegliere tema e palette, controllare backup e modalità offline. Il vetro è sempre cristallino. Nella Home, usa l’occhio per nascondere saldo ed entrate; le uscite restano visibili. I riepiloghi non duplicano movimenti.</p>
               <div class="help-body">
                 <p><b>Giorni rimanenti:</b> giorni mancanti alla chiusura del periodo.</p>
                 <p><b>Media settimanale uscite:</b> uscite registrate finora ÷ settimane realmente trascorse.</p>
@@ -3017,7 +3043,7 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
 
     function renderAll(){
       renderPeriod(); renderCategorySelects(); renderDashboard(); renderMovements(); renderBudget(); renderCategories();
-      syncActiveTabUI();
+      syncActiveTabUI(); if(activeTab==='menu')renderDrawerContent(document.getElementById('sideMenu').dataset.panel||'quick');
       if(activeTab==='analysis') setTimeout(drawCharts,60);
     }
     function renderPeriod(){
@@ -3046,8 +3072,33 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
       return (direct && direct.emoji) ? direct.emoji : inferCategoryEmoji(name,type);
     }
     function emojiBadge(name,type='uscita'){return `<span class="category-emoji" aria-hidden="true">${escapeHtml(categoryEmoji(name,type))}</span>`}
+
+    function intelligenceDay(a,b){return Math.round((Date.UTC(a.getFullYear(),a.getMonth(),a.getDate())-Date.UTC(b.getFullYear(),b.getMonth(),b.getDate()))/86400000);}
+    function buildFinancialIntelligence(p=currentPeriod(),today=toDate(todayKey())){
+      const out=[], push=(icon,title,body,kind='neutral')=>out.push({icon,title,body,kind});
+      const duration=intelligenceDay(p.end,p.start)+1, elapsed=Math.min(duration,Math.max(0,intelligenceDay(today,p.start)+1));
+      const current=elapsed>0&&today<=p.end, closed=today>p.end;
+      const cutoff=addDays(p.start,elapsed-1), expenses=(q,end)=>state.movements.filter(m=>m.type==='uscita'&&inPeriod(m,q)&&toDate(m.date)<=end);
+      if(elapsed===0){push('🗓️','Periodo futuro','Le analisi saranno disponibili quando inizia il periodo.');return out;}
+      const priorMonth=new Date(p.labelYear,p.labelMonth-1,1),prev=periodForLabel(priorMonth.getFullYear(),priorMonth.getMonth()), prevDays=intelligenceDay(prev.end,prev.start)+1, common=Math.min(elapsed,prevDays);
+      const a=expenses(p,addDays(p.start,common-1)), b=expenses(prev,addDays(prev.start,common-1));
+      if(b.length&&sum(b)>0&&a.length){const delta=(sum(a)-sum(b))/sum(b)*100;push(delta<=0?'↘':'↗',Math.abs(delta)<.05?'Spese stabili':delta<0?'Stai spendendo meno':'Spese in aumento',`${nf.format(Math.abs(delta))}% ${delta<0?'in meno':delta>0?'in più':'di variazione'} nei primi ${common} giorni rispetto al periodo precedente.`,delta<=0?'good':'warn');}
+      else push('📊','Confronto non disponibile','Servono spese registrate in entrambi i periodi per confrontare lo stesso numero di giorni.');
+      const rows=budgetRowsForPeriod(p).filter(r=>r.spent>0&&r.max>0).sort((a,b)=>b.pct-a.pct);const risk=rows.find(r=>r.pct>=80);
+      if(risk)push('◎',risk.name+(risk.out?' fuori budget':' vicino al limite'),state.settings.hideHomeBalance?'Controlla il budget in Analisi.':`${nf.format(risk.pct)}% del budget assegnato utilizzato.`, 'warn');
+      else if(rows.length)push('✓','Budget sotto controllo','Nessuna categoria con budget assegnato ha raggiunto l’80%.','good');
+      const ms=expenses(p,cutoff),spent=sum(ms),income=sum(state.movements.filter(m=>m.type==='entrata'&&inPeriod(m,p)&&toDate(m.date)<=cutoff));
+      if(current){let due=0,count=0,late=0;for(const r of state.settings.recurringExpenses||[]){const d=v41Days(r.date,dateKey(today));if(d<0)late++;else if(d<=7){due+=Number(r.amount)||0;count++;}}push('🗓️','Prossime scadenze',count?`${count} scadenze entro 7 giorni: ${fmt.format(due)}.${late?' '+late+' arretrate.':''}`:late?`${late} scadenze arretrate. Nessuna in arrivo entro 7 giorni.`:'Nessuna scadenza registrata entro 7 giorni.');
+        if(!state.settings.hideHomeBalance&&income>0&&ms.length&&elapsed>=7){const projected=income-spent/elapsed*duration;push('◉',projected>=0?'Risparmio previsto':'Disavanzo previsto',`${fmt.format(Math.abs(projected))} a fine periodo, ipotizzando entrate già registrate e ritmo di spesa costante.`,projected>=0?'good':'warn');}}
+      const history=[2,1,0].map(i=>{const d=new Date(p.labelYear,p.labelMonth-i-(closed?0:1),1);return periodForLabel(d.getFullYear(),d.getMonth())});const hs=history.map(q=>movementsForPeriod(q).filter(m=>m.type==='uscita'));
+      if(hs.every(x=>x.length)){const trend=state.categories.filter(c=>c.type==='uscita').map(c=>({name:c.name,v:hs.map(x=>sum(x.filter(m=>m.category===c.name)))})).filter(x=>x.v[0]>0&&x.v[0]<x.v[1]&&x.v[1]<x.v[2]).sort((a,b)=>(b.v[2]-b.v[0])-(a.v[2]-a.v[0]))[0];if(trend)push('↗','Tendenza: '+trend.name,`Spesa in crescita nei tre ultimi periodi conclusi (${fmt.format(trend.v[0])} → ${fmt.format(trend.v[2])}).`,'warn');}
+      return out;
+    }
+    function renderFinancialIntelligence(){const host=document.getElementById('financialIntelligence');host.innerHTML=buildFinancialIntelligence().map(r=>`<div class="intelligence-row ${r.kind}"><span class="intelligence-icon" aria-hidden="true">${r.icon}</span><div><strong>${escapeHtml(r.title)}</strong><p>${escapeHtml(r.body)}</p></div></div>`).join('');}
+
     function renderDashboard(){
       const t=totals(),p=currentPeriod();
+      renderFinancialIntelligence();
       const oldHeroFill=parseFloat(document.querySelector('#dashboardStats .hero-track i')?.style.width||'0');
       const oldAmounts=[...document.querySelectorAll("#dashboardStats .hero-saldo strong,#dashboardStats .hero-flow strong")].map(el=>el.textContent);
       const ratio=t.entrate>0?t.uscite/t.entrate*100:0;
@@ -3059,10 +3110,9 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
       const days=Math.max(0,Math.ceil((p.end-refDate)/86400000)),totalDays=Math.ceil((p.end-p.start+1)/86400000),elapsed=Math.max(1,Math.ceil((refDate-p.start+1)/86400000)),elapsedWeeks=Math.max(1,Math.ceil(elapsed/7)),avg=t.uscite/elapsedWeeks,projection=t.uscite/elapsed*totalDays;
       const rows=budgetRows().sort((a,b)=>b.spent-a.spent||byAlpha(a,b));
       const top=rows.find(r=>r.spent>0);
-      const prevMonth=new Date(p.labelYear,p.labelMonth-1,15);const prev=totalsForPeriod(periodForLabel(prevMonth.getFullYear(),prevMonth.getMonth()));
-      const diff=prev.uscite>0?(t.uscite-prev.uscite)/prev.uscite*100:null;
+      
       const insights=[['💡','Categoria più costosa',top?top.name+' · '+fmt.format(top.spent):'Nessuna uscita registrata'],['📊','Media settimanale',fmt.format(avg)+' · '+elapsedWeeks+' sett. trascorse'],['🔮','Proiezione fine periodo',fmt.format(projection)+' di uscite stimate'],['🗓️','Giorni rimanenti',days+' · fino al '+formatDate(p.end).slice(0,5)]];
-      if(diff!==null)insights.splice(1,0,['📉','Confronto con il periodo precedente',(diff>0?'+':'')+nf.format(diff)+'% di uscite'+(realToday<p.end?' (periodo parziale)':'')]);
+      
       document.getElementById('infoStrip').innerHTML=insights.map(([icon,title,value])=>`<div class="insight-row"><span class="category-emoji">${icon}</span><div><span>${title}</span><b>${escapeHtml(value)}</b></div></div>`).join('');
       document.getElementById('homeBudgetPreview').innerHTML=rows.length?rows.slice(0,4).map(r=>`<div class="budget-preview-row">${emojiBadge(r.name)}<div class="budget-preview-main"><div><b>${escapeHtml(r.name)}</b><span class="${r.out?'redText':''}">${fmt.format(r.spent)} <small>/ ${fmt.format(r.max)}</small></span></div><div class="preview-track"><i class="${r.out?'over':''}" style="width:${r.max>0?Math.max(0,Math.min(100,r.spent/r.max*100)):(r.spent>0?100:0)}%"></i></div></div></div>`).join(''):'<div class="empty">Nessuna categoria disponibile.</div>';
       const recent=currentMovements().slice().sort((a,b)=>movementDateTimestamp(b)-movementDateTimestamp(a)||movementInsertTimestamp(b)-movementInsertTimestamp(a)).slice(0,4);
@@ -3204,7 +3254,7 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
         const isIncome=m.type==='entrata',selected=selectedExpenseIds.has(m.id),id=escapeHtml(m.id),selectable=movementSelectionMode&&!isIncome;
         return `<div class="move-card ${isIncome?'entrata':'uscita'} ${selected?'selected':''}" data-movement-id="${id}">
           <button type="button" class="movement-row-button" aria-label="${escapeHtml(m.desc)}: ${fmt.format(m.amount)}" ${movementSelectionMode?'aria-pressed="'+String(selected)+'"':'aria-expanded="false"'}>
-            ${selectable?`<span class="category-emoji selection-dot">${selected?'✓':'○'}</span>`:emojiBadge(m.category,m.type)}
+            ${selectable?`<span class="category-emoji selection-dot">${selected?'<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10 3 3 7-7"/></svg>':''}</span>`:emojiBadge(m.category,m.type)}
             <span class="move-main"><b>${escapeHtml(m.desc||'Movimento')}</b><small>${escapeHtml(m.category)}${movementInsertTime(m)?' · '+movementInsertTime(m):''}${sort==='high'||sort==='low'?' · '+formatDate(toDate(m.date)).slice(0,5):''}</small></span>
             <strong class="move-amount ${isIncome?'greenText':'redText'}">${isIncome?'+':'−'}${fmt.format(m.amount)}</strong>
             ${movementSelectionMode?'':'<span class="row-chevron" aria-hidden="true">›</span>'}
@@ -3315,9 +3365,9 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
       document.body.classList.toggle('movements-scroll-locked',locked);
       if(locked) window.scrollTo({top:0,left:0,behavior:'auto'});
     }
-    const premiumTabOrder=['home','movements','analysis','categories'];
+    const premiumTabOrder=['home','movements','analysis','categories','menu'];
     function syncActiveTabUI(previousTab=null){
-      const safeTab=['home','analysis','movements','categories'].includes(activeTab)?activeTab:'home';
+      const safeTab=['home','analysis','movements','categories','menu'].includes(activeTab)?activeTab:'home';
       activeTab=safeTab;
       const previousIndex=premiumTabOrder.indexOf(previousTab);
       const nextIndex=premiumTabOrder.indexOf(safeTab);
@@ -3330,22 +3380,22 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
           }
         }
       });
-      document.querySelectorAll('.nav-item,.nav-home-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===safeTab));
-      document.body.dataset.activeTab=safeTab;
-      document.getElementById('screenTitle').textContent={home:'Home',movements:'Movimenti',analysis:'Analisi',categories:'Categorie'}[safeTab];
-      document.querySelectorAll('.nav-item,.nav-home-btn').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===safeTab?'page':'false')); 
+      document.querySelectorAll('.nav-item,.nav-home-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===(safeTab==='categories'?'analysis':safeTab)));
+      document.body.dataset.activeTab=safeTab; if(safeTab==='menu'&&!document.getElementById('drawerContent').innerHTML)renderDrawerContent('quick');
+      document.getElementById('screenTitle').textContent={home:'Home',movements:'Movimenti',analysis:'Analisi',categories:'Categorie',menu:'Menu rapido'}[safeTab];
+      document.querySelectorAll('.nav-item,.nav-home-btn').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===(safeTab==='categories'?'analysis':safeTab)?'page':'false')); 
       updateNavPreview(null);
       syncMovementScrollLock();
     }
     function setTab(tab,scroll=true){
       if(tab!=='analysis')finishMonthlyMorph();
       const previousTab=activeTab;
-      activeTab=['home','analysis','movements','categories'].includes(tab)?tab:'home';
+      activeTab=['home','analysis','movements','categories','menu'].includes(tab)?tab:'home';
       state.activeTab=activeTab;
       if(activeTab==='movements' && previousTab!==activeTab){state.movementsOpen=true;renderMovements();}
       saveState();
       syncActiveTabUI(previousTab);
-      if(activeTab==='analysis') setTimeout(drawCharts,80);
+      if(activeTab==='home')renderDashboard(); if(activeTab==='analysis') setTimeout(drawCharts,80); if(activeTab==='menu')renderDrawerContent(document.getElementById('sideMenu').dataset.panel||'quick');
       if(scroll) window.scrollTo({top:0,behavior:'smooth'});
     }
     let chartFrame=0;
@@ -3906,6 +3956,7 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
         endNavInteraction(e.clientX,e.clientY,true);
       });
     }
+    document.querySelector('.balance-panel').addEventListener('pointerdown',e=>{if(v40ReducedMotion())return;const el=e.currentTarget,r=el.getBoundingClientRect();el.style.setProperty('--press-x',Math.max(0,Math.min(100,(e.clientX-r.left)/r.width*100))+'%');el.style.setProperty('--press-y',Math.max(0,Math.min(100,(e.clientY-r.top)/r.height*100))+'%');},{passive:true});
     const premiumRippleSelector='.icon-btn,.period-btn,.primary,.secondary,.ghost,.collapse-btn,.mini-primary,.drawer-menu-item,.nav-item,.nav-home-btn,.nav-add,.detail-summary';
     document.addEventListener('pointerdown',e=>{
       const btn=e.target.closest(premiumRippleSelector);if(!btn||btn.id==='resetFilters'||btn.matches('.nav-item,.nav-home-btn')||v40ReducedMotion())return;
@@ -4005,11 +4056,11 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
     document.addEventListener('selectstart',e=>{if(!e.target.closest('input,textarea'))e.preventDefault();},{capture:true,passive:false});
 
 
-    document.getElementById('menuBtn').addEventListener('click',()=>openSideMenu('quick'));
+    document.getElementById('menuBtn').addEventListener('click',()=>setTab('analysis')); document.querySelectorAll('[data-manage-categories]').forEach(b=>b.addEventListener('click',()=>{setTab('categories',false);window.scrollTo(0,0);}));
     document.getElementById('sideMenuClose').addEventListener('click',closeSideMenu);
-    document.getElementById('sideMenu').addEventListener('click',e=>{if(e.target.id==='sideMenu')closeSideMenu()});
+    
     document.getElementById('drawerHelpFab').addEventListener('click',()=>renderDrawerContent('help'));
-    document.querySelectorAll('.drawer-menu-item').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.panel==='current'){goToCurrentMonth(false);renderDrawerContent('current');return}renderDrawerContent(b.dataset.panel)}));
+    document.querySelectorAll('.drawer-menu-item').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.panel==='current'){goToCurrentMonth(true);return}renderDrawerContent(b.dataset.panel)}));
     // Visual viewport keyboard handling: no double safe-area padding.
     let entryViewportFrame=0;
     let entryNormalHeight=Math.round(window.visualViewport?.height||window.innerHeight);
@@ -4133,8 +4184,8 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v4.1')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v4.1', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v4.2')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v4.2', '1');
               location.reload();
             }
           });
@@ -4148,8 +4199,8 @@ body.rev3 .v41-axis span:nth-child(2){top:78px;}body.rev3 .v41-axis span:nth-chi
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v41')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v41', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v42')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v42', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
