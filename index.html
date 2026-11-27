@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v3.6</title>
+  <title>Tracciatore Spese · v3.7</title>
   <meta name="theme-color" content="#dce6f4" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1407,7 +1407,7 @@ body.rev3:not([data-active-tab="analysis"]) .monthly-live-point:before,body.rev3
 @media(prefers-reduced-motion:reduce){body.rev3 #revampBackdrop:before,body.rev3 #revampBackdrop:after{transform:none!important}body.rev3 #bottomNav .nav-drag-lens,body.rev3 .view{transition:none!important;animation:none!important}}
 @media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav,body.rev3 .sticky-head{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav,body.rev3.dark-mode .sticky-head{background:#233248!important}}
 
-/* === v3.6 premium liquid glass refresh === */
+/* === v3.7 premium liquid glass refresh === */
 body.rev3 .category-emoji{width:auto!important;height:auto!important;flex:0 0 auto!important;display:inline-flex!important;align-items:center;justify-content:center;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;font-size:1.22em;line-height:1}
 body.rev3 .selection-dot{font-size:14px!important;color:var(--blue)!important;min-width:18px;justify-content:center}
 body.rev3 #bottomNav{position:fixed!important;left:max(14px,calc(env(safe-area-inset-left) + 12px))!important;right:max(14px,calc(env(safe-area-inset-right) + 12px))!important;bottom:max(10px,calc(env(safe-area-inset-bottom) + 8px))!important;height:72px!important;padding:8px 10px!important;border-radius:32px!important;display:grid!important;grid-template-columns:1fr 64px 1fr!important;grid-template-areas:"left add right"!important;align-items:center!important;gap:10px!important;background:linear-gradient(180deg,rgba(255,255,255,.52),rgba(255,255,255,.26))!important;border:1px solid rgba(255,255,255,.58)!important;box-shadow:0 16px 42px rgba(31,54,102,.16),inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.16)!important;backdrop-filter:blur(24px) saturate(180%)!important;-webkit-backdrop-filter:blur(24px) saturate(180%)!important;overflow:visible!important;transition:transform .28s cubic-bezier(.22,.86,.24,1),opacity .22s ease,filter .22s ease!important;will-change:transform,opacity}
@@ -1583,8 +1583,70 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
 @media(prefers-reduced-motion:reduce){body.rev3 #entryModal.open #movementEntry{animation:none!important;}.pref-chevron{transition:none!important;}}
 @media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important;}}
 </style>
+
+<style id="rev37-premium">
+body.rev3{--ink:#17263a;--muted:#58697e;--blue:#245acb;--blue2:#397cff;--green:#087b55;--red:#c33449;--surface:#f9fbfe;--line:rgba(38,57,87,.11);--premium-surface:linear-gradient(148deg,rgba(255,255,255,.97),rgba(245,249,254,.89));--premium-edge:rgba(255,255,255,.88);--premium-shadow:0 10px 24px rgba(27,48,80,.075),0 1px 3px rgba(27,48,80,.045),inset 0 1px 0 rgba(255,255,255,.9)}
+body.rev3.dark-mode{--ink:#edf3fc;--muted:#a9bbd0;--blue:#9abaff;--green:#63dbae;--red:#ff899b;--surface:#192638;--line:rgba(183,207,239,.13);--premium-surface:linear-gradient(145deg,#243348,#192638);--premium-edge:rgba(194,219,255,.15);--premium-shadow:0 10px 24px rgba(0,0,0,.19),inset 0 1px 0 rgba(255,255,255,.07)}
+body.rev3 #revampBackdrop{background:linear-gradient(165deg,#9aaec9 0%,#d1dceb 30%,#e9edf4 65%,#d9e8e7 100%)!important}
+body.rev3 #revampBackdrop:before{background:radial-gradient(ellipse at 32% 22%,rgba(75,111,164,.47),transparent 52%),radial-gradient(ellipse at 77% 42%,rgba(154,141,197,.29),transparent 55%)!important}
+body.rev3 #revampBackdrop:after{background:radial-gradient(ellipse at 20% 65%,rgba(112,188,171,.32),transparent 55%)!important}
+body.rev3.dark-mode #revampBackdrop{background:linear-gradient(165deg,#243852,#101925 70%)!important}
+body.rev3 .sticky-head{background:linear-gradient(180deg,#d9e2ef,#e3eaf3f2)!important;border-bottom:1px solid rgba(255,255,255,.50)!important}
+body.rev3.dark-mode .sticky-head{background:linear-gradient(180deg,#1d2d42,#192638f5)!important;border-bottom-color:var(--line)!important}
+body.rev3 .card,body.rev3.dark-mode .card,body.rev3 #infoStrip.insight-list,body.rev3 .preview-list{background:var(--premium-surface)!important;border:1px solid var(--premium-edge)!important;box-shadow:var(--premium-shadow)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3 .card:before{display:none!important}
+body.rev3 .balance-panel{background:radial-gradient(ellipse at 90% 0%,#496b8a 0%,transparent 55%),linear-gradient(145deg,#132238,#233d56 76%,#204c51);border:1px solid #ffffff3b;box-shadow:0 13px 28px #1e345234,inset 0 1px 0 #ffffff35}
+body.rev3 .hero-saldo strong{color:#8ce9c5}body.rev3 .hero-saldo.negative strong{color:#ffabb4}
+body.rev3 .hero-flow strong,body.rev3 .hero-saldo strong,body.rev3 .move-amount,body.rev3 .value,body.rev3 .category-viz-spent{font-variant-numeric:tabular-nums lining-nums}
+body.rev3 .icon-btn{background:linear-gradient(155deg,#ffffffb8,#ffffff25)!important;border:1px solid #ffffffb0!important;box-shadow:inset 0 1px 1px #fff9,0 4px 11px #263e6510!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.rev3.dark-mode .icon-btn{background:linear-gradient(155deg,#ffffff24,#ffffff08)!important;border-color:#ffffff30!important;box-shadow:inset 0 1px 1px #ffffff18!important}
+body.rev3 #bottomNav.rev3-nav{background:linear-gradient(160deg,#ffffff24,#ffffff08 48%,#ffffff20)!important;border:1px solid #ffffffa6!important;box-shadow:0 8px 25px #21395026,inset 0 1px 1px #ffffffcf,inset 0 -1px 2px #ffffff40!important;backdrop-filter:blur(8px) saturate(170%) contrast(1.05)!important;-webkit-backdrop-filter:blur(8px) saturate(170%) contrast(1.05)!important}
+body.rev3 #bottomNav.rev3-nav:before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,#ffffff40,transparent 35%,transparent 70%,#d0e6ff30);opacity:.7}
+body.rev3 #bottomNav.rev3-nav .nav-item.active,body.rev3 #bottomNav.rev3-nav .nav-item.previewed{background:linear-gradient(145deg,#ffffff55,#4879bc25)!important;box-shadow:inset 0 1px 1px #ffffff90,inset 0 -1px 1px #5277ad18!important}
+body.rev3 #bottomNav .nav-drag-lens{background:radial-gradient(ellipse at 22% 0%,#ffffffad,transparent 48%),linear-gradient(135deg,#dbefff70,#b2ccf12a 55%,#e3d6ff55)!important;border:1px solid #ffffffdf!important;box-shadow:inset 0 1px 2px #fff,inset 2px -1px 3px #8facd533,0 5px 16px #28477826!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;transition:transform .19s cubic-bezier(.18,.85,.25,1.15),opacity .12s!important}
+body.rev3.dark-mode #bottomNav.rev3-nav{background:linear-gradient(150deg,#293b5366,#14223840)!important;border-color:#c8dfff38!important;box-shadow:0 8px 25px #0005,inset 0 1px 1px #ffffff30!important}
+body.rev3.dark-mode #bottomNav.rev3-nav .nav-item.active{background:#a2c6ff29!important}
+body.rev3.dark-mode #bottomNav .nav-drag-lens{background:linear-gradient(145deg,#c8e3ff70,#6381b236)!important;border-color:#b4d7ff80!important;box-shadow:inset 0 1px 2px #ffffff55,0 5px 15px #0004!important}
+body.rev3 .nav-add{transition:transform .19s cubic-bezier(.2,.8,.25,1.2)!important}
+body.rev3 .nav-add:active,body.rev3 .icon-btn:active,body.rev3 .primary:active,body.rev3 .secondary:active{transform:scale(.96)!important}
+body.rev3 .input,body.rev3 .select{box-shadow:inset 0 1px 2px #1c344b08!important;border-color:var(--line)!important}
+body.rev3 .input:focus,body.rev3 .select:focus{outline:2px solid #739eff80;outline-offset:1px}
+body.rev3 .primary{background:linear-gradient(135deg,#347be9,#2456c4)!important;box-shadow:inset 0 1px 1px #ffffff35,0 5px 13px #2456c426!important}
+body.rev3 .modal-backdrop:not(#sideMenu)>[role="dialog"]{background:var(--premium-surface)!important;border-color:var(--premium-edge)!important}
+body.rev3 #settingsModal .settings-sheet{background:var(--surface)!important}
+body.rev3 #analysis .monthly-chart-wrap{border:0!important;background:transparent!important;height:235px!important}
+body.rev3 #analysis .category-chart-wrap{border:0!important;background:transparent!important}
+body.rev3 #monthlyCanvas{touch-action:pan-y!important}
+.monthly-readout{display:flex;justify-content:space-between;align-items:flex-end;gap:8px;min-height:53px;padding:3px 4px 5px;color:var(--muted);font-size:11px}
+.monthly-readout strong{display:block;color:var(--ink);font-size:24px;line-height:1.15;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.monthly-readout .read-status{font-size:11px;font-weight:700;text-align:right;max-width:45%;overflow-wrap:anywhere;color:var(--green)}.monthly-readout .read-status.ko{color:var(--red)}
+.monthly-guide{position:absolute;width:1px;pointer-events:none;background:repeating-linear-gradient(to bottom,#7792bd99 0 4px,transparent 4px 8px);z-index:2;opacity:0;transition:opacity .15s}.monthly-guide.show{opacity:1}
+body.rev3 .monthly-live-point{--point-color:#09966c;--point-glow:#09966c35;box-shadow:0 0 0 3px var(--point-glow),0 0 8px var(--point-glow)!important;background:var(--point-color)!important}
+body.rev3 .monthly-live-point.ko{--point-color:#d43f50;--point-glow:#d43f5040}
+body.rev3 .monthly-live-point.selected{transform:translate(-50%,-50%) scale(1.3)!important;box-shadow:0 0 0 5px var(--point-glow),0 0 10px var(--point-glow)!important}
+body.rev3 .monthly-live-point:before{animation:none!important}body.rev3 .monthly-live-point.selected:before{animation:v65Halo 2.8s ease-out 2!important}
+body.rev3 #analysis .category-viz-track{height:9px!important;background:#dce4ee!important;box-shadow:inset 0 1px 2px #172b4910!important}
+body.rev3.dark-mode #analysis .category-viz-track{background:#384a61!important}
+body.rev3 .category-viz-fill,body.rev3 .preview-track i{background:linear-gradient(180deg,#ffffff36,transparent 55%),linear-gradient(90deg,#35cba0,#07855f)!important;transform-origin:left center}
+body.rev3 .category-viz-row.out .category-viz-fill,body.rev3 .preview-track i.over{background:linear-gradient(180deg,#ffffff33,transparent 55%),linear-gradient(90deg,#f47e87,#c33449)!important}
+body.rev3 #analysis .category-viz-row{min-height:72px!important;padding:12px 0!important}
+body.rev3 #analysis .category-viz-max{font-size:12px!important}
+body.rev3 .chart-cloud-tooltip{background:#f9fcffeb!important;border-color:#ffffffd9!important;box-shadow:0 7px 22px #263b6526,inset 0 1px 0 white!important;backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
+body.rev3 .chart-cloud-tooltip:after{background:#f9fcff!important;border-color:#ffffffd9!important}
+body.rev3.dark-mode .chart-cloud-tooltip,body.rev3.dark-mode .chart-cloud-tooltip:after{background:#26374cf5!important;border-color:#758aa74d!important}
+body.rev3.dark-mode .chart-cloud-tooltip.ok b{color:#72dfb0!important}body.rev3.dark-mode .chart-cloud-tooltip.ko b{color:#ff9bab!important}
+body.rev3 .category-emoji{background:none!important;box-shadow:none!important}
+@keyframes premiumBarIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes premiumPlotIn{from{clip-path:inset(0 100% 0 0);opacity:.55}to{clip-path:inset(0);opacity:1}}
+body.rev3 .plot-enter #monthlyCanvas,body.rev3 .plot-enter #monthlyPointLayer{animation:premiumPlotIn .38s cubic-bezier(.2,.75,.3,1) both!important}
+body.rev3 .category-viz.render-enter .category-viz-fill{animation:premiumBarIn .32s cubic-bezier(.2,.8,.25,1) both}
+body.rev3.page-hidden *,body.rev3.page-hidden *:before,body.rev3.page-hidden *:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){body.rev3 .plot-enter #monthlyCanvas,body.rev3 .plot-enter #monthlyPointLayer,body.rev3 .category-viz.render-enter .category-viz-fill,body.rev3 .monthly-live-point.selected:before{animation:none!important}body.rev3 #bottomNav .nav-drag-lens{transition:none!important}}
+@media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important}body.rev3 .chart-cloud-tooltip{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
+</style>
+
 </head>
-<body data-app-version="3.6" class="rev3">
+<body data-app-version="3.7" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
@@ -1593,7 +1655,7 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
           <div class="title">
             <h1 id="screenTitle">Home</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">v3.6</span></p>
+            <p>Lorenzo Vizzini <span class="profile-badge">v3.7</span></p>
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -1623,7 +1685,8 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
         <div class="analysis-grid">
           <article class="card chart-card">
             <div class="card-title"><h2>Uscite mensili</h2><span class="pill blue" id="lineChartBadge">Maggio 2026</span></div>
-            <div class="chart-wrap monthly-chart-wrap">
+            <div class="monthly-readout" aria-live="off"><div><span id="monthlyReadLabel">Periodo selezionato</span><strong id="monthlyReadValue">0,00 €</strong></div><span id="monthlyReadStatus" class="read-status"></span></div><div class="chart-wrap monthly-chart-wrap">
+              <div id="monthlyGuide" class="monthly-guide" aria-hidden="true"></div>
               <canvas id="monthlyCanvas" aria-label="Grafico delle uscite degli ultimi sei mesi" role="img"></canvas>
               <div class="monthly-point-layer" id="monthlyPointLayer" aria-hidden="true"></div>
               <div class="chart-cloud-tooltip" id="monthlyChartTooltip" role="status" aria-live="polite"></div>
@@ -1765,7 +1828,7 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
       <div class="drawer-head">
         <div>
           <h2 id="sideMenuTitle">Menu rapido</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.6</p>
+          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.7</p>
         </div>
         <button class="modal-close" id="sideMenuClose" aria-label="Chiudi menu">×</button>
       </div>
@@ -2754,9 +2817,11 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
     function emojiBadge(name,type='uscita'){return `<span class="category-emoji" aria-hidden="true">${escapeHtml(categoryEmoji(name,type))}</span>`}
     function renderDashboard(){
       const t=totals(),p=currentPeriod();
+      const oldAmounts=[...document.querySelectorAll("#dashboardStats .hero-saldo strong,#dashboardStats .hero-flow strong")].map(el=>el.textContent);
       const ratio=t.entrate>0?t.uscite/t.entrate*100:0;
       const fill=t.entrate>0?Math.max(0,Math.min(100,ratio)):(t.uscite>0?100:0);
       document.getElementById('dashboardStats').innerHTML=`<div class="hero-saldo ${t.saldo<0?'negative':''}"><span>Saldo del periodo</span><strong>${fmt.format(t.saldo)}</strong></div><div class="hero-track"><i class="${t.saldo<0?'over':''}" style="width:${fill}%"></i></div><div class="hero-progress"><span>${t.entrate>0?'Speso '+nf.format(ratio)+'% delle entrate':'Entrate non ancora registrate'}</span><span>${t.saldo>=0?'Saldo positivo':'Saldo negativo'}</span></div><div class="hero-flow"><div><span>↗ Entrate</span><strong>${fmt.format(t.entrate)}</strong></div><div><span>↘ Uscite</span><strong>${fmt.format(t.uscite)}</strong></div></div>${t.extra>0?`<div class="hero-extra">Di cui entrate extra <b>${fmt.format(t.extra)}</b></div>`:''}`;
+      if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&activeTab==='home'&&!document.hidden){document.querySelectorAll('#dashboardStats .hero-saldo strong,#dashboardStats .hero-flow strong').forEach((el,i)=>{if(oldAmounts[i]!==el.textContent)el.animate([{opacity:.48,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:240,easing:'ease-out'});});}
       const realToday=toDate(dateKey(new Date())),refDate=realToday<p.start?p.start:realToday>p.end?p.end:realToday;
       const days=Math.max(0,Math.ceil((p.end-refDate)/86400000)),totalDays=Math.ceil((p.end-p.start+1)/86400000),elapsed=Math.max(1,Math.ceil((refDate-p.start+1)/86400000)),elapsedWeeks=Math.max(1,Math.ceil(elapsed/7)),avg=t.uscite/elapsedWeeks,projection=t.uscite/elapsed*totalDays;
       const rows=budgetRows().sort((a,b)=>b.spent-a.spent||byAlpha(a,b));
@@ -3072,6 +3137,8 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
       if(canvas._renderSignature===signature)return;
       const {ctx,w,h}=resizeCanvas(canvas);ctx.clearRect(0,0,w,h);
       drawLine(ctx,w,h,data,canvas);canvas._renderSignature=signature;
+      updateMonthlyReadout(data[data.length-1]);
+      const wrap=canvas.parentElement;wrap.classList.remove('plot-enter');void canvas.offsetWidth;wrap.classList.add('plot-enter');
     }
     function niceChartStep(maxValue){
       const raw=Math.max(1,maxValue)/4;
@@ -3125,7 +3192,7 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
         ctx.shadowColor=colors.dark?'rgba(75,125,255,.28)':'rgba(52,120,246,.18)';ctx.shadowBlur=10;ctx.stroke();ctx.shadowBlur=0;
 
         pts.forEach(p=>{
-          const pointColor=p.out?'#ff453a':'#30c768';
+          const pointColor=p.out?'#d43f50':'#09966c';
           ctx.save();
           ctx.beginPath();ctx.arc(p.x,p.y,p.isCurrent?4.6:3.9,0,Math.PI*2);
           ctx.fillStyle=pointColor;ctx.fill();
@@ -3165,7 +3232,10 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
 
     function hideMonthlyChartTooltip(){
       const tip=document.getElementById('monthlyChartTooltip');
-      if(tip) tip.classList.remove('show','ok','ko');
+      if(tip) tip.classList.remove('show','ok','ko','below');
+      document.getElementById('monthlyGuide')?.classList.remove('show');
+      document.querySelectorAll('.monthly-live-point.selected').forEach(el=>el.classList.remove('selected'));
+      monthlySelectedPoint=null;
     }
 
     function placeChartTooltip(tip,wrap,x,y){
@@ -3177,26 +3247,29 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
       tip.style.left=left+'px';tip.style.top=(above?y-height-13:y+13)+'px';
       tip.style.setProperty('--tooltip-arrow-x',Math.max(7,Math.min(width-7,x-left))+'px');
     }
+    let monthlySelectedPoint=null;
+    function updateMonthlyReadout(point){
+      if(!point)return;
+      const label=document.getElementById('monthlyReadLabel'),value=document.getElementById('monthlyReadValue'),status=document.getElementById('monthlyReadStatus');
+      label.textContent=point.fullLabel;value.textContent=fmt.format(point.value);
+      status.textContent=point.out?'● Fuori budget':point.budget>0?'● Dentro budget':'Budget non disponibile';status.classList.toggle('ko',point.out);
+    }
     function showMonthlyChartTooltip(point){
       const canvas=document.getElementById('monthlyCanvas'),tip=document.getElementById('monthlyChartTooltip');if(!canvas||!tip||!point)return;
+      if(monthlySelectedPoint===point&&tip.classList.contains('show'))return;
+      monthlySelectedPoint=point;updateMonthlyReadout(point);
+      const guide=document.getElementById('monthlyGuide');guide.style.left=(canvas.offsetLeft+point.x)+'px';guide.style.top=(canvas.offsetTop+26)+'px';guide.style.height=Math.max(0,canvas.clientHeight-76)+'px';guide.classList.add('show');
+      document.querySelectorAll('.monthly-live-point').forEach((el,i)=>el.classList.toggle('selected',canvas._monthlyPoints[i]===point));
       tip.classList.remove('ok','ko');tip.classList.add(point.out?'ko':'ok');
       const status=point.out?'Fuori budget':'Dentro budget';
       tip.innerHTML=`<strong>${escapeHtml(point.fullLabel||point.label)}</strong><b>${fmt.format(point.value)}</b><small>${status} · ${point.budget>0?'Budget '+fmt.format(point.budget):'Budget non disponibile'}</small>`;
       placeChartTooltip(tip,canvas.parentElement,canvas.offsetLeft+point.x,canvas.offsetTop+point.y);
     }
     function handleMonthlyChartPointer(event){
-      const canvas=document.getElementById('monthlyCanvas');
-      if(!canvas || !Array.isArray(canvas._monthlyPoints)) return;
-      const rect=canvas.getBoundingClientRect();
-      const x=(event.clientX-rect.left)*canvas.clientWidth/rect.width;
-      const y=(event.clientY-rect.top)*canvas.clientHeight/rect.height;
-      let nearest=null,nearestDistance=Infinity;
-      canvas._monthlyPoints.forEach(point=>{
-        const d=Math.hypot(point.x-x,point.y-y);
-        if(d<nearestDistance){nearest=point;nearestDistance=d}
-      });
-      if(nearest && nearestDistance<=30) showMonthlyChartTooltip(nearest);
-      else hideMonthlyChartTooltip();
+      const canvas=document.getElementById('monthlyCanvas');if(!canvas?._monthlyPoints?.length)return;
+      const rect=canvas.getBoundingClientRect();const x=(event.clientX-rect.left)*canvas.clientWidth/rect.width;
+      const nearest=canvas._monthlyPoints.reduce((a,b)=>Math.abs(a.x-x)<=Math.abs(b.x-x)?a:b);
+      showMonthlyChartTooltip(nearest);
     }
 
     function fitSplitCanvasText(ctx,leftText,rightText,maxWidth,fontBase,fontMin=8,gap=4){
@@ -3233,13 +3306,13 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
     function drawCategoryChart(){
       const host=document.getElementById('categoryViz');if(!host)return;
       const data=budgetRows().sort((a,b)=>b.spent-a.spent||byAlpha(a,b)).map(r=>({label:r.name,value:r.spent,max:r.max,out:r.out}));
-      const signature=JSON.stringify(data);if(host._renderSignature===signature)return;
+      const signature=JSON.stringify(data.map(d=>[d,categoryEmoji(d.label)]));if(host._renderSignature===signature)return;
       host.innerHTML=data.length?data.map((d,i)=>{const ratio=d.max>0?Math.max(0,Math.min(1,d.value/d.max)):(d.value>0?1:0);return `<button type="button" class="category-viz-row ${d.out?'out':''} ${d.value===0?'zero':''}" data-i="${i}" aria-label="${escapeHtml(d.label)}: ${fmt.format(d.value)}, budget ${fmt.format(d.max)}"><span class="category-viz-meta"><span class="category-viz-name">${emojiBadge(d.label)} ${escapeHtml(d.label)}</span><span class="category-viz-values"><span class="category-viz-spent">${fmt.format(d.value)}</span><span class="category-viz-max">max ${fmt.format(d.max)}</span></span></span><span class="category-viz-track"><span class="category-viz-fill" style="width:${ratio*100}%"></span></span></button>`}).join(''):'<div class="empty">Nessuna categoria uscita.</div>';
       host.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>showCategoryChartTooltip({data:data[Number(btn.dataset.i)],row:btn})));
-      host._renderSignature=signature;
+      host._renderSignature=signature;host.classList.remove('render-enter');void host.offsetWidth;host.classList.add('render-enter');
     }
     function hideCategoryChartTooltip(){const tip=document.getElementById('categoryChartTooltip');if(tip)tip.classList.remove('show','ok','ko','below')}
-    function showCategoryChartTooltip(hit){const tip=document.getElementById('categoryChartTooltip');if(!tip||!hit)return;const d=hit.data,wrap=tip.parentElement,track=hit.row.querySelector('.category-viz-track');const r=track.getBoundingClientRect(),wr=wrap.getBoundingClientRect();tip.classList.remove('ok','ko');tip.classList.add(d.out?'ko':'ok');tip.innerHTML=`<strong>${escapeHtml(d.label)}</strong><b>${fmt.format(d.value)}</b><small>${d.out?'Fuori budget':'Dentro budget'} · max. ${fmt.format(d.max)}</small>`;placeChartTooltip(tip,wrap,r.left-wr.left+r.width/2,r.top-wr.top+r.height/2)}
+    function showCategoryChartTooltip(hit){const tip=document.getElementById('categoryChartTooltip');if(!tip||!hit)return;const d=hit.data,wrap=tip.parentElement,track=hit.row.querySelector('.category-viz-track');const r=track.getBoundingClientRect(),wr=wrap.getBoundingClientRect();tip.classList.remove('ok','ko');tip.classList.add(d.out?'ko':'ok');tip.innerHTML=`<strong>${escapeHtml(d.label)}</strong><b>${fmt.format(d.value)}</b><small>${d.out?'Fuori budget':'Dentro budget'} · max. ${fmt.format(d.max)}<br>${d.out?'Superato di':'Residuo'} ${fmt.format(Math.abs(d.max-d.value))}</small>`;placeChartTooltip(tip,wrap,r.left-wr.left+r.width/2,r.top-wr.top+r.height/2)}
     function handleCategoryChartPointer(){}
     function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
     function shortLabel(s,maxLen=14){return s.length>maxLen?s.slice(0,Math.max(1,maxLen-2))+'…':s}
@@ -3560,7 +3633,11 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
 
     const monthlyCanvasInteraction=document.getElementById('monthlyCanvas');
     if(monthlyCanvasInteraction){
-      monthlyCanvasInteraction.addEventListener('pointerup',handleMonthlyChartPointer,{passive:true});
+      let gesture=null;
+      monthlyCanvasInteraction.addEventListener('pointerdown',e=>{gesture={id:e.pointerId,x:e.clientX,y:e.clientY,drag:false};},{passive:true});
+      monthlyCanvasInteraction.addEventListener('pointermove',e=>{if(!gesture||gesture.id!==e.pointerId)return;const dx=Math.abs(e.clientX-gesture.x),dy=Math.abs(e.clientY-gesture.y);if(!gesture.drag&&dx>6&&dx>dy){gesture.drag=true;try{monthlyCanvasInteraction.setPointerCapture(e.pointerId)}catch(_){}}if(gesture.drag)handleMonthlyChartPointer(e);},{passive:true});
+      monthlyCanvasInteraction.addEventListener('pointerup',e=>{if(gesture&&gesture.id===e.pointerId&&(gesture.drag||Math.abs(e.clientY-gesture.y)<9))handleMonthlyChartPointer(e);gesture=null;},{passive:true});
+      monthlyCanvasInteraction.addEventListener('pointercancel',()=>{gesture=null;},{passive:true});
     }
     const categoryCanvasInteraction=document.getElementById('categoryCanvas');
     if(categoryCanvasInteraction){
@@ -3737,8 +3814,8 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.6')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.6', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.7')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.7', '1');
               location.reload();
             }
           });
@@ -3752,8 +3829,8 @@ body.rev3 #toast.show{transform:translate(-50%,-50%) scale(1)!important;}
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v36')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v36', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v37')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v37', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
