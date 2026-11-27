@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Tracciatore Spese · v3.9</title>
+  <title>Tracciatore Spese · v4.0</title>
   <meta name="theme-color" content="#dfe7f2" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -1725,8 +1725,38 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
 @media(prefers-reduced-transparency:reduce){body.rev3 #bottomNav.rev3-nav{background:#f5f7fb!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}body.rev3.dark-mode #bottomNav.rev3-nav{background:#233248!important}body.rev3 #bottomNav.rev3-nav::before,body.rev3 #bottomNav.rev3-nav::after{display:none!important}}
 </style>
 
+
+<style id="rev40-custom">
+body.rev3 .shell > .sticky-head,body.rev3:not(.dark-mode) .shell > .sticky-head,body.rev3.dark-mode .shell > .sticky-head{background:transparent!important;isolation:isolate;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border:0!important;padding-top:calc(env(safe-area-inset-top,0px) + 22px)!important;padding-bottom:5px!important;z-index:40!important;overflow:visible!important}
+body.rev3 .shell > .sticky-head::before,body.rev3:not(.dark-mode) .shell > .sticky-head::before,body.rev3.dark-mode .shell > .sticky-head::before{content:""!important;display:block!important;position:absolute;inset:0;z-index:-1;pointer-events:none;filter:none!important;mask-image:none!important;-webkit-mask-image:none!important;background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;height:auto!important;box-shadow:none!important;border-radius:0!important}
+body.rev3.dark-mode .shell > .sticky-head::before{background:transparent!important}
+body.rev3.header-scrolled .shell > .sticky-head::before,body.rev3:not(.dark-mode).header-scrolled .shell > .sticky-head::before{background:linear-gradient(180deg,#d9e5f1c9,#e2eaf5a0)!important;backdrop-filter:blur(var(--v40-blur,8px)) saturate(135%)!important;-webkit-backdrop-filter:blur(var(--v40-blur,8px)) saturate(135%)!important}
+body.rev3.dark-mode.header-scrolled .shell > .sticky-head::before{background:linear-gradient(180deg,#17263be6,#1c2b40a8)!important}
+body.rev3[data-glass="clear"].header-scrolled .shell > .sticky-head::before{background:linear-gradient(180deg,#dbe6f2a0,#e5edf57d)!important}
+body.rev3.dark-mode[data-glass="clear"].header-scrolled .shell > .sticky-head::before{background:linear-gradient(180deg,#17263bc9,#1c2b4090)!important}
+body.rev3[data-glass="frosted"].header-scrolled .shell > .sticky-head::before{background:linear-gradient(180deg,#e1eaf5ed,#e1eaf5cc)!important}
+body.rev3.dark-mode[data-glass="frosted"].header-scrolled .shell > .sticky-head::before{background:linear-gradient(180deg,#17263bf5,#1c2b40e8)!important}
+body.rev3:not(.dark-mode) #settingsModal .settings-sheet{background:#f5f8fc!important}body.rev3.dark-mode #settingsModal .settings-sheet{background:#192639!important}
+body.rev3 .v40-panel .drawer-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin-top:12px}body.rev3 .v40-panel .drawer-metric{min-width:0;padding:10px!important}body.rev3 .v40-panel .drawer-metric b{font-size:clamp(14px,4vw,19px)!important;overflow-wrap:anywhere}body.rev3 .v40-panel .drawer-metric span{font-size:11px!important;line-height:1.3}
+
+body.rev3 .shell > .sticky-head::after{display:none!important;content:none!important}
+body.rev3 .sticky-head .topbar,body.rev3 .sticky-head .period-row{position:relative;z-index:1;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:transparent!important}
+body.rev3 .sticky-head .title{padding:0!important}body.rev3 .sticky-head .title h1{font-size:clamp(23px,6.6vw,32px)!important;line-height:1.15!important;filter:none!important}
+body.rev3 .sticky-head .topbar-inner{min-height:44px!important}body.rev3 .sticky-head .period-row{margin-top:0!important}
+body.rev3[data-glass="clear"]{--v40-blur:3px}body.rev3[data-glass="balanced"]{--v40-blur:8px}body.rev3[data-glass="frosted"]{--v40-blur:16px}
+body.rev3[data-glass] #bottomNav.rev3-nav{backdrop-filter:blur(var(--v40-blur)) saturate(160%)!important;-webkit-backdrop-filter:blur(var(--v40-blur)) saturate(160%)!important}
+body.rev3[data-glass="clear"] #bottomNav.rev3-nav{background:linear-gradient(155deg,#ffffff15,#ffffff05)!important}body.rev3[data-glass="frosted"] #bottomNav.rev3-nav{background:linear-gradient(155deg,#ffffffa6,#ffffff66)!important}
+body.rev3.dark-mode[data-glass="frosted"] #bottomNav.rev3-nav{background:#26364bdb!important}body.rev3.dark-mode[data-glass="clear"] #bottomNav.rev3-nav{background:#14223824!important}
+body.rev3[data-glass="frosted"] .sticky-head::before{opacity:1}body.rev3[data-glass="clear"] .sticky-head::before{opacity:.7}
+body.rev3.motion-reduced *,body.rev3.motion-reduced *::before,body.rev3.motion-reduced *::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}body.rev3.motion-reduced #revampBackdrop::before,body.rev3.motion-reduced #revampBackdrop::after{transform:none!important}
+body.rev3 .v40-pref{display:grid;gap:8px;padding:12px;min-width:0;border-top:1px solid var(--line);font-size:14px}body.rev3 .v40-pref small{font-size:12px;color:var(--muted);line-height:1.45}body.rev3 .v40-pref select{width:100%;min-width:0}body.rev3 .v40-pref label{font-weight:700}body.rev3 #settingsModal .setting-card{min-width:0}body.rev3 #v40Theme{max-width:145px}body.rev3 #themeToggle[hidden]{display:none!important}
+body.rev3 .drawer-menu{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}body.rev3 .drawer-menu-item{min-height:44px!important;padding:7px!important;font-size:12px!important}body.rev3 .drawer-content{min-width:0}body.rev3 .v40-panel{display:grid;gap:12px;min-width:0}body.rev3 .v40-panel .drawer-card{min-width:0;overflow-wrap:anywhere}body.rev3 .v40-panel label{display:grid;gap:5px;font-size:13px;font-weight:650}body.rev3 .v40-panel input,body.rev3 .v40-panel select{width:100%;min-width:0;min-height:44px;padding:9px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font-size:16px}body.rev3 .v40-panel form{display:grid;gap:9px}body.rev3 .v40-panel button{min-height:44px}body.rev3 .v40-panel .v40-row{display:flex;align-items:center;gap:9px;justify-content:space-between;flex-wrap:wrap}body.rev3 .v40-panel .v40-row>div{flex:1;min-width:0}body.rev3 .v40-panel .v40-row small{display:block;color:var(--muted);margin-top:4px}body.rev3 .v40-panel .v40-remove{background:transparent;color:var(--red,#c43b4c);border:0;padding:8px;font-size:12px}body.rev3 .v40-panel .v40-track{height:8px;border-radius:99px;background:#95a7be38;overflow:hidden;margin:10px 0}body.rev3 .v40-panel .v40-track i{height:100%;display:block;background:linear-gradient(90deg,#4cdbab,#138661);border-radius:99px}
+body.rev3 #v40SaveSummary{min-height:44px!important;font-size:12px!important;padding:6px 12px!important}body.rev3 .expense-selection-actions{flex-wrap:wrap!important}
+body.rev3.privacy-amounts #dashboardStats strong,body.rev3.privacy-amounts .hero-extra b,body.rev3.privacy-amounts .hero-progress,body.rev3.privacy-amounts .hero-track,body.rev3.privacy-amounts .insight-row b,body.rev3.privacy-amounts .budget-preview-main span,body.rev3.privacy-amounts .preview-track,body.rev3.privacy-amounts .recent-row strong,body.rev3.privacy-amounts .move-amount,body.rev3.privacy-amounts .movement-day-total,body.rev3.privacy-amounts .movement-day-head,body.rev3.privacy-amounts .day-totals,body.rev3.privacy-amounts .day-total,body.rev3.privacy-amounts #expenseSelectionSum,body.rev3.privacy-amounts #analysis .chart-wrap,body.rev3.privacy-amounts #monthlyReadValue,body.rev3.privacy-amounts #monthlyReadStatus,body.rev3.privacy-amounts #categoryViz,body.rev3.privacy-amounts #budgetSummary .value,body.rev3.privacy-amounts #budgetMini,body.rev3.privacy-amounts #budgetList,body.rev3.privacy-amounts .drawer-metric b,body.rev3.privacy-amounts .drawer-row b,body.rev3.privacy-amounts .drawer-row small,body.rev3.privacy-amounts .v40-sensitive{visibility:hidden!important}body.rev3.privacy-amounts .hero-saldo::after{content:'Importi nascosti';display:block;font-size:13px;color:inherit}
+@media(prefers-reduced-transparency:reduce){body.rev3[data-glass] #bottomNav.rev3-nav,body.rev3[data-glass] .shell>.sticky-head::before{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:#e6edf6!important}body.rev3.dark-mode[data-glass] #bottomNav.rev3-nav,body.rev3.dark-mode[data-glass] .shell>.sticky-head::before{background:#233248!important}}
+</style>
 </head>
-<body data-app-version="3.9" class="rev3">
+<body data-app-version="4.0" class="rev3">
   <div id="revampBackdrop" aria-hidden="true"></div>
   <div class="shell">
     <div class="sticky-head">
@@ -1735,7 +1765,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
           <button class="icon-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h10M5 17h14"/></svg></button>
           <div class="title">
             <h1 id="screenTitle">Home</h1>
-            <p>Lorenzo Vizzini <span class="profile-badge">v3.9</span></p>
+            
           </div>
           <button class="icon-btn" id="settingsBtn" aria-label="Impostazioni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg></button>
         </div>
@@ -1816,7 +1846,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
               </div>
               <div class="expense-selection-actions">
                 <button class="expense-selection-cancel" id="expenseSelectionCancel" type="button">Annulla</button>
-                <button class="expense-selection-total" id="expenseSelectionTotal" type="button">Totale</button>
+                <button class="expense-selection-total" id="expenseSelectionTotal" type="button">Totale</button><button class="secondary" id="v40SaveSummary" type="button">Salva</button>
               </div>
             </div>
             <div class="movement-list" id="movementList" style="display:none"></div>
@@ -1908,7 +1938,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       <div class="drawer-head">
         <div>
           <h2 id="sideMenuTitle">Menu rapido</h2>
-          <p>Accessi rapidi e lettura veloce del mese finanziario. · v3.9</p>
+          <p>Accessi rapidi e lettura veloce del mese finanziario. · v4.0</p>
         </div>
         <button class="modal-close" id="sideMenuClose" aria-label="Chiudi menu">×</button>
       </div>
@@ -1919,6 +1949,10 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
         <button class="drawer-menu-item" data-panel="critical">Categorie<br>Critiche</button>
         <button class="drawer-menu-item" data-panel="investments">Investimenti</button>
         <button class="drawer-menu-item" data-panel="archive">Archivio<br>Mesi</button>
+        <button class="drawer-menu-item" data-panel="annual">Bilancio<br>annuale</button>
+        <button class="drawer-menu-item" data-panel="summaries">Riepiloghi<br>personali</button>
+        <button class="drawer-menu-item" data-panel="recurring">Spese<br>ricorrenti</button>
+        <button class="drawer-menu-item" data-panel="goals">Obiettivi<br>risparmio</button>
       </div>
       <div class="drawer-content" id="drawerContent"></div>
       <button class="drawer-help-fab" id="drawerHelpFab" type="button" aria-label="Apri Help">?</button>
@@ -1927,11 +1961,10 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
 
 <div class="modal-backdrop" id="settingsModal" aria-hidden="true"><section class="settings-sheet card card-pad" role="dialog" aria-modal="true" aria-labelledby="settingsTitle"><div class="pref-header"><div><h2 id="settingsTitle">Impostazioni</h2><p>Preferenze e gestione dati</p></div><button aria-label="Chiudi impostazioni" class="glass-back-btn" id="settingsBack">×</button></div><div class="pref-body"><section class="pref-group"><h3>Aspetto</h3><div class="pref-list"><div class="setting-card">
 <div class="setting-copy">
-<strong>Dark Mode</strong>
-<small>Tema scuro per tutta l’app.</small>
+<strong>Tema</strong><small>Chiaro, scuro o automatico.</small>
 </div>
-<button aria-label="Attiva o disattiva dark mode" aria-pressed="false" class="theme-switch" id="themeToggle"></button>
-</div></div></section><section class="pref-group"><h3>Finanze</h3><div class="pref-list"><details class="pref-fold"><summary><span class="pref-symbol" aria-hidden="true">◎</span><span>Obiettivo risparmio</span><span class="pref-chevron" aria-hidden="true">›</span></summary><div class="setting-card">
+<button hidden aria-label="Attiva o disattiva dark mode" aria-pressed="false" class="theme-switch" id="themeToggle"></button><select id="v40Theme" class="setting-select" aria-label="Tema"><option value="light">Chiaro</option><option value="dark">Scuro</option><option value="auto">Automatico</option></select>
+</div><div class="v40-pref"><label for="v40Glass">Intensità Liquid Glass</label><select class="setting-select" id="v40Glass"><option value="clear">Cristallino</option><option value="balanced">Equilibrato</option><option value="frosted">Satinato</option></select><small>Trasparenza e contrasto dei controlli.</small></div><div class="v40-pref"><label for="v40Motion">Animazioni</label><select class="setting-select" id="v40Motion"><option value="standard">Standard</option><option value="reduced">Ridotte</option></select></div><div class="v40-pref"><label><input id="v40Privacy" type="checkbox"> Nascondi importi</label><small>Oscura i dati nelle schermate principali. Non protegge i file o l'archiviazione.</small></div></div></section><section class="pref-group"><h3>Finanze</h3><div class="pref-list"><details class="pref-fold"><summary><span class="pref-symbol" aria-hidden="true">◎</span><span>Obiettivo risparmio</span><span class="pref-chevron" aria-hidden="true">›</span></summary><div class="setting-card">
 <div class="setting-copy">
 
 <small>Imposta un target mensile e il relativo avviso.</small>
@@ -1976,7 +2009,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
 <button class="mini-dark" id="testNotificationsBtn" type="button">Verifica</button>
 <div class="settings-status" id="notificationStatus">Notifiche interne attive</div>
 </div>
-</div></details></div></section><section class="pref-group"><h3>Dati e report</h3><div class="pref-list"><div class="backup-grid backup-grid-minimal">
+</div></details></div></section><section class="pref-group"><h3>Dati e report</h3><div class="pref-list"><div class="v40-pref"><strong>Ultimo backup avviato</strong><small id="v40LastBackup">Mai registrato</small><label for="v40Reminder">Promemoria backup</label><select class="setting-select" id="v40Reminder"><option value="monthly">Mensile</option><option value="weekly">Settimanale</option><option value="off">Disattivato</option></select><small>Avvisi solo quando apri o utilizzi l’app.</small></div><div class="v40-pref"><button class="secondary" id="v40Integrity" type="button">Verifica integrità dati</button><button class="secondary" id="v40Offline" type="button">Verifica modalità offline</button><small id="v40OfflineStatus" role="status">Controllo su richiesta</small></div><div class="backup-grid backup-grid-minimal">
 <button class="backup-btn" id="backupJson"><span>💾</span>Backup Completo<br/>(JSON)</button>
 <button class="backup-btn purple" id="importBtn"><span>📥</span>Importa Backup<br/>precedente</button>
 </div><div class="setting-card">
@@ -2108,7 +2141,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       periodDate:dateKey(new Date()),
       movementsOpen:false,
       theme:'light',
-      settings:{savingsTarget:250,seasonalProfile:'',notificationsEnabled:true,notificationThreshold:80},
+      settings:normalizeV40Settings(defaultSettings(),'light'),
       categories:[
         {id:uid(),name:'Abbonamenti',type:'uscita',budget:8,emoji:'💳'},
         {id:uid(),name:'Anticipi/Rimborsi',type:'uscita',budget:0,emoji:'🔄'},
@@ -2128,13 +2161,53 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       movements:[]
     });
 
+
+    function normalizeV40Settings(s,theme){
+      const choice=(v,allowed,fallback)=>allowed.includes(v)?v:fallback;
+      s.themeMode=choice(s.themeMode,['light','dark','auto'],theme==='dark'?'dark':'light');s.glassMode=choice(s.glassMode,['clear','balanced','frosted'],'balanced');s.motionMode=choice(s.motionMode,['standard','reduced'],'standard');s.backupReminder=choice(s.backupReminder,['monthly','weekly','off'],'monthly');s.privacyAmounts=s.privacyAmounts===true;
+      for(const k of ['lastBackupAt','lastBackupPromptAt'])s[k]=typeof s[k]==='string'&&Number.isFinite(Date.parse(s[k]))?s[k]:'';
+      const clean=(list,mapper)=>Array.isArray(list)?list.filter(x=>x&&typeof x==='object').map(mapper).filter(Boolean):[];
+      const money=x=>Number.isFinite(Number(x))&&Number(x)>=0?Math.round(Number(x)*100)/100:0;
+      const name=x=>String(x||'').trim().slice(0,100);
+      s.savedSummaries=clean(s.savedSummaries,x=>name(x.name)?{id:String(x.id||uid()),name:name(x.name),createdAt:String(x.createdAt||''),items:clean(x.items,m=>({id:String(m.id||uid()),desc:name(m.desc),category:name(m.category),date:String(m.date||''),amount:money(m.amount)}))}:null);
+      s.recurringExpenses=clean(s.recurringExpenses,x=>name(x.name)&&money(x.amount)>0?{id:String(x.id||uid()),name:name(x.name),amount:money(x.amount),frequency:x.frequency==='yearly'?'yearly':'monthly',anchorDay:Math.min(31,Math.max(1,Number(x.anchorDay)||Number(String(x.date).slice(8,10))||1)),date:/^\d{4}-\d{2}-\d{2}$/.test(x.date)&&Number.isFinite(Date.parse(x.date))?x.date:dateKey(new Date())}:null);
+      s.personalGoals=clean(s.personalGoals,x=>name(x.name)&&money(x.target)>0?{id:String(x.id||uid()),name:name(x.name),target:money(x.target),saved:money(x.saved)}:null);
+      return s;
+    }
+    function v40ReducedMotion(){return state?.settings?.motionMode==='reduced'||matchMedia('(prefers-reduced-motion: reduce)').matches;}
+    function applyV40Appearance(){const s=state.settings||{};document.body.dataset.glass=s.glassMode||'balanced';document.body.classList.toggle('motion-reduced',s.motionMode==='reduced');document.body.classList.toggle('privacy-amounts',s.privacyAmounts===true);}
+    function syncV40Controls(){const s=state.settings;for(const [id,key] of [['v40Theme','themeMode'],['v40Glass','glassMode'],['v40Motion','motionMode'],['v40Reminder','backupReminder']])document.getElementById(id).value=s[key]||defaultSettings()[key];document.getElementById('v40Privacy').checked=!!s.privacyAmounts;document.getElementById('v40LastBackup').textContent=s.lastBackupAt?new Date(s.lastBackupAt).toLocaleString('it-IT'):'Mai registrato';}
+    function v40Annual(year){const rows=buildArchive().filter(r=>r.labelYear===year&&r.count>0);return {entrate:rows.reduce((s,r)=>s+r.entrate,0),uscite:rows.reduce((s,r)=>s+r.uscite,0),saldo:rows.reduce((s,r)=>s+r.saldo,0),count:rows.length,rows};}
+    function v40Metric(label,value){return `<div class="drawer-metric"><span>${escapeHtml(label)}</span><b class="v40-sensitive">${fmt.format(value)}</b></div>`;}
+    function renderV40Panel(panel,box){
+      const s=state.settings, empty='<p>Nessun elemento salvato.</p>';
+      const card=(title,body)=>`<div class="drawer-card"><h3>${title}</h3>${body}</div>`;
+      const remove=(kind,id)=>`<button class="v40-remove" type="button" data-v40-remove="${kind}" data-id="${escapeHtml(id)}">Elimina</button>`;
+      let body='';
+      if(panel==='annual'){
+        const years=[...new Set([getPeriod(new Date()).labelYear,...buildArchive().map(r=>r.labelYear)])].sort((a,b)=>b-a);const year=years.includes(Number(box.dataset.annualYear))?Number(box.dataset.annualYear):years[0];const a=v40Annual(year),prev=v40Annual(year-1);
+        body=card('Bilancio annuale',`<p>Anno finanziario: i periodi sono attribuiti all’anno della loro etichetta.</p><label>Anno<select id="v40AnnualYear">${years.map(y=>`<option ${y===year?'selected':''}>${y}</option>`).join('')}</select></label><div class="drawer-grid">${v40Metric('Entrate',a.entrate)}${v40Metric('Uscite',a.uscite)}${v40Metric('Saldo',a.saldo)}${v40Metric('Media uscite / mese registrato',a.count?a.uscite/a.count:0)}</div><p>${a.count} ${a.count===1?'periodo con movimenti':'periodi con movimenti'} · confronto su dati registrati, anche parziali.</p>`)+card('Anno precedente',prev.count?`<div class="drawer-grid">${v40Metric('Entrate '+(year-1),prev.entrate)}${v40Metric('Uscite '+(year-1),prev.uscite)}${v40Metric('Saldo '+(year-1),prev.saldo)}${v40Metric('Differenza saldo',a.saldo-prev.saldo)}</div><p>${prev.count} ${prev.count===1?'periodo registrato':'periodi registrati'} nel ${year-1}.</p>`:'<p>Nessun dato nell’anno precedente.</p>')+card('Dettaglio mensile',a.rows.map(r=>`<div class="drawer-row"><div>${escapeHtml(r.label)}</div><b>${fmt.format(r.saldo)}</b></div>`).join('')||empty);
+      }else if(panel==='summaries'){
+        body=card('Riepiloghi personali','<p>In Movimenti → Calcola spese → Salva puoi archiviare un gruppo di spese, anche di mesi diversi. È una fotografia del calcolo: non cambia i saldi e non si aggiorna se modifichi i movimenti originali.</p>')+s.savedSummaries.map(r=>card(escapeHtml(r.name),`<div class="v40-row"><div><strong class="v40-sensitive">${fmt.format(sum(r.items))}</strong><small>${r.items.length} spese · ${escapeHtml(r.createdAt?new Date(r.createdAt).toLocaleDateString('it-IT'):'')}</small></div>${remove('savedSummaries',r.id)}</div><details><summary>Dettaglio spese</summary>${r.items.map(m=>`<div class="drawer-row"><div>${escapeHtml(m.desc)}<small>${escapeHtml(m.date)} · ${escapeHtml(m.category)}</small></div><b>${fmt.format(m.amount)}</b></div>`).join('')}</details>`)).join('');if(!s.savedSummaries.length)body+=card('Archivio',empty);
+      }else if(panel==='recurring'){
+        const total=s.recurringExpenses.reduce((a,r)=>a+r.amount*(r.frequency==='yearly'?1:12),0);
+        body=card('Spese ricorrenti',`<p>Promemoria manuali per rate e abbonamenti. Non generano movimenti automaticamente.</p><div class="drawer-grid">${v40Metric('Costo annuo stimato',total)}${v40Metric('Media mensile',total/12)}</div><form id="v40RecurringForm"><label>Nome<input name="name" required maxlength="100" placeholder="Es. Netflix"></label><label>Importo (€)<input name="amount" type="number" min="0.01" max="100000000" step="0.01" required></label><label>Frequenza<select name="frequency"><option value="monthly">Mensile</option><option value="yearly">Annuale</option></select></label><label>Prossima scadenza<input name="date" type="date" required value="${todayKey()}"></label><button class="primary" type="submit">Aggiungi</button></form>`)+s.recurringExpenses.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(r=>card(escapeHtml(r.name),`<div class="v40-row"><div><strong class="v40-sensitive">${fmt.format(r.amount)} · ${r.frequency==='monthly'?'mese':'anno'}</strong><small>Scadenza: ${escapeHtml(formatDate(toDate(r.date)))}${r.date<todayKey()?' · scaduta':''}</small></div>${remove('recurringExpenses',r.id)}</div><button class="secondary" type="button" data-v40-next="${escapeHtml(r.id)}">Sposta alla prossima scadenza</button>`)).join('');
+      }else{
+        const goal=Number(s.savingsTarget)||0,t=totals();body=card('Obiettivo del mese',`<p>${escapeHtml(currentPeriod().label)} · saldo rispetto al target impostato nelle Impostazioni.</p><div class="drawer-grid">${v40Metric('Target',goal)}${v40Metric('Saldo',t.saldo)}</div><div class="v40-track v40-sensitive"><i style="width:${goal>0?Math.max(0,Math.min(100,t.saldo/goal*100)):0}%"></i></div>`)+card('Obiettivi personali',`<p>Traguardi con importi aggiornati manualmente, indipendenti dal saldo contabile.</p><form id="v40GoalForm"><label>Nome<input name="name" required maxlength="100" placeholder="Es. Vacanza"></label><label>Obiettivo (€)<input name="target" type="number" min="0.01" max="100000000" step="0.01" required></label><label>Già accantonato (€)<input name="saved" type="number" min="0" max="100000000" step="0.01" required value="0"></label><button class="primary" type="submit">Crea obiettivo</button></form>`)+s.personalGoals.map(r=>card(escapeHtml(r.name),`<div class="v40-row"><div class="v40-sensitive"><strong>${fmt.format(r.saved)} / ${fmt.format(r.target)}</strong><small>${r.saved>=r.target?'Obiettivo raggiunto':'Mancano '+fmt.format(r.target-r.saved)}</small></div>${remove('personalGoals',r.id)}</div><div class="v40-track v40-sensitive"><i style="width:${Math.min(100,r.saved/r.target*100)}%"></i></div><form data-v40-goal="${escapeHtml(r.id)}"><label>Totale accantonato (€)<input name="saved" type="number" min="0" max="100000000" step="0.01" required value="${r.saved}"></label><button class="secondary" type="submit">Aggiorna</button></form>`)).join('');
+      }
+      box.innerHTML='<div class="v40-panel">'+body+'</div>';
+    }
+    function v40SaveSelected(){const items=selectedExpenseMovements().map(m=>({id:m.id,desc:m.desc,category:m.category,date:m.date,amount:m.amount}));if(!items.length)return;showAppPopup('Assegna un nome a questo riepilogo.');document.getElementById('messageModalTitle').textContent='Salva riepilogo';const input=document.createElement('input');input.id='v40SummaryName';input.className='input';input.placeholder='Es. Viaggio Vienna';input.maxLength=100;input.setAttribute('aria-label','Nome riepilogo');document.getElementById('messageModalText').after(input);document.getElementById('messageModalCancel').hidden=false;document.getElementById('messageModalOk').textContent='Salva';pendingAppConfirmation=accepted=>{const name=input.value.trim();input.remove();if(!accepted)return;if(!name){showAppPopup('Inserisci un nome per il riepilogo.');return;}state.settings.savedSummaries.push({id:uid(),name,createdAt:new Date().toISOString(),items});saveState();movementSelectionMode=false;selectedExpenseIds.clear();renderMovements();showToast('Riepilogo salvato nel Menu rapido');};}
+    function v40Integrity(){const problems=[];const ids=new Set(),cats=new Set(state.categories.map(c=>c.type+'|'+c.name));for(const m of state.movements){if(ids.has(m.id))problems.push('ID movimento duplicato');ids.add(m.id);if(!Number.isFinite(Number(m.amount))||Number(m.amount)<0)problems.push('Importo non valido');if(!cats.has(m.type+'|'+m.category))problems.push('Categoria non associata');if(!/^\d{4}-\d{2}-\d{2}$/.test(m.date)||!Number.isFinite(Date.parse(m.date))||dateKey(toDate(m.date))!==m.date)problems.push('Data non valida');}return [...new Set(problems)];}
+    async function v40OfflineCheck(){const el=document.getElementById('v40OfflineStatus');el.textContent='Verifica in corso…';try{if(!navigator.serviceWorker||!window.caches)throw Error();const reg=await navigator.serviceWorker.getRegistration();const controlled=!!navigator.serviceWorker.controller;const cache=await caches.open('tracking-spese-next-revamp-v40');const cached=await cache.match(new URL('./index.html',location.href).href);el.textContent=reg?.active&&controlled&&cached?.ok?'App installata e pagina presente nella cache. Prova in modalità aereo per conferma.':'Modalità offline non ancora verificata: apri online e riprova.';}catch{el.textContent='Verifica offline non disponibile in questo contesto.';}}
+
     let state = loadState();
     let activeTab = 'home';
     applyTheme(state.theme || 'light');
     let scrollTimer = null;
 
     function uid(){return Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4)}
-    function defaultSettings(){return {savingsTarget:250,savingsGoalNotificationEnabled:false,lastSavingsGoalPeriod:'',lastMonthlyBackupPromptPeriod:'',seasonalProfile:'',customBudgetProfiles:[],notificationsEnabled:true,notificationThreshold:80}}
+    function defaultSettings(){return {savingsTarget:250,savingsGoalNotificationEnabled:false,lastSavingsGoalPeriod:'',lastMonthlyBackupPromptPeriod:'',seasonalProfile:'',customBudgetProfiles:[],notificationsEnabled:true,notificationThreshold:80,themeMode:'legacy',glassMode:'balanced',motionMode:'standard',privacyAmounts:false,lastBackupAt:'',backupReminder:'monthly',lastBackupPromptAt:'',savedSummaries:[],recurringExpenses:[],personalGoals:[]}}
     function normalizeImportedSettings(imported){
       const importedSettings = imported.settings || imported.impostazioni || {};
       const merged = {...defaultSettings(), ...importedSettings};
@@ -2146,7 +2219,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       merged.notificationThreshold = Number(importedSettings.notificationThreshold ?? importedSettings.sogliaNotifiche ?? imported.sogliaNotifiche ?? 80) || 80;
       merged.notificationsEnabled = Boolean(importedSettings.notificationsEnabled ?? importedSettings.notificheAbilitate ?? imported.notificheAbilitate ?? true);
       merged.savingsGoalNotificationEnabled = Boolean(importedSettings.savingsGoalNotificationEnabled ?? importedSettings.notificaObiettivoRisparmio ?? imported.notificaObiettivoRisparmio ?? false);
-      return merged;
+      return normalizeV40Settings(merged,imported.theme||imported.tema);
     }
     function loadState(){
       try{
@@ -2298,9 +2371,10 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
     }
 
     function applyTheme(theme){
-      state.theme = theme === 'dark' ? 'dark' : 'light';
+      const mode=state.settings?.themeMode; state.theme = mode==='auto'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):mode==='dark'||mode==='light'?mode:theme==='dark'?'dark':'light';
       document.body.classList.toggle('dark-mode', state.theme === 'dark');
       syncThemeSwitch();
+      applyV40Appearance();
       if(activeTab==='analysis') setTimeout(drawCharts,60);
     }
     function syncThemeSwitch(){
@@ -2428,6 +2502,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       const notificationToggle=document.getElementById('notificationToggle'); if(notificationToggle){notificationToggle.classList.toggle('on',!!state.settings.notificationsEnabled);notificationToggle.setAttribute('aria-pressed',String(!!state.settings.notificationsEnabled))}
       const threshold=document.getElementById('notificationThreshold'); if(threshold) threshold.value=String(state.settings.notificationThreshold||80);
       const notificationStatus=document.getElementById('notificationStatus'); if(notificationStatus) notificationStatus.textContent=state.settings.notificationsEnabled?`Attive a ${state.settings.notificationThreshold||80}%`:'Notifiche disattivate';
+      syncV40Controls();
     }
     function builtInBudgetProfiles(){
       return {};
@@ -2576,6 +2651,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
     }
     function renderDrawerContent(panel='quick'){
       setDrawerActive(panel); const box=document.getElementById('drawerContent'); const p=currentPeriod(); const t=totals(); const rows=budgetRows();
+      if(['annual','summaries','recurring','goals'].includes(panel)){renderV40Panel(panel,box);return;}
       if(panel==='quick'){
         box.innerHTML=`<div class="drawer-card"><h3>Riepilogo Rapido</h3><p>${p.label} · ${p.range}</p><div class="drawer-grid" style="margin-top:12px"><div class="drawer-metric"><span>Entrate</span><b class="greenText">${fmt.format(t.entrate)}</b></div><div class="drawer-metric"><span>Uscite</span><b class="redText">${fmt.format(t.uscite)}</b></div><div class="drawer-metric"><span>Saldo</span><b class="${t.saldo>=0?'saldoPositiveText':'saldoNegativeText'}">${fmt.format(t.saldo)}</b></div><div class="drawer-metric"><span>Target risparmio</span><b>${fmt.format(Number(state.settings.savingsTarget)||0)}</b></div></div></div>`;
       } else if(panel==='piggy'){
@@ -2657,7 +2733,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
               </div>
             </details>
             <details>
-              <summary>5. Indicatori rapidi</summary>
+              <summary>5. Indicatori rapidi</summary><p class="help-body">v4.0: nel Menu rapido trovi bilancio annuale, riepiloghi salvati, ricorrenze e obiettivi personali. In Impostazioni puoi personalizzare vetro, tema e animazioni, controllare backup e modalità offline. I riepiloghi non duplicano movimenti.</p>
               <div class="help-body">
                 <p><b>Giorni rimanenti:</b> giorni mancanti alla chiusura del periodo.</p>
                 <p><b>Media settimanale uscite:</b> uscite registrate finora ÷ settimane realmente trascorse.</p>
@@ -2902,7 +2978,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       const ratio=t.entrate>0?t.uscite/t.entrate*100:0;
       const fill=t.entrate>0?Math.max(0,Math.min(100,ratio)):(t.uscite>0?100:0);
       document.getElementById('dashboardStats').innerHTML=`<div class="hero-saldo ${t.saldo<0?'negative':''}"><span>Saldo del periodo</span><strong>${fmt.format(t.saldo)}</strong></div><div class="hero-track"><i class="${t.saldo<0?'over':''}" style="width:${fill}%"></i></div><div class="hero-progress"><span>${t.entrate>0?'Speso '+nf.format(ratio)+'% delle entrate':'Entrate non ancora registrate'}</span><span>${t.saldo>=0?'Saldo positivo':'Saldo negativo'}</span></div><div class="hero-flow"><div><span>↗ Entrate</span><strong>${fmt.format(t.entrate)}</strong></div><div><span>↘ Uscite</span><strong>${fmt.format(t.uscite)}</strong></div></div>${t.extra>0?`<div class="hero-extra">Di cui entrate extra <b>${fmt.format(t.extra)}</b></div>`:''}`;
-      if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&activeTab==='home'&&!document.hidden){document.querySelectorAll('#dashboardStats .hero-saldo strong,#dashboardStats .hero-flow strong').forEach((el,i)=>{if(oldAmounts[i]!==el.textContent)el.animate([{opacity:.48,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:240,easing:'ease-out'});});}
+      if(!v40ReducedMotion()&&activeTab==='home'&&!document.hidden){document.querySelectorAll('#dashboardStats .hero-saldo strong,#dashboardStats .hero-flow strong').forEach((el,i)=>{if(oldAmounts[i]!==el.textContent)el.animate([{opacity:.48,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:240,easing:'ease-out'});});}
       if(activeTab==='home'&&opticalMotionAllowed()&&Math.abs(oldHeroFill-fill)>.1){const bar=document.querySelector('#dashboardStats .hero-track i');bar?.animate([{width:oldHeroFill+'%'},{width:fill+'%'}],{duration:280,easing:'cubic-bezier(.2,.8,.25,1)'});}
       const realToday=toDate(dateKey(new Date())),refDate=realToday<p.start?p.start:realToday>p.end?p.end:realToday;
       const days=Math.max(0,Math.ceil((p.end-refDate)/86400000)),totalDays=Math.ceil((p.end-p.start+1)/86400000),elapsed=Math.max(1,Math.ceil((refDate-p.start+1)/86400000)),elapsedWeeks=Math.max(1,Math.ceil(elapsed/7)),avg=t.uscite/elapsedWeeks,projection=t.uscite/elapsed*totalDays;
@@ -2976,6 +3052,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       if(count){const periods=new Set(selected.map(m=>getPeriod(toDate(m.date)).label));count.textContent=`${selected.length} ${selected.length===1?'spesa selezionata':'spese selezionate'}`+(periods.size>1?` · ${periods.size} mesi`:'');}
       if(sumEl) sumEl.textContent=`Totale provvisorio: ${fmt.format(selectedExpenseTotal())}`;
       if(totalBtn) totalBtn.disabled=selected.length===0;
+      document.getElementById('v40SaveSummary').disabled=selected.length===0;
     }
     function startMovementExpenseSelection(){
       ensureMovementSelectionContext();
@@ -3019,7 +3096,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       movementSelectionMode=false;
       selectedExpenseIds.clear();
       renderMovements();
-      showAppPopup(`Hai speso ${fmt.format(total)} nelle ${count} ${count===1?'spesa selezionata':'spese selezionate'}.`);
+      showAppPopup(state.settings.privacyAmounts?`Calcolo completato: ${count} spese selezionate. Importo nascosto dalle impostazioni di privacy.`:`Hai speso ${fmt.format(total)} nelle ${count} ${count===1?'spesa selezionata':'spese selezionate'}.`);
     }
 
     function renderMovements(){
@@ -3295,7 +3372,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       if(monthlyMorphFrame)cancelAnimationFrame(monthlyMorphFrame);monthlyMorphFrame=0;
       if(monthlyMorphFinish){const finish=monthlyMorphFinish;monthlyMorphFinish=null;finish();}
     }
-    function opticalMotionAllowed(){return !document.hidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches;}
+    function opticalMotionAllowed(){return !document.hidden&&!v40ReducedMotion();}
     function monthlyPath(points){
       if(!points.length)return '';
       let d=`M${points[0].x},${points[0].y}`;
@@ -3481,28 +3558,30 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
     }
     function download(name,text,type='text/plain'){const blob=new Blob([text],{type});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},0)}
     function downloadCompleteBackup(prefix='backup_completo_tracking_spese'){
-      const stamp=new Date().toISOString().slice(0,10);
-      download(`${prefix}_${stamp}.json`,JSON.stringify(state,null,2),'application/json');
+      const now=new Date();state.settings.lastBackupAt=now.toISOString();saveState();
+      download(`Backup - ${formatDate(now).replaceAll('/','-')}.json`,JSON.stringify(state,null,2),'application/json');syncV40Controls();
     }
     function currentPeriodKey(p=currentPeriod()){return `${p.labelYear}-${p.labelMonth}`}
     function shouldShowMonthlyBackupReminder(){
       state.settings={...defaultSettings(),...(state.settings||{})};
       const today=toDate(todayKey());
       const p=getPeriod(today);
-      return sameDate(today,p.end) && state.settings.lastMonthlyBackupPromptPeriod!==currentPeriodKey(p);
+      const s=state.settings;if(s.backupReminder==='off')return false;if(s.backupReminder==='weekly'){const last=Math.max(Date.parse(s.lastBackupAt)||0,Date.parse(s.lastBackupPromptAt)||0);return Date.now()-last>=7*86400000;}return sameDate(today,p.end) && s.lastMonthlyBackupPromptPeriod!==currentPeriodKey(p) && (!s.lastBackupAt||dateKey(new Date(s.lastBackupAt))!==todayKey());
     }
     function openMonthlyBackupReminder(){
       const modal=document.getElementById('monthlyBackupModal');
       if(!modal || modal.classList.contains('open')) return;
+      const weekly=state.settings.backupReminder==='weekly';document.getElementById('monthlyBackupTitle').textContent=weekly?'Backup settimanale':'Backup mensile';modal.querySelector('p').textContent='Ti consigliamo di effettuare un backup. Vuoi eseguirlo adesso?';
       modal.classList.add('open');
       modal.setAttribute('aria-hidden','false');
     }
     function closeMonthlyBackupReminder(markDone=true){
       const modal=document.getElementById('monthlyBackupModal');
-      if(modal){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}
-      if(markDone){
+      if(modal){modal.dataset.wasOpen=modal.classList.contains('open')?'1':'0';modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}
+      if(markDone && modal?.dataset.wasOpen==='1'){
+        delete modal.dataset.wasOpen;
         state.settings={...defaultSettings(),...(state.settings||{})};
-        state.settings.lastMonthlyBackupPromptPeriod=currentPeriodKey(getPeriod(toDate(todayKey())));
+        state.settings.lastMonthlyBackupPromptPeriod=currentPeriodKey(getPeriod(toDate(todayKey())));state.settings.lastBackupPromptAt=new Date().toISOString();
         saveState();
       }
     }
@@ -3511,9 +3590,9 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       closeMonthlyBackupReminder(true);
       showToast('Backup mensile scaricato');
     }
-    function checkMonthlyBackupReminder(){setTimeout(()=>{if(shouldShowMonthlyBackupReminder())openMonthlyBackupReminder()},650)}
+    function checkMonthlyBackupReminder(){setTimeout(()=>{if(!document.hidden&&!document.querySelector('.modal-backdrop.open')&&shouldShowMonthlyBackupReminder())openMonthlyBackupReminder()},650)}
     function emptyCleanState(){
-      return {selectedDate:dateKey(new Date()),movementsOpen:false,theme:'light',settings:defaultSettings(),categories:[],movements:[]};
+      return {selectedDate:dateKey(new Date()),movementsOpen:false,theme:'light',settings:normalizeV40Settings(defaultSettings(),'light'),categories:[],movements:[]};
     }
     function openWipeAllModal(){
       document.getElementById('wipeConfirmText').value='';
@@ -3535,8 +3614,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
         showAppPopup('Per eliminare tutto devi scrivere ELIMINA TUTTO e selezionare la conferma.');
         return;
       }
-      const stamp=new Date().toISOString().slice(0,10);
-      download(`backup_completo_prima_eliminazione_${stamp}.json`,JSON.stringify(state,null,2),'application/json');
+      downloadCompleteBackup();
       setTimeout(()=>{
         localStorage.removeItem(STORAGE_KEY);
         state=emptyCleanState();
@@ -3633,7 +3711,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       const previous=Number(nav.dataset.lensCenter||x);
       const direction=x-previous;
       nav.dataset.lensCenter=String(x);
-      const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const reduced=v40ReducedMotion();
       nav.style.setProperty('--light-x',direction>0?'76%':direction<0?'24%':'34%');
       nav.style.setProperty('--lens-sx',!reduced&&Math.abs(direction)>5?'1.10':'1.04');
       nav.style.setProperty('--lens-sy',!reduced&&Math.abs(direction)>5?'.96':'1');
@@ -3755,7 +3833,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
     }
     const premiumRippleSelector='.icon-btn,.period-btn,.primary,.secondary,.ghost,.collapse-btn,.mini-primary,.drawer-menu-item,.nav-item,.nav-home-btn,.nav-add,.detail-summary';
     document.addEventListener('pointerdown',e=>{
-      const btn=e.target.closest(premiumRippleSelector);if(!btn||btn.id==='resetFilters'||btn.matches('.nav-item,.nav-home-btn')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+      const btn=e.target.closest(premiumRippleSelector);if(!btn||btn.id==='resetFilters'||btn.matches('.nav-item,.nav-home-btn')||v40ReducedMotion())return;
       const r=btn.getBoundingClientRect();
       btn.style.setProperty('--press-x',Math.max(0,Math.min(100,(e.clientX-r.left)/r.width*100))+'%');
       btn.style.setProperty('--press-y',Math.max(0,Math.min(100,(e.clientY-r.top)/r.height*100))+'%');
@@ -3903,13 +3981,13 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       state.periodDate=dateKey(d);state.selectedDate=todayKey();saveState();renderAll();resetHomeDefaults(true);
       const pill=document.querySelector('.period-pill');
       if(monthSlideAnimation)monthSlideAnimation.cancel();
-      if(!matchMedia('(prefers-reduced-motion: reduce)').matches && pill.animate){
+      if(!v40ReducedMotion() && pill.animate){
         monthSlideAnimation=pill.animate([{transform:`translateX(${direction*13}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],{duration:245,easing:'cubic-bezier(.2,.8,.2,1)'});
       }
     }
     document.getElementById('prevPeriod').addEventListener('click',()=>changeDisplayedMonth(-1));
     document.getElementById('nextPeriod').addEventListener('click',()=>changeDisplayedMonth(1));
-    document.getElementById('themeToggle').addEventListener('click',()=>{applyTheme(state.theme==='dark'?'light':'dark');saveState();showToast(state.theme==='dark'?'Dark mode attiva':'Tema chiaro attivo')});
+    document.getElementById('themeToggle').addEventListener('click',()=>{state.settings.themeMode=state.theme==='dark'?'light':'dark';applyTheme(state.settings.themeMode);saveState();syncV40Controls();showToast(state.theme==='dark'?'Dark mode attiva':'Tema chiaro attivo')});
     document.getElementById('saveSavingsTarget').addEventListener('click',saveSavingsTargetValue);
     document.getElementById('savingsGoalNotifyToggle').addEventListener('click',toggleSavingsGoalNotification);
     document.getElementById('applySeasonalBudget').addEventListener('click',applySeasonalProfile);
@@ -3935,6 +4013,19 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
       chartResizeTimer=setTimeout(()=>{if(activeTab==='analysis') drawCharts()},140);
     },{passive:true});
 
+
+    for(const [id,key] of [['v40Theme','themeMode'],['v40Glass','glassMode'],['v40Motion','motionMode'],['v40Reminder','backupReminder']])document.getElementById(id).addEventListener('change',e=>{state.settings[key]=e.target.value;if(key==='themeMode')applyTheme(state.theme);else applyV40Appearance();saveState();syncV40Controls();if(key==='motionMode'&&v40ReducedMotion())document.getAnimations().forEach(a=>a.cancel());});
+    document.getElementById('v40Privacy').addEventListener('change',e=>{state.settings.privacyAmounts=e.target.checked;applyV40Appearance();saveState();});
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(state.settings.themeMode==='auto'){applyTheme(state.theme);saveState();}});
+    document.getElementById('v40SaveSummary').addEventListener('click',v40SaveSelected);
+    document.getElementById('v40Integrity').addEventListener('click',()=>{const p=v40Integrity();showAppPopup(p.length?'Controllo: '+p.join('; ')+'. Nessun dato modificato.':`Nessuna anomalia rilevata nei controlli di date, importi, ID e categorie. ${state.movements.length} movimenti, ${state.categories.length} categorie.`);});
+    document.getElementById('v40Offline').addEventListener('click',v40OfflineCheck);
+    const v40Drawer=document.getElementById('drawerContent');
+    v40Drawer.addEventListener('change',e=>{if(e.target.id==='v40AnnualYear'){v40Drawer.dataset.annualYear=e.target.value;renderDrawerContent('annual');}});
+    v40Drawer.addEventListener('submit',e=>{const f=e.target;if(!f.matches('#v40RecurringForm,#v40GoalForm,[data-v40-goal]'))return;e.preventDefault();const d=Object.fromEntries(new FormData(f));const name=String(d.name||'').trim();const cents=n=>Math.round(Number(n)*100)/100;let panel;if(f.id==='v40RecurringForm'){if(!name||!(cents(d.amount)>0)||!d.date)return;state.settings.recurringExpenses.push({id:uid(),name,amount:cents(d.amount),frequency:d.frequency,date:d.date,anchorDay:toDate(d.date).getDate()});panel='recurring';}else if(f.id==='v40GoalForm'){if(!name||!(cents(d.target)>0)||!(cents(d.saved)>=0))return;state.settings.personalGoals.push({id:uid(),name,target:cents(d.target),saved:cents(d.saved)});panel='goals';}else{const r=state.settings.personalGoals.find(x=>x.id===f.dataset.v40Goal);if(!r||!(cents(d.saved)>=0))return;r.saved=cents(d.saved);panel='goals';}saveState();renderDrawerContent(panel);showToast('Salvato');});
+    v40Drawer.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.v40Remove){const k=b.dataset.v40Remove;if(!['savedSummaries','recurringExpenses','personalGoals'].includes(k))return;if(!await confirmInApp('Eliminare questo elemento? I movimenti contabili rimangono invariati.'))return;state.settings[k]=state.settings[k].filter(x=>x.id!==b.dataset.id);saveState();renderDrawerContent({savedSummaries:'summaries',recurringExpenses:'recurring',personalGoals:'goals'}[k]);}else if(b.dataset.v40Next){const r=state.settings.recurringExpenses.find(x=>x.id===b.dataset.v40Next);if(!r)return;const d=toDate(r.date),day=r.anchorDay||d.getDate();d.setDate(1);d.setMonth(d.getMonth()+(r.frequency==='yearly'?12:1));d.setDate(Math.min(day,new Date(d.getFullYear(),d.getMonth()+1,0).getDate()));r.date=dateKey(d);saveState();renderDrawerContent('recurring');}});
+
+    let v40HeaderScrolled=false;function syncV40Header(){const next=(window.scrollY||0)>8;if(next!==v40HeaderScrolled){v40HeaderScrolled=next;document.body.classList.toggle('header-scrolled',next);}}window.addEventListener('scroll',syncV40Header,{passive:true});window.addEventListener('pageshow',syncV40Header);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkMonthlyBackupReminder();});syncV40Header();
     // All'apertura dell'app porta sempre il riferimento alla data odierna.
     state.selectedDate = todayKey();
     state.periodDate = todayKey();
@@ -3954,7 +4045,7 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
   </script>
 
   <script>
-    (()=>{const bg=document.getElementById('revampBackdrop');let pending=false;const reduced=matchMedia('(prefers-reduced-motion: reduce)');function update(){pending=false;if(reduced.matches){bg.style.setProperty('--v65-shift','0px');bg.style.setProperty('--v65-shift2','0px');return;}const y=Math.max(0,window.scrollY||0);bg.style.setProperty('--v65-shift',Math.max(-120,-y*.12)+'px');bg.style.setProperty('--v65-shift2',Math.min(110,y*.09)+'px');}function schedule(){if(!pending){pending=true;requestAnimationFrame(update)}}window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});document.addEventListener('visibilitychange',()=>{document.body.classList.toggle('page-hidden',document.hidden);if(!document.hidden){schedule();if(activeTab==='analysis')drawCharts();}});schedule();})();
+    (()=>{const bg=document.getElementById('revampBackdrop');let pending=false;const reduced=matchMedia('(prefers-reduced-motion: reduce)');function update(){pending=false;if(v40ReducedMotion()){bg.style.setProperty('--v65-shift','0px');bg.style.setProperty('--v65-shift2','0px');return;}const y=Math.max(0,window.scrollY||0);bg.style.setProperty('--v65-shift',Math.max(-120,-y*.12)+'px');bg.style.setProperty('--v65-shift2',Math.min(110,y*.09)+'px');}function schedule(){if(!pending){pending=true;requestAnimationFrame(update)}}window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});document.addEventListener('visibilitychange',()=>{document.body.classList.toggle('page-hidden',document.hidden);if(!document.hidden){schedule();if(activeTab==='analysis')drawCharts();}});schedule();})();
   </script>
 
   <script>
@@ -3967,8 +4058,8 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
           navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (firstControlReloaded) return;
             firstControlReloaded = true;
-            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v3.9')) {
-              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v3.9', '1');
+            if (!sessionStorage.getItem('tracciatore-spese-revamp-first-control-v4.0')) {
+              sessionStorage.setItem('tracciatore-spese-revamp-first-control-v4.0', '1');
               location.reload();
             }
           });
@@ -3982,8 +4073,8 @@ body.rev3.dark-mode .icon-btn{background:radial-gradient(ellipse at var(--press-
           if(navigator.onLine) await registration.update().catch(()=>{});
           await navigator.serviceWorker.ready;
 
-          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v39')) {
-            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v39', '1');
+          if (!localStorage.getItem('tracciatore-spese-revamp-offline-ready-v40')) {
+            localStorage.setItem('tracciatore-spese-revamp-offline-ready-v40', '1');
             if (typeof showToast === 'function') showToast('App pronta anche senza connessione');
           }
         } catch (error) {
